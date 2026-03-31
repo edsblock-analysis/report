@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Report 11 — Block Functional Documentation: Navigation & Interactive Blocks | Thermo Fisher AEM→EDS Migration</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;background:#f5f5f5;color:#333;line-height:1.6;overflow-x:hidden}
+.container{max-width:1400px;margin:0 auto}
+.report-header{background:linear-gradient(135deg,#1a237e 0%,#0d47a1 100%);color:#fff;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);margin-bottom:30px;padding:40px 24px;border-radius:0;box-sizing:border-box}
+.report-header-inner{max-width:1400px;margin:0 auto}
+.report-header h1{margin:0 0 10px;font-size:28px}.report-header .subtitle{opacity:.9;font-size:16px}.report-header .meta{margin-top:15px;font-size:13px;opacity:.7}
+.toc{background:#fff;padding:30px;border-radius:8px;margin-bottom:30px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.toc h2{margin-top:0;color:#1a237e;border-bottom:2px solid #e8eaf6;padding-bottom:10px}
+.toc ul{list-style:none;padding:0}.toc li{padding:4px 0}.toc a{color:#1565c0;text-decoration:none}.toc a:hover{text-decoration:underline}
+.toc .sub{margin-left:24px;font-size:14px}.vc{color:#888;font-size:13px;margin-left:6px}
+.bs{background:#fff;border-radius:8px;margin-bottom:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);overflow:hidden}
+.bh{background:#1a237e;color:#fff;padding:20px 30px}.bh h2{margin:0;font-size:22px}
+.bh .bm{display:flex;gap:15px;margin-top:8px;font-size:13px;opacity:.85;flex-wrap:wrap}
+.bh .bm span{background:rgba(255,255,255,.15);padding:2px 10px;border-radius:12px}
+.bb{padding:30px}
+.bo{background:#f8f9ff;padding:20px;border-radius:8px;margin-bottom:25px;border-left:4px solid #1a237e}
+.vc2{border:1px solid #e0e0e0;border-radius:8px;margin-bottom:25px;overflow:hidden}
+.vh{background:#e8eaf6;padding:15px 20px;border-bottom:1px solid #c5cae9;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.vh h3{margin:0;color:#283593;font-size:17px}
+.vb2{display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;text-transform:uppercase}
+.badge-modern{background:#e3f2fd;color:#1565c0}.badge-legacy{background:#fff3e0;color:#e65100}
+.badge-corporate{background:#f3e5f5;color:#7b1fa2}.badge-new{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+.badge-both{background:#fce4ec;color:#c62828}.badge-global{background:#e0f2f1;color:#00695c}
+.badge-complex{background:#fbe9e7;color:#bf360c}
+.vbd{padding:20px}.desc{margin-bottom:20px;color:#555;font-size:15px}
+.ds{margin-bottom:20px}
+.ds h4{color:#1a237e;margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e8eaf6;padding-bottom:6px}
+table.st{width:100%;border-collapse:collapse;font-size:13px}
+.st th{background:#f5f5f5;text-align:left;padding:8px 12px;border:1px solid #e0e0e0;font-weight:600}
+.st td{padding:8px 12px;border:1px solid #e0e0e0;vertical-align:top}
+.st code{background:#f5f5f5;padding:1px 4px;border-radius:3px;font-size:12px;color:#d32f2f}
+ul.cl{list-style:none;padding:0}ul.cl li{padding:5px 0;font-size:14px}ul.cl li::before{content:'☐ ';color:#1a237e;font-weight:700}
+.rg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px}
+.rc{border:1px solid #e0e0e0;border-radius:6px;padding:15px}.rc h5{margin:0 0 8px;font-size:13px;color:#1a237e}
+.rc .bp{font-size:11px;color:#888;margin-bottom:8px}.rc ul{margin:0;padding-left:18px;font-size:13px}
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ii{background:#fafafa;padding:12px;border-radius:6px;border:1px solid #eee}
+.ii .tp{font-weight:600;font-size:13px;color:#333;margin-bottom:4px}.ii .dt{font-size:13px;color:#666}
+ul.al{list-style:none;padding:0}ul.al li{padding:4px 0;font-size:13px}ul.al li::before{content:'♿ '}
+table.at{width:100%;border-collapse:collapse;font-size:13px}
+.at th{background:#f5f5f5;text-align:left;padding:8px 12px;border:1px solid #e0e0e0}.at td{padding:8px 12px;border:1px solid #e0e0e0}
+.req{color:#d32f2f;font-weight:600}.opt{color:#666}
+.rl{display:flex;flex-wrap:wrap;gap:8px}
+.rl a{display:inline-block;padding:4px 12px;background:#e3f2fd;color:#1565c0;border-radius:4px;font-size:12px;text-decoration:none}
+.rl a:hover{background:#bbdefb}
+.screenshot-thumb{max-width:300px;max-height:180px;border:1px solid #ddd;border-radius:4px;margin-top:10px}
+.top-nav{background:linear-gradient(90deg,#1a237e 0%,#0d47a1 100%);box-shadow:0 2px 8px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box}
+.top-nav-inner{margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.top-nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;transition:all .2s;background:rgba(255,255,255,.08)}
+.top-nav a:hover{background:rgba(255,255,255,.2);color:#fff}
+.top-nav .sep{color:rgba(255,255,255,.5);font-size:13px}
+.top-nav .project{color:rgba(255,255,255,.9);font-size:14px;font-weight:500}
+@media print{body{background:#fff}.bs{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top-nav"><div class="top-nav-inner"><a href="index.html"><span style="font-size:18px">&#8962;</span> Dashboard Home</a><span class="sep">·</span><span class="project">Thermo Fisher AEM &rarr; EDS Migration</span></div></nav>
+
+<div class="report-header">
+<div class="report-header-inner">
+<h1>Block Functional Documentation — Part 2: Navigation &amp; Interactive Blocks</h1>
+<div class="subtitle">Functional specs for Sidebar Nav, Accordion, Tabs, Video, Carousel, Event Table, Anchor Nav, Embed &amp; Table blocks</div>
+<div class="meta">Thermo Fisher Scientific AEM → EDS Migration | 10 blocks, 25 variations | Generated 2026-03-20 | Report 11 of 12</div>
+</div>
+</div>
+
+<div class="container">
+<div class="toc"><h2>Table of Contents</h2>
+<ul>
+<li><a href="#sidebar-nav">6. Sidebar Navigation</a><span class="vc">— 3 variations</span></li>
+<li><a href="#accordion">7. Accordion</a><span class="vc">— 2 variations</span></li>
+<li><a href="#tabs">8. Tabs</a><span class="vc">— 3 variations</span></li>
+<li><a href="#video">9. Video</a><span class="vc">— 4 variations</span></li>
+<li><a href="#carousel">10. Carousel</a><span class="vc">— 2 variations</span></li>
+<li><a href="#event-table">11. Event Table</a><span class="vc">— 1 variation</span></li>
+<li><a href="#anchor-nav">12. Anchor Navigation</a><span class="vc">— 3 variations</span></li>
+<li><a href="#product-sub-nav">13. Product Sub-Nav</a><span class="vc">— 2 variations</span></li>
+<li><a href="#embed">14. Embed</a><span class="vc">— 3 variations</span></li>
+<li><a href="#table">15. Table</a><span class="vc">— 2 variations</span></li>
+</ul></div>
+
+<!-- BLOCK 6: SIDEBAR NAV -->
+<div class="bs" id="sidebar-nav">
+<div class="bh"><h2>6. Sidebar Navigation</h2><div class="bm"><span>3 Variations</span><span>Complexity: Medium</span><span>Est: 3–5 dev days</span><span>Priority: P1</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Left sidebar navigation for category/sub-category page hierarchies. Provides contextual wayfinding within a section. Found on all Legacy category pages and some Modern pages. Features collapsible sections with expand/collapse icons.</div>
+
+<div class="vc2" id="sidebar-v1">
+<div class="vh"><h3>V1: Modern Collapsible Sidebar</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Left sidebar with expandable category sections using AEM Core accordion pattern. Smooth CSS transitions on expand/collapse. Current page highlighted.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-p-sidebar-nav</code></td><td>Sidebar wrapper, typically in 25% column</td></tr>
+<tr><td>Section Header</td><td><code>.cmp-p-sidebar-nav__header</code></td><td>Clickable section header with toggle</td></tr>
+<tr><td>Link List</td><td><code>ul &gt; li &gt; a</code></td><td>Nested navigation links</td></tr>
+<tr><td>Active State</td><td><code>.active</code></td><td>Current page indicator</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Sidebar renders in left column (25% width)</li><li>Sections expand/collapse on click with smooth animation</li><li>Current page is visually highlighted (bold/colored)</li><li>Nested levels properly indented</li><li>On mobile, sidebar collapses into an expandable drawer</li><li>Multiple sections can be open simultaneously</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click (Header)</div><div class="dt">Toggles section open/closed. Chevron icon rotates 90→180 degrees.</div></div>
+<div class="ii"><div class="tp">Click (Link)</div><div class="dt">Navigates to the linked page. Current link gets active styling.</div></div>
+<div class="ii"><div class="tp">Keyboard</div><div class="dt">Enter/Space toggles sections. Arrow keys navigate between links.</div></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>Navigation region uses &lt;nav&gt; with aria-label="Section navigation"</li><li>Expand/collapse buttons have aria-expanded state</li><li>aria-controls links button to controlled section</li><li>Keyboard navigable with arrow keys</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/bioproduction.html" target="_blank">bioprocessing.html</a></div>
+</div></div></div>
+
+<div class="vc2" id="sidebar-v2">
+<div class="vh"><h3>V2: Legacy Parsys Sidebar</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Fixed left sidebar with static link lists in parsys containers. No collapse behavior — all links always visible. Simpler structure.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>All links always visible (no collapse)</li><li>Current page highlighted</li><li>Links properly nested for hierarchy</li><li>Sidebar scrolls independently if content is long</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/analytical-chemistry/chromatography.html" target="_blank">chromatography.html</a></div>
+</div></div></div>
+
+<div class="vc2" id="sidebar-v3">
+<div class="vh"><h3>V3: Chapter Sidebar</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd">
+<p class="desc">Sidebar for handbook/reference pages with plus/minus icons for expand/collapse. Classes: sidebar, icon-plus, icon-minus. Deeper nesting for multi-part handbooks. Found on 4+ pages.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.sidebar</code></td><td>Legacy sidebar wrapper</td></tr>
+<tr><td>Expand Icon</td><td><code>.icon-plus</code></td><td>Plus icon for collapsed sections</td></tr>
+<tr><td>Collapse Icon</td><td><code>.icon-minus</code></td><td>Minus icon for expanded sections</td></tr>
+<tr><td>Header Icon</td><td><code>.nav-list-header-icon</code></td><td>Section header icon wrapper</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Plus icon shown for collapsed sections</li><li>Minus icon shown for expanded sections</li><li>Toggle between icons on click</li><li>Deep nesting supported (3+ levels)</li><li>Found on: cloning, handbook, diagnostic-testing, protein-biology pages</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl">
+<a href="https://www.thermofisher.com/us/en/home/life-science/cloning.html" target="_blank">cloning.html</a>
+<a href="https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook.html" target="_blank">molecular-probes-the-handbook.html</a>
+</div>
+<img src="screenshots/sidebar-nav-v3.jpeg" alt="Sidebar V3" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 7: ACCORDION -->
+<div class="bs" id="accordion">
+<div class="bh"><h2>7. Accordion</h2><div class="bm"><span>2 Variations</span><span>Complexity: Simple</span><span>Est: 1–2 dev days</span><span>Priority: P1</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Expandable/collapsible content sections for FAQs, support topics, and content organization. Two implementations: Modern AEM Core Components and Legacy Bootstrap-based.</div>
+
+<div class="vc2" id="accordion-v1">
+<div class="vh"><h3>V1: Modern AEM Core Accordion</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">AEM Core Components accordion with smooth expand/collapse animations. Chevron icon rotates on state change. Full ARIA support built-in.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-accordion</code></td><td>Accordion wrapper</td></tr>
+<tr><td>Item</td><td><code>.cmp-accordion__item</code></td><td>Single accordion panel</td></tr>
+<tr><td>Header</td><td><code>.cmp-accordion__header button</code></td><td>Clickable toggle button</td></tr>
+<tr><td>Icon</td><td><code>.cmp-accordion__icon</code></td><td>Chevron/arrow indicator</td></tr>
+<tr><td>Panel</td><td><code>.cmp-accordion__panel</code></td><td>Collapsible content area</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Clicking header toggles panel open/closed</li><li>Smooth height animation on expand/collapse (300ms ease)</li><li>Chevron rotates 180° when expanded</li><li>Multiple panels can be open simultaneously (configurable)</li><li>First panel optionally pre-expanded on load</li><li>Content inside panels renders correctly (rich text, images, lists)</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">Toggle panel open/closed. Chevron animates.</div></div>
+<div class="ii"><div class="tp">Keyboard</div><div class="dt">Enter/Space: toggle. Up/Down arrows: navigate between headers. Home/End: first/last header.</div></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>role="region" on each panel</li><li>aria-expanded="true/false" on header buttons</li><li>aria-controls linking header to panel</li><li>aria-labelledby linking panel to header</li><li>Full keyboard navigation per WAI-ARIA Accordion Pattern</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/support.html" target="_blank">support.html</a></div>
+<img src="screenshots/accordion-v1.jpeg" alt="Accordion V1" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="accordion-v2">
+<div class="vh"><h3>V2: Legacy Bootstrap Accordion</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd">
+<p class="desc">jQuery Bootstrap collapse plugin. Uses panel-group/panel-heading/panel-collapse class structure. Plus/minus text toggle instead of chevron. Found on older category pages.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Bootstrap collapse functionality works</li><li>Plus changes to minus on expand</li><li>Panel content reveals smoothly</li><li>Only one panel open at a time (accordion mode)</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/pcr.html" target="_blank">pcr.html (FAQ section)</a></div>
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 8: TABS -->
+<div class="bs" id="tabs">
+<div class="bh"><h2>8. Tabs</h2><div class="bm"><span>3 Variations</span><span>Complexity: Medium</span><span>Est: 2–4 dev days</span><span>Priority: P1</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Tabbed content interfaces for organizing related content into switchable panels. Three distinct implementations ranging from Modern AEM Core to Legacy workflow steppers.</div>
+
+<div class="vc2" id="tabs-v1">
+<div class="vh"><h3>V1: Modern Horizontal Tabs</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">AEM Core tabs with horizontal tab bar, active tab indicator underline, and smooth content transition between panels.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Tab bar renders horizontally with clear active indicator</li><li>Clicking tab switches visible panel instantly</li><li>Only one panel visible at a time</li><li>Tab content supports rich content (text, images, nested blocks)</li><li>Active tab has visual underline/highlight</li></ul></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>role="tablist" on tab container</li><li>role="tab" on each tab button</li><li>role="tabpanel" on each content panel</li><li>aria-selected="true" on active tab</li><li>Arrow keys navigate between tabs</li></ul></div>
+</div></div>
+
+<div class="vc2" id="tabs-v2">
+<div class="vh"><h3>V2: Legacy Vertical Tabs</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Vertical tab list on the left, content panel on the right. jQuery-driven tab switching. Used for product comparison or specification tables.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Vertical tab list renders on left (~20% width)</li><li>Content panel on right (~80% width)</li><li>Active tab visually connected to panel (no gap/border)</li><li>On mobile, converts to accordion or horizontal tabs</li></ul></div>
+</div></div>
+
+<div class="vc2" id="tabs-v3">
+<div class="vh"><h3>V3: Workflow Tab Container (Stepper)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-new">NEW</span><span class="badge badge-complex">Complex</span></div></div>
+<div class="vbd">
+<p class="desc">Tabbed workflow stepper showing sequential process steps (e.g., molecular cloning workflow). 5 steps with visual progression indicators. Each tab reveals step-specific content with products and resources. Very content-rich (78 h3 headings, 108 images on the reference page).</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.tabworkflowcontainer.tabbable</code></td><td>Workflow stepper wrapper</td></tr>
+<tr><td>Tab Nav</td><td><code>.nav-workflow</code></td><td>Horizontal step navigation</td></tr>
+<tr><td>Step Variant</td><td><code>.workflow-5steps</code></td><td>5-step workflow layout</td></tr>
+<tr><td>First Step</td><td><code>.first-tab</code></td><td>First step styling</td></tr>
+<tr><td>Middle Steps</td><td><code>.next-tab</code></td><td>Middle step styling</td></tr>
+<tr><td>Last Step</td><td><code>.last-tab</code></td><td>Last step styling</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>5 step tabs render in sequential order with visual connectors</li><li>Active step highlighted, completed steps show different state</li><li>Content panel updates when switching steps</li><li>Each step panel can contain product cards, images, and resources</li><li>Step progression is linear (1→2→3→4→5) but all tabs clickable</li><li>Page handles 78+ sub-headings and 108+ images without performance issues</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">Step tab click reveals associated content panel. Active state updates.</div></div>
+<div class="ii"><div class="tp">Animation</div><div class="dt">Content panel transitions with fade or slide effect.</div></div>
+</div></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/cloning.html" target="_blank">cloning.html</a></div>
+<img src="screenshots/workflow-stepper-v1.jpeg" alt="Workflow Stepper" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 9: VIDEO -->
+<div class="bs" id="video">
+<div class="bh"><h2>9. Video</h2><div class="bm"><span>4 Variations</span><span>Complexity: Medium</span><span>Est: 3–5 dev days</span><span>Priority: P1</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Video blocks embed and play video content using Brightcove video.js platform primarily, with some YouTube embeds. Variations include inline players, modal/lightbox players, and playlist interfaces.</div>
+
+<div class="vc2" id="video-v1">
+<div class="vh"><h3>V1: Brightcove Inline Player</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Embedded Brightcove video.js player rendered inline within content. Features auto-poster image, play button overlay, and full controls bar. Responsive 16:9 aspect ratio.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Player renders with poster image before playback</li><li>Play button centered on poster</li><li>Controls bar shows: play/pause, progress, volume, fullscreen</li><li>Responsive 16:9 container (no black bars)</li><li>Video loads on demand (not auto-play)</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click (Play)</div><div class="dt">Poster image replaced by video. Playback starts. Controls appear on hover.</div></div>
+<div class="ii"><div class="tp">Controls</div><div class="dt">Standard video controls: play/pause, seek, volume, captions toggle, fullscreen.</div></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>Closed captions/subtitles available via CC button</li><li>Keyboard: Space=play/pause, arrows=seek, M=mute, F=fullscreen</li><li>Video player has aria-label with video title</li><li>Transcript option available for screen readers</li></ul></div>
+</div></div>
+
+<div class="vc2" id="video-v2">
+<div class="vh"><h3>V2: YouTube Embed</h3><div class="vb2"><span class="badge badge-both">Both Platforms</span></div></div>
+<div class="vbd">
+<p class="desc">YouTube iframe embed with privacy-enhanced mode (youtube-nocookie.com). Standard YouTube controls and responsive wrapper.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>YouTube iframe renders within responsive container</li><li>Privacy-enhanced mode URL used</li><li>Standard YouTube player controls available</li><li>Responsive sizing maintained</li></ul></div>
+</div></div>
+
+<div class="vc2" id="video-v3">
+<div class="vh"><h3>V3: Video with Transcript</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Video player with expandable transcript section below. Accordion-style expand for full transcript text, improving accessibility.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Video player renders above transcript area</li><li>Transcript section collapsed by default</li><li>Expand/collapse toggle labeled "View Transcript"</li><li>Transcript text is selectable and searchable</li></ul></div>
+</div></div>
+
+<div class="vc2" id="video-v4">
+<div class="vh"><h3>V4: Playlist Player</h3><div class="vb2"><span class="badge badge-modern">Modern</span><span class="badge badge-new">NEW</span><span class="badge badge-complex">Complex</span></div></div>
+<div class="vbd">
+<p class="desc">Brightcove video.js player on the left with a scrollable playlist panel on the right. Playlist shows video thumbnails for navigation. Features modal dialog, poster image, slider bar, and progress bar.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.video-container</code></td><td>Overall video+playlist wrapper</td></tr>
+<tr><td>Player</td><td><code>.video-player-wrapper .video-js</code></td><td>Brightcove player (left side)</td></tr>
+<tr><td>Playlist</td><td><code>.video-playlist-right</code></td><td>Scrollable playlist panel (right side)</td></tr>
+<tr><td>Poster</td><td><code>.vjs-video-poster</code></td><td>Preview poster image</td></tr>
+<tr><td>Progress</td><td><code>.vjs-slider-bar</code></td><td>Playback progress indicator</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Player renders on left (~65% width), playlist on right (~35%)</li><li>Playlist shows video thumbnails with titles</li><li>Clicking playlist item loads and plays that video</li><li>Current playing video highlighted in playlist</li><li>Playlist scrollable if many items</li><li>Modal dialog available for enlarged view</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html" target="_blank">gibco-cell-culture-basics.html</a></div>
+<img src="screenshots/video-v4.jpeg" alt="Video Playlist" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 10: CAROUSEL -->
+<div class="bs" id="carousel">
+<div class="bh"><h2>10. Carousel</h2><div class="bm"><span>2 Variations</span><span>Complexity: Medium</span><span>Est: 3–4 dev days</span><span>Priority: P2</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Content carousels for rotating through multiple content items. Two distinct patterns: a tabbed rotator with label-based navigation and a horizontal filmstrip with arrow navigation.</div>
+
+<div class="vc2" id="carousel-v1">
+<div class="vh"><h3>V1: Carousel Rotator (Tabbed)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Tabbed content rotator with clickable tab labels (e.g., "Global reach / Innovation / Mission"). Auto-rotates through 3 content panels with animated transitions. Used for key statistics and messaging.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Tab Labels</td><td><code>Custom tab navigation</code></td><td>3 labels: Global reach, Innovation, Mission</td></tr>
+<tr><td>Content Panels</td><td><code>Animated content areas</code></td><td>Statistics and messaging text per tab</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>3 tab labels visible and clickable</li><li>Auto-rotates with 5-second interval</li><li>Clicking a tab stops auto-rotation and shows that panel</li><li>Animated transition between panels (fade or slide)</li><li>Active tab visually distinct</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Auto-rotate</div><div class="dt">Cycles through tabs every 5 seconds. Pauses on hover/focus.</div></div>
+<div class="ii"><div class="tp">Click</div><div class="dt">Selects specific tab, stops auto-rotation.</div></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>Auto-rotation pauses on keyboard focus</li><li>ARIA tablist/tab/tabpanel roles</li><li>Pause/play control available</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/about-us/partnering-licensing.html" target="_blank">partnering-licensing.html</a></div>
+<img src="screenshots/carousel-v1.jpeg" alt="Carousel Rotator" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="carousel-v2">
+<div class="vh"><h3>V2: Filmstrip Carousel</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Horizontal scrolling filmstrip showing content cards (blog posts, magazine issues) with left/right arrow navigation. No dots. Cards contain images, titles, and CTAs.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.filmstrip.filmstrip-container</code></td><td>Filmstrip outer wrapper</td></tr>
+<tr><td>Title</td><td><code>.filmstrip-title</code></td><td>Section heading above filmstrip</td></tr>
+<tr><td>Track</td><td><code>.filmstrip-inner</code></td><td>Scrollable card track</td></tr>
+<tr><td>Controls</td><td><code>.filmstrip-control</code></td><td>Left/right arrow buttons</td></tr>
+<tr><td>Arrow Icons</td><td><code>.sn-icons.sn-icons-lg</code></td><td>Arrow icon styling</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Cards display in horizontal scrollable row</li><li>Left/right arrows visible at container edges</li><li>Clicking arrow scrolls by card width (1–3 cards)</li><li>Arrows disabled at scroll boundaries</li><li>Smooth scroll animation (ease-out)</li><li>Touch swipe supported on mobile</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Arrow Click</div><div class="dt">Scrolls filmstrip left/right by 1–3 card widths.</div></div>
+<div class="ii"><div class="tp">Touch Swipe</div><div class="dt">Horizontal swipe scrolls filmstrip on mobile/tablet.</div></div>
+<div class="ii"><div class="tp">Keyboard</div><div class="dt">Left/Right arrow keys scroll when container focused.</div></div>
+</div></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/new-ideas/life-in-the-lab.html" target="_blank">life-in-the-lab.html</a></div>
+<img src="screenshots/carousel-v2.jpeg" alt="Filmstrip Carousel" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 11: EVENT TABLE -->
+<div class="bs" id="event-table">
+<div class="bh"><h2>11. Event Table</h2><div class="bm"><span>1 Variation</span><span>Complexity: Complex</span><span>Est: 5–8 dev days</span><span>Priority: P2</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Filterable, searchable event listing with complex filter UI, text search, and event cards rendered as table rows. Integrates with event data backend.</div>
+
+<div class="vc2" id="event-table-v1">
+<div class="vh"><h3>V1: Filterable Event Listing</h3><div class="vb2"><span class="badge badge-modern">Modern</span><span class="badge badge-complex">Complex</span></div></div>
+<div class="vbd">
+<p class="desc">Single-column HTML table with full-width event card rows. 18+ event rows, each containing title (h2>a link), date/location (h4), description paragraph, and thumbnail image. Features text search + 3 checkbox filter groups (Event Type: 9 options, Region: 3 options, Month: 5 options = 17 total checkboxes).</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Table Container</td><td><code>.table-container</code></td><td>Wrapper div</td></tr>
+<tr><td>Search</td><td><code>.table-search .search-field</code></td><td>Text search input</td></tr>
+<tr><td>Filters Toggle</td><td><code>.filter-icon</code></td><td>"Filters" button to show/hide filter panel</td></tr>
+<tr><td>Filter Group</td><td><code>.cmp-form-options</code></td><td>Checkbox group (Event Type, Region, Month)</td></tr>
+<tr><td>Checkboxes</td><td><code>.cmp-form-options__field--checkbox</code></td><td>Individual filter checkboxes (17 total)</td></tr>
+<tr><td>Event Row</td><td><code>tr &gt; td</code></td><td>Full-width event card in single cell</td></tr>
+<tr><td>Event Title</td><td><code>h2 &gt; a</code></td><td>Linked event title</td></tr>
+<tr><td>Date/Location</td><td><code>h4</code></td><td>Pipe-separated date range and location</td></tr>
+<tr><td>Thumbnail</td><td><code>img</code></td><td>Event thumbnail, right-aligned</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>All 18+ events display as card rows in the table</li><li>Text search filters events in real-time (keyup debounced)</li><li>Filters toggle button shows/hides the filter panel</li><li>Checking filter checkboxes immediately filters visible events</li><li>Multiple filters combine with AND logic within group, OR between groups</li><li>Each event card shows: title, date, location, description, thumbnail, CTA links</li><li>"No results" message when filters yield zero events</li><li>Filter state can be cleared with a "Reset" action</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Text Search</div><div class="dt">Keyup filtering with 300ms debounce. Matches against title and description.</div></div>
+<div class="ii"><div class="tp">Checkbox Filter</div><div class="dt">Immediate filtering on check/uncheck. Visual count of active filters.</div></div>
+<div class="ii"><div class="tp">Event Card Click</div><div class="dt">Title link and "Learn more" navigate to event detail/registration page.</div></div>
+<div class="ii"><div class="tp">Filter Toggle</div><div class="dt">Shows/hides the filter panel with slide animation.</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>Filters collapse to modal/overlay</li><li>Event cards stack vertically</li><li>Thumbnail hidden or smaller</li><li>Search bar full-width</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>Filter panel beside search</li><li>Cards maintain layout</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>Filter panel inline below search</li><li>Full card layout with right-aligned thumbnails</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>Search input has associated label and aria-label</li><li>Filter checkboxes have visible labels</li><li>Filter groups wrapped in fieldset with legend</li><li>Live region (aria-live="polite") announces result count changes</li><li>Event links have descriptive text</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/events.html" target="_blank">events.html</a></div>
+<img src="screenshots/event-table-v1.jpeg" alt="Event Table" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 12: ANCHOR NAV -->
+<div class="bs" id="anchor-nav">
+<div class="bh"><h2>12. Anchor Navigation</h2><div class="bm"><span>3 Variations</span><span>Complexity: Simple</span><span>Est: 1–2 dev days</span><span>Priority: P2</span></div></div>
+<div class="bb">
+<div class="vc2" id="anchor-v1"><div class="vh"><h3>V1: Sticky Horizontal</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Horizontal sticky bar that follows scroll. Contains anchor links to page sections. Active state updates on scroll via IntersectionObserver. Smooth scroll to section on click.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Bar sticks to top on scroll (position: sticky)</li><li>Active link updates based on visible section</li><li>Smooth scroll to target section on click</li><li>Does not overlap page header</li></ul></div></div></div>
+
+<div class="vc2" id="anchor-v2"><div class="vh"><h3>V2: Jump Links Bar</h3><div class="vb2"><span class="badge badge-both">Both</span></div></div>
+<div class="vbd"><p class="desc">Simple horizontal bar with pipe-separated links to page sections. Not sticky. Fixed position at section top.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Links render inline with pipe separators</li><li>Click scrolls to target section</li><li>Not sticky (scrolls with content)</li></ul></div></div></div>
+
+<div class="vc2" id="anchor-v3"><div class="vh"><h3>V3: Pipe-separated Link Directory</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd"><p class="desc">Pipe-separated inline links serving as mini-directory. Used in order/catalog sections for alphabetical or category navigation.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Links render inline with visual separators</li><li>Each link navigates to corresponding section/page</li><li>Wraps gracefully on narrow viewports</li></ul></div></div></div>
+</div></div>
+
+<!-- BLOCK 13: PRODUCT SUB-NAV -->
+<div class="bs" id="product-sub-nav">
+<div class="bh"><h2>13. Product Sub-Navigation</h2><div class="bm"><span>2 Variations</span><span>Complexity: Medium</span><span>Est: 2–3 dev days</span><span>Priority: P2</span></div></div>
+<div class="bb">
+<div class="vc2" id="product-sub-nav-v1"><div class="vh"><h3>V1: Mega-menu Style</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Large dropdown sub-navigation for product categories. Multi-column layout with category headers and product links. Hover-triggered on desktop, click on mobile.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Dropdown appears on hover (desktop) or click (mobile)</li><li>Multi-column layout for category grouping</li><li>Dismiss on click outside or Escape key</li><li>Smooth enter/exit animations</li></ul></div></div></div>
+
+<div class="vc2" id="product-sub-nav-v2"><div class="vh"><h3>V2: Manual/Auto Nav with Dropdowns</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd"><p class="desc">Combination of manually curated links and auto-generated product links with dropdown menus. Found on order/catalog pages.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Both manual and auto-generated links render correctly</li><li>Dropdown menus functional</li><li>Active state for current section</li></ul></div></div></div>
+</div></div>
+
+<!-- BLOCK 14: EMBED -->
+<div class="bs" id="embed">
+<div class="bh"><h2>14. Embed</h2><div class="bm"><span>3 Variations</span><span>Complexity: Simple</span><span>Est: 1–2 dev days</span><span>Priority: P3</span></div></div>
+<div class="bb">
+<div class="vc2" id="embed-v1"><div class="vh"><h3>V1: Social Media Embed</h3><div class="vb2"><span class="badge badge-both">Both</span></div></div>
+<div class="vbd"><p class="desc">Embedded social media posts (Twitter/X, LinkedIn) using oEmbed or iframe patterns.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Social post renders with proper styling</li><li>Responsive container</li><li>Third-party scripts load async</li></ul></div></div></div>
+
+<div class="vc2" id="embed-v2"><div class="vh"><h3>V2: Interactive Widget</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Third-party interactive content (calculators, configurators) embedded via iframe.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Widget loads in responsive iframe</li><li>Cross-origin communication handled</li><li>Loading state shown</li></ul></div></div></div>
+
+<div class="vc2" id="embed-v3"><div class="vh"><h3>V3: PDF Viewer</h3><div class="vb2"><span class="badge badge-both">Both</span></div></div>
+<div class="vbd"><p class="desc">Embedded PDF document viewer using iframe or object tag. Full-width with scroll.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>PDF renders within page (no new tab by default)</li><li>Scroll within embedded viewer</li><li>Download option available</li><li>Fallback link if embed fails</li></ul></div></div></div>
+</div></div>
+
+<!-- BLOCK 15: TABLE -->
+<div class="bs" id="table">
+<div class="bh"><h2>15. Table</h2><div class="bm"><span>2 Variations</span><span>Complexity: Simple</span><span>Est: 1–2 dev days</span><span>Priority: P2</span></div></div>
+<div class="bb">
+<div class="vc2" id="table-v1"><div class="vh"><h3>V1: Data Table</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Standard HTML table with thead/tbody structure. Optional column sorting. Zebra striping for readability. Responsive horizontal scroll on mobile.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Table renders with proper thead/tbody structure</li><li>Zebra striping applied to alternating rows</li><li>Horizontal scroll wrapper on mobile (no content clipping)</li><li>Column headers are sticky if table is tall</li><li>Optional: click column header to sort</li></ul></div>
+<div class="ds"><h4>Accessibility</h4><ul class="al"><li>scope="col" on th elements</li><li>Caption or aria-label describing table purpose</li><li>Sort buttons have aria-sort state</li></ul></div></div></div>
+
+<div class="vc2" id="table-v2"><div class="vh"><h3>V2: Comparison Table</h3><div class="vb2"><span class="badge badge-both">Both</span></div></div>
+<div class="vbd"><p class="desc">Multi-column product/feature comparison table. Header row fixed on scroll. Checkmark/X cells for feature presence. Hover highlights entire column.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Column header row sticky on vertical scroll</li><li>Checkmark (✓) and X (✗) cells rendered consistently</li><li>Column hover highlight for easy comparison</li><li>Product names in header link to product pages</li><li>Mobile: horizontal scroll with first column fixed</li></ul></div></div></div>
+</div></div>
+
+</div><!-- end container -->
+</body>
+</html>

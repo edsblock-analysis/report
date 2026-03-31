@@ -1,0 +1,460 @@
+{
+  "meta": {
+    "site": "thermofisher.com",
+    "analysisDate": "2026-03-20",
+    "totalUrls": 81753,
+    "templatesIdentified": 21,
+    "blocksIdentified": 35,
+    "blockVariations": 87
+  },
+  "templates": [
+    {
+      "id": "T01",
+      "name": "Modern Category Landing (L1)",
+      "platform": "Modern",
+      "estPages": 216,
+      "description": "Top-level category pages (life-science, industrial, clinical, bioprocessing, EM) with hero, card grids, and section containers",
+      "variations": [
+        {"id": "T01a", "name": "Standard", "description": "Standard hero + 3/4-up cards + resources grid footer", "sampleUrls": ["https://www.thermofisher.com/us/en/home/life-science/cell-analysis.html", "https://www.thermofisher.com/us/en/home/industrial/environmental.html"]},
+        {"id": "T01b", "name": "With CTA Hero", "description": "Hero with call-to-action buttons + branded search", "sampleUrls": ["https://www.thermofisher.com/us/en/home/life-science/antibodies.html", "https://www.thermofisher.com/us/en/home/bioprocessing.html"]},
+        {"id": "T01c", "name": "Gradient Hero", "description": "Dark gradient overlay hero + card grid", "sampleUrls": ["https://www.thermofisher.com/us/en/home/industrial/environmental.html", "https://www.thermofisher.com/us/en/home/industrial/food-beverage.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)", "V3: Gradient overlay", "V4: With CTA buttons"]},
+        {"block": "cards", "variations": ["V1: Image+Title+Desc+CTA (3-up)", "V2: Image+Title+Desc+CTA (4-up)", "V3: Image+Title+Desc+CTA (2-up)", "V8: Icon value props (3-up)"]},
+        {"block": "columns", "variations": ["V1: 50/50 text-left image-right", "V2: 50/50 image-left text-right"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar"]},
+        {"block": "resources-grid", "variations": ["V1: 4-up icon+title+CTA footer"]},
+        {"block": "section-metadata", "variations": ["V8: Modern section container"]}
+      ]
+    },
+    {
+      "id": "T02",
+      "name": "Modern Category L2",
+      "platform": "Modern",
+      "estPages": 1698,
+      "description": "Sub-category pages with narrative text+image alternating layout",
+      "variations": [
+        {"id": "T02a", "name": "Standard", "description": "Hero + alternating content columns + card grid", "sampleUrls": ["https://www.thermofisher.com/us/en/home/bioprocessing/about.html"]},
+        {"id": "T02b", "name": "With Sidebar", "description": "Auto-generated sidebar + content area", "sampleUrls": ["https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)", "V4: With CTA buttons"]},
+        {"block": "cards", "variations": ["V1: Image+Title+Desc+CTA (3-up)", "V2: Image+Title+Desc+CTA (4-up)", "V8: Icon value props (3-up)"]},
+        {"block": "columns", "variations": ["V1: 50/50 text-left image-right", "V2: 50/50 image-left text-right", "V3: 75/25 asymmetric"]},
+        {"block": "sidebar-nav", "variations": ["V1: Auto-navigation tree"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar", "V4: Mid-page promotional"]},
+        {"block": "resources-grid", "variations": ["V1: 4-up icon+title+CTA footer"]},
+        {"block": "section-metadata", "variations": ["V8: Modern section container"]}
+      ]
+    },
+    {
+      "id": "T03",
+      "name": "Category Deep Page",
+      "platform": "Mixed (Modern + Legacy)",
+      "estPages": 16758,
+      "description": "Deep sub-pages (3+ levels) covering products, techniques, applications — highest page count template",
+      "variations": [
+        {"id": "T03a", "name": "Modern Deep", "description": "Modern hero + section containers + cards", "sampleUrls": ["https://www.thermofisher.com/us/en/home/industrial/pharma-biopharma.html"]},
+        {"id": "T03b", "name": "Legacy Deep with Sidebar", "description": "Thinbanner + sidebar-nav + wells + columns", "sampleUrls": ["https://www.thermofisher.com/us/en/home/industrial/chromatography.html", "https://www.thermofisher.com/us/en/home/life-science/pcr.html"]},
+        {"id": "T03c", "name": "Legacy Deep with Video", "description": "Thinbanner + wells + multiple Brightcove videos", "sampleUrls": ["https://www.thermofisher.com/us/en/home/life-science/pcr/real-time-pcr.html"]},
+        {"id": "T03d", "name": "Legacy Deep with Forms", "description": "Thinbanner + wells + inline request forms", "sampleUrls": ["https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)", "V5: Thinbanner (legacy)"]},
+        {"block": "sidebar-nav", "variations": ["V1: Auto-navigation tree", "V2: Manual left-nav"]},
+        {"block": "cards", "variations": ["V1: Image+Title+Desc+CTA (3-up)", "V2: Image+Title+Desc+CTA (4-up)", "V6: Product showcase"]},
+        {"block": "columns", "variations": ["V1: 50/50 text-left image-right", "V4: Legacy 2-col (lt0)", "V5: Legacy 3-col (lt3)", "V6: Legacy asymmetric (lt7/lt8)"]},
+        {"block": "video", "variations": ["V1: Brightcove player (legacy)"]},
+        {"block": "embed", "variations": ["V1: LTRawHTML"]},
+        {"block": "table", "variations": ["V1: Spec table", "V2: Striped RTE table"]},
+        {"block": "form", "variations": ["V3: Experience Fragment form", "V4: Inline request form"]},
+        {"block": "mondrian", "variations": ["V2: Product showcase (module-f)", "V3: Mondrian-group", "V4: Featured-list"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar", "V5: Dark gradient overlay"]},
+        {"block": "section-metadata", "variations": ["V2: Blue-light background", "V3: Gray-lighter background", "V5: Mini compact", "V6: Background image", "V7: Page heading well"]},
+        {"block": "resources-grid", "variations": ["V1: 4-up icon+title+CTA footer"]}
+      ]
+    },
+    {
+      "id": "T04",
+      "name": "Product Detail Page",
+      "platform": "Modern",
+      "estPages": 807,
+      "description": "Individual product pages with foreground image hero, product sub-nav, and technical specs",
+      "variations": [
+        {"id": "T04a", "name": "Standard Product", "description": "Foreground-image hero + product sub-nav tabs + sidebar", "sampleUrls": ["https://www.thermofisher.com/us/en/home/electron-microscopy/products/scanning-electron-microscopes/volumescope-2-sem.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V2: Foreground product image"]},
+        {"block": "product-sub-nav", "variations": ["V1: Sticky product nav"]},
+        {"block": "sidebar-nav", "variations": ["V1: Auto-navigation tree"]},
+        {"block": "columns", "variations": ["V3: 75/25 asymmetric"]},
+        {"block": "video", "variations": ["V2: Video teaser card"]},
+        {"block": "table", "variations": ["V1: Spec table"]},
+        {"block": "embed", "variations": ["V1: LTRawHTML"]},
+        {"block": "download-card", "variations": ["V1: Resource download"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar"]},
+        {"block": "section-metadata", "variations": ["V8: Modern section container"]}
+      ]
+    },
+    {
+      "id": "T05",
+      "name": "Form Page",
+      "platform": "Mixed",
+      "estPages": 18521,
+      "description": "Standalone form pages (11,550 forms + 6,971 thank-you pages) — highest combined page count",
+      "variations": [
+        {"id": "T05a", "name": "Modern Pragma Form", "description": "Clean AEM Core form, 7-8 fields, responsive grid", "sampleUrls": ["https://www.thermofisher.com/us/en/home/global/forms/life-science/pcr-innovation.html"]},
+        {"id": "T05b", "name": "Legacy Eloqua Form", "description": "20+ field Eloqua form with reCAPTCHA and conditional logic", "sampleUrls": ["https://www.thermofisher.com/us/en/home/global/forms/industrial/gc-columns-literature-request.html"]},
+        {"id": "T05c", "name": "Thank-You Page", "description": "Post-submission confirmation page", "sampleUrls": []}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)", "V5: Thinbanner (legacy)"]},
+        {"block": "form", "variations": ["V1: Modern Pragma form", "V2: Legacy Eloqua form"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar"]}
+      ]
+    },
+    {
+      "id": "T06",
+      "name": "Promotion Page",
+      "platform": "Modern",
+      "estPages": 13813,
+      "description": "Promotional campaign pages (12,411 PAS promos + 845 thank-you + 372 promo-section + 185 standalone)",
+      "variations": [
+        {"id": "T06a", "name": "Standard Promotion", "description": "Hero + promo cards + CTA", "sampleUrls": ["https://www.thermofisher.com/us/en/home/products-and-services/promotions/save-now.html"]},
+        {"id": "T06b", "name": "Campaign Landing", "description": "Gradient hero + featured content + form", "sampleUrls": []},
+        {"id": "T06c", "name": "Thank-You Page", "description": "Post-submission redirect", "sampleUrls": []}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)", "V3: Gradient overlay"]},
+        {"block": "cards", "variations": ["V9: Promotion cards with badge"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar", "V2: Image-background full-width", "V4: Mid-page promotional"]},
+        {"block": "columns", "variations": ["V1: 50/50 text-left image-right"]},
+        {"block": "form", "variations": ["V1: Modern Pragma form"]}
+      ]
+    },
+    {
+      "id": "T07",
+      "name": "Tech Resources Page",
+      "platform": "Modern",
+      "estPages": 6871,
+      "description": "Technical reference library, application notes, protocols, webinar pages",
+      "variations": [
+        {"id": "T07a", "name": "Resource Hub", "description": "Hero + filterable card grid", "sampleUrls": ["https://www.thermofisher.com/us/en/home/technical-resources/technical-reference-library.html"]},
+        {"id": "T07b", "name": "Resource Detail", "description": "Hero + content body + related resources", "sampleUrls": []}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)"]},
+        {"block": "cards", "variations": ["V10: Tech reference cards"]},
+        {"block": "anchor-nav", "variations": ["V1: cmp-anchorlist (formal TOC)"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar"]},
+        {"block": "section-metadata", "variations": ["V8: Modern section container"]}
+      ]
+    },
+    {
+      "id": "T08",
+      "name": "Events Page",
+      "platform": "Modern",
+      "estPages": 4873,
+      "description": "Events hub with filterable event table and event detail pages",
+      "variations": [
+        {"id": "T08a", "name": "Events Hub", "description": "Hero + filterable event table with 20+ checkboxes", "sampleUrls": ["https://www.thermofisher.com/us/en/home/about-us/events.html"]},
+        {"id": "T08b", "name": "Event Detail", "description": "Hero + event info + registration form", "sampleUrls": ["https://www.thermofisher.com/us/en/home/about-us/events/digital-solutions.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)"]},
+        {"block": "event-table", "variations": ["V1: Filterable event list"]},
+        {"block": "cards", "variations": ["V7: Category cards (legacy 4-col)"]},
+        {"block": "form", "variations": ["V1: Modern Pragma form"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar"]}
+      ]
+    },
+    {
+      "id": "T09",
+      "name": "Brand Page",
+      "platform": "Legacy",
+      "estPages": 1795,
+      "description": "Brand landing pages (Invitrogen, Ambion, Applied Biosystems, etc.) and sub-pages",
+      "variations": [
+        {"id": "T09a", "name": "Brand Landing", "description": "Thinbanner + wells + product showcase cards", "sampleUrls": ["https://www.thermofisher.com/us/en/home/brands/invitrogen.html"]},
+        {"id": "T09b", "name": "Brand Sub-page", "description": "Thinbanner + sidebar + wells + columns", "sampleUrls": ["https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V5: Thinbanner (legacy)"]},
+        {"block": "sidebar-nav", "variations": ["V1: Auto-navigation tree", "V2: Manual left-nav"]},
+        {"block": "cards", "variations": ["V5: Text-only (no image)", "V6: Product showcase"]},
+        {"block": "columns", "variations": ["V4: Legacy 2-col (lt0)", "V5: Legacy 3-col (lt3)"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar", "V4: Mid-page promotional"]},
+        {"block": "section-metadata", "variations": ["V1: White background", "V2: Blue-light background", "V3: Gray-lighter background"]}
+      ]
+    },
+    {
+      "id": "T10",
+      "name": "Corporate About Page",
+      "platform": "Modern + Corporate",
+      "estPages": 1906,
+      "description": "Corporate about pages including CSR, partnering, careers, and TFC corporate site",
+      "variations": [
+        {"id": "T10a", "name": "Standard About", "description": "Hero + columns + quote/testimonial", "sampleUrls": ["https://www.thermofisher.com/us/en/home/about-us/partnering-licensing.html"]},
+        {"id": "T10b", "name": "Corporate TFC", "description": "Corporate hero + highlights + CSR pillars + quote", "sampleUrls": ["https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)", "V7: Corporate hero"]},
+        {"block": "carousel", "variations": ["V1: Hero slider"]},
+        {"block": "highlights", "variations": ["V1: Stats/numbers grid"]},
+        {"block": "quote", "variations": ["V1: CEO letter", "V2: Customer testimonial"]},
+        {"block": "csr-pillars", "variations": ["V1: Corporate pillar cards"]},
+        {"block": "pipeline", "variations": ["V1: Drug dev phase cards"]},
+        {"block": "columns", "variations": ["V1: 50/50 text-left image-right", "V4: Legacy 2-col (lt0)"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar"]}
+      ]
+    },
+    {
+      "id": "T11",
+      "name": "Reference/Protocol Page",
+      "platform": "Legacy",
+      "estPages": 1730,
+      "description": "Protocol index pages and individual protocol detail pages",
+      "variations": [
+        {"id": "T11a", "name": "Protocol Index", "description": "Categorized protocol links with pipe-separated navigation", "sampleUrls": ["https://www.thermofisher.com/us/en/home/references/protocols.html"]},
+        {"id": "T11b", "name": "Protocol Detail", "description": "Sidebar + long-form content + embedded tables", "sampleUrls": []}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V5: Thinbanner (legacy)"]},
+        {"block": "anchor-nav", "variations": ["V3: Pipe-separated link directory"]},
+        {"block": "sidebar-nav", "variations": ["V2: Manual left-nav"]},
+        {"block": "resources-list", "variations": ["V1: Title + description links"]},
+        {"block": "table", "variations": ["V2: Striped RTE table"]},
+        {"block": "section-metadata", "variations": ["V2: Blue-light background", "V3: Gray-lighter background"]}
+      ]
+    },
+    {
+      "id": "T12",
+      "name": "Reference/Handbook Page",
+      "platform": "Legacy",
+      "estPages": 455,
+      "description": "In-depth handbook pages (Gibco Cell Culture Basics, Molecular Probes Handbook) with TOC, video, and search",
+      "variations": [
+        {"id": "T12a", "name": "Gibco Handbook", "description": "Hero + video playlist + chapter content + icon cards", "sampleUrls": ["https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html"]},
+        {"id": "T12b", "name": "Molecular Probes Handbook", "description": "Hero + chapter TOC (Parts I-VI, Ch 1-23) + search box", "sampleUrls": ["https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V5: Thinbanner (legacy)"]},
+        {"block": "chapter-toc", "variations": ["V1: Handbook chapter navigation"]},
+        {"block": "handbook-search", "variations": ["V1: Inline search box"]},
+        {"block": "sidebar-nav", "variations": ["V3: Chapter sidebar"]},
+        {"block": "video", "variations": ["V1: Brightcove player (legacy)", "V4: Video with playlist"]},
+        {"block": "video-playlist", "variations": ["V1: Playlist"]},
+        {"block": "cards", "variations": ["V11: Icon cards (decorative)"]},
+        {"block": "section-metadata", "variations": ["V2: Blue-light background", "V6: Background image"]}
+      ]
+    },
+    {
+      "id": "T13",
+      "name": "Support Hub Page",
+      "platform": "Modern",
+      "estPages": 310,
+      "description": "Support pages with categorized links, accordion, and chat widget integration",
+      "variations": [
+        {"id": "T13a", "name": "Support Landing", "description": "Hero + categorized link directory + accordion + quick links", "sampleUrls": ["https://www.thermofisher.com/us/en/home/support.html"]},
+        {"id": "T13b", "name": "Support Detail", "description": "Hero + long-form content + sidebar", "sampleUrls": []}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)"]},
+        {"block": "support-hub", "variations": ["V1: Categorized link directory"]},
+        {"block": "quick-menu", "variations": ["V1: Titled quick-links"]},
+        {"block": "accordion", "variations": ["V1: Modern cmp-accordion"]},
+        {"block": "anchor-nav", "variations": ["V1: cmp-anchorlist (formal TOC)"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar"]},
+        {"block": "section-metadata", "variations": ["V8: Modern section container"]}
+      ]
+    },
+    {
+      "id": "T14",
+      "name": "Blog/Editorial Page",
+      "platform": "Legacy/WordPress",
+      "estPages": 789,
+      "description": "Blog hubs (Life in the Lab), community forums, editorial magazine content",
+      "variations": [
+        {"id": "T14a", "name": "Magazine Hub", "description": "Filmstrip carousel + blog card grid + social share", "sampleUrls": ["https://www.thermofisher.com/us/en/home/new-ideas/life-in-the-lab.html"]},
+        {"id": "T14b", "name": "Blog Post", "description": "Long-form article + social share + related posts", "sampleUrls": []},
+        {"id": "T14c", "name": "Community Post", "description": "Forum-style content + comments", "sampleUrls": []}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V5: Thinbanner (legacy)"]},
+        {"block": "carousel", "variations": ["V2: Filmstrip magazine"]},
+        {"block": "blog-cards", "variations": ["V1: WordPress card grid", "V2: Legacy post-list"]},
+        {"block": "social-share", "variations": ["V1: Inline social icons"]},
+        {"block": "columns", "variations": ["V4: Legacy 2-col (lt0)"]},
+        {"block": "section-metadata", "variations": ["V3: Gray-lighter background"]}
+      ]
+    },
+    {
+      "id": "T15",
+      "name": "PAS Landing/Services Page",
+      "platform": "Mixed",
+      "estPages": 6676,
+      "description": "Products & Services landing pages, services pages, supply center",
+      "variations": [
+        {"id": "T15a", "name": "PAS Landing", "description": "Hero + anchor-nav + accordion sections", "sampleUrls": ["https://www.thermofisher.com/us/en/home/products-and-services/services.html"]},
+        {"id": "T15b", "name": "Supply Center", "description": "Hero + video teasers + video modals", "sampleUrls": ["https://www.thermofisher.com/us/en/home/products-and-services/supply-center.html"]},
+        {"id": "T15c", "name": "PAS Detail", "description": "Hero + content + cards", "sampleUrls": []}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)", "V5: Thinbanner (legacy)"]},
+        {"block": "accordion", "variations": ["V1: Modern cmp-accordion", "V2: Legacy Bootstrap accordion"]},
+        {"block": "anchor-nav", "variations": ["V1: cmp-anchorlist (formal TOC)"]},
+        {"block": "video-teaser", "variations": ["V1: Thumbnail + play overlay"]},
+        {"block": "video-modal", "variations": ["V1: Modal overlay"]},
+        {"block": "cards", "variations": ["V1: Image+Title+Desc+CTA (3-up)"]},
+        {"block": "teaser", "variations": ["V1: Header promo bar"]},
+        {"block": "section-metadata", "variations": ["V8: Modern section container"]}
+      ]
+    },
+    {
+      "id": "T16",
+      "name": "Industry Vertical Page",
+      "platform": "Modern",
+      "estPages": 414,
+      "description": "Semiconductors, materials science, sustainable design vertical pages",
+      "variations": [
+        {"id": "T16a", "name": "Vertical Landing", "description": "Gradient hero + sidebar + video + cards", "sampleUrls": ["https://www.thermofisher.com/us/en/home/sustainable-design.html"]},
+        {"id": "T16b", "name": "Vertical Detail", "description": "Standard hero + content + cards", "sampleUrls": []}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)", "V3: Gradient overlay"]},
+        {"block": "sidebar-nav", "variations": ["V1: Auto-navigation tree"]},
+        {"block": "video", "variations": ["V3: Modern Brightcove player"]},
+        {"block": "product-sub-nav", "variations": ["V2: Manual/auto nav with dropdowns"]},
+        {"block": "cards", "variations": ["V1: Image+Title+Desc+CTA (3-up)", "V2: Image+Title+Desc+CTA (4-up)"]},
+        {"block": "columns", "variations": ["V1: 50/50 text-left image-right"]},
+        {"block": "section-metadata", "variations": ["V8: Modern section container"]}
+      ]
+    },
+    {
+      "id": "T17",
+      "name": "Digital Solutions Page",
+      "platform": "Mixed",
+      "estPages": 96,
+      "description": "Digital solutions and cloud platform pages with workflow tabs and interactive elements",
+      "variations": [
+        {"id": "T17a", "name": "Hub with Workflow Tabs", "description": "Gradient hero + workflow tabs + accordion", "sampleUrls": ["https://www.thermofisher.com/us/en/home/digital-solutions.html"]},
+        {"id": "T17b", "name": "Cloud Module", "description": "Standard content page", "sampleUrls": []}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V3: Gradient overlay"]},
+        {"block": "tabs", "variations": ["V3: Workflow tab container"]},
+        {"block": "accordion", "variations": ["V2: Legacy Bootstrap accordion"]},
+        {"block": "columns", "variations": ["V7: Bordered 4-col (bordered-lt4)"]},
+        {"block": "workflow-stepper", "variations": ["V1: Multi-step workflow"]},
+        {"block": "section-metadata", "variations": ["V8: Modern section container"]}
+      ]
+    },
+    {
+      "id": "T18",
+      "name": "Clinical Hub Page",
+      "platform": "Legacy",
+      "estPages": 147,
+      "description": "Clinical division landing and sub-hub pages with mondrian hero and quick-links",
+      "variations": [
+        {"id": "T18a", "name": "Division Landing (Mondrian)", "description": "Mondrian hero grid + teaser + cards", "sampleUrls": ["https://www.thermofisher.com/us/en/home/clinical.html"]},
+        {"id": "T18b", "name": "Clinical Sub-hub", "description": "Thinbanner + wells + quick-menu + columns", "sampleUrls": ["https://www.thermofisher.com/us/en/home/clinical/diagnostic-testing.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V5: Thinbanner (legacy)", "V6: Mondrian hero"]},
+        {"block": "mondrian", "variations": ["V1: Feature promo"]},
+        {"block": "quick-menu", "variations": ["V1: Titled quick-links"]},
+        {"block": "teaser", "variations": ["V2: Image-background full-width", "V3: Image-right split", "V5: Dark gradient overlay"]},
+        {"block": "cards", "variations": ["V1: Image+Title+Desc+CTA (3-up)", "V7: Category cards (legacy 4-col)"]},
+        {"block": "columns", "variations": ["V4: Legacy 2-col (lt0)", "V5: Legacy 3-col (lt3)", "V6: Legacy asymmetric (lt7/lt8)"]},
+        {"block": "form", "variations": ["V3: Experience Fragment form"]},
+        {"block": "section-metadata", "variations": ["V2: Blue-light background", "V3: Gray-lighter background"]}
+      ]
+    },
+    {
+      "id": "T19",
+      "name": "Order Hub Page",
+      "platform": "Modern",
+      "estPages": 64,
+      "description": "Product ordering and shop-all directory pages with anchor navigation",
+      "variations": [
+        {"id": "T19a", "name": "Order Hub", "description": "Hero + anchor-nav TOC + accordion sections + massive link directory", "sampleUrls": ["https://www.thermofisher.com/us/en/home/order.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V1: Page heading (standard)"]},
+        {"block": "anchor-nav", "variations": ["V1: cmp-anchorlist (formal TOC)"]},
+        {"block": "accordion", "variations": ["V1: Modern cmp-accordion"]},
+        {"block": "section-metadata", "variations": ["V8: Modern section container"]}
+      ]
+    },
+    {
+      "id": "T20",
+      "name": "B2B Page",
+      "platform": "Legacy",
+      "estPages": 69,
+      "description": "Business-to-business landing and configuration pages",
+      "variations": [
+        {"id": "T20a", "name": "B2B Landing", "description": "Mondrian hero + category cards", "sampleUrls": ["https://www.thermofisher.com/us/en/home/b2b.html"]}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V6: Mondrian hero"]},
+        {"block": "mondrian", "variations": ["V1: Feature promo", "V2: Product showcase (module-f)"]},
+        {"block": "cards", "variations": ["V7: Category cards (legacy 4-col)"]},
+        {"block": "columns", "variations": ["V4: Legacy 2-col (lt0)"]},
+        {"block": "section-metadata", "variations": ["V2: Blue-light background"]}
+      ]
+    },
+    {
+      "id": "T21",
+      "name": "Chemicals Page",
+      "platform": "Legacy",
+      "estPages": 230,
+      "description": "Chemicals division pages (AcroSeal, biochemicals, learning center)",
+      "variations": [
+        {"id": "T21a", "name": "Chemicals Landing", "description": "Thinbanner + sidebar + product columns", "sampleUrls": []}
+      ],
+      "blocks": [
+        {"block": "hero", "variations": ["V5: Thinbanner (legacy)"]},
+        {"block": "sidebar-nav", "variations": ["V2: Manual left-nav"]},
+        {"block": "columns", "variations": ["V4: Legacy 2-col (lt0)", "V5: Legacy 3-col (lt3)"]},
+        {"block": "section-metadata", "variations": ["V2: Blue-light background", "V3: Gray-lighter background"]}
+      ]
+    }
+  ],
+  "crossCuttingBlocks": {
+    "description": "Blocks that appear across 5+ templates (highest reuse value)",
+    "blocks": [
+      {"block": "hero", "templateCount": 21, "note": "Present in ALL templates — highest priority for development"},
+      {"block": "teaser (V1: promo bar)", "templateCount": 18, "note": "Global header promo — universal across site"},
+      {"block": "section-metadata", "templateCount": 17, "note": "Section styling — needed for all templates"},
+      {"block": "cards", "templateCount": 14, "note": "Most versatile block — 11 variations across 14 templates"},
+      {"block": "columns", "templateCount": 13, "note": "Core layout block — 7 variations"},
+      {"block": "sidebar-nav", "templateCount": 9, "note": "Navigation block — 3 variations"},
+      {"block": "form", "templateCount": 6, "note": "Form block — 4 variations across 6 templates"},
+      {"block": "accordion", "templateCount": 5, "note": "Expand/collapse — 2 variations"},
+      {"block": "anchor-nav", "templateCount": 5, "note": "Jump-link navigation — 3 variations"},
+      {"block": "resources-grid", "templateCount": 4, "note": "Shared footer grid — 1 variation"}
+    ]
+  },
+  "templateSpecificBlocks": {
+    "description": "Blocks that appear in only 1-2 templates (unique to specific page types)",
+    "blocks": [
+      {"block": "event-table", "templates": ["T08: Events"], "note": "Only on events hub"},
+      {"block": "chapter-toc", "templates": ["T12: Handbook"], "note": "Only on handbook pages"},
+      {"block": "handbook-search", "templates": ["T12: Handbook"], "note": "Only on handbook pages"},
+      {"block": "video-playlist", "templates": ["T12: Handbook"], "note": "Only on handbook pages"},
+      {"block": "support-hub", "templates": ["T13: Support"], "note": "Only on support pages"},
+      {"block": "quick-menu", "templates": ["T13: Support", "T18: Clinical Hub"], "note": "Support + Clinical"},
+      {"block": "carousel", "templates": ["T10: Corporate", "T14: Blog"], "note": "2 distinct variants"},
+      {"block": "highlights", "templates": ["T10: Corporate"], "note": "Only on corporate pages"},
+      {"block": "csr-pillars", "templates": ["T10: Corporate"], "note": "Only on corporate pages"},
+      {"block": "pipeline", "templates": ["T10: Corporate"], "note": "Only on corporate pages"},
+      {"block": "workflow-stepper", "templates": ["T17: Digital Solutions"], "note": "Only on digital solutions"},
+      {"block": "video-teaser", "templates": ["T15: PAS/Services"], "note": "Only on supply center"},
+      {"block": "video-modal", "templates": ["T15: PAS/Services"], "note": "Only on supply center"},
+      {"block": "blog-cards", "templates": ["T14: Blog"], "note": "Only on blog pages"},
+      {"block": "social-share", "templates": ["T14: Blog"], "note": "Only on blog pages"},
+      {"block": "featured-grid", "templates": ["T14: Blog"], "note": "Only on editorial pages"}
+    ]
+  }
+}

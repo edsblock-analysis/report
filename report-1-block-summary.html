@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>Report 1: Block Summary - Thermo Fisher AEM-to-EDS Migration</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1400px; margin: 0 auto; padding: 20px; overflow-x: hidden; }
+h1 { color: #0066cc; border-bottom: 3px solid #0066cc; padding-bottom: 10px; }
+h2 { color: #333; margin-top: 30px; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; vertical-align: top; }
+th { background: #0066cc; color: white; font-size: 0.9em; }
+tr:nth-child(even) { background: #f8f9fa; }
+.new-tag { color: #dc3545; font-weight: bold; font-size: 0.85em; }
+.thumb { max-width: 180px; max-height: 100px; border: 1px solid #ccc; border-radius: 3px; }
+p.meta { color: #666; }
+.top-nav{background:linear-gradient(90deg,#1a237e 0%,#0d47a1 100%);box-shadow:0 2px 8px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box}
+.top-nav-inner{margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.top-nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;transition:all .2s;background:rgba(255,255,255,.08)}
+.top-nav a:hover{background:rgba(255,255,255,.2);color:#fff}
+.top-nav .sep{color:rgba(255,255,255,.5);font-size:13px}
+.top-nav .project{color:rgba(255,255,255,.9);font-size:14px;font-weight:500}
+</style>
+</head>
+<body>
+<nav class="top-nav"><div class="top-nav-inner"><a href="index.html"><span style="font-size:18px">&#8962;</span> Dashboard Home</a><span class="sep">·</span><span class="project">Thermo Fisher AEM &rarr; EDS Migration</span></div></nav>
+
+<h1>Report 1: Block Summary with Screenshots</h1>
+<p class="meta"><b>Site:</b> thermofisher.com | <b>Date:</b> 2026-03-20 | <b>Total URLs:</b> 81,753 | <b>Blocks:</b> 35 | <b>Variations:</b> 87 | <b>Screenshots:</b> 59</p>
+
+<table>
+<tr>
+<th>#</th><th>Block Name</th><th>Variants</th><th>Complexity</th><th>Suggested Action</th><th>Est. Dev Days (Need to review)</th><th>Screenshot (primary variant)</th>
+</tr>
+<tr><td>1</td><td><b>hero</b></td><td>7</td><td style="background:#ffc107">Medium</td><td>SPLIT into 3: hero, hero-legacy, hero-corporate</td><td>6-10</td><td><img class="thumb" src="screenshots/hero-v1.jpeg" alt="hero"></td></tr>
+<tr><td>2</td><td><b>cards</b></td><td>11</td><td style="background:#ffc107">Medium-High</td><td>CONSOLIDATE: single block with variant classes</td><td>5-8</td><td><img class="thumb" src="screenshots/cards-v1.jpeg" alt="cards"></td></tr>
+<tr><td>3</td><td><b>columns</b></td><td>7</td><td style="background:#ffc107">Medium</td><td>CONSOLIDATE: 2/3/4-col + asymmetric</td><td>3-4</td><td><img class="thumb" src="screenshots/columns-v1.jpeg" alt="columns"></td></tr>
+<tr><td>4</td><td><b>teaser</b></td><td>5</td><td style="background:#ffc107">Medium</td><td>CONSOLIDATE: bar, full-image, split, promo, gradient</td><td>3-5</td><td><img class="thumb" src="screenshots/teaser-v4.jpeg" alt="teaser"></td></tr>
+<tr><td>5</td><td><b>form</b></td><td>4</td><td style="background:#dc3545;color:white">Complex</td><td>SPLIT into 2: form + form-complex</td><td>8-12</td><td><img class="thumb" src="screenshots/form-v1.jpeg" alt="form"></td></tr>
+<tr><td>6</td><td><b>sidebar-nav</b></td><td>3</td><td style="background:#ffc107">Medium</td><td>CONSOLIDATE: auto-nav, manual-nav, chapter-nav</td><td>3-5</td><td><img class="thumb" src="screenshots/sidebar-nav-v1.jpeg" alt="sidebar-nav"></td></tr>
+<tr><td>7</td><td><b>video</b></td><td>4</td><td style="background:#ffc107">Medium</td><td>CONSOLIDATE: Brightcove, teaser, modern, playlist</td><td>4-6</td><td><img class="thumb" src="screenshots/video-v1.jpeg" alt="video"></td></tr>
+<tr><td>8</td><td><b>accordion</b></td><td>2</td><td style="background:#ffc107">Medium</td><td>CONSOLIDATE: Modern + Legacy Bootstrap</td><td>2-3</td><td><img class="thumb" src="screenshots/accordion-v1.jpeg" alt="accordion"></td></tr>
+<tr><td>9</td><td><b>tabs</b></td><td>3</td><td style="background:#ffc107">Medium</td><td>CONSOLIDATE: pragma-tabs, nav-tabs, workflow-tabs</td><td>3-5</td><td><img class="thumb" src="screenshots/tabs-v2.jpeg" alt="tabs"></td></tr>
+<tr><td>10</td><td><b>anchor-nav</b></td><td>3</td><td style="background:#28a745;color:white">Simple</td><td>CONSOLIDATE: anchorlist, inline, pipe-separated</td><td>1-2</td><td><img class="thumb" src="screenshots/anchor-nav-v1.jpeg" alt="anchor-nav"></td></tr>
+<tr><td>11</td><td><b>product-sub-nav</b></td><td>2</td><td style="background:#dc3545;color:white">Complex</td><td>CONSOLIDATE: sticky nav + dropdown nav</td><td>5-8</td><td><img class="thumb" src="screenshots/product-sub-nav-v1.jpeg" alt="product-sub-nav"></td></tr>
+<tr><td>12</td><td><b>event-table</b></td><td>1</td><td style="background:#dc3545;color:white">Complex</td><td>STANDALONE: filterable event list</td><td>5-8</td><td><img class="thumb" src="screenshots/event-table-v1.jpeg" alt="event-table"></td></tr>
+<tr><td>13</td><td><b>resources-grid</b></td><td>1</td><td style="background:#28a745;color:white">Simple</td><td>FRAGMENT: shared 4-up footer grid</td><td>1-2</td><td><img class="thumb" src="screenshots/resources-grid-v1.jpeg" alt="resources-grid"></td></tr>
+<tr><td>14</td><td><b>section-metadata</b></td><td>8</td><td style="background:#28a745;color:white">Simple</td><td>MAP: wells to section-metadata</td><td>1-2</td><td><img class="thumb" src="screenshots/section-meta-v2.jpeg" alt="section-metadata"></td></tr>
+<tr><td>15</td><td><b>embed</b></td><td>3</td><td style="background:#ffc107">Medium</td><td>CONSOLIDATE: LTRawHTML, 3D tours, XF</td><td>2-4</td><td><img class="thumb" src="screenshots/embed-v1.jpeg" alt="embed"></td></tr>
+<tr><td>16</td><td><b>table</b></td><td>2</td><td style="background:#28a745;color:white">Simple</td><td>CONSOLIDATE: spec table + striped RTE</td><td>1-2</td><td><img class="thumb" src="screenshots/table-v1.jpeg" alt="table"></td></tr>
+<tr><td>17</td><td><b>quote</b></td><td>2</td><td style="background:#28a745;color:white">Simple</td><td>CONSOLIDATE: CEO letter + testimonial</td><td>1-2</td><td><img class="thumb" src="screenshots/quote-v1.jpeg" alt="quote"></td></tr>
+<tr><td>18</td><td><b>carousel</b></td><td>2</td><td style="background:#dc3545;color:white">Complex</td><td>CONSOLIDATE: hero slider + filmstrip</td><td>5-7</td><td><img class="thumb" src="screenshots/carousel-v1.jpeg" alt="carousel"></td></tr>
+<tr><td>19</td><td><b>highlights</b></td><td>1</td><td style="background:#ffc107">Medium</td><td>STANDALONE: stats/numbers grid</td><td>2-3</td><td><img class="thumb" src="screenshots/highlights-v1.jpeg" alt="highlights"></td></tr>
+<tr><td>20</td><td><b>mondrian</b></td><td>4</td><td style="background:#dc3545;color:white">Complex</td><td>STANDALONE: 4 layout variants</td><td>5-8</td><td><img class="thumb" src="screenshots/mondrian-v1.jpeg" alt="mondrian"></td></tr>
+<tr><td>21</td><td><b>featured-grid</b></td><td>1</td><td style="background:#ffc107">Medium</td><td>STANDALONE: asymmetric magazine layout</td><td>2-3</td><td>—</td></tr>
+<tr><td>22</td><td><b>resources-list</b></td><td>1</td><td style="background:#28a745;color:white">Simple</td><td>STANDALONE: title + description links</td><td>1-2</td><td>—</td></tr>
+<tr><td>23</td><td><b>pipeline</b></td><td>1</td><td style="background:#ffc107">Medium</td><td>STANDALONE: drug dev phase cards</td><td>2-3</td><td>—</td></tr>
+<tr><td>24</td><td><b>csr-pillars</b></td><td>1</td><td style="background:#ffc107">Medium</td><td>STANDALONE: corporate pillar cards</td><td>2-3</td><td>—</td></tr>
+<tr><td>25</td><td><b>blog-cards</b></td><td>2</td><td style="background:#ffc107">Medium</td><td>CONSOLIDATE: WordPress + legacy post-list</td><td>2-3</td><td>—</td></tr>
+<tr><td>26</td><td><b>video-teaser</b> <span class="new-tag">[NEW]</span></td><td>1</td><td style="background:#ffc107">Medium</td><td>STANDALONE: thumbnail + play + duration</td><td>3-4</td><td><img class="thumb" src="screenshots/video-teaser-v1.jpeg" alt="video-teaser"></td></tr>
+<tr><td>27</td><td><b>video-modal</b> <span class="new-tag">[NEW]</span></td><td>1</td><td style="background:#ffc107">Medium</td><td>STANDALONE: modal overlay for video</td><td>2-3</td><td>—</td></tr>
+<tr><td>28</td><td><b>video-playlist</b> <span class="new-tag">[NEW]</span></td><td>1</td><td style="background:#ffc107">Medium</td><td>STANDALONE: Brightcove + sidebar playlist</td><td>3-5</td><td><img class="thumb" src="screenshots/video-v4.jpeg" alt="video-playlist"></td></tr>
+<tr><td>29</td><td><b>workflow-stepper</b> <span class="new-tag">[NEW]</span></td><td>1</td><td style="background:#dc3545;color:white">Complex</td><td>STANDALONE: multi-step interactive workflow</td><td>4-6</td><td><img class="thumb" src="screenshots/workflow-stepper-v1.jpeg" alt="workflow-stepper"></td></tr>
+<tr><td>30</td><td><b>chapter-toc</b> <span class="new-tag">[NEW]</span></td><td>1</td><td style="background:#ffc107">Medium</td><td>STANDALONE: handbook chapter navigation</td><td>2-3</td><td><img class="thumb" src="screenshots/chapter-toc-v1.jpeg" alt="chapter-toc"></td></tr>
+<tr><td>31</td><td><b>handbook-search</b> <span class="new-tag">[NEW]</span></td><td>1</td><td style="background:#ffc107">Medium</td><td>STANDALONE: inline search box</td><td>3-4</td><td><img class="thumb" src="screenshots/handbook-search-v1.jpeg" alt="handbook-search"></td></tr>
+<tr><td>32</td><td><b>quick-menu</b> <span class="new-tag">[NEW]</span></td><td>1</td><td style="background:#28a745;color:white">Simple</td><td>STANDALONE: titled quick-links</td><td>1-2</td><td><img class="thumb" src="screenshots/quick-menu-v1.jpeg" alt="quick-menu"></td></tr>
+<tr><td>33</td><td><b>support-hub</b> <span class="new-tag">[NEW]</span></td><td>1</td><td style="background:#ffc107">Medium</td><td>STANDALONE: categorized link directory</td><td>2-3</td><td><img class="thumb" src="screenshots/support-hub-v1.jpeg" alt="support-hub"></td></tr>
+<tr><td>34</td><td><b>social-share</b></td><td>1</td><td style="background:#28a745;color:white">Simple</td><td>DEFAULT CONTENT: inline social icons</td><td>0</td><td>—</td></tr>
+<tr><td>35</td><td><b>download-card</b></td><td>2</td><td style="background:#28a745;color:white">Simple</td><td>MERGE with cards block</td><td>0</td><td>—</td></tr>
+</table>
+
+<h2>Consolidation Summary</h2>
+<table>
+<tr style="background:#0066cc;color:white"><th>Action</th><th>Count</th><th>Blocks</th></tr>
+<tr><td><b>CONSOLIDATE</b></td><td>11</td><td>cards, columns, teaser, sidebar-nav, video, anchor-nav, tabs, accordion, embed, table, quote, blog-cards</td></tr>
+<tr><td><b>STANDALONE</b></td><td>15</td><td>product-sub-nav, event-table, resources-grid, resources-list, mondrian, carousel, highlights, featured-grid, pipeline, csr-pillars, video-teaser, video-modal, video-playlist, workflow-stepper, chapter-toc, handbook-search, quick-menu, support-hub</td></tr>
+<tr><td><b>SPLIT</b></td><td>2 (into 5)</td><td>hero (3 blocks), form (2 blocks)</td></tr>
+<tr><td><b>MERGE / DEFAULT</b></td><td>3</td><td>download-card (into cards), report-hub (into cards), social-share (default content)</td></tr>
+<tr><td><b>MAP</b></td><td>1</td><td>section-metadata (from wells)</td></tr>
+</table>
+
+<p><b>Final recommended EDS block count after consolidation: ~30 custom blocks</b></p>
+<p><b>Estimated total development: 85-165 dev days</b></p>
+</body>
+</html>

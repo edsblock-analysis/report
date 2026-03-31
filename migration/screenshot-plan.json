@@ -1,0 +1,94 @@
+{
+  "batches": [
+    {
+      "id": "batch1",
+      "label": "Hero, Cards V1-V6",
+      "screenshots": [
+        {"file": "hero-v1.png", "url": "https://www.thermofisher.com/us/en/home/life-science/cell-analysis.html", "block": "hero", "variant": "V1: Page heading (standard)", "hint": ".cmp-p-pageheadinghero, .pageheading-hero, header.hero, .hero-wrapper, h1"},
+        {"file": "hero-v2.png", "url": "https://www.thermofisher.com/us/en/home/electron-microscopy/products/scanning-electron-microscopes/volumescope-2-sem.html", "block": "hero", "variant": "V2: Foreground product image", "hint": ".cmp-pageheadinghero--hasForegroundImage, .cmp-p-pageheadinghero, h1"},
+        {"file": "hero-v3.png", "url": "https://www.thermofisher.com/us/en/home/industrial/environmental.html", "block": "hero", "variant": "V3: Gradient overlay", "hint": ".cmp-pageheadinghero__gradient-black, .cmp-p-pageheadinghero, h1"},
+        {"file": "hero-v4.png", "url": "https://www.thermofisher.com/us/en/home/life-science/antibodies.html", "block": "hero", "variant": "V4: With CTA buttons", "hint": ".cmp-p-pageheadinghero, h1"},
+        {"file": "hero-v5.png", "url": "https://www.thermofisher.com/us/en/home/industrial/chromatography.html", "block": "hero", "variant": "V5: Thinbanner (legacy)", "hint": ".thinbanner, .thinbanner-info, h1"},
+        {"file": "hero-v6.png", "url": "https://www.thermofisher.com/us/en/home/clinical.html", "block": "hero", "variant": "V6: Mondrian hero", "hint": ".mondrian, .mondrian.section"},
+        {"file": "hero-v7.png", "url": "https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html", "block": "hero", "variant": "V7: Corporate hero", "hint": ".cmp-p-herotext, .cmp-p-banner, h1"},
+        {"file": "cards-v1.png", "url": "https://www.thermofisher.com/us/en/home/bioprocessing.html", "block": "cards", "variant": "V1: Image+Title+Desc+CTA (3-up)", "hint": ".cmp-p-contentcard, .cmp-p-imagecard, .card-deck"},
+        {"file": "cards-v2.png", "url": "https://www.thermofisher.com/us/en/home/life-science/lab-equipment.html", "block": "cards", "variant": "V2: Image+Title+Desc+CTA (4-up)", "hint": ".cmp-p-contentcard, .cmp-p-imagecard"},
+        {"file": "cards-v3.png", "url": "https://www.thermofisher.com/us/en/home/industrial/pharma-biopharma.html", "block": "cards", "variant": "V3: Image+Title+Desc+CTA (2-up)", "hint": ".cmp-p-contentcard, .cmp-p-imagecard"},
+        {"file": "cards-v4.png", "url": "https://www.thermofisher.com/us/en/home/bioprocessing/resources.html", "block": "cards", "variant": "V4: Text overlay on dark image", "hint": ".cmp-p-contentcard, .card-deck"},
+        {"file": "cards-v5.png", "url": "https://www.thermofisher.com/us/en/home/brands/invitrogen.html", "block": "cards", "variant": "V5: Text-only (no image)", "hint": ".cmp-p-contentcard, .card-deck"}
+      ]
+    },
+    {
+      "id": "batch2",
+      "label": "Cards V6-V11, Columns, Teaser",
+      "screenshots": [
+        {"file": "cards-v6.png", "url": "https://www.thermofisher.com/us/en/home/brands/invitrogen.html", "block": "cards", "variant": "V6: Product showcase", "hint": ".product-card, .cmp-p-contentcard"},
+        {"file": "cards-v7.png", "url": "https://www.thermofisher.com/us/en/home/about-us/events/digital-solutions.html", "block": "cards", "variant": "V7: Category cards (legacy 4-col)", "hint": ".cq-colctrl-lt, .parsys"},
+        {"file": "cards-v8.png", "url": "https://www.thermofisher.com/us/en/home/bioprocessing/about.html", "block": "cards", "variant": "V8: Icon value props (3-up)", "hint": ".cmp-p-contentcard"},
+        {"file": "cards-v9.png", "url": "https://www.thermofisher.com/us/en/home/products-and-services/promotions/save-now.html", "block": "cards", "variant": "V9: Promotion cards with badge", "hint": ".cmp-p-contentcard, .promo"},
+        {"file": "cards-v10.png", "url": "https://www.thermofisher.com/us/en/home/technical-resources/technical-reference-library.html", "block": "cards", "variant": "V10: Tech reference cards", "hint": ".cmp-p-contentcard"},
+        {"file": "cards-v11.png", "url": "https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html", "block": "cards", "variant": "V11: Icon cards (decorative)", "hint": ".cmp-p-contentcard, .card-deck, .parsys"},
+        {"file": "columns-v1.png", "url": "https://www.thermofisher.com/us/en/home/bioprocessing.html", "block": "columns", "variant": "V1: 50/50 text-left image-right", "hint": ".cmp-p-columncontrol, .aem-Grid"},
+        {"file": "columns-v4.png", "url": "https://www.thermofisher.com/us/en/home/industrial/chromatography.html", "block": "columns", "variant": "V4: Legacy 2-col (lt0)", "hint": ".cq-colctrl-lt0"},
+        {"file": "columns-v5.png", "url": "https://www.thermofisher.com/us/en/home/electron-microscopy.html", "block": "columns", "variant": "V5: Legacy 3-col (lt3)", "hint": ".cq-colctrl-lt3"},
+        {"file": "columns-v6.png", "url": "https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html", "block": "columns", "variant": "V6: Legacy asymmetric (lt7/lt8)", "hint": ".cq-colctrl-lt7, .cq-colctrl-lt8"},
+        {"file": "columns-v7.png", "url": "https://www.thermofisher.com/us/en/home/digital-solutions.html", "block": "columns", "variant": "V7: Bordered 4-col", "hint": ".cq-colctrl-lt4, .bordered"},
+        {"file": "teaser-v2.png", "url": "https://www.thermofisher.com/us/en/home/clinical.html", "block": "teaser", "variant": "V2: Image-background full-width", "hint": ".cmp-p-teaser, .teaser, .promo-banner"}
+      ]
+    },
+    {
+      "id": "batch3",
+      "label": "Teaser V3-V5, Form, Sidebar, Video, Accordion, Tabs",
+      "screenshots": [
+        {"file": "teaser-v4.png", "url": "https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html", "block": "teaser", "variant": "V4: Mid-page promotional", "hint": ".cmp-p-teaser, .promo-banner"},
+        {"file": "teaser-v5.png", "url": "https://www.thermofisher.com/us/en/home/clinical/clinical-translational-research.html", "block": "teaser", "variant": "V5: Dark gradient overlay", "hint": ".cmp-p-teaser, .teaser"},
+        {"file": "form-v1.png", "url": "https://www.thermofisher.com/us/en/home/global/forms/life-science/pcr-innovation.html", "block": "form", "variant": "V1: Modern Pragma form", "hint": "form, .cmp-p-form, .pragma-form"},
+        {"file": "form-v2.png", "url": "https://www.thermofisher.com/us/en/home/global/forms/industrial/gc-columns-literature-request.html", "block": "form", "variant": "V2: Legacy Eloqua form", "hint": "form, .eloqua-form"},
+        {"file": "sidebar-nav-v1.png", "url": "https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html", "block": "sidebar-nav", "variant": "V1: Auto-navigation tree", "hint": ".cmp-p-autonavigation, .cmp-autonavigation, nav.sidebar"},
+        {"file": "sidebar-nav-v2.png", "url": "https://www.thermofisher.com/us/en/home/life-science/pcr.html", "block": "sidebar-nav", "variant": "V2: Manual left-nav", "hint": ".cmp-manualnavigation, nav.sidebar, .left-nav"},
+        {"file": "sidebar-nav-v3.png", "url": "https://www.thermofisher.com/us/en/home/life-science/cloning.html", "block": "sidebar-nav", "variant": "V3: Chapter sidebar", "hint": ".cmp-manualnavigation, nav.sidebar"},
+        {"file": "video-v1.png", "url": "https://www.thermofisher.com/us/en/home/life-science/pcr/real-time-pcr.html", "block": "video", "variant": "V1: Brightcove player (legacy)", "hint": ".brightcove-video, video, .video-player"},
+        {"file": "video-v3.png", "url": "https://www.thermofisher.com/us/en/home/sustainable-design.html", "block": "video", "variant": "V3: Modern Brightcove player", "hint": ".cmp-p-videoplayer, video"},
+        {"file": "video-v4.png", "url": "https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html", "block": "video", "variant": "V4: Video with playlist", "hint": ".brightcove-video, .video-playlist, video"},
+        {"file": "accordion-v1.png", "url": "https://www.thermofisher.com/us/en/home/products-and-services/services.html", "block": "accordion", "variant": "V1: Modern cmp-accordion", "hint": ".cmp-accordion, .cmp-p-accordion"},
+        {"file": "accordion-v2.png", "url": "https://www.thermofisher.com/us/en/home/digital-solutions.html", "block": "accordion", "variant": "V2: Legacy Bootstrap accordion", "hint": ".panel-group, .accordion"}
+      ]
+    },
+    {
+      "id": "batch4",
+      "label": "Tabs, Anchor-nav, Product-sub-nav, Event, Resources, Section-meta, Embed, Table, Mondrian",
+      "screenshots": [
+        {"file": "tabs-v2.png", "url": "https://www.thermofisher.com/us/en/home/life-science/sequencing/sanger-sequencing.html", "block": "tabs", "variant": "V2: Content tabs (nav-tabs)", "hint": ".nav-tabs, .tab-content, .cmp-tabs"},
+        {"file": "tabs-v3.png", "url": "https://www.thermofisher.com/us/en/home/digital-solutions.html", "block": "tabs", "variant": "V3: Workflow tab container", "hint": ".tabstep, .workflow-tabs"},
+        {"file": "anchor-nav-v1.png", "url": "https://www.thermofisher.com/us/en/home/order.html", "block": "anchor-nav", "variant": "V1: cmp-anchorlist (formal TOC)", "hint": ".cmp-anchorlist, .anchor-nav"},
+        {"file": "anchor-nav-v3.png", "url": "https://www.thermofisher.com/us/en/home/references/protocols.html", "block": "anchor-nav", "variant": "V3: Pipe-separated link directory", "hint": ".cmp-anchorlist, a"},
+        {"file": "product-sub-nav-v1.png", "url": "https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html", "block": "product-sub-nav", "variant": "V1: Sticky product nav", "hint": ".cmp-p-productsubnav, .product-subnav, nav.sticky"},
+        {"file": "product-sub-nav-v2.png", "url": "https://www.thermofisher.com/us/en/home/sustainable-design.html", "block": "product-sub-nav", "variant": "V2: Manual/auto nav with dropdowns", "hint": ".cmp-manualnavigation, .cmp-autonavigation, nav"},
+        {"file": "event-table-v1.png", "url": "https://www.thermofisher.com/us/en/home/about-us/events.html", "block": "event-table", "variant": "V1: Filterable event list", "hint": ".event-table, .event-list, table, .filter"},
+        {"file": "resources-grid-v1.png", "url": "https://www.thermofisher.com/us/en/home/bioprocessing.html", "block": "resources-grid", "variant": "V1: 4-up icon+title+CTA footer", "hint": ".cmp-p-contentcard, .resource-grid, footer"},
+        {"file": "section-meta-v2.png", "url": "https://www.thermofisher.com/us/en/home/life-science/pcr.html", "block": "section-metadata", "variant": "V2: Blue-light background", "hint": ".well-blue-light, .well"},
+        {"file": "embed-v1.png", "url": "https://www.thermofisher.com/us/en/home/industrial/chromatography.html", "block": "embed", "variant": "V1: LTRawHTML", "hint": ".LTRawHTML, iframe"},
+        {"file": "table-v1.png", "url": "https://www.thermofisher.com/us/en/home/industrial/chromatography/liquid-chromatography-lc/hplc-uhplc-systems/vanquish-tandem-lc-system-lc-lc-ms.html", "block": "table", "variant": "V1: Spec table", "hint": "table, .spec-table"},
+        {"file": "mondrian-v1.png", "url": "https://www.thermofisher.com/us/en/home/clinical.html", "block": "mondrian", "variant": "V1: Feature promo", "hint": ".mondrian, .module-a"}
+      ]
+    },
+    {
+      "id": "batch5",
+      "label": "Mondrian V2-V4, New blocks, Remaining blocks",
+      "screenshots": [
+        {"file": "mondrian-v2.png", "url": "https://www.thermofisher.com/us/en/home/life-science/protein-biology.html", "block": "mondrian", "variant": "V2: Product showcase (module-f)", "hint": ".mondrian, .module-f"},
+        {"file": "mondrian-v3.png", "url": "https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html", "block": "mondrian", "variant": "V3: Mondrian-group", "hint": ".mondrian-group, .mondrian"},
+        {"file": "carousel-v1.png", "url": "https://www.thermofisher.com/us/en/home/about-us/partnering-licensing.html", "block": "carousel", "variant": "V1: Hero slider", "hint": ".carousel, .slick-slider, .owl-carousel"},
+        {"file": "carousel-v2.png", "url": "https://www.thermofisher.com/us/en/home/new-ideas/life-in-the-lab.html", "block": "carousel", "variant": "V2: Filmstrip magazine", "hint": ".carousel, .filmstrip, .slick"},
+        {"file": "highlights-v1.png", "url": "https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html", "block": "highlights", "variant": "V1: Stats/numbers grid", "hint": ".highlight, .stat, .counter"},
+        {"file": "quote-v1.png", "url": "https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html", "block": "quote", "variant": "V1: CEO letter", "hint": "blockquote, .quote, .testimonial"},
+        {"file": "video-teaser-v1.png", "url": "https://www.thermofisher.com/us/en/home/products-and-services/supply-center.html", "block": "video-teaser", "variant": "V1: Thumbnail + play overlay", "hint": ".video-teaser, .video-card, .play-button"},
+        {"file": "workflow-stepper-v1.png", "url": "https://www.thermofisher.com/us/en/home/life-science/cloning.html", "block": "workflow-stepper", "variant": "V1: Multi-step workflow", "hint": ".workflow, .stepper, .step"},
+        {"file": "chapter-toc-v1.png", "url": "https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook.html", "block": "chapter-toc", "variant": "V1: Handbook chapter navigation", "hint": ".chapter-toc, .toc, h2, h3"},
+        {"file": "handbook-search-v1.png", "url": "https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook.html", "block": "handbook-search", "variant": "V1: Inline search box", "hint": "input[type=search], .search-box, form.search"},
+        {"file": "quick-menu-v1.png", "url": "https://www.thermofisher.com/us/en/home/clinical/diagnostic-testing.html", "block": "quick-menu", "variant": "V1: Titled quick-links", "hint": ".quick-links, .quick-menu, nav"},
+        {"file": "support-hub-v1.png", "url": "https://www.thermofisher.com/us/en/home/support.html", "block": "support-hub", "variant": "V1: Categorized link directory", "hint": ".support-hub, .category-links, .link-directory"}
+      ]
+    }
+  ]
+}

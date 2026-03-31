@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "site": "thermofisher.com",
+    "baseUrl": "https://www.thermofisher.com",
+    "analysisDate": "2026-03-20",
+    "totalUrlsProcessed": 61253,
+    "uniqueUrls": 61253,
+    "transactionalExcluded": 10828,
+    "formPagesIdentified": 10222,
+    "promotionPagesIdentified": 12736,
+    "netContentUrls": 27467,
+    "representativePagesAnalyzed": 45,
+    "platformsDetected": 3,
+    "totalBlocksIdentified": 28,
+    "totalVariationsIdentified": 72
+  },
+  "platforms": [
+    {
+      "id": "A",
+      "name": "Legacy AEM Classic (Parsys/CQ5)",
+      "identifier": "body with empty className + .container-wrap.template-{N}-column",
+      "layoutSystem": "parsys + parsys_column + cq-colctrl-lt{N}",
+      "componentPattern": "{type}.parbase.section",
+      "estimatedPageShare": "40%",
+      "keyClasses": ["parsys", "parbase", "cq-colctrl-lt0", "cq-colctrl-lt2", "cq-colctrl-lt3", "cq-colctrl-lt4", "cq-colctrl-lt8", "well", "mondrian", "thinbanner", "LTRawHTML", "brightcoveplayer", "leftnav", "section"]
+    },
+    {
+      "id": "B",
+      "name": "Modern AEM Core Components",
+      "identifier": "body.cmp-p-page + .aem-Grid",
+      "layoutSystem": "aem-Grid--12 + aem-GridColumn responsive",
+      "componentPattern": "cmp-p-{type} (proxy) + cmp-{type} (core)",
+      "estimatedPageShare": "50%",
+      "keyClasses": ["cmp-p-page", "aem-Grid", "aem-GridColumn", "cmp-container", "cmp-textimage", "cmp-sectioncontainer", "cmp-pageheadinghero", "cmp-separator", "cmp-ctaitem", "cmp-accordion", "cmp-anchorlist"]
+    },
+    {
+      "id": "C",
+      "name": "Corporate AEM (TFC Custom)",
+      "identifier": "body.page.basicpage + corporate.thermofisher.com",
+      "layoutSystem": "Custom flexbox/grid",
+      "componentPattern": "cmp-tfc-{type}",
+      "estimatedPageShare": "5%",
+      "keyClasses": ["cmp-tfc-container", "cmp-tfc-text", "cmp-p-herotext", "cmp-p-highlights", "cmp-p-ceoletter", "cmp-p-csr-commitment"]
+    },
+    {
+      "id": "D",
+      "name": "External Platforms (WordPress, Custom SPAs)",
+      "identifier": "Various - redirects to external domains",
+      "estimatedPageShare": "5%",
+      "notes": "Blog redirects to WordPress; Virtual/3D tours are custom React/BabylonJS apps; Cell Lines tool is a React SPA"
+    }
+  ],
+  "urlDistribution": {
+    "formPages": {"count": 10222, "templateId": "T01", "priority": "MEDIUM"},
+    "promotionPages": {"count": 12736, "templateId": "T02", "priority": "MEDIUM"},
+    "industrialPages": {"count": 5976, "templateId": "T13-T19", "priority": "HIGH"},
+    "technicalResources": {"count": 6486, "templateId": "T03-T12", "priority": "HIGH"},
+    "lifeSciencePages": {"count": 2148, "templateId": "T20-T23", "priority": "HIGH"},
+    "eventsNews": {"count": 4554, "templateId": "T24-T33", "priority": "LOW"},
+    "brandPages": {"count": 1782, "templateId": "T39", "priority": "HIGH"},
+    "virtualPages": {"count": 1303, "templateId": "T38", "priority": "LOW"},
+    "bioprocessingPages": {"count": 650, "templateId": "T40-T41", "priority": "HIGH"},
+    "electronMicroscopy": {"count": 643, "templateId": "T36-T37", "priority": "HIGH"},
+    "clinicalPages": {"count": 471, "templateId": "T42", "priority": "HIGH"},
+    "verticalMarket": {"count": 479, "templateId": "T46", "priority": "MEDIUM"},
+    "servicesPages": {"count": 392, "templateId": "T47", "priority": "MEDIUM"},
+    "communityBlog": {"count": 392, "templateId": "T44-T45", "priority": "LOW"},
+    "chemicalsPages": {"count": 284, "templateId": "T43", "priority": "MEDIUM"},
+    "corporateCSR": {"count": 138, "templateId": "T34", "priority": "LOW"},
+    "campaignPages": {"count": 97, "templateId": "T49", "priority": "LOW"},
+    "b2bPages": {"count": 68, "templateId": "T50", "priority": "MEDIUM"},
+    "other": {"count": 949, "templateId": "T99", "priority": "LOW"}
+  }
+}

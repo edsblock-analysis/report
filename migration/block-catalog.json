@@ -1,0 +1,732 @@
+{
+  "blockCatalog": {
+    "generatedDate": "2026-03-20",
+    "totalBlocks": 23,
+    "totalVariations": 52,
+    "blocks": [
+      {
+        "id": "B01",
+        "edsBlockName": "hero",
+        "description": "Full-width or contained hero section with heading, optional subtitle, background image, CTAs",
+        "variations": [
+          {
+            "variationId": "B01-V1",
+            "name": "hero (page-heading with breadcrumb)",
+            "domSignature": ".cmp-p-pageheadinghero > .cmp-pageheadinghero",
+            "cssClasses": ["cmp-p-pageheadinghero", "cmp-pageheadinghero", "m--dark"],
+            "platform": "B (Modern AEM)",
+            "contentModel": "H1 + optional subtitle + optional CTA buttons + breadcrumb above",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/resources.html",
+              "https://www.thermofisher.com/us/en/home/clinical/clinical-genomics.html",
+              "https://www.thermofisher.com/us/en/home/about-us/events.html"
+            ]
+          },
+          {
+            "variationId": "B01-V2",
+            "name": "hero (full-width modern)",
+            "domSignature": "Full-width div with H1 + tagline + CTA buttons + anchor nav links",
+            "cssClasses": [],
+            "platform": "B (Modern - no AEM classes)",
+            "contentModel": "H1 + paragraph tagline + CTA buttons + optional anchor navigation links",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing.html",
+              "https://www.thermofisher.com/us/en/home/brands/applied-biosystems.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/about.html"
+            ]
+          },
+          {
+            "variationId": "B01-V3",
+            "name": "hero (product with dual CTAs)",
+            "domSignature": "H1 + two CTA buttons + hero product image",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "H1 + 'Request info' button + 'Experience products' button + product image",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html"
+            ]
+          },
+          {
+            "variationId": "B01-V4",
+            "name": "hero (mondrian multi-slot)",
+            "domSignature": ".mondrian.section > .mondrian_cq > .mondrian-module",
+            "cssClasses": ["mondrian", "mondrian-module", "mondrian-module-d", "mondrian-submodule-left", "mondrian-submodule-right"],
+            "platform": "A (Legacy)",
+            "contentModel": "Left large panel (feature promo) + right stacked panels (2 smaller offers)",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/clinical.html",
+              "https://www.thermofisher.com/us/en/home/b2b.html"
+            ]
+          },
+          {
+            "variationId": "B01-V5",
+            "name": "hero (classic banner)",
+            "domSignature": ".hero-banner-content / .hero-banner-content.white",
+            "cssClasses": ["hero-banner-content", "white"],
+            "platform": "A (Legacy)",
+            "contentModel": "H1 + subtitle text",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/chemicals/learning-center.html",
+              "https://www.thermofisher.com/us/en/home/chemicals/applications.html"
+            ]
+          },
+          {
+            "variationId": "B01-V6",
+            "name": "hero (corporate)",
+            "domSignature": ".cmp-p-herotext / .cmp-p-about-hero / .cmp-p-banner",
+            "cssClasses": ["cmp-p-herotext", "cmp-p-about-hero", "cmp-p-banner"],
+            "platform": "C (Corporate TFC)",
+            "contentModel": "Variable - hero text, about hero, or banner depending on page type",
+            "sampleUrls": [
+              "https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html",
+              "https://corporate.thermofisher.com/us/en/index/about.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "SPLIT",
+        "consolidationReason": "6 distinct content models with divergent layouts. Recommend: hero (standard) combining V1+V2+V3, hero-mondrian for V4, hero-corporate for V5+V6. Total: 3 EDS blocks."
+      },
+      {
+        "id": "B02",
+        "edsBlockName": "cards",
+        "description": "Grid of content cards with various layouts (image+text, text-only, icon+text)",
+        "variations": [
+          {
+            "variationId": "B02-V1",
+            "name": "cards (image + title + description + CTA)",
+            "domSignature": "Grid of divs each containing: linked img + H2/H3 + paragraph + CTA link with arrow",
+            "cssClasses": ["cmp-textimage", "cmp-p-textimage"],
+            "platform": "B (Modern)",
+            "contentModel": "Image + H2/H3 heading (linked) + paragraph + 'Learn more' CTA",
+            "columns": "2-up or 3-up",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html",
+              "https://www.thermofisher.com/us/en/home/brands/applied-biosystems.html"
+            ]
+          },
+          {
+            "variationId": "B02-V2",
+            "name": "cards (text-only links)",
+            "domSignature": "Grid of divs each containing: H3 (linked) + paragraph description",
+            "cssClasses": [],
+            "platform": "A & B",
+            "contentModel": "H3 heading (linked) + paragraph description, no image",
+            "columns": "2-up",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/brands/invitrogen.html"
+            ]
+          },
+          {
+            "variationId": "B02-V3",
+            "name": "cards (product showcase 3-up)",
+            "domSignature": "Grid of divs each containing: linked product image + H3 title below",
+            "cssClasses": [],
+            "platform": "A & B",
+            "contentModel": "Product image (linked) + H3 product name below",
+            "columns": "3-up",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/brands/invitrogen.html"
+            ]
+          },
+          {
+            "variationId": "B02-V4",
+            "name": "cards (featured resource overlay dark)",
+            "domSignature": ".cmp-p-textimage.m--text-overlay-dark > .cmp-textimage",
+            "cssClasses": ["cmp-p-textimage", "m--text-overlay-dark"],
+            "platform": "B (Modern)",
+            "contentModel": "Background image + text overlay (H2 + description) + CTA on dark background",
+            "columns": "3-up",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing/resources.html"
+            ]
+          },
+          {
+            "variationId": "B02-V5",
+            "name": "cards (category 4-up legacy)",
+            "domSignature": ".parsys_column.cq-colctrl-lt4 > .cq-colctrl-lt4-c{N} > .heading + .text",
+            "cssClasses": ["cq-colctrl-lt4"],
+            "platform": "A (Legacy)",
+            "contentModel": "Heading + text paragraph per column, 4 columns",
+            "columns": "4-up",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/about-us/events/digital-solutions.html",
+              "https://www.thermofisher.com/us/en/home/b2b.html"
+            ]
+          },
+          {
+            "variationId": "B02-V6",
+            "name": "cards (featured-grid asymmetric)",
+            "domSignature": "1 large card (left) + 3 small cards (right) in magazine layout",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "Large feature card (H2 + CTA) alongside 3 smaller cards",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/brands/applied-biosystems.html"
+            ]
+          },
+          {
+            "variationId": "B02-V7",
+            "name": "cards (icon value props 3-up)",
+            "domSignature": "3-up grid of H3 + paragraph (no images, no CTAs)",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "H3 heading + paragraph description, no image, no CTA",
+            "columns": "3-up",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing/about.html"
+            ]
+          },
+          {
+            "variationId": "B02-V8",
+            "name": "cards (CSR pillar cards)",
+            "domSignature": ".cmp-p-csr-commitment with hover overlays",
+            "cssClasses": ["cmp-p-csr-commitment"],
+            "platform": "C (Corporate)",
+            "contentModel": "6 pillar cards with image + hover overlay text",
+            "sampleUrls": [
+              "https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "CONSOLIDATE with variants",
+        "consolidationReason": "All share 'grid of items' pattern. Recommend single 'cards' EDS block with variants: default (V1), text-only (V2), product (V3), overlay (V4), category (V5). V6 (asymmetric) should be separate 'featured-grid' block. V7 maps to default content. V8 is corporate-specific."
+      },
+      {
+        "id": "B03",
+        "edsBlockName": "columns",
+        "description": "Side-by-side text + image (50/50) layout block",
+        "variations": [
+          {
+            "variationId": "B03-V1",
+            "name": "columns (text-left image-right with CTA)",
+            "domSignature": "Text block (H2 + paragraphs + CTA) alongside linked image",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "H2 + paragraph + CTA link (arrow icon) | Image",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/about.html"
+            ]
+          },
+          {
+            "variationId": "B03-V2",
+            "name": "columns (product image-right)",
+            "domSignature": "Text block (H2 + paragraphs + CTA) | Product photo",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "H2 + paragraph + CTA | Product photograph",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/brands/applied-biosystems.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html"
+            ]
+          },
+          {
+            "variationId": "B03-V3",
+            "name": "columns (legacy 2-col parsys)",
+            "domSignature": ".parsys_column.cq-colctrl-lt0 > c0 + c1",
+            "cssClasses": ["cq-colctrl-lt0"],
+            "platform": "A (Legacy)",
+            "contentModel": "2 equal columns containing text, images, or nested components",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/chemicals/learning-center.html"
+            ]
+          },
+          {
+            "variationId": "B03-V4",
+            "name": "columns (featured product)",
+            "domSignature": ".cmp-p-textimage.m--featured-product",
+            "cssClasses": ["cmp-p-textimage", "m--featured-product"],
+            "platform": "B (Modern)",
+            "contentModel": "Featured product with larger image treatment",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing/resources.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "CONSOLIDATE",
+        "consolidationReason": "All are 2-column side-by-side layouts. Single 'columns' block with image-position variant (left/right). Legacy 2-col parsys maps directly."
+      },
+      {
+        "id": "B04",
+        "edsBlockName": "teaser",
+        "description": "Promotional banner/teaser with dynamic content",
+        "variations": [
+          {
+            "variationId": "B04-V1",
+            "name": "teaser (header promo bar)",
+            "domSignature": ".aem-offer-container > .dm-dynamic-offer.cmp-teaser",
+            "cssClasses": ["aem-offer-container", "dm-dynamic-offer", "cmp-teaser"],
+            "platform": "All",
+            "contentModel": "Thin banner with promotional text + CTA link",
+            "sampleUrls": ["All pages - global header element"]
+          },
+          {
+            "variationId": "B04-V2",
+            "name": "teaser (image-right)",
+            "domSignature": ".dm-dynamic-offer.dm-img-right.cmp-teaser",
+            "cssClasses": ["dm-img-right"],
+            "platform": "A (Legacy)",
+            "contentModel": "Text on left + image on right + CTA",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/clinical.html"
+            ]
+          },
+          {
+            "variationId": "B04-V3",
+            "name": "teaser (image-background)",
+            "domSignature": ".dm-dynamic-offer.dm-img-bkg.cmp-teaser",
+            "cssClasses": ["dm-img-bkg"],
+            "platform": "A (Legacy)",
+            "contentModel": "Text overlaid on background image + CTA",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/clinical.html"
+            ]
+          },
+          {
+            "variationId": "B04-V4",
+            "name": "teaser (mid-page promotional)",
+            "domSignature": "Full-width div with H2 + text + CTA + optional image",
+            "cssClasses": ["m--camp-teaser"],
+            "platform": "B (Modern)",
+            "contentModel": "H2 + paragraph + CTA button, optional background",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "CONSOLIDATE",
+        "consolidationReason": "All are promotional content with image + text + CTA. Single 'teaser' block with variants: header-bar, image-right, image-background, promotional."
+      },
+      {
+        "id": "B05",
+        "edsBlockName": "sidebar-nav",
+        "description": "Left sidebar navigation with categorized link lists",
+        "variations": [
+          {
+            "variationId": "B05-V1",
+            "name": "sidebar-nav (auto-navigation)",
+            "domSignature": "aside[role=complementary] > .cmp-navigation / .cmp-autonavigation",
+            "cssClasses": ["cmp-navigation", "cmp-autonavigation"],
+            "platform": "B (Modern)",
+            "contentModel": "Auto-generated category tree with expandable groups",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html",
+              "https://www.thermofisher.com/us/en/home/brands/invitrogen.html"
+            ]
+          },
+          {
+            "variationId": "B05-V2",
+            "name": "sidebar-nav (manual left-nav)",
+            "domSignature": ".container-leftnav > .railParsys > .leftnav.section",
+            "cssClasses": ["leftnav", "leftnav-manual"],
+            "platform": "A (Legacy)",
+            "contentModel": "Manually authored link lists organized into labeled sections",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/b2b.html",
+              "https://www.thermofisher.com/us/en/home/about-us/partnering-licensing.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "CONSOLIDATE",
+        "consolidationReason": "Both are sidebar navigation patterns. Map to single nav/sidebar approach in EDS or handle via page template."
+      },
+      {
+        "id": "B06",
+        "edsBlockName": "event-table",
+        "description": "Filterable event listing with search and checkbox filters",
+        "variations": [
+          {
+            "variationId": "B06-V1",
+            "name": "event-table (filterable list)",
+            "domSignature": ".cmp-corpcommons-table + .cmp-form-options (20 filter checkboxes) + .cmp-p-row (event items)",
+            "cssClasses": ["cmp-corpcommons-table", "cmp-table", "cmp-form-options", "cmp-p-row"],
+            "platform": "B (Modern)",
+            "contentModel": "Filter bar (checkboxes + text search) + event rows (H2 title + H4 date/location + description + thumbnail + Learn more link)",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/about-us/events.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "STANDALONE",
+        "consolidationReason": "Unique complex component with filtering behavior. Requires custom JS implementation in EDS."
+      },
+      {
+        "id": "B07",
+        "edsBlockName": "video",
+        "description": "Video embed block (Brightcove player)",
+        "variations": [
+          {
+            "variationId": "B07-V1",
+            "name": "video (brightcove player)",
+            "domSignature": ".brightcoveplayer.section containing Brightcove Video.js player",
+            "cssClasses": ["brightcoveplayer", "vjs-*"],
+            "platform": "A (Legacy)",
+            "contentModel": "Brightcove account ID + video ID + player configuration",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/about-us/events/life-science.html",
+              "https://www.thermofisher.com/us/en/home/about-us/events/industrial.html",
+              "https://www.thermofisher.com/us/en/home/about-us/events/clinical.html"
+            ]
+          },
+          {
+            "variationId": "B07-V2",
+            "name": "video (teaser with description)",
+            "domSignature": ".cmp-video-teaser containing video thumbnail + duration + heading + description",
+            "cssClasses": ["cmp-video-teaser"],
+            "platform": "A (Legacy)",
+            "contentModel": "Video thumbnail + duration badge + H3 title + paragraph description",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/about-us/events/life-science.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "CONSOLIDATE",
+        "consolidationReason": "Both are video-related. Single 'embed' or 'video' EDS block that accepts Brightcove embed URL."
+      },
+      {
+        "id": "B08",
+        "edsBlockName": "resources-grid",
+        "description": "Standardized 4-column resources footer (Blog, Events, Resources, Contact)",
+        "variations": [
+          {
+            "variationId": "B08-V1",
+            "name": "resources-grid (bioprocessing standard)",
+            "domSignature": "4-column container: each with icon image + H3 + paragraph + CTA link",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "4 items: Image icon + H3 heading + paragraph + CTA link",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/about.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/resources.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "STANDALONE",
+        "consolidationReason": "Highly consistent reusable fragment across bioprocessing pages. Map to shared EDS fragment or block."
+      },
+      {
+        "id": "B09",
+        "edsBlockName": "resources-list",
+        "description": "Two-column list of linked resource titles with descriptions",
+        "variations": [
+          {
+            "variationId": "B09-V1",
+            "name": "resources-list (title + description pairs)",
+            "domSignature": "Container with H3 (linked) + paragraph description pairs in 2-column layout",
+            "cssClasses": ["m--camp-teaser"],
+            "platform": "B (Modern)",
+            "contentModel": "H3 linked title + paragraph description, arranged in 2 columns",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html",
+              "https://www.thermofisher.com/us/en/home/brands/invitrogen.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "STANDALONE",
+        "consolidationReason": "Simple linked-list pattern. Could be default content or simple block."
+      },
+      {
+        "id": "B10",
+        "edsBlockName": "product-sub-nav",
+        "description": "Sticky product sub-navigation with nested hierarchy",
+        "variations": [
+          {
+            "variationId": "B10-V1",
+            "name": "product-sub-nav (sticky with CTA)",
+            "domSignature": "nav > ul with product categories + 'Speak to a specialist' CTA",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "Navigation tree (Overview, Product A, Product B...) + 'Contact' CTA",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "STANDALONE",
+        "consolidationReason": "Unique navigation pattern for product detail pages. Custom JS required."
+      },
+      {
+        "id": "B11",
+        "edsBlockName": "download-card",
+        "description": "Resource download cards with type label",
+        "variations": [
+          {
+            "variationId": "B11-V1",
+            "name": "download-card (typed resource)",
+            "domSignature": "Card with bold type label (Application note: / Brochure: / Whitepaper:) + description + download CTA",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "Type label + title + description + download link",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "CONSOLIDATE with cards",
+        "consolidationReason": "Could be a variant of 'cards' block with download styling."
+      },
+      {
+        "id": "B12",
+        "edsBlockName": "well",
+        "description": "Styled container/box for grouped content (resources, links)",
+        "variations": [
+          {
+            "variationId": "B12-V1",
+            "name": "well (default white)",
+            "domSignature": ".well-cmp.section > .well.well-white.well-default",
+            "cssClasses": ["well-cmp", "well", "well-white", "well-default"],
+            "platform": "A (Legacy)",
+            "contentModel": "Contained box with rich text, links, or nested components",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/chemicals/learning-center.html",
+              "https://www.thermofisher.com/us/en/home/chemicals/applications.html",
+              "https://www.thermofisher.com/us/en/home/b2b.html"
+            ]
+          },
+          {
+            "variationId": "B12-V2",
+            "name": "well (mini)",
+            "domSignature": ".well.well-white.well-mini",
+            "cssClasses": ["well-mini"],
+            "platform": "A (Legacy)",
+            "contentModel": "Compact box variant",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/clinical/cell-gene-therapy.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "MAP to section-metadata",
+        "consolidationReason": "EDS handles styled containers via section-metadata block. Map well variants to section styles (background-color, padding)."
+      },
+      {
+        "id": "B13",
+        "edsBlockName": "section-title",
+        "description": "Section heading divider with styled H2",
+        "variations": [
+          {
+            "variationId": "B13-V1",
+            "name": "section-title (modern)",
+            "domSignature": ".cmp-p-sectiontitle > .cmp-sectiontitle > .cmp-sectiontitle__text",
+            "cssClasses": ["cmp-p-sectiontitle", "cmp-sectiontitle"],
+            "platform": "B (Modern)",
+            "contentModel": "H2 section heading text",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing/resources.html",
+              "https://www.thermofisher.com/us/en/home/clinical/clinical-genomics.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "DEFAULT CONTENT",
+        "consolidationReason": "Maps to default EDS content (H2 heading). No block needed."
+      },
+      {
+        "id": "B14",
+        "edsBlockName": "anchor-nav",
+        "description": "In-page anchor navigation links",
+        "variations": [
+          {
+            "variationId": "B14-V1",
+            "name": "anchor-nav (pipe-separated)",
+            "domSignature": "H4 or paragraph with pipe-separated anchor links (#section-id)",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "List of anchor links (link text | link text | link text)",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/about.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/resources.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "STANDALONE",
+        "consolidationReason": "Unique in-page navigation pattern. Could be a simple EDS block or default content with anchor links."
+      },
+      {
+        "id": "B15",
+        "edsBlockName": "social-links",
+        "description": "Social media icon links",
+        "variations": [
+          {
+            "variationId": "B15-V1",
+            "name": "social-links (brand page)",
+            "domSignature": "H4 + linked social media icons (Facebook, Twitter, YouTube)",
+            "cssClasses": [],
+            "platform": "A & B",
+            "contentModel": "Heading text + social platform icon links",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/brands/invitrogen.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "STANDALONE or DEFAULT CONTENT",
+        "consolidationReason": "Simple pattern. Can be default content with icon images."
+      },
+      {
+        "id": "B16",
+        "edsBlockName": "separator",
+        "description": "Horizontal rule section divider",
+        "variations": [
+          {
+            "variationId": "B16-V1",
+            "name": "separator (standard hr)",
+            "domSignature": "<hr> with role=separator",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "Simple horizontal rule",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/about.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/resources.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "DEFAULT CONTENT",
+        "consolidationReason": "Maps to standard EDS section break (---). No block needed."
+      },
+      {
+        "id": "B17",
+        "edsBlockName": "disclaimer",
+        "description": "Regulatory disclaimer text",
+        "variations": [
+          {
+            "variationId": "B17-V1",
+            "name": "disclaimer (research use only)",
+            "domSignature": "Paragraph with italic/small regulatory text",
+            "cssClasses": [],
+            "platform": "All",
+            "contentModel": "'For Research Use Only. Not for use in diagnostic procedures.' or similar",
+            "sampleUrls": ["Most pages across all sections"]
+          }
+        ],
+        "consolidationStrategy": "DEFAULT CONTENT or FRAGMENT",
+        "consolidationReason": "Simple text. Map to default content or shared EDS fragment."
+      },
+      {
+        "id": "B18",
+        "edsBlockName": "highlights",
+        "description": "Statistics/numbers highlight block",
+        "variations": [
+          {
+            "variationId": "B18-V1",
+            "name": "highlights (stats grid)",
+            "domSignature": ".cmp-p-highlights",
+            "cssClasses": ["cmp-p-highlights"],
+            "platform": "C (Corporate)",
+            "contentModel": "Grid of statistic numbers with labels (e.g., '120,000+ Colleagues', '$40B+ Revenue')",
+            "sampleUrls": [
+              "https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "STANDALONE",
+        "consolidationReason": "Unique corporate component. Custom block needed."
+      },
+      {
+        "id": "B19",
+        "edsBlockName": "quote",
+        "description": "CEO letter / blockquote block",
+        "variations": [
+          {
+            "variationId": "B19-V1",
+            "name": "quote (CEO letter)",
+            "domSignature": ".cmp-p-ceoletter",
+            "cssClasses": ["cmp-p-ceoletter"],
+            "platform": "C (Corporate)",
+            "contentModel": "Portrait image + quote text + attribution name/title",
+            "sampleUrls": [
+              "https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "STANDALONE",
+        "consolidationReason": "Standard quote/testimonial pattern. Map to simple EDS block."
+      },
+      {
+        "id": "B20",
+        "edsBlockName": "report-hub",
+        "description": "Report download section with links to PDF reports",
+        "variations": [
+          {
+            "variationId": "B20-V1",
+            "name": "report-hub (CSR reports)",
+            "domSignature": ".cmp-p-csr-report",
+            "cssClasses": ["cmp-p-csr-report"],
+            "platform": "C (Corporate)",
+            "contentModel": "Report title + year + download link/thumbnail",
+            "sampleUrls": [
+              "https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "CONSOLIDATE with download-card",
+        "consolidationReason": "Similar to download-card (B11). Could share same EDS block."
+      },
+      {
+        "id": "B21",
+        "edsBlockName": "carousel",
+        "description": "Rotating hero carousel/slider",
+        "variations": [
+          {
+            "variationId": "B21-V1",
+            "name": "carousel (hero slider)",
+            "domSignature": "Legacy carousel with rotating content panels containing image + text + CTA",
+            "cssClasses": [],
+            "platform": "A (Legacy)",
+            "contentModel": "Multiple slides: each with image + H2 heading + paragraph + CTA",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/about-us/partnering-licensing.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "STANDALONE",
+        "consolidationReason": "EDS carousel block needed for rotating hero content. Custom JS required."
+      },
+      {
+        "id": "B22",
+        "edsBlockName": "embed",
+        "description": "Raw HTML / third-party embed container",
+        "variations": [
+          {
+            "variationId": "B22-V1",
+            "name": "embed (raw HTML)",
+            "domSignature": ".LTRawHTML.section",
+            "cssClasses": ["LTRawHTML"],
+            "platform": "A (Legacy)",
+            "contentModel": "Arbitrary HTML content (scripts, iframes, custom widgets)",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/chemicals/learning-center.html",
+              "https://www.thermofisher.com/us/en/home/b2b.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "STANDALONE",
+        "consolidationReason": "Generic embed container for third-party content."
+      },
+      {
+        "id": "B23",
+        "edsBlockName": "related-pages",
+        "description": "Grid of related page links with thumbnails",
+        "variations": [
+          {
+            "variationId": "B23-V1",
+            "name": "related-pages (4-up with images)",
+            "domSignature": "4-column grid: each with image thumbnail + CTA text link",
+            "cssClasses": [],
+            "platform": "B (Modern)",
+            "contentModel": "4 items: Image + text link to sibling/related page",
+            "sampleUrls": [
+              "https://www.thermofisher.com/us/en/home/bioprocessing/about.html",
+              "https://www.thermofisher.com/us/en/home/bioprocessing/resources.html"
+            ]
+          }
+        ],
+        "consolidationStrategy": "CONSOLIDATE with cards",
+        "consolidationReason": "Similar to cards pattern. Can be a 'cards' variant with minimal content (image + link)."
+      }
+    ]
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "site": "thermofisher.com",
+    "analysisDate": "2026-03-20",
+    "totalUrlsInAllurls": 81753,
+    "previouslyAnalyzed": 61253,
+    "newUrlsDiscovered": 20500,
+    "duplicatesAcrossFiles": 0,
+    "totalBlocksIdentified": 35,
+    "totalVariations": 87,
+    "newBlocksFromIncremental": 8,
+    "newVariationsFromIncremental": 15,
+    "recommendedEdsBlocks": 30,
+    "estimatedDevDays": {"min": 85, "max": 165},
+    "platforms": ["Legacy AEM Classic (Parsys)", "Modern AEM Core Components", "Corporate TFC", "External (WordPress/SPAs)"]
+  },
+  "blocks": [
+    {
+      "id": 1, "name": "hero", "variants": 7, "complexity": "Medium",
+      "action": "SPLIT into 3 (hero, hero-legacy, hero-corporate)",
+      "estDevDays": {"min": 6, "max": 10},
+      "variations": [
+        {"id": "V1", "name": "Page heading (standard)", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/life-science/cell-analysis.html", "https://www.thermofisher.com/us/en/home/about-us/events.html"]},
+        {"id": "V2", "name": "Foreground product image", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/electron-microscopy/products/scanning-electron-microscopes/volumescope-2-sem.html"]},
+        {"id": "V3", "name": "Gradient overlay", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/industrial/environmental.html", "https://www.thermofisher.com/us/en/home/industrial/food-beverage.html"]},
+        {"id": "V4", "name": "With CTA buttons", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/life-science/antibodies.html", "https://www.thermofisher.com/us/en/home/bioprocessing.html"]},
+        {"id": "V5", "name": "Thinbanner (legacy)", "platform": "Legacy", "refs": ["https://www.thermofisher.com/us/en/home/industrial/chromatography.html", "https://www.thermofisher.com/us/en/home/life-science/pcr.html"]},
+        {"id": "V6", "name": "Mondrian hero", "platform": "Legacy", "refs": ["https://www.thermofisher.com/us/en/home/clinical.html", "https://www.thermofisher.com/us/en/home/b2b.html"]},
+        {"id": "V7", "name": "Corporate hero", "platform": "Corporate", "refs": ["https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html"]}
+      ]
+    },
+    {
+      "id": 2, "name": "cards", "variants": 11, "complexity": "Medium-High",
+      "action": "CONSOLIDATE (single block with variant classes)",
+      "estDevDays": {"min": 5, "max": 8},
+      "variations": [
+        {"id": "V1", "name": "Image+Title+Desc+CTA (3-up)", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/bioprocessing.html"]},
+        {"id": "V2", "name": "Image+Title+Desc+CTA (4-up)", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/life-science/lab-equipment.html"]},
+        {"id": "V3", "name": "Image+Title+Desc+CTA (2-up)", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/industrial/pharma-biopharma.html"]},
+        {"id": "V4", "name": "Text overlay on dark image", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/bioprocessing/resources.html"]},
+        {"id": "V5", "name": "Text-only (no image)", "platform": "Both", "refs": ["https://www.thermofisher.com/us/en/home/brands/invitrogen.html"]},
+        {"id": "V6", "name": "Product showcase", "platform": "Both", "refs": ["https://www.thermofisher.com/us/en/home/industrial/chromatography.html"]},
+        {"id": "V7", "name": "Category cards (legacy 4-col)", "platform": "Legacy", "refs": ["https://www.thermofisher.com/us/en/home/about-us/events/digital-solutions.html"]},
+        {"id": "V8", "name": "Icon value props (3-up)", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/bioprocessing/about.html"]},
+        {"id": "V9", "name": "Promotion cards with badge", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/products-and-services/promotions/save-now.html"]},
+        {"id": "V10", "name": "Tech reference cards", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/technical-resources/technical-reference-library.html"]},
+        {"id": "V11", "name": "Icon cards (decorative)", "platform": "Legacy", "isNew": true, "refs": ["https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html"]}
+      ]
+    },
+    {
+      "id": 3, "name": "columns", "variants": 7, "complexity": "Medium",
+      "action": "CONSOLIDATE",
+      "estDevDays": {"min": 3, "max": 4},
+      "variations": [
+        {"id": "V1", "name": "50/50 text-left image-right", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/bioprocessing.html"]},
+        {"id": "V2", "name": "50/50 image-left text-right", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/bioprocessing/about.html"]},
+        {"id": "V3", "name": "75/25 asymmetric", "platform": "Modern", "refs": ["https://www.thermofisher.com/us/en/home/electron-microscopy/products/scanning-electron-microscopes/volumescope-2-sem.html"]},
+        {"id": "V4", "name": "Legacy 2-col (lt0)", "platform": "Legacy", "refs": ["https://www.thermofisher.com/us/en/home/industrial/chromatography.html"]},
+        {"id": "V5", "name": "Legacy 3-col (lt3)", "platform": "Legacy", "refs": ["https://www.thermofisher.com/us/en/home/electron-microscopy.html"]},
+        {"id": "V6", "name": "Legacy asymmetric (lt7/lt8)", "platform": "Legacy", "isNew": true, "refs": ["https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html"]},
+        {"id": "V7", "name": "Bordered 4-col (bordered-lt4)", "platform": "Legacy", "isNew": true, "refs": ["https://www.thermofisher.com/us/en/home/digital-solutions.html"]}
+      ]
+    },
+    {
+      "id": 4, "name": "teaser", "variants": 5, "complexity": "Medium",
+      "action": "CONSOLIDATE",
+      "estDevDays": {"min": 3, "max": 5},
+      "variations": [
+        {"id": "V1", "name": "Header promo bar", "refs": ["All pages"]},
+        {"id": "V2", "name": "Image-background full-width", "refs": ["https://www.thermofisher.com/us/en/home/clinical.html"]},
+        {"id": "V3", "name": "Image-right split", "refs": ["https://www.thermofisher.com/us/en/home/clinical.html"]},
+        {"id": "V4", "name": "Mid-page promotional", "refs": ["https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html"]},
+        {"id": "V5", "name": "Dark gradient overlay", "isNew": true, "refs": ["https://www.thermofisher.com/us/en/home/clinical/clinical-translational-research.html"]}
+      ]
+    },
+    {
+      "id": 5, "name": "form", "variants": 4, "complexity": "Complex",
+      "action": "SPLIT into 2 (form + form-complex)",
+      "estDevDays": {"min": 8, "max": 12},
+      "variations": [
+        {"id": "V1", "name": "Modern Pragma form", "refs": ["https://www.thermofisher.com/us/en/home/global/forms/life-science/pcr-innovation.html"]},
+        {"id": "V2", "name": "Legacy Eloqua form", "refs": ["https://www.thermofisher.com/us/en/home/global/forms/industrial/gc-columns-literature-request.html"]},
+        {"id": "V3", "name": "Experience Fragment form", "refs": ["https://www.thermofisher.com/us/en/home/clinical/clinical-translational-research.html"]},
+        {"id": "V4", "name": "Inline request form", "isNew": true, "refs": ["https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html"]}
+      ]
+    },
+    {"id": 6, "name": "sidebar-nav", "variants": 3, "complexity": "Medium", "action": "CONSOLIDATE", "estDevDays": {"min": 3, "max": 5}},
+    {"id": 7, "name": "video", "variants": 4, "complexity": "Medium", "action": "CONSOLIDATE", "estDevDays": {"min": 4, "max": 6}},
+    {"id": 8, "name": "accordion", "variants": 2, "complexity": "Medium", "action": "CONSOLIDATE", "estDevDays": {"min": 2, "max": 3}},
+    {"id": 9, "name": "tabs", "variants": 3, "complexity": "Medium", "action": "CONSOLIDATE", "estDevDays": {"min": 3, "max": 5}},
+    {"id": 10, "name": "anchor-nav", "variants": 3, "complexity": "Simple", "action": "CONSOLIDATE", "estDevDays": {"min": 1, "max": 2}},
+    {"id": 11, "name": "product-sub-nav", "variants": 2, "complexity": "Complex", "action": "CONSOLIDATE", "estDevDays": {"min": 5, "max": 8}},
+    {"id": 12, "name": "event-table", "variants": 1, "complexity": "Complex", "action": "STANDALONE", "estDevDays": {"min": 5, "max": 8}},
+    {"id": 13, "name": "resources-grid", "variants": 1, "complexity": "Simple", "action": "FRAGMENT", "estDevDays": {"min": 1, "max": 2}},
+    {"id": 14, "name": "section-metadata", "variants": 8, "complexity": "Simple", "action": "MAP from wells", "estDevDays": {"min": 1, "max": 2}},
+    {"id": 15, "name": "embed", "variants": 3, "complexity": "Medium", "action": "CONSOLIDATE", "estDevDays": {"min": 2, "max": 4}},
+    {"id": 16, "name": "table", "variants": 2, "complexity": "Simple", "action": "CONSOLIDATE", "estDevDays": {"min": 1, "max": 2}},
+    {"id": 17, "name": "quote", "variants": 2, "complexity": "Simple", "action": "CONSOLIDATE", "estDevDays": {"min": 1, "max": 2}},
+    {"id": 18, "name": "carousel", "variants": 2, "complexity": "Complex", "action": "CONSOLIDATE", "estDevDays": {"min": 5, "max": 7}},
+    {"id": 19, "name": "highlights", "variants": 1, "complexity": "Medium", "action": "STANDALONE", "estDevDays": {"min": 2, "max": 3}},
+    {"id": 20, "name": "mondrian", "variants": 4, "complexity": "Complex", "action": "STANDALONE", "estDevDays": {"min": 5, "max": 8}},
+    {"id": 21, "name": "featured-grid", "variants": 1, "complexity": "Medium", "action": "STANDALONE", "estDevDays": {"min": 2, "max": 3}},
+    {"id": 22, "name": "resources-list", "variants": 1, "complexity": "Simple", "action": "STANDALONE", "estDevDays": {"min": 1, "max": 2}},
+    {"id": 23, "name": "pipeline", "variants": 1, "complexity": "Medium", "action": "STANDALONE", "estDevDays": {"min": 2, "max": 3}},
+    {"id": 24, "name": "csr-pillars", "variants": 1, "complexity": "Medium", "action": "STANDALONE", "estDevDays": {"min": 2, "max": 3}},
+    {"id": 25, "name": "blog-cards", "variants": 2, "complexity": "Medium", "action": "CONSOLIDATE", "estDevDays": {"min": 2, "max": 3}},
+    {"id": 26, "name": "video-teaser", "variants": 1, "complexity": "Medium", "action": "STANDALONE", "isNew": true, "estDevDays": {"min": 3, "max": 4}},
+    {"id": 27, "name": "video-modal", "variants": 1, "complexity": "Medium", "action": "STANDALONE", "isNew": true, "estDevDays": {"min": 2, "max": 3}},
+    {"id": 28, "name": "video-playlist", "variants": 1, "complexity": "Medium", "action": "STANDALONE", "isNew": true, "estDevDays": {"min": 3, "max": 5}},
+    {"id": 29, "name": "workflow-stepper", "variants": 1, "complexity": "Complex", "action": "STANDALONE", "isNew": true, "estDevDays": {"min": 4, "max": 6}},
+    {"id": 30, "name": "chapter-toc", "variants": 1, "complexity": "Medium", "action": "STANDALONE", "isNew": true, "estDevDays": {"min": 2, "max": 3}},
+    {"id": 31, "name": "handbook-search", "variants": 1, "complexity": "Medium", "action": "STANDALONE", "isNew": true, "estDevDays": {"min": 3, "max": 4}},
+    {"id": 32, "name": "quick-menu", "variants": 1, "complexity": "Simple", "action": "STANDALONE", "isNew": true, "estDevDays": {"min": 1, "max": 2}},
+    {"id": 33, "name": "support-hub", "variants": 1, "complexity": "Medium", "action": "STANDALONE", "isNew": true, "estDevDays": {"min": 2, "max": 3}},
+    {"id": 34, "name": "social-share", "variants": 1, "complexity": "Simple", "action": "DEFAULT CONTENT", "estDevDays": {"min": 0, "max": 0}},
+    {"id": 35, "name": "download-card", "variants": 2, "complexity": "Simple", "action": "MERGE with cards", "estDevDays": {"min": 0, "max": 0}}
+  ],
+  "incrementalFindings": {
+    "newSectionsDiscovered": [
+      {"section": "/references/", "urls": 2185, "keyBlocks": ["chapter-toc", "handbook-search", "video-playlist"]},
+      {"section": "/materials-science/", "urls": 341, "keyBlocks": ["standard Modern blocks"]},
+      {"section": "/support/", "urls": 310, "keyBlocks": ["support-hub", "quick-menu"]},
+      {"section": "/new-ideas/", "urls": 159, "keyBlocks": ["filmstrip carousel", "blog post-list"]},
+      {"section": "/semiconductors/", "urls": 57, "keyBlocks": ["application-selector cards"]},
+      {"section": "/sustainable-design/", "urls": 12, "keyBlocks": ["manual/auto navigation"]},
+      {"section": "/cloud/", "urls": 13, "keyBlocks": ["workflow tab container"]},
+      {"section": "/order/", "urls": 64, "keyBlocks": ["cmp-anchorlist TOC", "massive product directory"]}
+    ],
+    "newBlocks": ["video-teaser", "video-modal", "video-playlist", "workflow-stepper", "chapter-toc", "handbook-search", "quick-menu", "support-hub"],
+    "newVariationsOfExistingBlocks": [
+      {"block": "cards", "newVariant": "V11: Icon cards (decorative)"},
+      {"block": "columns", "newVariant": "V6: Asymmetric lt7/lt8"},
+      {"block": "columns", "newVariant": "V7: Bordered 4-col"},
+      {"block": "teaser", "newVariant": "V5: Dark gradient overlay"},
+      {"block": "form", "newVariant": "V4: Inline request form"},
+      {"block": "sidebar-nav", "newVariant": "V3: Chapter sidebar"},
+      {"block": "video", "newVariant": "V4: Playlist"},
+      {"block": "accordion", "newVariant": "V2: Legacy Bootstrap"},
+      {"block": "tabs", "newVariant": "V3: Workflow tab container"},
+      {"block": "anchor-nav", "newVariant": "V3: Pipe-separated link directory"},
+      {"block": "product-sub-nav", "newVariant": "V2: Manual/auto nav with dropdowns"},
+      {"block": "mondrian", "newVariant": "V3: Mondrian-group"},
+      {"block": "mondrian", "newVariant": "V4: Featured-list"},
+      {"block": "section-metadata", "newVariant": "V6: Background image"},
+      {"block": "section-metadata", "newVariant": "V7: Page heading well"}
+    ]
+  }
+}

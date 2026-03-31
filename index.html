@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thermo Fisher AEM → EDS Migration — Analysis Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;color:#333;min-height:100vh;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* Header - matches report theme */
+.header{background:linear-gradient(135deg,#1a237e 0%,#0d47a1 100%);padding:50px 40px 40px;text-align:center;position:relative}
+.header h1{font-size:36px;font-weight:700;margin-bottom:8px;letter-spacing:-0.5px;color:#fff}
+.header .subtitle{font-size:18px;opacity:0.9;margin-bottom:24px;color:rgba(255,255,255,0.9)}
+.stats-bar{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:20px}
+.stat{text-align:center}
+.stat .num{font-size:32px;font-weight:700;color:#fff;display:block}
+.stat .label{font-size:12px;text-transform:uppercase;letter-spacing:1px;opacity:0.8;margin-top:2px;color:rgba(255,255,255,0.9)}
+
+/* Main */
+.main{max-width:1300px;margin:0 auto;padding:40px 24px 60px}
+
+/* Section Headers */
+.section-header{display:flex;align-items:center;gap:12px;margin:40px 0 20px;padding-bottom:12px;border-bottom:2px solid #e8eaf6}
+.section-header:first-child{margin-top:0}
+.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.section-header h2{font-size:22px;font-weight:600;color:#1a237e}
+.section-header .count{background:#e8eaf6;color:#1565c0;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;margin-left:8px}
+
+/* Cards Grid */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:20px}
+
+/* Report Card */
+.card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:24px;transition:all 0.2s ease;position:relative;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.card:hover{border-color:#1a237e;transform:translateY(-2px);box-shadow:0 4px 20px rgba(26,35,126,0.15)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.card.blue::before{background:linear-gradient(90deg,#1a237e,#3949ab)}
+.card.green::before{background:linear-gradient(90deg,#1565c0,#1976d2)}
+.card.orange::before{background:linear-gradient(90deg,#0d47a1,#1565c0)}
+.card.purple::before{background:linear-gradient(90deg,#283593,#3949ab)}
+.card.teal::before{background:linear-gradient(90deg,#1565c0,#1e88e5)}
+
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.card-badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:4px 10px;border-radius:6px}
+.badge-inventory{background:#e3f2fd;color:#1565c0}
+.badge-template{background:#e8f5e9;color:#2e7d32}
+.badge-functional{background:#fff3e0;color:#e65100}
+.badge-data{background:#e8eaf6;color:#283593}
+
+.card-number{font-size:13px;color:#666;font-weight:600}
+.card h3{font-size:18px;font-weight:600;color:#1a237e;margin-bottom:8px;line-height:1.3}
+.card .desc{font-size:14px;color:#555;line-height:1.6;flex-grow:1;margin-bottom:16px}
+.card .meta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.card .meta-tag{font-size:12px;color:#666;background:#f5f5f5;padding:4px 10px;border-radius:6px;border:1px solid #e0e0e0}
+.card .meta-tag strong{color:#333}
+.card-link{display:inline-flex;align-items:center;gap:6px;color:#1565c0;font-size:14px;font-weight:600;transition:color 0.15s}
+.card:hover .card-link{color:#0d47a1}
+.card-link::after{content:'→';transition:transform 0.15s}
+.card:hover .card-link::after{transform:translateX(3px)}
+
+/* Data Files Section */
+.data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.data-card{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:18px 20px;display:flex;align-items:center;gap:16px;transition:border-color 0.2s;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.data-card:hover{border-color:#1565c0}
+.data-icon{width:44px;height:44px;border-radius:10px;background:#e8eaf6;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:#1a237e}
+.data-info h4{font-size:15px;color:#333;margin-bottom:3px}
+.data-info p{font-size:13px;color:#666}
+
+/* Footer */
+.footer{text-align:center;padding:40px 24px;color:#666;font-size:13px;border-top:1px solid #e0e0e0;margin-top:40px}
+.footer a{color:#1565c0}
+
+/* Quick Stats Cards */
+.quick-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:40px}
+.qs{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:20px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qs .qs-num{font-size:28px;font-weight:700;color:#1565c0}
+.qs .qs-label{font-size:13px;color:#666;margin-top:4px}
+
+/* Top Nav Bar - matches report theme, full width */
+.top-nav{background:linear-gradient(90deg,#1a237e 0%,#0d47a1 100%);box-shadow:0 2px 8px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box}
+.top-nav-inner{margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.top-nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;transition:all .2s;background:rgba(255,255,255,.08)}
+.top-nav a:hover{background:rgba(255,255,255,.2);color:#fff}
+.top-nav .sep{color:rgba(255,255,255,.5);font-size:13px}
+.top-nav .project{color:rgba(255,255,255,.9);font-size:14px;font-weight:500}
+.top-nav-current{color:#fff;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;background:rgba(255,255,255,.15)}
+
+@media(max-width:768px){
+  .header h1{font-size:24px}
+  .stats-bar{gap:24px}
+  .stat .num{font-size:24px}
+  .cards{grid-template-columns:1fr}
+  .data-grid{grid-template-columns:1fr}
+  .quick-stats{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <span class="top-nav-current">⌂ Dashboard</span>
+    <span class="sep">·</span>
+    <span class="project">Thermo Fisher AEM → EDS Migration</span>
+  </div>
+</nav>
+
+<div class="header">
+  <h1>Thermo Fisher AEM → EDS Migration</h1>
+  <div class="subtitle">Analysis Dashboard — Block Inventory, Template Mapping & Functional Documentation</div>
+  <div class="stats-bar">
+    <div class="stat"><span class="num">81,753</span><span class="label">URLs Analyzed</span></div>
+    <div class="stat"><span class="num">35</span><span class="label">Blocks</span></div>
+    <div class="stat"><span class="num">87</span><span class="label">Variations</span></div>
+    <div class="stat"><span class="num">21</span><span class="label">Templates</span></div>
+    <div class="stat"><span class="num">12</span><span class="label">Reports</span></div>
+    <div class="stat"><span class="num">59</span><span class="label">Screenshots</span></div>
+  </div>
+</div>
+
+<div class="main">
+
+
+
+<!-- SECTION 1: Block Inventory & Analysis -->
+<div class="section-header">
+  <div class="section-icon" style="background:rgba(59,130,246,0.15);color:#60a5fa">&#9638;</div>
+  <h2>Block Inventory & Analysis</h2>
+  <span class="count">4 Reports</span>
+</div>
+
+<div class="cards">
+
+  <a href="report-1-block-summary.html" class="card blue">
+    <div class="card-top">
+      <span class="card-badge badge-inventory">Inventory</span>
+      <span class="card-number">Report 1</span>
+    </div>
+    <h3>Block Summary</h3>
+    <p class="desc">Master inventory of all 35 identified blocks with screenshot thumbnails, complexity ratings (Simple/Medium/Complex), consolidation recommendations (Consolidate/Standalone/Split/Merge), and estimated development effort per block.</p>
+    <div class="meta-row">
+      <span class="meta-tag"><strong>35</strong> blocks</span>
+      <span class="meta-tag"><strong>87</strong> variations</span>
+      <span class="meta-tag">Screenshots</span>
+    </div>
+    <span class="card-link">View Report</span>
+  </a>
+
+  <a href="report-2-detailed-breakdown.html" class="card blue">
+    <div class="card-top">
+      <span class="card-badge badge-inventory">Inventory</span>
+      <span class="card-number">Report 2</span>
+    </div>
+    <h3>Detailed Block Breakdown</h3>
+    <p class="desc">Every block variation documented individually with per-variation screenshots, reference URLs to live thermofisher.com pages, platform tags (Modern/Legacy/Corporate), and [NEW] markers for recently discovered variations.</p>
+    <div class="meta-row">
+      <span class="meta-tag"><strong>87</strong> variations</span>
+      <span class="meta-tag"><strong>59</strong> screenshots</span>
+      <span class="meta-tag">Live URLs</span>
+    </div>
+    <span class="card-link">View Report</span>
+  </a>
+
+
+
+</div>
+
+<!-- SECTION 2: Template Mapping -->
+<div class="section-header">
+  <div class="section-icon" style="background:rgba(34,197,94,0.15);color:#4ade80">&#9776;</div>
+  <h2>Template & Block Mapping</h2>
+  <span class="count">3 Reports</span>
+</div>
+
+<div class="cards">
+
+  <a href="report-7-template-list.html" class="card green">
+    <div class="card-top">
+      <span class="card-badge badge-template">Templates</span>
+      <span class="card-number">Report 7</span>
+    </div>
+    <h3>Template List (View 1)</h3>
+    <p class="desc">All 21 identified page templates with 43 variations, estimated page counts, sample URLs, and platform distribution chart. Shows that Modern covers 38%, Legacy 6%, Mixed 51%, and Corporate 4% of pages.</p>
+    <div class="meta-row">
+      <span class="meta-tag"><strong>21</strong> templates</span>
+      <span class="meta-tag"><strong>43</strong> variations</span>
+      <span class="meta-tag">Distribution chart</span>
+    </div>
+    <span class="card-link">View Report</span>
+  </a>
+
+  <a href="report-8-template-block-mapping.html" class="card green">
+    <div class="card-top">
+      <span class="card-badge badge-template">Mapping</span>
+      <span class="card-number">Report 8</span>
+    </div>
+    <h3>Template → Block Mapping (View 2)</h3>
+    <p class="desc">Full mapping matrix showing which block variations appear on each template. Color-coded block tags by category (hero, cards, columns, nav, video, interactive, unique). The definitive reference for template composition.</p>
+    <div class="meta-row">
+      <span class="meta-tag"><strong>21×35</strong> matrix</span>
+      <span class="meta-tag">Color-coded</span>
+      <span class="meta-tag">Reference URLs</span>
+    </div>
+    <span class="card-link">View Report</span>
+  </a>
+
+
+
+</div>
+
+<!-- SECTION 3: Functional Documentation -->
+<div class="section-header">
+  <div class="section-icon" style="background:rgba(249,115,22,0.15);color:#fb923c">&#9881;</div>
+  <h2>Block Functional Documentation</h2>
+  <span class="count">3 Reports</span>
+</div>
+
+<div class="cards">
+
+  <a href="report-10-block-functional-docs-core.html" class="card orange">
+    <div class="card-top">
+      <span class="card-badge badge-functional">Functional Docs</span>
+      <span class="card-number">Report 10</span>
+    </div>
+    <h3>Core Blocks — Hero, Cards, Columns, Teaser, Form</h3>
+    <p class="desc">Comprehensive functional documentation for the 5 highest-impact blocks covering 34 variations. Each variation includes: DOM structure, acceptance criteria (QA checklists), interactions, responsive behavior, WCAG accessibility, and authoring requirements. Ready for LLD, developer handoff, and Jira story creation.</p>
+    <div class="meta-row">
+      <span class="meta-tag"><strong>5</strong> blocks</span>
+      <span class="meta-tag"><strong>34</strong> variations</span>
+      <span class="meta-tag"><strong>9</strong> sections each</span>
+    </div>
+    <span class="card-link">View Report</span>
+  </a>
+
+  <a href="report-11-block-functional-docs-nav-interactive.html" class="card orange">
+    <div class="card-top">
+      <span class="card-badge badge-functional">Functional Docs</span>
+      <span class="card-number">Report 11</span>
+    </div>
+    <h3>Navigation & Interactive — Sidebar, Tabs, Video, Carousel, Event Table</h3>
+    <p class="desc">Functional specs for 10 navigation and interactive blocks covering 25 variations. Includes complex components like the filterable event table (17 checkboxes, 3 filter groups), Brightcove video playlist, workflow stepper (5-step), and filmstrip carousel.</p>
+    <div class="meta-row">
+      <span class="meta-tag"><strong>10</strong> blocks</span>
+      <span class="meta-tag"><strong>25</strong> variations</span>
+      <span class="meta-tag">ARIA/keyboard docs</span>
+    </div>
+    <span class="card-link">View Report</span>
+  </a>
+
+  <a href="report-12-block-functional-docs-specialized.html" class="card orange">
+    <div class="card-top">
+      <span class="card-badge badge-functional">Functional Docs</span>
+      <span class="card-number">Report 12</span>
+    </div>
+    <h3>Specialized & Layout — Mondrian, CSR, Support Hub, Chapter TOC</h3>
+    <p class="desc">Functional documentation for 18 specialized blocks covering 29 variations. Includes unique components: Mondrian grid (4 variants), CSR commitments grid, statistics highlights slider, support hub (6 categories + chat), chapter table of contents, and video modal/teaser pair.</p>
+    <div class="meta-row">
+      <span class="meta-tag"><strong>18</strong> blocks</span>
+      <span class="meta-tag"><strong>29</strong> variations</span>
+      <span class="meta-tag">Corporate blocks</span>
+    </div>
+    <span class="card-link">View Report</span>
+  </a>
+
+</div>
+
+
+
+</div>
+
+
+</body>
+</html>

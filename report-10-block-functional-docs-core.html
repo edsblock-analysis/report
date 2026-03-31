@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Report 10 — Block Functional Documentation: Core Blocks | Thermo Fisher AEM→EDS Migration</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;background:#f5f5f5;color:#333;line-height:1.6;overflow-x:hidden}
+.container{max-width:1400px;margin:0 auto}
+.report-header{background:linear-gradient(135deg,#1a237e 0%,#0d47a1 100%);color:#fff;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);margin-bottom:30px;padding:40px 24px;border-radius:0;box-sizing:border-box}
+.report-header-inner{max-width:1400px;margin:0 auto}
+.report-header h1{margin:0 0 10px;font-size:28px}
+.report-header .subtitle{opacity:.9;font-size:16px}
+.report-header .meta{margin-top:15px;font-size:13px;opacity:.7}
+.toc{background:#fff;padding:30px;border-radius:8px;margin-bottom:30px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.toc h2{margin-top:0;color:#1a237e;border-bottom:2px solid #e8eaf6;padding-bottom:10px}
+.toc ul{list-style:none;padding:0}.toc li{padding:4px 0}.toc a{color:#1565c0;text-decoration:none}.toc a:hover{text-decoration:underline}
+.toc .sub{margin-left:24px;font-size:14px}.vc{color:#888;font-size:13px;margin-left:6px}
+.bs{background:#fff;border-radius:8px;margin-bottom:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);overflow:hidden}
+.bh{background:#1a237e;color:#fff;padding:20px 30px}
+.bh h2{margin:0;font-size:22px}
+.bh .bm{display:flex;gap:15px;margin-top:8px;font-size:13px;opacity:.85;flex-wrap:wrap}
+.bh .bm span{background:rgba(255,255,255,.15);padding:2px 10px;border-radius:12px}
+.bb{padding:30px}
+.bo{background:#f8f9ff;padding:20px;border-radius:8px;margin-bottom:25px;border-left:4px solid #1a237e}
+.vc2{border:1px solid #e0e0e0;border-radius:8px;margin-bottom:25px;overflow:hidden}
+.vh{background:#e8eaf6;padding:15px 20px;border-bottom:1px solid #c5cae9;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.vh h3{margin:0;color:#283593;font-size:17px}
+.vb2{display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;text-transform:uppercase}
+.badge-modern{background:#e3f2fd;color:#1565c0}.badge-legacy{background:#fff3e0;color:#e65100}
+.badge-corporate{background:#f3e5f5;color:#7b1fa2}.badge-new{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+.badge-both{background:#fce4ec;color:#c62828}.badge-global{background:#e0f2f1;color:#00695c}
+.vbd{padding:20px}
+.desc{margin-bottom:20px;color:#555;font-size:15px}
+.ds{margin-bottom:20px}
+.ds h4{color:#1a237e;margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e8eaf6;padding-bottom:6px}
+table.st{width:100%;border-collapse:collapse;font-size:13px}
+.st th{background:#f5f5f5;text-align:left;padding:8px 12px;border:1px solid #e0e0e0;font-weight:600}
+.st td{padding:8px 12px;border:1px solid #e0e0e0;vertical-align:top}
+.st code{background:#f5f5f5;padding:1px 4px;border-radius:3px;font-size:12px;color:#d32f2f}
+ul.cl{list-style:none;padding:0}
+ul.cl li{padding:5px 0;font-size:14px}
+ul.cl li::before{content:'☐ ';color:#1a237e;font-weight:700}
+.rg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px}
+.rc{border:1px solid #e0e0e0;border-radius:6px;padding:15px}
+.rc h5{margin:0 0 8px;font-size:13px;color:#1a237e}
+.rc .bp{font-size:11px;color:#888;margin-bottom:8px}
+.rc ul{margin:0;padding-left:18px;font-size:13px}
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ii{background:#fafafa;padding:12px;border-radius:6px;border:1px solid #eee}
+.ii .tp{font-weight:600;font-size:13px;color:#333;margin-bottom:4px}
+.ii .dt{font-size:13px;color:#666}
+ul.al{list-style:none;padding:0}ul.al li{padding:4px 0;font-size:13px}ul.al li::before{content:'♿ '}
+table.at{width:100%;border-collapse:collapse;font-size:13px}
+.at th{background:#f5f5f5;text-align:left;padding:8px 12px;border:1px solid #e0e0e0}
+.at td{padding:8px 12px;border:1px solid #e0e0e0}
+.req{color:#d32f2f;font-weight:600}.opt{color:#666}
+.rl{display:flex;flex-wrap:wrap;gap:8px}
+.rl a{display:inline-block;padding:4px 12px;background:#e3f2fd;color:#1565c0;border-radius:4px;font-size:12px;text-decoration:none}
+.rl a:hover{background:#bbdefb}
+.screenshot-thumb{max-width:300px;max-height:180px;border:1px solid #ddd;border-radius:4px;margin-top:10px}
+.top-nav{background:linear-gradient(90deg,#1a237e 0%,#0d47a1 100%);box-shadow:0 2px 8px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box}
+.top-nav-inner{margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.top-nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;transition:all .2s;background:rgba(255,255,255,.08)}
+.top-nav a:hover{background:rgba(255,255,255,.2);color:#fff}
+.top-nav .sep{color:rgba(255,255,255,.5);font-size:13px}
+.top-nav .project{color:rgba(255,255,255,.9);font-size:14px;font-weight:500}
+@media print{body{background:#fff}.bs{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top-nav"><div class="top-nav-inner"><a href="index.html"><span style="font-size:18px">&#8962;</span> Dashboard Home</a><span class="sep">·</span><span class="project">Thermo Fisher AEM &rarr; EDS Migration</span></div></nav>
+
+<div class="report-header">
+<div class="report-header-inner">
+<h1>Block Functional Documentation — Part 1: Core Blocks</h1>
+<div class="subtitle">Comprehensive functional specs for Hero, Cards, Columns, Teaser &amp; Form blocks across all variations</div>
+<div class="meta">Thermo Fisher Scientific AEM → EDS Migration | 5 blocks, 34 variations | Generated 2026-03-20 | Report 10 of 12</div>
+</div>
+</div>
+
+<div class="container">
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#hero">1. Hero</a><span class="vc">— 7 variations</span>
+  <ul class="sub"><li><a href="#hero-v1">V1: Page heading (standard)</a></li><li><a href="#hero-v2">V2: Foreground product image</a></li><li><a href="#hero-v3">V3: Gradient overlay</a></li><li><a href="#hero-v4">V4: With CTA buttons</a></li><li><a href="#hero-v5">V5: Thinbanner (legacy)</a></li><li><a href="#hero-v6">V6: Mondrian hero</a></li><li><a href="#hero-v7">V7: Corporate hero</a></li></ul>
+</li>
+<li><a href="#cards">2. Cards</a><span class="vc">— 11 variations</span>
+  <ul class="sub"><li><a href="#cards-v1">V1: Image+Title+Desc+CTA (3-up)</a></li><li><a href="#cards-v2">V2: Image+Title+Desc+CTA (4-up)</a></li><li><a href="#cards-v3">V3: Image+Title+Desc+CTA (2-up)</a></li><li><a href="#cards-v4">V4: Text overlay on dark image</a></li><li><a href="#cards-v5">V5: Text-only (no image)</a></li><li><a href="#cards-v6">V6: Product showcase</a></li><li><a href="#cards-v7">V7: Category cards (legacy 4-col)</a></li><li><a href="#cards-v8">V8: Icon value props (3-up)</a></li><li><a href="#cards-v9">V9: Promotion cards with badge</a></li><li><a href="#cards-v10">V10: Tech reference cards</a></li><li><a href="#cards-v11">V11: Icon cards (decorative)</a></li></ul>
+</li>
+<li><a href="#columns">3. Columns</a><span class="vc">— 7 variations</span>
+  <ul class="sub"><li><a href="#columns-v1">V1: 50/50 text-left image-right</a></li><li><a href="#columns-v2">V2: 50/50 image-left text-right</a></li><li><a href="#columns-v3">V3: 75/25 asymmetric</a></li><li><a href="#columns-v4">V4: Legacy 2-col (lt0)</a></li><li><a href="#columns-v5">V5: Legacy 3-col (lt3)</a></li><li><a href="#columns-v6">V6: Legacy asymmetric (lt7/lt8)</a></li><li><a href="#columns-v7">V7: Bordered 4-col (bordered-lt4)</a></li></ul>
+</li>
+<li><a href="#teaser">4. Teaser</a><span class="vc">— 5 variations</span>
+  <ul class="sub"><li><a href="#teaser-v1">V1: Header promo bar</a></li><li><a href="#teaser-v2">V2: Image-background full-width</a></li><li><a href="#teaser-v3">V3: Image-right split</a></li><li><a href="#teaser-v4">V4: Mid-page promotional</a></li><li><a href="#teaser-v5">V5: Dark gradient overlay</a></li></ul>
+</li>
+<li><a href="#form">5. Form</a><span class="vc">— 4 variations</span>
+  <ul class="sub"><li><a href="#form-v1">V1: Modern Pragma form</a></li><li><a href="#form-v2">V2: Legacy Eloqua form</a></li><li><a href="#form-v3">V3: Experience Fragment form</a></li><li><a href="#form-v4">V4: Inline request form</a></li></ul>
+</li>
+</ul>
+</div>
+
+<!-- ===================== BLOCK 1: HERO ===================== -->
+<div class="bs" id="hero">
+<div class="bh"><h2>1. Hero</h2><div class="bm"><span>7 Variations</span><span>Complexity: Simple–Medium</span><span>Est: 3–5 dev days</span><span>Priority: P0</span></div></div>
+<div class="bb">
+<div class="bo">
+<strong>Block Overview:</strong> The Hero block is the primary page-heading component appearing at the top of virtually every page. It sets the visual tone with background imagery, text overlays, and optional CTAs. Variations span all three AEM platforms (Modern, Legacy, Corporate) with significant DOM differences between each. EDS consolidation target: 2–3 hero variants covering all use cases.
+</div>
+
+<!-- Hero V1 -->
+<div class="vc2" id="hero-v1">
+<div class="vh"><h3>V1: Page Heading (Standard)</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Full-width background image with white text overlay containing page title (h1) and optional subtitle. The most common hero pattern across Modern AEM pages, used on category landing pages and informational pages.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-p-pageheadinghero</code></td><td>Outer wrapper for the hero component</td></tr>
+<tr><td>Background Image</td><td><code>.cmp-p-pageheadinghero__image</code></td><td>Full-width background image, CSS background-image or &lt;picture&gt;</td></tr>
+<tr><td>Content Overlay</td><td><code>.cmp-p-pageheadinghero__content</code></td><td>Text container positioned over the image</td></tr>
+<tr><td>Title</td><td><code>h1</code></td><td>Page title, white text, typically 32–48px</td></tr>
+<tr><td>Subtitle</td><td><code>p</code></td><td>Optional descriptive subtitle below h1</td></tr>
+<tr><td>Breadcrumb</td><td><code>.cmp-breadcrumb</code></td><td>Optional breadcrumb trail above or below hero</td></tr>
+</table></div>
+<div class="ds"><h4>Visual / Functional Differences</h4>
+<div class="content">Simplest hero variant. No CTA buttons, no foreground images, no gradient overlay. Distinguished from V3/V4 by lack of gradient and buttons. Height ranges 300–400px. Text is left-aligned with max-width constraint.</div></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>Hero renders full-width with background image covering the entire container</li>
+<li>H1 title displays in white text with adequate contrast ratio (≥4.5:1) against background</li>
+<li>Background image is responsive and uses srcset or picture element for optimal loading</li>
+<li>Hero height is consistent (300–400px) across standard viewport widths</li>
+<li>Subtitle text renders below title when provided, hidden when empty</li>
+<li>Breadcrumb navigation renders correctly above or below the hero if present</li>
+<li>No horizontal overflow or content clipping on any viewport width</li>
+</ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">No interactive click targets within V1 hero (no CTAs/links)</div></div>
+<div class="ii"><div class="tp">Hover</div><div class="dt">No hover states. Cursor remains default.</div></div>
+<div class="ii"><div class="tp">Animation</div><div class="dt">Optional: subtle fade-in on page load via CSS opacity transition (0→1 over 0.3s)</div></div>
+<div class="ii"><div class="tp">Lazy Loading</div><div class="dt">Hero image should use eager loading (loading="eager") as it's above the fold (LCP candidate)</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>Height reduces to 200–250px</li><li>Title font-size: 24px</li><li>Text centered</li><li>Background image repositioned (object-position: center)</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>Height: 280–350px</li><li>Title font-size: 32px</li><li>Text left-aligned</li><li>Full image visible</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>Height: 300–400px</li><li>Title font-size: 40–48px</li><li>Text left-aligned with max-width ~60%</li><li>Full bleed background</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al">
+<li>Background image must have meaningful alt text or be marked decorative (role="img" aria-label="...")</li>
+<li>H1 is the single page heading — only one h1 per page</li>
+<li>Color contrast: white text on image must meet WCAG 2.1 AA (4.5:1 minimum)</li>
+<li>Text remains readable if images fail to load (dark fallback background-color)</li>
+<li>No keyboard traps — hero is non-interactive content</li>
+</ul></div>
+<div class="ds"><h4>Authoring Requirements</h4>
+<table class="at"><tr><th>Field</th><th>Required</th><th>Type</th><th>Validation</th></tr>
+<tr><td>Background Image</td><td class="req">Required *</td><td>Image (DAM asset)</td><td>Min 1600×400px, max 500KB optimized</td></tr>
+<tr><td>Title (H1)</td><td class="req">Required *</td><td>Text</td><td>Max 80 characters, no HTML</td></tr>
+<tr><td>Subtitle</td><td class="opt">Optional</td><td>Rich Text</td><td>Max 200 characters</td></tr>
+<tr><td>Mobile Image</td><td class="opt">Optional</td><td>Image (DAM asset)</td><td>Min 768×300px, portrait crop recommended</td></tr>
+</table></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl">
+<a href="https://www.thermofisher.com/us/en/home/life-science/cell-analysis.html" target="_blank">cell-analysis.html</a>
+<a href="https://www.thermofisher.com/us/en/home/events.html" target="_blank">events.html</a>
+</div>
+<img src="screenshots/hero-v1.jpeg" alt="Hero V1 screenshot" class="screenshot-thumb" onerror="this.style.display='none'">
+</div>
+</div></div>
+
+<!-- Hero V2 -->
+<div class="vc2" id="hero-v2">
+<div class="vh"><h3>V2: Foreground Product Image</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Background image with a foreground product image floated to the right and text overlay on the left. Includes CTA buttons below the text. Used for product/technology landing pages where a hero product shot is needed.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-p-pageheadinghero--product</code></td><td>Hero variant with product image modifier class</td></tr>
+<tr><td>Background Image</td><td><code>.cmp-p-pageheadinghero__image</code></td><td>Full-width ambient background</td></tr>
+<tr><td>Product Image</td><td><code>.cmp-p-pageheadinghero__product-img</code></td><td>Foreground product photo, floated right, ~40% width</td></tr>
+<tr><td>Text Content</td><td><code>.cmp-p-pageheadinghero__content</code></td><td>Left-aligned text area (~60% width)</td></tr>
+<tr><td>Title</td><td><code>h1</code></td><td>Product/technology name</td></tr>
+<tr><td>Description</td><td><code>p</code></td><td>Product tagline or brief description</td></tr>
+<tr><td>CTA Buttons</td><td><code>.cmp-p-pageheadinghero__cta a.btn</code></td><td>1–2 action buttons (primary + secondary)</td></tr>
+</table></div>
+<div class="ds"><h4>Visual / Functional Differences</h4>
+<div class="content">Distinguished from V1 by the foreground product image and CTA buttons. The hero area is split ~60/40 (text/image). Product image has transparent background (PNG) and may extend beyond the hero container bottom edge for a "pop-out" effect.</div></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>Product image renders on the right side with transparent background preserved</li>
+<li>Text content and product image do not overlap on desktop viewports</li>
+<li>CTA buttons are visible, clickable, and have proper hover states</li>
+<li>Product image scales proportionally without distortion</li>
+<li>On mobile, layout stacks vertically: text on top, product image below</li>
+<li>Both background and product images load with appropriate priority</li>
+</ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">CTA buttons navigate to target URLs. Primary button has solid fill, secondary has outline style.</div></div>
+<div class="ii"><div class="tp">Hover</div><div class="dt">CTA buttons: background color darkens, subtle box-shadow appears. Product image: no hover effect.</div></div>
+<div class="ii"><div class="tp">Animation</div><div class="dt">Product image may slide in from right on page load (translateX animation). Text fades in.</div></div>
+<div class="ii"><div class="tp">Dynamic</div><div class="dt">Product image may be served via Scene7/Dynamic Media for on-the-fly transformations.</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>Stacked layout: text block on top</li><li>Product image below, centered, max-width 80%</li><li>CTA buttons full-width, stacked</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>Side-by-side maintained but narrower gap</li><li>Product image ~35% width</li><li>Smaller text sizes</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>60/40 split text/image</li><li>Product image may overflow bottom</li><li>Full typography scale</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al">
+<li>Product image must have descriptive alt text (product name + context)</li>
+<li>CTA buttons must have clear, descriptive link text (not "Click here")</li>
+<li>Keyboard focus order: h1 → description → CTA primary → CTA secondary</li>
+<li>Focus visible outlines on all interactive elements</li>
+</ul></div>
+<div class="ds"><h4>Authoring Requirements</h4>
+<table class="at"><tr><th>Field</th><th>Required</th><th>Type</th><th>Validation</th></tr>
+<tr><td>Background Image</td><td class="req">Required *</td><td>Image</td><td>Min 1600×400px</td></tr>
+<tr><td>Product Image</td><td class="req">Required *</td><td>Image (PNG w/ transparency)</td><td>Min 400×400px, transparent bg</td></tr>
+<tr><td>Title (H1)</td><td class="req">Required *</td><td>Text</td><td>Max 60 characters</td></tr>
+<tr><td>Description</td><td class="opt">Optional</td><td>Rich Text</td><td>Max 150 characters</td></tr>
+<tr><td>Primary CTA Label</td><td class="req">Required *</td><td>Text</td><td>Max 30 characters</td></tr>
+<tr><td>Primary CTA URL</td><td class="req">Required *</td><td>URL</td><td>Valid internal/external URL</td></tr>
+<tr><td>Secondary CTA Label</td><td class="opt">Optional</td><td>Text</td><td>Max 30 characters</td></tr>
+<tr><td>Secondary CTA URL</td><td class="opt">Optional</td><td>URL</td><td>Valid URL</td></tr>
+</table></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/electron-microscopy/products/scanning-electron-microscopes/volumescope-2-sem.html" target="_blank">volumescope-2-sem.html</a></div>
+<img src="screenshots/hero-v2.jpeg" alt="Hero V2 screenshot" class="screenshot-thumb" onerror="this.style.display='none'">
+</div>
+</div></div>
+
+<!-- Hero V3 -->
+<div class="vc2" id="hero-v3">
+<div class="vh"><h3>V3: Gradient Overlay</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Background image with a dark-to-transparent gradient overlay from left to right, ensuring text readability. Text content is left-aligned over the gradient zone. Common on science/technology category pages.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-p-pageheadinghero--gradient</code></td><td>Hero with gradient modifier</td></tr>
+<tr><td>Background Image</td><td><code>.cmp-p-pageheadinghero__image</code></td><td>Full-width image</td></tr>
+<tr><td>Gradient Overlay</td><td><code>::after pseudo-element</code></td><td>CSS gradient: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, transparent 60%)</td></tr>
+<tr><td>Title</td><td><code>h1</code></td><td>White text over gradient area</td></tr>
+<tr><td>Subtitle</td><td><code>p</code></td><td>Optional subtitle</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>Gradient overlay renders from left (opaque dark) to right (transparent)</li>
+<li>Text remains readable over the gradient on all images</li>
+<li>Gradient does not obscure important parts of the background image on the right</li>
+<li>Gradient adapts for mobile (may become full-width semi-transparent overlay)</li>
+<li>No layout shift when hero image loads</li>
+<li>Fallback dark background renders if image fails</li>
+</ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">No interactive elements in V3 (text-only hero)</div></div>
+<div class="ii"><div class="tp">Animation</div><div class="dt">Gradient may animate in (opacity 0→1) for smooth entrance</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>Gradient covers full width at 60% opacity</li><li>Centered text</li><li>Reduced height: 200px</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>Gradient from left ~50%</li><li>Left-aligned text</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>Gradient from left ~40%</li><li>Text constrained to left 50%</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al">
+<li>Gradient must ensure WCAG AA contrast for all text over background</li>
+<li>Decorative gradient should not be announced by screen readers</li>
+<li>Background image needs alt text or aria-label on container</li>
+</ul></div>
+<div class="ds"><h4>Authoring Requirements</h4>
+<table class="at"><tr><th>Field</th><th>Required</th><th>Type</th><th>Validation</th></tr>
+<tr><td>Background Image</td><td class="req">Required *</td><td>Image</td><td>Min 1600×500px, subject matter on right half</td></tr>
+<tr><td>Title</td><td class="req">Required *</td><td>Text</td><td>Max 80 chars</td></tr>
+<tr><td>Subtitle</td><td class="opt">Optional</td><td>Text</td><td>Max 200 chars</td></tr>
+</table></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl">
+<a href="https://www.thermofisher.com/us/en/home/industrial/environmental.html" target="_blank">environmental.html</a>
+<a href="https://www.thermofisher.com/us/en/home/industrial/food-beverage.html" target="_blank">food-beverage.html</a>
+</div>
+<img src="screenshots/hero-v3.jpeg" alt="Hero V3 screenshot" class="screenshot-thumb" onerror="this.style.display='none'">
+</div>
+</div></div>
+
+<!-- Hero V4 -->
+<div class="vc2" id="hero-v4">
+<div class="vh"><h3>V4: With CTA Buttons</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Standard hero with background image, title, subtitle, plus 1–2 prominent CTA buttons. The primary CTA uses a solid blue button; the secondary uses an outlined/ghost style. High-conversion variant for key landing pages.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-p-pageheadinghero</code></td><td>Standard hero container</td></tr>
+<tr><td>CTA Group</td><td><code>.cmp-p-pageheadinghero__actions</code></td><td>Flex container for CTA buttons</td></tr>
+<tr><td>Primary CTA</td><td><code>a.btn.btn-primary</code></td><td>Solid blue button (#0072CE)</td></tr>
+<tr><td>Secondary CTA</td><td><code>a.btn.btn-outline</code></td><td>White outlined button</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>Primary CTA button is visually prominent with solid fill</li>
+<li>Secondary CTA has clear outline style differentiating it from primary</li>
+<li>Both buttons are clickable and navigate to correct URLs</li>
+<li>Buttons maintain minimum touch target size (44×44px)</li>
+<li>Button text is readable against button background</li>
+<li>On mobile, buttons stack vertically with full width</li>
+</ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">Primary CTA: navigates to product/signup page. Secondary CTA: opens resource or alternative path.</div></div>
+<div class="ii"><div class="tp">Hover</div><div class="dt">Primary: darker shade (#005FA3). Secondary: fills with white, text turns blue.</div></div>
+<div class="ii"><div class="tp">Focus</div><div class="dt">2px white outline with 2px offset for keyboard navigation visibility.</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>Buttons stack vertically, full-width</li><li>8px gap between buttons</li><li>Text centered</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>Buttons side-by-side</li><li>Auto-width with padding</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>Buttons inline, left-aligned with text</li><li>Min-width 160px per button</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al">
+<li>Buttons must use &lt;a&gt; with role="button" if not native buttons, or semantic &lt;a&gt; tags</li>
+<li>Each CTA must have descriptive text (not "Learn More" — use "Explore Antibodies")</li>
+<li>Focus indicators must be visible against both hero image and button backgrounds</li>
+<li>Tab order: Primary CTA first, then Secondary</li>
+</ul></div>
+<div class="ds"><h4>Authoring Requirements</h4>
+<table class="at"><tr><th>Field</th><th>Required</th><th>Type</th><th>Validation</th></tr>
+<tr><td>Background Image</td><td class="req">Required *</td><td>Image</td><td>Min 1600×400px</td></tr>
+<tr><td>Title</td><td class="req">Required *</td><td>Text</td><td>Max 80 chars</td></tr>
+<tr><td>Primary CTA Text</td><td class="req">Required *</td><td>Text</td><td>Max 30 chars, action verb</td></tr>
+<tr><td>Primary CTA URL</td><td class="req">Required *</td><td>URL</td><td>Valid URL</td></tr>
+<tr><td>Secondary CTA Text</td><td class="opt">Optional</td><td>Text</td><td>Max 30 chars</td></tr>
+<tr><td>Secondary CTA URL</td><td class="opt">Optional</td><td>URL</td><td>Valid URL</td></tr>
+</table></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl">
+<a href="https://www.thermofisher.com/us/en/home/life-science/antibodies.html" target="_blank">antibodies.html</a>
+<a href="https://www.thermofisher.com/us/en/home/life-science/bioproduction.html" target="_blank">bioprocessing.html</a>
+</div>
+<img src="screenshots/hero-v4.jpeg" alt="Hero V4 screenshot" class="screenshot-thumb" onerror="this.style.display='none'">
+</div>
+</div></div>
+
+<!-- Hero V5 -->
+<div class="vc2" id="hero-v5">
+<div class="vh"><h3>V5: Thinbanner (Legacy)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Thin horizontal banner (~100–150px height) with solid or gradient background and centered text. Used on legacy parsys-based pages as a compact page header. Often paired with sidebar navigation.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-thinBanner</code></td><td>Legacy thin banner wrapper</td></tr>
+<tr><td>Background</td><td><code>CSS gradient or solid color</code></td><td>Blue/dark gradient, no image typically</td></tr>
+<tr><td>Title</td><td><code>h1</code></td><td>Centered page title, 24–32px</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>Banner renders at consistent thin height (100–150px)</li>
+<li>Title is horizontally centered within the banner</li>
+<li>Background gradient/color renders correctly without image dependency</li>
+<li>No content overflow at any viewport width</li>
+<li>Transitions smoothly to content below</li>
+</ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">No interactive elements</div></div>
+<div class="ii"><div class="tp">Animation</div><div class="dt">None — static display</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>Height: 80–100px</li><li>Font-size: 20px</li><li>Centered text</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>Height: 100–120px</li><li>Font-size: 26px</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>Height: 120–150px</li><li>Font-size: 32px</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>H1 is semantic page heading</li><li>Sufficient color contrast on gradient backgrounds</li><li>No images requiring alt text</li></ul></div>
+<div class="ds"><h4>Authoring Requirements</h4>
+<table class="at"><tr><th>Field</th><th>Required</th><th>Type</th><th>Validation</th></tr>
+<tr><td>Title</td><td class="req">Required *</td><td>Text</td><td>Max 60 chars</td></tr>
+<tr><td>Background Color/Gradient</td><td class="opt">Optional</td><td>Color picker</td><td>Valid CSS color/gradient</td></tr>
+</table></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl">
+<a href="https://www.thermofisher.com/us/en/home/life-science/pcr.html" target="_blank">pcr.html</a>
+<a href="https://www.thermofisher.com/us/en/home/analytical-chemistry/chromatography.html" target="_blank">chromatography.html</a>
+</div>
+<img src="screenshots/hero-v5.jpeg" alt="Hero V5 screenshot" class="screenshot-thumb" onerror="this.style.display='none'">
+</div>
+</div></div>
+
+<!-- Hero V6 -->
+<div class="vc2" id="hero-v6">
+<div class="vh"><h3>V6: Mondrian Hero</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Uses the Mondrian grid layout as a hero component. Multi-slot grid with large and small image tiles, text overlays, and navigation links. Acts as both hero and primary navigation on category hub pages.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.mondrian-module.mondrian-module-d</code></td><td>Mondrian variant D grid</td></tr>
+<tr><td>Left Panel</td><td><code>.mondrian-submodule-left</code></td><td>Large image tile (376×170px)</td></tr>
+<tr><td>Right Top</td><td><code>.mondrian-module-inner</code></td><td>Small image tile (174×170px)</td></tr>
+<tr><td>Right Bottom</td><td><code>.mondrian-module-list</code></td><td>Navigation link list (no image)</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>Grid renders with correct proportions (left ~55%, right-top ~25%, right-bottom ~25%)</li>
+<li>All image tiles display without distortion</li>
+<li>Overlay text is readable on all tile images</li>
+<li>Navigation list items are clickable and properly styled</li>
+<li>Grid collapses gracefully on mobile (stacked vertically)</li>
+<li>All links navigate to correct destination pages</li>
+</ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">Image tiles link to category pages. Nav list items link to sub-categories.</div></div>
+<div class="ii"><div class="tp">Hover</div><div class="dt">Image tiles: slight zoom effect (transform: scale(1.05)). Nav items: underline + color change.</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>Tiles stack vertically</li><li>Full-width per tile</li><li>Nav list becomes full-width</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>Grid maintained, proportionally scaled</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>Full Mondrian grid layout</li><li>Fixed proportions</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>Each tile image has descriptive alt text</li><li>Navigation list uses semantic &lt;nav&gt; or &lt;ul&gt; markup</li><li>All interactive elements keyboard-accessible</li><li>Focus order follows visual layout (left → right-top → right-bottom)</li></ul></div>
+<div class="ds"><h4>Authoring Requirements</h4>
+<table class="at"><tr><th>Field</th><th>Required</th><th>Type</th><th>Validation</th></tr>
+<tr><td>Left Tile Image</td><td class="req">Required *</td><td>Image</td><td>376×170px min</td></tr>
+<tr><td>Left Tile Link</td><td class="req">Required *</td><td>URL</td><td>Valid URL</td></tr>
+<tr><td>Left Tile Text</td><td class="req">Required *</td><td>Text</td><td>Max 40 chars</td></tr>
+<tr><td>Right Top Image</td><td class="req">Required *</td><td>Image</td><td>174×170px min</td></tr>
+<tr><td>Nav List Items</td><td class="req">Required *</td><td>Link list</td><td>2–6 items</td></tr>
+</table></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl">
+<a href="https://www.thermofisher.com/us/en/home/clinical.html" target="_blank">clinical.html</a>
+</div>
+<img src="screenshots/hero-v6.jpeg" alt="Hero V6 screenshot" class="screenshot-thumb" onerror="this.style.display='none'">
+</div>
+</div></div>
+
+<!-- Hero V7 -->
+<div class="vc2" id="hero-v7">
+<div class="vh"><h3>V7: Corporate Hero</h3><div class="vb2"><span class="badge badge-corporate">Corporate</span></div></div>
+<div class="vbd">
+<p class="desc">Corporate TFC platform hero with distinct DOM structure using cmp-tfc- prefix classes. Large immersive hero with mission-focused messaging. Found on corporate.thermofisher.com pages.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-tfc-hero / .csr-first-section</code></td><td>Corporate hero wrapper</td></tr>
+<tr><td>Heading</td><td><code>.csr-main-heading</code></td><td>Large mission statement heading</td></tr>
+<tr><td>Background</td><td><code>Full-bleed image</code></td><td>Corporate imagery</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>Hero matches corporate brand guidelines (different from main site)</li>
+<li>Mission text is prominent and centered</li>
+<li>Background image is full-bleed and responsive</li>
+<li>Corporate color scheme maintained (#1C3F94 navy base)</li>
+<li>Distinct from main site heroes in typography and spacing</li>
+</ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">No interactive elements (informational hero)</div></div>
+<div class="ii"><div class="tp">Scroll</div><div class="dt">May have subtle parallax effect on background image</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>Reduced height</li><li>Text centered, smaller font</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>Mid-size hero</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>Full immersive hero, ~400–500px</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>H1 tag for main heading</li><li>Corporate branding meets contrast requirements</li><li>Image has appropriate alt text</li></ul></div>
+<div class="ds"><h4>Authoring Requirements</h4>
+<table class="at"><tr><th>Field</th><th>Required</th><th>Type</th><th>Validation</th></tr>
+<tr><td>Background Image</td><td class="req">Required *</td><td>Image</td><td>Min 1600×500px</td></tr>
+<tr><td>Heading Text</td><td class="req">Required *</td><td>Text</td><td>Max 120 chars</td></tr>
+</table></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html" target="_blank">corporate-social-responsibility.html</a></div>
+<img src="screenshots/hero-v7.jpeg" alt="Hero V7 screenshot" class="screenshot-thumb" onerror="this.style.display='none'">
+</div>
+</div></div>
+
+</div></div>
+
+<!-- ===================== BLOCK 2: CARDS ===================== -->
+<div class="bs" id="cards">
+<div class="bh"><h2>2. Cards</h2><div class="bm"><span>11 Variations</span><span>Complexity: Simple–Medium</span><span>Est: 5–8 dev days</span><span>Priority: P0</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Cards are the most versatile and frequently used content block across the site. They present content in grid layouts with combinations of images, titles, descriptions, and CTAs. Found on virtually every page type. 11 variations span Modern and Legacy platforms with significant layout differences. EDS consolidation target: 4–5 card variants using CSS modifiers.</div>
+
+<!-- Cards V1 -->
+<div class="vc2" id="cards-v1">
+<div class="vh"><h3>V1: Image + Title + Desc + CTA (3-up)</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Three cards per row, each with top image, h3 title, paragraph description, and CTA link. The standard card layout for most Modern AEM pages. ~33% width per card.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Grid Container</td><td><code>.cmp-p-cards</code></td><td>Flex/grid wrapper, 3-column</td></tr>
+<tr><td>Card</td><td><code>.cmp-p-cards__item</code></td><td>Individual card container</td></tr>
+<tr><td>Image</td><td><code>.cmp-p-cards__image img</code></td><td>Top image, 16:9 or 4:3 ratio</td></tr>
+<tr><td>Title</td><td><code>h3</code></td><td>Card heading, linked</td></tr>
+<tr><td>Description</td><td><code>p</code></td><td>Brief text, 2–3 lines</td></tr>
+<tr><td>CTA</td><td><code>a.cmp-p-cards__cta</code></td><td>"Learn more" style link</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>3 cards render in a single row on desktop with equal widths</li>
+<li>Card images maintain consistent aspect ratio across all cards in a row</li>
+<li>Cards have equal height (CSS flexbox/grid stretch)</li>
+<li>CTA link is positioned at the bottom of each card consistently</li>
+<li>Entire card is clickable (card-as-link pattern) or CTA link only</li>
+<li>Cards wrap to next row if more than 3 items</li>
+<li>Empty/missing image gracefully shows placeholder or collapses</li>
+</ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">Card click navigates to detail page. CTA link is primary click target.</div></div>
+<div class="ii"><div class="tp">Hover</div><div class="dt">Card: subtle box-shadow elevation (0 4px 12px rgba(0,0,0,0.15)). CTA: underline + color shift.</div></div>
+<div class="ii"><div class="tp">Lazy Load</div><div class="dt">Card images use loading="lazy" if below fold.</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>1 card per row, full-width</li><li>Stacked vertically</li><li>16px gap between cards</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>2 cards per row</li><li>Last card wraps to new row if 3 items</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>3 cards per row</li><li>24px gap</li><li>Max-width 1200px container</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al">
+<li>Card images have descriptive alt text</li>
+<li>H3 headings maintain proper heading hierarchy</li>
+<li>If card-as-link, use aria-label on card container with full card title</li>
+<li>Focus visible on CTA links and any clickable areas</li>
+<li>Card grid uses semantic list markup (&lt;ul&gt;/&lt;li&gt;) or role="list"</li>
+</ul></div>
+<div class="ds"><h4>Authoring Requirements</h4>
+<table class="at"><tr><th>Field</th><th>Required</th><th>Type</th><th>Validation</th></tr>
+<tr><td>Image</td><td class="req">Required *</td><td>Image</td><td>Min 400×300px, consistent ratio</td></tr>
+<tr><td>Title</td><td class="req">Required *</td><td>Text</td><td>Max 60 chars</td></tr>
+<tr><td>Description</td><td class="req">Required *</td><td>Rich Text</td><td>Max 200 chars</td></tr>
+<tr><td>CTA Label</td><td class="req">Required *</td><td>Text</td><td>Max 30 chars</td></tr>
+<tr><td>CTA URL</td><td class="req">Required *</td><td>URL</td><td>Valid URL</td></tr>
+</table></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/bioproduction.html" target="_blank">bioprocessing.html</a></div>
+<img src="screenshots/cards-v1.jpeg" alt="Cards V1" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<!-- Cards V2 -->
+<div class="vc2" id="cards-v2">
+<div class="vh"><h3>V2: Image + Title + Desc + CTA (4-up)</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Four cards per row, ~25% width each. More compact layout for pages with many category links or product groupings. Smaller image and tighter text.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Grid Container</td><td><code>.cmp-p-cards.cmp-p-cards--4up</code></td><td>4-column grid modifier</td></tr>
+<tr><td>Card</td><td><code>.cmp-p-cards__item</code></td><td>Same card structure as V1, narrower</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>4 cards render per row on desktop</li><li>Cards have equal height</li><li>Images scale correctly in narrower containers</li><li>Text truncation with ellipsis if too long</li><li>Wraps to 2×2 on tablet, 1-col on mobile</li></ul></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>1 card per row</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>2 cards per row</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>4 cards per row, 20px gap</li></ul></div>
+</div></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/global/forms/lab-equipment.html" target="_blank">lab-equipment.html</a></div>
+<img src="screenshots/cards-v2.jpeg" alt="Cards V2" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<!-- Cards V3 -->
+<div class="vc2" id="cards-v3">
+<div class="vh"><h3>V3: Image + Title + Desc + CTA (2-up)</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Two cards per row, ~50% width. More spacious layout with larger images and more text. Used for featured content or when only 2 items need highlighting.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>2 cards per row on desktop with equal widths</li><li>Larger images than 3-up/4-up variants</li><li>More description text visible without truncation</li><li>Stacks to 1-col on mobile</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/clinical/pharma-biopharma.html" target="_blank">pharma-biopharma.html</a></div>
+<img src="screenshots/cards-v3.jpeg" alt="Cards V3" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<!-- Cards V4 -->
+<div class="vc2" id="cards-v4">
+<div class="vh"><h3>V4: Text Overlay on Dark Image</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Full background image per card with white text overlay. Title and CTA appear on hover with slight background darkening. Used for visually rich promotional sections.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Background image fills entire card area</li><li>Text overlay is readable with contrast overlay</li><li>Hover state reveals additional content (CTA) with smooth transition</li><li>Cards maintain consistent height regardless of text length</li><li>On mobile, text is always visible (no hover dependency)</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Hover</div><div class="dt">Background darkens (overlay opacity 0.3→0.6). CTA text slides up from bottom. Image may slightly zoom (scale 1.05).</div></div>
+<div class="ii"><div class="tp">Click</div><div class="dt">Entire card is clickable, navigates to destination.</div></div>
+</div></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/bioproduction/resources.html" target="_blank">bioprocessing/resources.html</a></div>
+<img src="screenshots/cards-v4.jpeg" alt="Cards V4" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<!-- Cards V5 -->
+<div class="vc2" id="cards-v5">
+<div class="vh"><h3>V5: Text-only (No Image)</h3><div class="vb2"><span class="badge badge-both">Both Platforms</span></div></div>
+<div class="vbd">
+<p class="desc">Card with title, description, and CTA link but no image. Clean, text-focused layout for quick links, resource listings, or when imagery is not available. Often used in sidebar or supplementary sections.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Card renders without image space/placeholder</li><li>Title is prominent and serves as primary visual anchor</li><li>Consistent card height maintained across row</li><li>Border or background color differentiates cards from surrounding content</li><li>CTA positioned at bottom</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/brands/invitrogen.html" target="_blank">invitrogen.html</a></div>
+<img src="screenshots/cards-v5.jpeg" alt="Cards V5" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<!-- Cards V6 -->
+<div class="vc2" id="cards-v6">
+<div class="vh"><h3>V6: Product Showcase</h3><div class="vb2"><span class="badge badge-both">Both Platforms</span></div></div>
+<div class="vbd">
+<p class="desc">Product-focused cards with product image, product name, brief specification summary, and shop/details CTA. Used in product catalog and comparison sections.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Product image centered with consistent sizing</li><li>Product name clearly visible as card title</li><li>Spec summary displays key product attributes</li><li>Shop/Details CTA button present</li><li>Price display if applicable</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/analytical-chemistry/chromatography.html" target="_blank">chromatography.html</a></div>
+</div></div></div>
+
+<!-- Cards V7 -->
+<div class="vc2" id="cards-v7">
+<div class="vh"><h3>V7: Category Cards (Legacy 4-col)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">4-column grid of text-only category navigation cards. Each card has an h3 linked title and descriptive paragraph. No images. 17 cards found on clinical.html organized in rows of 4.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Grid</td><td><code>Legacy parsys 4-col layout</code></td><td>4 cards per row</td></tr>
+<tr><td>Card</td><td><code>div</code></td><td>Simple div container</td></tr>
+<tr><td>Title</td><td><code>h3 &gt; a</code></td><td>Linked category title</td></tr>
+<tr><td>Description</td><td><code>p</code></td><td>Category description text</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>4 cards per row on desktop</li><li>All h3 titles are clickable links</li><li>Cards have consistent height per row</li><li>17 cards display across 4+ rows plus partial row</li><li>Related areas section has separate header</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl">
+<a href="https://www.thermofisher.com/us/en/home/clinical.html" target="_blank">clinical.html</a>
+<a href="https://www.thermofisher.com/us/en/home/life-science/cell-analysis/digital-solutions.html" target="_blank">digital-solutions.html</a>
+</div>
+<img src="screenshots/cards-v7.jpeg" alt="Cards V7" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<!-- Cards V8 -->
+<div class="vc2" id="cards-v8">
+<div class="vh"><h3>V8: Icon Value Props (3-up)</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">3 cards with icon/illustration at top, title, and description. Used for value propositions, feature highlights, and "why choose us" sections. Icons are typically SVG or small illustrations.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Icons are centered above text</li><li>Consistent icon sizing (48–64px)</li><li>3-column layout on desktop</li><li>Icons render as SVG for crisp display at all sizes</li><li>No CTA link required (informational only)</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/bioproduction/about.html" target="_blank">bioprocessing/about.html</a></div>
+<img src="screenshots/cards-v8.jpeg" alt="Cards V8" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<!-- Cards V9 -->
+<div class="vc2" id="cards-v9">
+<div class="vh"><h3>V9: Promotion Cards with Badge</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Cards with promotional badge overlay (e.g., "SALE", "NEW"), product image, title, and discount/promotion info. Used in promotional landing pages and deal sections.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Badge renders as overlay in top-left or top-right corner of card</li><li>Badge has distinct visual treatment (bright color, rounded)</li><li>Promotion details (discount %, savings) clearly displayed</li><li>Standard card interactions maintained</li><li>Badge does not obscure critical card content</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/global/forms/promotions/save-now.html" target="_blank">promotions/save-now.html</a></div>
+<img src="screenshots/cards-v9.jpeg" alt="Cards V9" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<!-- Cards V10 -->
+<div class="vc2" id="cards-v10">
+<div class="vh"><h3>V10: Tech Reference Cards</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Cards linking to technical documents and resources. Features document type icon (PDF, video, guide), title, and brief description. Used in resource library and technical reference sections.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Document type icon clearly indicates resource format</li><li>Title links to downloadable resource or resource page</li><li>File format/size displayed if applicable</li><li>Consistent card layout regardless of resource type</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/technical-resources.html" target="_blank">technical-reference-library.html</a></div>
+<img src="screenshots/cards-v10.jpeg" alt="Cards V10" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<!-- Cards V11 -->
+<div class="vc2" id="cards-v11">
+<div class="vh"><h3>V11: Icon Cards (Decorative)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd">
+<p class="desc">Legacy cards with decorative icon graphics, title, and description. Different DOM structure from V8 (uses legacy parsys patterns). Icons are larger decorative graphics rather than small UI icons.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Decorative icons render at correct size and position</li><li>Legacy DOM structure properly handled by EDS block</li><li>Cards align in grid despite legacy markup</li><li>Fallback styles if icons fail to load</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html" target="_blank">gibco-cell-culture-basics.html</a></div>
+<img src="screenshots/cards-v11.jpeg" alt="Cards V11" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+</div></div>
+
+<!-- ===================== BLOCK 3: COLUMNS ===================== -->
+<div class="bs" id="columns">
+<div class="bh"><h2>3. Columns</h2><div class="bm"><span>7 Variations</span><span>Complexity: Simple</span><span>Est: 2–3 dev days</span><span>Priority: P0</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Columns blocks create multi-column layouts for side-by-side content presentation. Used extensively for text+image pairs, comparison content, and page structure. Variations differ primarily in column ratios and DOM implementation (Modern CSS Grid vs Legacy parsys column controls).</div>
+
+<div class="vc2" id="columns-v1">
+<div class="vh"><h3>V1: 50/50 Text-Left Image-Right</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Two equal columns — text content on the left, supporting image on the right. The most common column layout for explanatory content sections.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-p-columns</code></td><td>CSS Grid/Flexbox 2-col container</td></tr>
+<tr><td>Left Column</td><td><code>.cmp-p-columns__left</code></td><td>Text: h2, paragraphs, optional CTA</td></tr>
+<tr><td>Right Column</td><td><code>.cmp-p-columns__right</code></td><td>Image or media content</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Columns render at equal 50/50 width on desktop</li><li>Vertical alignment centered between columns</li><li>Image fills column width with maintained aspect ratio</li><li>Text column supports rich text (headings, lists, links)</li><li>Stacks on mobile: text above, image below</li><li>No horizontal overflow</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">Optional CTA link in text column. Image may be clickable (opens lightbox or navigates).</div></div>
+<div class="ii"><div class="tp">Lazy Load</div><div class="dt">Column images use loading="lazy" if below the fold.</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>Single column stack</li><li>Text above, image below</li><li>Full-width</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>50/50 maintained but tighter spacing</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>50/50, 30–40px gap</li><li>Max-width 1200px</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>Reading order matches visual order (left → right) in DOM</li><li>On mobile stack, text comes first (content priority)</li><li>Images have alt text</li><li>Semantic heading hierarchy maintained in text column</li></ul></div>
+<div class="ds"><h4>Authoring Requirements</h4>
+<table class="at"><tr><th>Field</th><th>Required</th><th>Type</th><th>Validation</th></tr>
+<tr><td>Left Column Content</td><td class="req">Required *</td><td>Rich Text</td><td>H2 + paragraphs</td></tr>
+<tr><td>Right Column Image</td><td class="req">Required *</td><td>Image</td><td>Min 600×400px</td></tr>
+</table></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/bioproduction.html" target="_blank">bioprocessing.html</a></div>
+<img src="screenshots/columns-v1.jpeg" alt="Columns V1" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="columns-v2">
+<div class="vh"><h3>V2: 50/50 Image-Left Text-Right</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Reversed version of V1 — image on the left, text content on the right. Used to alternate visual rhythm when multiple column sections appear on the same page.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Image renders in left column, text in right</li><li>Mirror layout of V1 with same spacing/sizing rules</li><li>On mobile: image stacks above text</li><li>Alternating V1/V2 creates visual zigzag pattern</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/bioproduction/about.html" target="_blank">bioprocessing/about.html</a></div>
+<img src="screenshots/columns-v2.jpeg" alt="Columns V2" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="columns-v3">
+<div class="vh"><h3>V3: 75/25 Asymmetric</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Asymmetric layout with main content at 75% width and sidebar/supplementary content at 25%. Used for main content + sidebar patterns.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Main column renders at ~75% width</li><li>Sidebar column at ~25% width</li><li>On mobile both stack to full-width</li><li>Sidebar content doesn't wrap awkwardly at tablet widths</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/electron-microscopy/products/scanning-electron-microscopes/volumescope-2-sem.html" target="_blank">volumescope-2-sem.html</a></div>
+<img src="screenshots/columns-v3.jpeg" alt="Columns V3" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="columns-v4">
+<div class="vh"><h3>V4: Legacy 2-col (lt0)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Legacy AEM Classic 2-column layout using parsys column control with cq-colctrl-lt0 class. Float-based layout with parsys containers in each column.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Control</td><td><code>.cq-colctrl-lt0</code></td><td>Legacy column control marker (2-col equal)</td></tr>
+<tr><td>Column</td><td><code>.parsys_column</code></td><td>Each column is a parsys container</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Two columns render at equal width</li><li>Legacy float-based layout doesn't break with modern CSS reset</li><li>Parsys content within columns renders correctly</li><li>Clearfix applied to prevent float collapse</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/analytical-chemistry/chromatography.html" target="_blank">chromatography.html</a></div>
+<img src="screenshots/columns-v4.jpeg" alt="Columns V4" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="columns-v5">
+<div class="vh"><h3>V5: Legacy 3-col (lt3)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Legacy 3-column layout using cq-colctrl-lt3 class. Three equal parsys column containers.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Three columns at equal ~33% width</li><li>Legacy markup properly handled</li><li>Responsive collapse to single column on mobile</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/electron-microscopy.html" target="_blank">electron-microscopy.html</a></div>
+<img src="screenshots/columns-v5.jpeg" alt="Columns V5" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="columns-v6">
+<div class="vh"><h3>V6: Legacy Asymmetric (lt7/lt8)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd">
+<p class="desc">Asymmetric legacy layouts using lt7 (70/30) or lt8 (30/70) column controls. Different proportions for content emphasis.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Asymmetric widths render as specified (70/30 or 30/70)</li><li>Content in narrow column doesn't overflow</li><li>Stacks to full-width on mobile</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html" target="_blank">protein-assays-analysis.html</a></div>
+</div></div></div>
+
+<div class="vc2" id="columns-v7">
+<div class="vh"><h3>V7: Bordered 4-col (bordered-lt4)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd">
+<p class="desc">4-column legacy layout with visible borders/dividers between columns. Used for structured content comparison or feature listings.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>4 equal columns with visible vertical separators</li><li>Border color matches design system</li><li>Borders hidden on mobile when stacked</li><li>Content aligned within each column</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/cell-analysis/digital-solutions.html" target="_blank">digital-solutions.html</a></div>
+</div></div></div>
+
+</div></div>
+
+<!-- ===================== BLOCK 4: TEASER ===================== -->
+<div class="bs" id="teaser">
+<div class="bh"><h2>4. Teaser</h2><div class="bm"><span>5 Variations</span><span>Complexity: Simple–Medium</span><span>Est: 2–4 dev days</span><span>Priority: P1</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Teasers are promotional content blocks used to drive engagement. They range from the global header promo bar to full-width image-backed promotional sections. The dm-dynamic-offer class on some teasers indicates server-side personalization via Adobe Target. Found on 7+ page types.</div>
+
+<div class="vc2" id="teaser-v1">
+<div class="vh"><h3>V1: Header Promo Bar</h3><div class="vb2"><span class="badge badge-global">Global</span></div></div>
+<div class="vbd">
+<p class="desc">Thin bar at the very top of every page with rotating promotional messages and CTA links. ~40px height, dark background. Auto-rotates through multiple offers. Present site-wide.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Renders above global header at ~40px height</li><li>Promotional text is visible and CTA link is clickable</li><li>Auto-rotates between offers (3–5 second interval)</li><li>Can be dismissed/closed by user (persists via cookie)</li><li>Does not shift layout on page load (CLS prevention)</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Click</div><div class="dt">CTA link navigates to promotional landing page.</div></div>
+<div class="ii"><div class="tp">Auto-rotate</div><div class="dt">Cycles through 2–4 promotional messages every 3–5 seconds.</div></div>
+<div class="ii"><div class="tp">Dismiss</div><div class="dt">Close button hides bar, sets cookie to prevent re-showing.</div></div>
+</div></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://www.thermofisher.com/us/en/home.html" target="_blank">All pages (global)</a></div></div>
+</div></div>
+
+<div class="vc2" id="teaser-v2">
+<div class="vh"><h3>V2: Image-Background Full-Width</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Full-width background image with centered text overlay (h2, description, CTA button). Used mid-page to break content flow with a promotional message. Similar to hero but appears within the content body.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-teaser / .dm-dynamic-offer.dm-img-bkg</code></td><td>AEM teaser with optional personalization</td></tr>
+<tr><td>Image</td><td><code>CSS background-image</code></td><td>Full-width background</td></tr>
+<tr><td>Content</td><td><code>.cmp-teaser__content</code></td><td>Centered text + CTA overlay</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Full-width image background with proper aspect ratio</li><li>Text overlay centered and readable</li><li>CTA button prominent and clickable</li><li>Supports personalized content (Adobe Target integration)</li><li>Responsive image scaling</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/clinical.html" target="_blank">clinical.html</a></div>
+<img src="screenshots/teaser-v2.jpeg" alt="Teaser V2" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="teaser-v3">
+<div class="vh"><h3>V3: Image-Right Split</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">50/50 split layout — text content (h2, paragraph, CTA) on the left, image on the right. Not a full-width background; the image is contained to the right half.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>50/50 split on desktop</li><li>Text left, image right</li><li>CTA button below text</li><li>Stacks on mobile (text top, image bottom)</li><li>Image maintains aspect ratio</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://www.thermofisher.com/us/en/home/clinical.html" target="_blank">clinical.html</a></div></div>
+</div></div>
+
+<div class="vc2" id="teaser-v4">
+<div class="vh"><h3>V4: Mid-Page Promotional</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Narrower promotional band with gradient background, h2 heading, and CTA. Used between content sections as visual separator and promotional driver.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Renders as horizontal band (100–150px height)</li><li>Gradient background renders correctly</li><li>H2 and CTA are visible and clickable</li><li>Does not disrupt content flow</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html" target="_blank">molecular-biology.html</a></div></div>
+</div></div>
+
+<div class="vc2" id="teaser-v5">
+<div class="vh"><h3>V5: Dark Gradient Overlay</h3><div class="vb2"><span class="badge badge-modern">Modern</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd">
+<p class="desc">Similar to V2 but with a pronounced dark gradient overlay for better text readability. Used when background images have high contrast or busy patterns.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Gradient overlay ensures WCAG AA contrast for all text</li><li>Overlay does not completely obscure the background image</li><li>Text and CTA clearly visible on all devices</li><li>Gradient direction appropriate for text placement</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://www.thermofisher.com/us/en/home/clinical/clinical-translational-research.html" target="_blank">clinical-translational-research.html</a></div></div>
+</div></div>
+
+</div></div>
+
+<!-- ===================== BLOCK 5: FORM ===================== -->
+<div class="bs" id="form">
+<div class="bh"><h2>5. Form</h2><div class="bm"><span>4 Variations</span><span>Complexity: Complex</span><span>Est: 5–8 dev days</span><span>Priority: P1</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Form blocks handle lead capture, contact requests, sample orders, and literature downloads. They integrate with multiple backend systems (Eloqua, AEM Forms, Pragma). Form variations differ significantly in DOM structure, validation approach, and backend integration. All forms require careful EDS reimplementation for data collection continuity.</div>
+
+<div class="vc2" id="form-v1">
+<div class="vh"><h3>V1: Modern Pragma Form</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">Modern AEM Core form component built with the Pragma form framework. Fields include first name, last name, email, company, country dropdown, optional phone. Includes CAPTCHA validation and terms checkbox.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Form Container</td><td><code>.cmp-form</code></td><td>AEM Core form wrapper</td></tr>
+<tr><td>Text Input</td><td><code>.cmp-form-text__text</code></td><td>Standard text input fields</td></tr>
+<tr><td>Dropdown</td><td><code>.cmp-form-options__field--drop-down</code></td><td>Country/region selector</td></tr>
+<tr><td>Checkbox</td><td><code>.cmp-form-options__field--checkbox</code></td><td>Terms acceptance, opt-in</td></tr>
+<tr><td>Submit</td><td><code>.cmp-form-button</code></td><td>Submit button</td></tr>
+<tr><td>CAPTCHA</td><td><code>.g-recaptcha</code></td><td>Google reCAPTCHA v2/v3</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>All required fields show validation errors when submitted empty</li>
+<li>Email field validates format (regex pattern match)</li>
+<li>Country dropdown populates with full country list</li>
+<li>CAPTCHA renders and validates before submission</li>
+<li>Terms checkbox must be checked before submission</li>
+<li>Success message displays after successful submission</li>
+<li>Form data submits to correct backend endpoint</li>
+<li>Inline validation on blur for each field</li>
+</ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Submit</div><div class="dt">Validates all fields → shows errors or submits data → displays success/error message. Button shows loading spinner during submission.</div></div>
+<div class="ii"><div class="tp">Validation</div><div class="dt">Real-time validation on blur. Red border + error message below field. Field label turns red.</div></div>
+<div class="ii"><div class="tp">Focus</div><div class="dt">Input fields: blue border highlight. Label floats above field (material design style).</div></div>
+</div></div>
+<div class="ds"><h4>Responsive Behavior</h4>
+<div class="rg">
+<div class="rc"><h5>Mobile</h5><div class="bp">&lt; 768px</div><ul><li>All fields full-width, stacked</li><li>Touch-friendly input sizes (min 44px height)</li><li>Country dropdown uses native select on mobile</li></ul></div>
+<div class="rc"><h5>Tablet</h5><div class="bp">768–1024px</div><ul><li>2-column layout for short fields (first/last name side by side)</li></ul></div>
+<div class="rc"><h5>Desktop</h5><div class="bp">&gt; 1024px</div><ul><li>2-column for name fields</li><li>Single column for long fields</li><li>Max-width 600px form container</li></ul></div>
+</div></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al">
+<li>All inputs have associated &lt;label&gt; elements with for/id pairing</li>
+<li>Required fields indicated with aria-required="true" and visual asterisk</li>
+<li>Error messages linked via aria-describedby</li>
+<li>Form has role="form" with aria-label</li>
+<li>CAPTCHA has accessible alternative</li>
+<li>Tab order follows visual field order</li>
+</ul></div>
+<div class="ds"><h4>Authoring Requirements</h4>
+<table class="at"><tr><th>Field</th><th>Required</th><th>Type</th><th>Validation</th></tr>
+<tr><td>First Name</td><td class="req">Required *</td><td>Text input</td><td>2–50 chars, letters/spaces only</td></tr>
+<tr><td>Last Name</td><td class="req">Required *</td><td>Text input</td><td>2–50 chars, letters/spaces only</td></tr>
+<tr><td>Email</td><td class="req">Required *</td><td>Email input</td><td>Valid email format</td></tr>
+<tr><td>Company</td><td class="req">Required *</td><td>Text input</td><td>2–100 chars</td></tr>
+<tr><td>Country</td><td class="req">Required *</td><td>Dropdown</td><td>Must select valid country</td></tr>
+<tr><td>Phone</td><td class="opt">Optional</td><td>Tel input</td><td>Valid phone format</td></tr>
+<tr><td>Terms Checkbox</td><td class="req">Required *</td><td>Checkbox</td><td>Must be checked</td></tr>
+</table></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/global/forms/pcr-innovation.html" target="_blank">pcr-innovation.html</a></div>
+<img src="screenshots/form-v1.jpeg" alt="Form V1" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="form-v2">
+<div class="vh"><h3>V2: Legacy Eloqua Form</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Integration with Oracle Eloqua marketing automation platform. Similar form fields but different DOM structure with Eloqua-specific tracking scripts, hidden fields, and form action endpoints. Used for lead generation and literature requests.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>Form submits to Eloqua endpoint successfully</li>
+<li>Hidden tracking fields (elqFormName, elqSiteId) are present</li>
+<li>Eloqua cookie tracking initialized</li>
+<li>Field validation matches Eloqua configuration</li>
+<li>Redirect to thank-you page after successful submission</li>
+<li>Error handling for submission failures</li>
+</ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/global/forms/gc-columns-literature-request.html" target="_blank">gc-columns-literature-request.html</a></div>
+<img src="screenshots/form-v2.jpeg" alt="Form V2" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="form-v3">
+<div class="vh"><h3>V3: Experience Fragment Form</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd">
+<p class="desc">AEM Experience Fragment embedding a form component. Often loaded asynchronously via XHR. Can appear in sidebars, modals, or inline within content. The fragment pattern allows reuse across multiple pages.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>Fragment loads asynchronously without blocking page render</li>
+<li>Form renders correctly within the fragment container</li>
+<li>All form functionality (validation, submission) works within fragment context</li>
+<li>Fragment respects container width constraints</li>
+<li>Loading state shown while fragment loads</li>
+</ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/clinical/clinical-translational-research.html" target="_blank">clinical-translational-research.html</a></div>
+<img src="screenshots/form-v3.jpeg" alt="Form V3" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="form-v4">
+<div class="vh"><h3>V4: Inline Request Form</h3><div class="vb2"><span class="badge badge-modern">Modern</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd">
+<p class="desc">Compact inline form for quick requests (sample request, quote request). Fewer fields than V1/V2, embedded directly within the content flow rather than in a dedicated form section. Designed for low-friction conversion.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl">
+<li>Form is compact (3–4 fields max)</li>
+<li>Renders inline within content without dedicated section</li>
+<li>Quick submission flow (minimal steps)</li>
+<li>Success confirmation appears inline</li>
+<li>Does not disrupt surrounding content layout</li>
+</ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html" target="_blank">protein-assays-analysis.html</a></div>
+</div></div></div>
+
+</div></div>
+
+</div><!-- end container -->
+</body>
+</html>

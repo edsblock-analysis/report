@@ -1,0 +1,613 @@
+<html>
+<head>
+<title>Report 2: Detailed Block Breakdown - Thermo Fisher AEM-to-EDS Migration</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1400px; margin: 0 auto; padding: 20px; overflow-x: hidden; }
+h1 { color: #0066cc; border-bottom: 3px solid #0066cc; padding-bottom: 10px; }
+h2 { color: #333; margin-top: 40px; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; vertical-align: top; }
+th { background: #0066cc; color: white; }
+tr:nth-child(even) { background: #f8f9fa; }
+.new-tag { color: #dc3545; font-weight: bold; font-size: 0.85em; }
+.screenshot-cell { text-align: center; width: 320px; }
+.screenshot-cell img { max-width: 300px; max-height: 200px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; }
+.screenshot-cell img:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+.block-header { display: flex; align-items: center; gap: 12px; }
+.complexity-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.85em; font-weight: bold; color: white; }
+.complexity-simple { background: #28a745; }
+.complexity-medium { background: #ffc107; color: #333; }
+.complexity-complex { background: #dc3545; }
+.action-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; background: #e3f2fd; color: #0066cc; }
+a { color: #0066cc; }
+.full-screenshot { display: block; margin: 10px 0; }
+.full-screenshot img { max-width: 100%; max-height: 400px; border: 1px solid #ddd; border-radius: 4px; }
+p.meta { color: #666; }
+.top-nav{background:linear-gradient(90deg,#1a237e 0%,#0d47a1 100%);box-shadow:0 2px 8px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box}
+.top-nav-inner{margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.top-nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;transition:all .2s;background:rgba(255,255,255,.08)}
+.top-nav a:hover{background:rgba(255,255,255,.2);color:#fff}
+.top-nav .sep{color:rgba(255,255,255,.5);font-size:13px}
+.top-nav .project{color:rgba(255,255,255,.9);font-size:14px;font-weight:500}
+</style>
+</head>
+<body>
+<nav class="top-nav"><div class="top-nav-inner"><a href="index.html"><span style="font-size:18px">&#8962;</span> Dashboard Home</a><span class="sep">·</span><span class="project">Thermo Fisher AEM &rarr; EDS Migration</span></div></nav>
+
+<h1>Report 2: Detailed Block Breakdown with Screenshots</h1>
+<p class="meta"><b>Site:</b> thermofisher.com | <b>Date:</b> 2026-03-20 | <b>Blocks:</b> 35 | <b>Variations:</b> 87 | <b>Screenshots:</b> 59</p>
+
+<!-- BLOCK 1: HERO -->
+<h2>1. hero <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">SPLIT into 3 EDS blocks</span></h2>
+<p>7 variants across Modern, Legacy, and Corporate platforms</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Platform</th><th>DOM Signature</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Page heading (standard)</td><td>H1 + optional subtitle + breadcrumb</td><td>Modern</td><td><code>.cmp-p-pageheadinghero</code></td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/cell-analysis.html">Cell Analysis</a></td>
+<td class="screenshot-cell"><img src="screenshots/hero-v1.jpeg" alt="hero-v1"></td>
+</tr>
+<tr>
+<td>V2: Foreground product image</td><td>H1 + product photo overlay</td><td>Modern</td><td><code>.cmp-pageheadinghero--hasForegroundImage</code></td>
+<td><a href="https://www.thermofisher.com/us/en/home/electron-microscopy/products/scanning-electron-microscopes/volumescope-2-sem.html">VolumeScope SEM</a></td>
+<td class="screenshot-cell"><img src="screenshots/hero-v2.jpeg" alt="hero-v2"></td>
+</tr>
+<tr>
+<td>V3: Gradient overlay</td><td>H1 on dark gradient background</td><td>Modern</td><td><code>.cmp-pageheadinghero__gradient-black</code></td>
+<td><a href="https://www.thermofisher.com/us/en/home/industrial/environmental.html">Environmental</a></td>
+<td class="screenshot-cell"><img src="screenshots/hero-v3.jpeg" alt="hero-v3"></td>
+</tr>
+<tr>
+<td>V4: With CTA buttons</td><td>H1 + subtitle + action buttons</td><td>Modern</td><td><code>.cmp-pageheadinghero + .cmp-ctaitem</code></td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/antibodies.html">Antibodies</a></td>
+<td class="screenshot-cell"><img src="screenshots/hero-v4.jpeg" alt="hero-v4"></td>
+</tr>
+<tr>
+<td>V5: Thinbanner (legacy)</td><td>Text-only H1 banner</td><td>Legacy</td><td><code>.thinbanner.thinbanner-info</code></td>
+<td><a href="https://www.thermofisher.com/us/en/home/industrial/chromatography.html">Chromatography</a></td>
+<td class="screenshot-cell"><img src="screenshots/hero-v5.jpeg" alt="hero-v5"></td>
+</tr>
+<tr>
+<td>V6: Mondrian hero</td><td>Multi-slot promo grid (1 large + 2 small)</td><td>Legacy</td><td><code>.mondrian.section</code></td>
+<td><a href="https://www.thermofisher.com/us/en/home/clinical.html">Clinical</a></td>
+<td class="screenshot-cell"><img src="screenshots/hero-v6.jpeg" alt="hero-v6"></td>
+</tr>
+<tr>
+<td>V7: Corporate hero</td><td>Custom corporate variants</td><td>Corporate</td><td><code>.cmp-p-herotext / .cmp-p-banner</code></td>
+<td><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html">CSR Landing</a></td>
+<td class="screenshot-cell"><img src="screenshots/hero-v7.jpeg" alt="hero-v7"></td>
+</tr>
+</table>
+
+<!-- BLOCK 2: CARDS -->
+<h2>2. cards <span class="complexity-badge complexity-medium">Medium-High</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>11 variants — single block with variant classes (2/3/4-up, overlay, icon, text-only)</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Platform</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Image+Title+Desc+CTA (3-up)</td><td>Standard content card in 3-column grid</td><td>Modern</td>
+<td><a href="https://www.thermofisher.com/us/en/home/bioprocessing.html">Bioprocessing</a></td>
+<td class="screenshot-cell"><img src="screenshots/cards-v1.jpeg" alt="cards-v1"></td>
+</tr>
+<tr>
+<td>V2: Image+Title+Desc+CTA (4-up)</td><td>Compact 4-column variant</td><td>Modern</td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/lab-equipment.html">Lab Equipment</a></td>
+<td class="screenshot-cell"><img src="screenshots/cards-v2.jpeg" alt="cards-v2"></td>
+</tr>
+<tr>
+<td>V3: Image+Title+Desc+CTA (2-up)</td><td>Wide 2-column variant</td><td>Modern</td>
+<td><a href="https://www.thermofisher.com/us/en/home/industrial/pharma-biopharma.html">Pharma</a></td>
+<td class="screenshot-cell"><img src="screenshots/cards-v3.jpeg" alt="cards-v3"></td>
+</tr>
+<tr>
+<td>V4: Text overlay on dark image</td><td>Featured resource with dark overlay</td><td>Modern</td>
+<td><a href="https://www.thermofisher.com/us/en/home/bioprocessing/resources.html">Bioprocessing Resources</a></td>
+<td class="screenshot-cell"><img src="screenshots/cards-v4.jpeg" alt="cards-v4"></td>
+</tr>
+<tr>
+<td>V5: Text-only (no image)</td><td>H3 + paragraph, no image</td><td>Both</td>
+<td><a href="https://www.thermofisher.com/us/en/home/brands/invitrogen.html">Invitrogen</a></td>
+<td class="screenshot-cell"><img src="screenshots/cards-v5.jpeg" alt="cards-v5"></td>
+</tr>
+<tr>
+<td>V6: Product showcase</td><td>Product thumbnail + name below</td><td>Both</td>
+<td><a href="https://www.thermofisher.com/us/en/home/brands/invitrogen.html">Invitrogen</a></td>
+<td class="screenshot-cell"><em>Same page as V5</em></td>
+</tr>
+<tr>
+<td>V7: Category cards (legacy 4-col)</td><td>Heading + text per column</td><td>Legacy</td>
+<td><a href="https://www.thermofisher.com/us/en/home/about-us/events/digital-solutions.html">Digital Solutions Events</a></td>
+<td class="screenshot-cell"><img src="screenshots/cards-v7.jpeg" alt="cards-v7"></td>
+</tr>
+<tr>
+<td>V8: Icon value props (3-up)</td><td>Icon image + H3 + description, no CTA</td><td>Modern</td>
+<td><a href="https://www.thermofisher.com/us/en/home/bioprocessing/about.html">Bioprocessing About</a></td>
+<td class="screenshot-cell"><img src="screenshots/cards-v8.jpeg" alt="cards-v8"></td>
+</tr>
+<tr>
+<td>V9: Promotion cards with badge</td><td>Image + badge + title + CTA</td><td>Modern</td>
+<td><a href="https://www.thermofisher.com/us/en/home/products-and-services/promotions/save-now.html">Promotions</a></td>
+<td class="screenshot-cell"><img src="screenshots/cards-v9.jpeg" alt="cards-v9"></td>
+</tr>
+<tr>
+<td>V10: Tech reference cards</td><td>Image + title + bullet list + View all</td><td>Modern</td>
+<td><a href="https://www.thermofisher.com/us/en/home/technical-resources/technical-reference-library.html">Tech Reference Library</a></td>
+<td class="screenshot-cell"><img src="screenshots/cards-v10.jpeg" alt="cards-v10"></td>
+</tr>
+<tr>
+<td>V11: Icon cards (decorative) <span class="new-tag">[NEW]</span></td><td>Small decorative icon + H2 + description + CTA (3x3 grid)</td><td>Legacy</td>
+<td><a href="https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html">Cell Culture Basics</a></td>
+<td class="screenshot-cell"><img src="screenshots/cards-v11.jpeg" alt="cards-v11"></td>
+</tr>
+</table>
+
+<!-- BLOCK 3: COLUMNS -->
+<h2>3. columns <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>7 variants — 2/3/4-col + asymmetric (lt7, lt8, bordered-lt4)</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Platform</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: 50/50 text-left image-right</td><td>Standard side-by-side</td><td>Modern</td>
+<td><a href="https://www.thermofisher.com/us/en/home/bioprocessing.html">Bioprocessing</a></td>
+<td class="screenshot-cell"><img src="screenshots/columns-v1.jpeg" alt="columns-v1"></td>
+</tr>
+<tr>
+<td>V2: 50/50 image-left text-right</td><td>Reversed layout</td><td>Modern</td>
+<td><a href="https://www.thermofisher.com/us/en/home/bioprocessing/about.html">Bioprocessing About</a></td>
+<td class="screenshot-cell"><em>See cards-v8 page</em></td>
+</tr>
+<tr>
+<td>V3: 75/25 asymmetric</td><td>Content + sidebar split</td><td>Modern</td>
+<td><a href="https://www.thermofisher.com/us/en/home/electron-microscopy/products/scanning-electron-microscopes/volumescope-2-sem.html">VolumeScope</a></td>
+<td class="screenshot-cell"><em>See hero-v2 page</em></td>
+</tr>
+<tr>
+<td>V4: Legacy 2-col (cq-colctrl-lt0)</td><td>Equal 2-col parsys</td><td>Legacy</td>
+<td><a href="https://www.thermofisher.com/us/en/home/industrial/chromatography.html">Chromatography</a></td>
+<td class="screenshot-cell"><img src="screenshots/columns-v4.jpeg" alt="columns-v4"></td>
+</tr>
+<tr>
+<td>V5: Legacy 3-col (cq-colctrl-lt3)</td><td>Equal 3-col parsys</td><td>Legacy</td>
+<td><a href="https://www.thermofisher.com/us/en/home/electron-microscopy.html">EM Landing</a></td>
+<td class="screenshot-cell"><img src="screenshots/columns-v5.jpeg" alt="columns-v5"></td>
+</tr>
+<tr>
+<td>V6: Legacy asymmetric (lt7, lt8) <span class="new-tag">[NEW]</span></td><td>70/30 and 80/20 splits</td><td>Legacy</td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html">Protein Assays</a></td>
+<td class="screenshot-cell"><img src="screenshots/columns-v6.jpeg" alt="columns-v6"></td>
+</tr>
+<tr>
+<td>V7: Bordered 4-col (bordered-lt4) <span class="new-tag">[NEW]</span></td><td>4-col with borders between columns</td><td>Legacy</td>
+<td><a href="https://www.thermofisher.com/us/en/home/digital-solutions.html">Digital Solutions</a></td>
+<td class="screenshot-cell"><img src="screenshots/columns-v7.jpeg" alt="columns-v7"></td>
+</tr>
+</table>
+
+<!-- BLOCK 4: TEASER -->
+<h2>4. teaser <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>5 variants — bar, full-image, split-image, promotional, gradient-dark</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr><td>V1: Header promo bar</td><td>Thin top-of-page promotional banner</td><td>All pages (global)</td><td class="screenshot-cell"><em>Visible in most screenshots</em></td></tr>
+<tr>
+<td>V2: Image-background full-width</td><td>Text overlaid on background image</td>
+<td><a href="https://www.thermofisher.com/us/en/home/clinical.html">Clinical</a></td>
+<td class="screenshot-cell"><img src="screenshots/teaser-v2.jpeg" alt="teaser-v2"></td>
+</tr>
+<tr><td>V3: Image-right split</td><td>Text left + image right</td><td><a href="https://www.thermofisher.com/us/en/home/clinical.html">Clinical</a></td><td class="screenshot-cell"><em>See hero-v6 page</em></td></tr>
+<tr>
+<td>V4: Mid-page promotional</td><td>H2 + text + CTA with background</td>
+<td><a href="https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html">Molecular Biology</a></td>
+<td class="screenshot-cell"><img src="screenshots/teaser-v4.jpeg" alt="teaser-v4"></td>
+</tr>
+<tr>
+<td>V5: Dark gradient overlay <span class="new-tag">[NEW]</span></td><td>Text on dark gradient over image</td>
+<td><a href="https://www.thermofisher.com/us/en/home/clinical/clinical-translational-research.html">Translational Research</a></td>
+<td class="screenshot-cell"><img src="screenshots/teaser-v5.jpeg" alt="teaser-v5"></td>
+</tr>
+</table>
+
+<!-- BLOCK 5: FORM -->
+<h2>5. form <span class="complexity-badge complexity-complex">Complex</span> <span class="action-tag">SPLIT into 2</span></h2>
+<p>4 variants — form (standard+XF) + form-complex (Eloqua)</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Modern Pragma form</td><td>7-8 fields, clean layout</td>
+<td><a href="https://www.thermofisher.com/us/en/home/global/forms/life-science/pcr-innovation.html">PCR Innovation Form</a></td>
+<td class="screenshot-cell"><img src="screenshots/form-v1.jpeg" alt="form-v1"></td>
+</tr>
+<tr>
+<td>V2: Legacy Eloqua form</td><td>20+ fields, reCAPTCHA, conditional logic</td>
+<td><a href="https://www.thermofisher.com/us/en/home/global/forms/industrial/gc-columns-literature-request.html">GC Columns Form</a></td>
+<td class="screenshot-cell"><img src="screenshots/form-v2.jpeg" alt="form-v2"></td>
+</tr>
+<tr><td>V3: Experience Fragment form</td><td>Shared XF-embedded form</td><td><a href="https://www.thermofisher.com/us/en/home/clinical/clinical-translational-research.html">Translational Research</a></td><td class="screenshot-cell"><em>See teaser-v5 page</em></td></tr>
+<tr>
+<td>V4: Inline request form <span class="new-tag">[NEW]</span></td><td>2 embedded forms on product pages</td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html">Protein Assays</a></td>
+<td class="screenshot-cell"><em>See columns-v6 page</em></td>
+</tr>
+</table>
+
+<!-- BLOCK 6: SIDEBAR-NAV -->
+<h2>6. sidebar-nav <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>3 variants — auto-nav, manual-nav, chapter-nav</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Auto-navigation tree</td><td>Auto-generated from page hierarchy</td>
+<td><a href="https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html">Molecular Biology</a></td>
+<td class="screenshot-cell"><img src="screenshots/sidebar-nav-v1.jpeg" alt="sidebar-nav-v1"></td>
+</tr>
+<tr>
+<td>V2: Manual left-nav</td><td>Manually authored link groups</td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/pcr.html">PCR</a></td>
+<td class="screenshot-cell"><img src="screenshots/sidebar-nav-v2.jpeg" alt="sidebar-nav-v2"></td>
+</tr>
+<tr>
+<td>V3: Chapter sidebar (7 groups) <span class="new-tag">[NEW]</span></td><td>Extensive grouped sidebar with 7 nav sections</td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/cloning.html">Cloning</a></td>
+<td class="screenshot-cell"><img src="screenshots/sidebar-nav-v3.jpeg" alt="sidebar-nav-v3"></td>
+</tr>
+</table>
+
+<!-- BLOCK 7: VIDEO -->
+<h2>7. video <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>4 variants — Brightcove player, video teaser, modern player, playlist</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Brightcove player (legacy)</td><td>Full video player embed</td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/pcr/real-time-pcr.html">Real-Time PCR</a></td>
+<td class="screenshot-cell"><img src="screenshots/video-v1.jpeg" alt="video-v1"></td>
+</tr>
+<tr><td>V2: Video teaser card</td><td>Thumbnail + play + duration + title</td><td><a href="https://www.thermofisher.com/us/en/home/electron-microscopy/products/scanning-electron-microscopes/volumescope-2-sem.html">VolumeScope</a></td><td class="screenshot-cell"><em>See hero-v2 page</em></td></tr>
+<tr>
+<td>V3: Modern Brightcove player</td><td>cmp-p-videoplayer wrapper</td>
+<td><a href="https://www.thermofisher.com/us/en/home/sustainable-design.html">Sustainable Design</a></td>
+<td class="screenshot-cell"><img src="screenshots/video-v3.jpeg" alt="video-v3"></td>
+</tr>
+<tr>
+<td>V4: Video with playlist <span class="new-tag">[NEW]</span></td><td>Brightcove player + sidebar playlist (7 videos)</td>
+<td><a href="https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html">Cell Culture Basics</a></td>
+<td class="screenshot-cell"><img src="screenshots/video-v4.jpeg" alt="video-v4"></td>
+</tr>
+</table>
+
+<!-- BLOCK 8: ACCORDION -->
+<h2>8. accordion <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>2 variants — Modern cmp-accordion + Legacy Bootstrap accordion</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Modern cmp-accordion</td><td>AEM Core Component accordion</td>
+<td><a href="https://www.thermofisher.com/us/en/home/products-and-services/services.html">Services</a></td>
+<td class="screenshot-cell"><img src="screenshots/accordion-v1.jpeg" alt="accordion-v1"></td>
+</tr>
+<tr>
+<td>V2: Legacy Bootstrap accordion <span class="new-tag">[NEW]</span></td><td>Bootstrap-style toggle accordion</td>
+<td><a href="https://www.thermofisher.com/us/en/home/digital-solutions.html">Digital Solutions</a></td>
+<td class="screenshot-cell"><img src="screenshots/accordion-v2.jpeg" alt="accordion-v2"></td>
+</tr>
+</table>
+
+<!-- BLOCK 9: TABS -->
+<h2>9. tabs <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>3 variants — pragma-tabs, nav-tabs, workflow-tabs</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr><td>V1: Pragma tabs</td><td>Toggle-based tab component</td><td>Global header/footer</td><td class="screenshot-cell"><em>Visible in most screenshots</em></td></tr>
+<tr>
+<td>V2: Content tabs (nav-tabs)</td><td>Tabbed content panels</td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/sequencing/sanger-sequencing.html">Sanger Sequencing</a></td>
+<td class="screenshot-cell"><img src="screenshots/tabs-v2.jpeg" alt="tabs-v2"></td>
+</tr>
+<tr>
+<td>V3: Workflow tab container <span class="new-tag">[NEW]</span></td><td>Step-based workflow tabs (tabstep)</td>
+<td><a href="https://www.thermofisher.com/us/en/home/digital-solutions.html">Digital Solutions</a></td>
+<td class="screenshot-cell"><img src="screenshots/tabs-v3.jpeg" alt="tabs-v3"></td>
+</tr>
+</table>
+
+<!-- BLOCK 10: ANCHOR-NAV -->
+<h2>10. anchor-nav <span class="complexity-badge complexity-simple">Simple</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>3 variants — cmp-anchorlist, inline anchors, pipe-separated links</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: cmp-anchorlist (formal TOC)</td><td>Structured jump-link navigation</td>
+<td><a href="https://www.thermofisher.com/us/en/home/order.html">Order</a></td>
+<td class="screenshot-cell"><img src="screenshots/anchor-nav-v1.jpeg" alt="anchor-nav-v1"></td>
+</tr>
+<tr><td>V2: Inline anchor links</td><td>Pipe-separated text links</td><td><a href="https://www.thermofisher.com/us/en/home/bioprocessing.html">Bioprocessing</a></td><td class="screenshot-cell"><em>See cards-v1 page</em></td></tr>
+<tr>
+<td>V3: Pipe-separated link directory <span class="new-tag">[NEW]</span></td><td>Category headings with pipe-separated link lists</td>
+<td><a href="https://www.thermofisher.com/us/en/home/references/protocols.html">Protocols</a></td>
+<td class="screenshot-cell"><img src="screenshots/anchor-nav-v3.jpeg" alt="anchor-nav-v3"></td>
+</tr>
+</table>
+
+<!-- BLOCK 11: PRODUCT-SUB-NAV -->
+<h2>11. product-sub-nav <span class="complexity-badge complexity-complex">Complex</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>2 variants — sticky nav + manual/auto nav with dropdowns</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Sticky product nav</td><td>Manual + auto nav with tabs</td>
+<td><a href="https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html">Bioreactors</a></td>
+<td class="screenshot-cell"><img src="screenshots/product-sub-nav-v1.jpeg" alt="product-sub-nav-v1"></td>
+</tr>
+<tr>
+<td>V2: Manual/auto nav with dropdowns <span class="new-tag">[NEW]</span></td><td>Multi-level nav with dropdown support and active tracking</td>
+<td><a href="https://www.thermofisher.com/us/en/home/sustainable-design.html">Sustainable Design</a></td>
+<td class="screenshot-cell"><img src="screenshots/product-sub-nav-v2.jpeg" alt="product-sub-nav-v2"></td>
+</tr>
+</table>
+
+<!-- BLOCK 12: EVENT-TABLE -->
+<h2>12. event-table <span class="complexity-badge complexity-complex">Complex</span> <span class="action-tag">STANDALONE</span></h2>
+<p>1 variant — filterable event list with 20+ checkboxes, search, date formatting, pagination</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Filterable event list</td><td>20+ filter checkboxes + search + event rows</td>
+<td><a href="https://www.thermofisher.com/us/en/home/about-us/events.html">Events</a></td>
+<td class="screenshot-cell"><img src="screenshots/event-table-v1.jpeg" alt="event-table-v1"></td>
+</tr>
+</table>
+
+<!-- BLOCK 13: RESOURCES-GRID -->
+<h2>13. resources-grid <span class="complexity-badge complexity-simple">Simple</span> <span class="action-tag">FRAGMENT</span></h2>
+<p>1 variant — shared 4-up footer grid</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: 4-up icon+title+CTA footer</td><td>Standardized resource footer grid</td>
+<td><a href="https://www.thermofisher.com/us/en/home/bioprocessing.html">Bioprocessing</a></td>
+<td class="screenshot-cell"><img src="screenshots/resources-grid-v1.jpeg" alt="resources-grid-v1"></td>
+</tr>
+</table>
+
+<!-- BLOCK 14: SECTION-METADATA -->
+<h2>14. section-metadata (wells) <span class="complexity-badge complexity-simple">Simple</span> <span class="action-tag">MAP from wells</span></h2>
+<p>8 variants — CSS-only background/spacing styles on sections</p>
+<table>
+<tr><th>Variant</th><th>CSS Class</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr><td>V1: White background</td><td><code>.well-white</code></td><td><a href="https://www.thermofisher.com/us/en/home/chemicals/learning-center.html">Chemicals Learning</a></td><td class="screenshot-cell">—</td></tr>
+<tr>
+<td>V2: Blue-light background</td><td><code>.well-blue-light</code></td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/pcr.html">PCR</a></td>
+<td class="screenshot-cell"><img src="screenshots/section-meta-v2.jpeg" alt="section-meta-v2"></td>
+</tr>
+<tr><td>V3: Gray-lighter background</td><td><code>.well-gray-lighter</code></td><td><a href="https://www.thermofisher.com/us/en/home/life-science/sequencing/sanger-sequencing.html">Sanger Sequencing</a></td><td class="screenshot-cell"><em>See tabs-v2 page</em></td></tr>
+<tr><td>V4: Gray-light background</td><td><code>.well-gray-light</code></td><td>Legacy environmental pages</td><td class="screenshot-cell">—</td></tr>
+<tr><td>V5: Mini compact</td><td><code>.well-mini</code></td><td><a href="https://www.thermofisher.com/us/en/home/life-science/pcr.html">PCR</a></td><td class="screenshot-cell"><em>See section-meta-v2 page</em></td></tr>
+<tr><td>V6: Background image <span class="new-tag">[NEW]</span></td><td><code>.well-background-image</code></td><td><a href="https://www.thermofisher.com/us/en/home/life-science/cloning.html">Cloning</a></td><td class="screenshot-cell"><em>See sidebar-nav-v3 page</em></td></tr>
+<tr><td>V7: Page heading well <span class="new-tag">[NEW]</span></td><td><code>.wellPageHeading + .well-wrapper</code></td><td><a href="https://www.thermofisher.com/us/en/home/life-science/cloning.html">Cloning</a></td><td class="screenshot-cell"><em>See sidebar-nav-v3 page</em></td></tr>
+<tr><td>V8: Modern section container</td><td><code>.cmp-sectioncontainer + .cmp-sectiontitle</code></td><td><a href="https://www.thermofisher.com/us/en/home/order.html">Order</a></td><td class="screenshot-cell"><em>See anchor-nav-v1 page</em></td></tr>
+</table>
+
+<!-- BLOCK 15: EMBED -->
+<h2>15. embed <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>3 variants — LTRawHTML, 3D tours, experience fragments</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: LTRawHTML</td><td>Raw HTML injection</td>
+<td><a href="https://www.thermofisher.com/us/en/home/industrial/chromatography.html">Chromatography</a></td>
+<td class="screenshot-cell"><img src="screenshots/embed-v1.jpeg" alt="embed-v1"></td>
+</tr>
+<tr><td>V2: 3D tours</td><td>Interactive 3D product tours</td><td><a href="https://www.thermofisher.com/us/en/home/virtual/orbitrap-exploris-240-ms-3d-tour.html">Orbitrap 3D Tour</a></td><td class="screenshot-cell">—</td></tr>
+<tr><td>V3: Experience fragments</td><td>Shared experience fragments</td><td>Various pages</td><td class="screenshot-cell">—</td></tr>
+</table>
+
+<!-- BLOCK 16: TABLE -->
+<h2>16. table <span class="complexity-badge complexity-simple">Simple</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>2 variants — spec table + striped RTE table</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Spec table</td><td>Product specification table</td>
+<td><a href="https://www.thermofisher.com/us/en/home/industrial/chromatography/liquid-chromatography-lc/hplc-uhplc-systems/vanquish-tandem-lc-system-lc-lc-ms.html">Vanquish LC</a></td>
+<td class="screenshot-cell"><img src="screenshots/table-v1.jpeg" alt="table-v1"></td>
+</tr>
+<tr><td>V2: Striped RTE table</td><td>Rich text editor table with striped rows</td><td>Various legacy pages</td><td class="screenshot-cell">—</td></tr>
+</table>
+
+<!-- BLOCK 17: QUOTE -->
+<h2>17. quote / testimonial <span class="complexity-badge complexity-simple">Simple</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>2 variants — CEO letter + customer testimonial</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: CEO letter</td><td>Executive quote block</td>
+<td><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html">CSR</a></td>
+<td class="screenshot-cell"><img src="screenshots/quote-v1.jpeg" alt="quote-v1"></td>
+</tr>
+<tr><td>V2: Customer testimonial</td><td>Customer quote with attribution</td><td><a href="https://www.thermofisher.com/us/en/home/life-science/pcr/real-time-pcr.html">Real-Time PCR</a></td><td class="screenshot-cell"><em>See video-v1 page</em></td></tr>
+</table>
+
+<!-- BLOCK 18: CAROUSEL -->
+<h2>18. carousel <span class="complexity-badge complexity-complex">Complex</span> <span class="action-tag">CONSOLIDATE</span></h2>
+<p>2 variants — hero slider + filmstrip magazine carousel</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Hero slider</td><td>Sliding hero panels with dots/arrows</td>
+<td><a href="https://www.thermofisher.com/us/en/home/about-us/partnering-licensing.html">Partnering</a></td>
+<td class="screenshot-cell"><img src="screenshots/carousel-v1.jpeg" alt="carousel-v1"></td>
+</tr>
+<tr>
+<td>V2: Filmstrip magazine <span class="new-tag">[NEW]</span></td><td>Horizontal scroll filmstrip of articles</td>
+<td><a href="https://www.thermofisher.com/us/en/home/new-ideas/life-in-the-lab.html">Life in the Lab</a></td>
+<td class="screenshot-cell"><img src="screenshots/carousel-v2.jpeg" alt="carousel-v2"></td>
+</tr>
+</table>
+
+<!-- BLOCK 19: HIGHLIGHTS -->
+<h2>19. highlights <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">STANDALONE</span></h2>
+<p>1 variant — stats/numbers grid (corporate)</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Stats/numbers grid</td><td>Counter animation + responsive grid</td>
+<td><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html">CSR</a></td>
+<td class="screenshot-cell"><img src="screenshots/highlights-v1.jpeg" alt="highlights-v1"></td>
+</tr>
+</table>
+
+<!-- BLOCK 20: MONDRIAN -->
+<h2>20. mondrian <span class="complexity-badge complexity-complex">Complex</span> <span class="action-tag">STANDALONE</span></h2>
+<p>4 variants — complex CSS grid with responsive breakpoints</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Feature promo</td><td>1 large + 2 small slots</td>
+<td><a href="https://www.thermofisher.com/us/en/home/clinical.html">Clinical</a></td>
+<td class="screenshot-cell"><img src="screenshots/mondrian-v1.jpeg" alt="mondrian-v1"></td>
+</tr>
+<tr>
+<td>V2: Product showcase (module-f)</td><td>Product image + info</td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/protein-biology.html">Protein Biology</a></td>
+<td class="screenshot-cell"><img src="screenshots/mondrian-v2.jpeg" alt="mondrian-v2"></td>
+</tr>
+<tr>
+<td>V3: Mondrian-group <span class="new-tag">[NEW]</span></td><td>Grouped featured items</td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html">Protein Assays</a></td>
+<td class="screenshot-cell"><img src="screenshots/mondrian-v3.jpeg" alt="mondrian-v3"></td>
+</tr>
+<tr><td>V4: Featured-list <span class="new-tag">[NEW]</span></td><td>Featured product list layout</td><td><a href="https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html">Protein Assays</a></td><td class="screenshot-cell"><em>See mondrian-v3 page</em></td></tr>
+</table>
+
+<!-- BLOCK 21-25: EXISTING STANDALONE -->
+<h2>21. featured-grid <span class="complexity-badge complexity-medium">Medium</span></h2>
+<p>1 variant — asymmetric magazine layout</p>
+
+<h2>22. resources-list <span class="complexity-badge complexity-simple">Simple</span></h2>
+<p>1 variant — title + description link pairs</p>
+
+<h2>23. pipeline <span class="complexity-badge complexity-medium">Medium</span></h2>
+<p>1 variant — drug dev phase cards</p>
+
+<h2>24. csr-pillars <span class="complexity-badge complexity-medium">Medium</span></h2>
+<p>1 variant — corporate pillar cards</p>
+
+<h2>25. blog-cards <span class="complexity-badge complexity-medium">Medium</span></h2>
+<p>2 variants — WordPress card grid + legacy post-list <span class="new-tag">[NEW]</span></p>
+
+<!-- BLOCK 26: VIDEO-TEASER -->
+<h2>26. video-teaser <span class="new-tag">[NEW BLOCK]</span> <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">STANDALONE</span></h2>
+<p>1 variant — thumbnail + play button overlay + duration badge + title + description</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Thumbnail + play overlay</td><td>Video card with play icon, duration badge, modal link</td>
+<td><a href="https://www.thermofisher.com/us/en/home/products-and-services/supply-center.html">Supply Center</a></td>
+<td class="screenshot-cell"><img src="screenshots/video-teaser-v1.jpeg" alt="video-teaser-v1"></td>
+</tr>
+</table>
+
+<!-- BLOCK 27: VIDEO-MODAL -->
+<h2>27. video-modal <span class="new-tag">[NEW BLOCK]</span> <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">STANDALONE</span></h2>
+<p>1 variant — modal overlay dialog for inline video playback</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr><td>V1: Modal overlay</td><td>Modal dialog wrapping video player</td><td><a href="https://www.thermofisher.com/us/en/home/products-and-services/supply-center.html">Supply Center</a></td><td class="screenshot-cell"><em>See video-teaser-v1 page (modal triggered on click)</em></td></tr>
+</table>
+
+<!-- BLOCK 28: VIDEO-PLAYLIST -->
+<h2>28. video-playlist <span class="new-tag">[NEW BLOCK]</span> <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">STANDALONE</span></h2>
+<p>1 variant — Brightcove player + sidebar playlist of 7 videos</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Playlist</td><td>Video player + sidebar playlist (title + description per video)</td>
+<td><a href="https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html">Cell Culture Basics</a></td>
+<td class="screenshot-cell"><img src="screenshots/video-v4.jpeg" alt="video-playlist-v1"></td>
+</tr>
+</table>
+
+<!-- BLOCK 29: WORKFLOW-STEPPER -->
+<h2>29. workflow-stepper <span class="new-tag">[NEW BLOCK]</span> <span class="complexity-badge complexity-complex">Complex</span> <span class="action-tag">STANDALONE</span></h2>
+<p>1 variant — multi-step interactive workflow navigation</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Multi-step workflow</td><td>Step 1 > Step 2 > Step 3 with content switching per step</td>
+<td><a href="https://www.thermofisher.com/us/en/home/life-science/cloning.html">Cloning</a></td>
+<td class="screenshot-cell"><img src="screenshots/workflow-stepper-v1.jpeg" alt="workflow-stepper-v1"></td>
+</tr>
+</table>
+
+<!-- BLOCK 30: CHAPTER-TOC -->
+<h2>30. chapter-toc <span class="new-tag">[NEW BLOCK]</span> <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">STANDALONE</span></h2>
+<p>1 variant — book/handbook chapter navigation (Part I-VI, Ch 1-23)</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Handbook chapter navigation</td><td>Part headers (I-VI) with chapter links (1-23), separated by horizontal rules</td>
+<td><a href="https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook.html">Molecular Probes Handbook</a></td>
+<td class="screenshot-cell"><img src="screenshots/chapter-toc-v1.jpeg" alt="chapter-toc-v1"></td>
+</tr>
+</table>
+
+<!-- BLOCK 31: HANDBOOK-SEARCH -->
+<h2>31. handbook-search <span class="new-tag">[NEW BLOCK]</span> <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">STANDALONE</span></h2>
+<p>1 variant — content-specific inline search box</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Inline search box</td><td>Input + button for searching within handbook content</td>
+<td><a href="https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook.html">Molecular Probes Handbook</a></td>
+<td class="screenshot-cell"><img src="screenshots/handbook-search-v1.jpeg" alt="handbook-search-v1"></td>
+</tr>
+</table>
+
+<!-- BLOCK 32: QUICK-MENU -->
+<h2>32. quick-menu <span class="new-tag">[NEW BLOCK]</span> <span class="complexity-badge complexity-simple">Simple</span> <span class="action-tag">STANDALONE</span></h2>
+<p>1 variant — titled quick-links navigation section</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Titled quick-links</td><td>"Quick links" section with multi-column link lists</td>
+<td><a href="https://www.thermofisher.com/us/en/home/clinical/diagnostic-testing.html">Diagnostic Testing</a></td>
+<td class="screenshot-cell"><img src="screenshots/quick-menu-v1.jpeg" alt="quick-menu-v1"></td>
+</tr>
+</table>
+
+<!-- BLOCK 33: SUPPORT-HUB -->
+<h2>33. support-hub <span class="new-tag">[NEW BLOCK]</span> <span class="complexity-badge complexity-medium">Medium</span> <span class="action-tag">STANDALONE</span></h2>
+<p>1 variant — categorized link directory for support pages</p>
+<table>
+<tr><th>Variant</th><th>Description</th><th>Reference URL</th><th class="screenshot-cell">Screenshot</th></tr>
+<tr>
+<td>V1: Categorized link directory</td><td>Collapsible TOC, quick-action sidebar, chat widget integration</td>
+<td><a href="https://www.thermofisher.com/us/en/home/support.html">Support</a></td>
+<td class="screenshot-cell"><img src="screenshots/support-hub-v1.jpeg" alt="support-hub-v1"></td>
+</tr>
+</table>
+
+<!-- BLOCK 34: SOCIAL-SHARE -->
+<h2>34. social-share <span class="complexity-badge complexity-simple">Simple</span> <span class="action-tag">DEFAULT CONTENT</span></h2>
+<p>1 variant — inline social share icons (Facebook, LinkedIn, Twitter, Email). No custom block needed.</p>
+
+<!-- BLOCK 35: DOWNLOAD-CARD -->
+<h2>35. download-card / report-hub <span class="complexity-badge complexity-simple">Simple</span> <span class="action-tag">MERGE with cards</span></h2>
+<p>2 variants — typed resource download + CSR report downloads. Merged into cards block.</p>
+
+<hr>
+<h2>Consolidation Summary</h2>
+<table>
+<tr style="background:#0066cc;color:white"><th>Action</th><th>Count</th><th>Blocks</th></tr>
+<tr><td><b>CONSOLIDATE</b></td><td>11</td><td>cards, columns, teaser, sidebar-nav, video, anchor-nav, tabs, accordion, embed, table, quote, blog-cards</td></tr>
+<tr><td><b>STANDALONE</b></td><td>15</td><td>product-sub-nav, event-table, resources-grid, resources-list, mondrian, carousel, highlights, featured-grid, pipeline, csr-pillars, video-teaser, video-modal, video-playlist, workflow-stepper, chapter-toc, handbook-search, quick-menu, support-hub</td></tr>
+<tr><td><b>SPLIT</b></td><td>2 (into 5)</td><td>hero (3 blocks), form (2 blocks)</td></tr>
+<tr><td><b>MERGE / DEFAULT</b></td><td>3</td><td>download-card (into cards), report-hub (into cards), social-share (default content)</td></tr>
+<tr><td><b>MAP</b></td><td>1</td><td>section-metadata (from wells)</td></tr>
+</table>
+<p><b>Final recommended EDS block count after consolidation: ~30 custom blocks</b></p>
+<p><b>Estimated total development: 85-165 dev days</b></p>
+<p><em>Note: Screenshots are full-page captures of the reference URLs. Each page contains the block variation in context with other page elements. Some pages were captured after automatic redirects by the ThermoFisher website.</em></p>
+</body>
+</html>

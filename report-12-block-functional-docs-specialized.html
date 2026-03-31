@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Report 12 — Block Functional Documentation: Specialized & Layout Blocks | Thermo Fisher AEM→EDS Migration</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;background:#f5f5f5;color:#333;line-height:1.6;overflow-x:hidden}
+.container{max-width:1400px;margin:0 auto}
+.report-header{background:linear-gradient(135deg,#1a237e 0%,#0d47a1 100%);color:#fff;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);margin-bottom:30px;padding:40px 24px;border-radius:0;box-sizing:border-box}
+.report-header-inner{max-width:1400px;margin:0 auto}
+.report-header h1{margin:0 0 10px;font-size:28px}.report-header .subtitle{opacity:.9;font-size:16px}.report-header .meta{margin-top:15px;font-size:13px;opacity:.7}
+.toc{background:#fff;padding:30px;border-radius:8px;margin-bottom:30px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.toc h2{margin-top:0;color:#1a237e;border-bottom:2px solid #e8eaf6;padding-bottom:10px}
+.toc ul{list-style:none;padding:0}.toc li{padding:4px 0}.toc a{color:#1565c0;text-decoration:none}.toc a:hover{text-decoration:underline}
+.toc .sub{margin-left:24px;font-size:14px}.vc{color:#888;font-size:13px;margin-left:6px}
+.bs{background:#fff;border-radius:8px;margin-bottom:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);overflow:hidden}
+.bh{background:#1a237e;color:#fff;padding:20px 30px}.bh h2{margin:0;font-size:22px}
+.bh .bm{display:flex;gap:15px;margin-top:8px;font-size:13px;opacity:.85;flex-wrap:wrap}
+.bh .bm span{background:rgba(255,255,255,.15);padding:2px 10px;border-radius:12px}
+.bb{padding:30px}
+.bo{background:#f8f9ff;padding:20px;border-radius:8px;margin-bottom:25px;border-left:4px solid #1a237e}
+.vc2{border:1px solid #e0e0e0;border-radius:8px;margin-bottom:25px;overflow:hidden}
+.vh{background:#e8eaf6;padding:15px 20px;border-bottom:1px solid #c5cae9;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.vh h3{margin:0;color:#283593;font-size:17px}
+.vb2{display:flex;gap:8px;flex-wrap:wrap}
+.badge{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;text-transform:uppercase}
+.badge-modern{background:#e3f2fd;color:#1565c0}.badge-legacy{background:#fff3e0;color:#e65100}
+.badge-corporate{background:#f3e5f5;color:#7b1fa2}.badge-new{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+.badge-both{background:#fce4ec;color:#c62828}.badge-global{background:#e0f2f1;color:#00695c}
+.badge-complex{background:#fbe9e7;color:#bf360c}.badge-unique{background:#ede7f6;color:#4527a0}
+.vbd{padding:20px}.desc{margin-bottom:20px;color:#555;font-size:15px}
+.ds{margin-bottom:20px}
+.ds h4{color:#1a237e;margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #e8eaf6;padding-bottom:6px}
+table.st{width:100%;border-collapse:collapse;font-size:13px}
+.st th{background:#f5f5f5;text-align:left;padding:8px 12px;border:1px solid #e0e0e0;font-weight:600}
+.st td{padding:8px 12px;border:1px solid #e0e0e0;vertical-align:top}
+.st code{background:#f5f5f5;padding:1px 4px;border-radius:3px;font-size:12px;color:#d32f2f}
+ul.cl{list-style:none;padding:0}ul.cl li{padding:5px 0;font-size:14px}ul.cl li::before{content:'☐ ';color:#1a237e;font-weight:700}
+.rg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px}
+.rc{border:1px solid #e0e0e0;border-radius:6px;padding:15px}.rc h5{margin:0 0 8px;font-size:13px;color:#1a237e}
+.rc .bp{font-size:11px;color:#888;margin-bottom:8px}.rc ul{margin:0;padding-left:18px;font-size:13px}
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ii{background:#fafafa;padding:12px;border-radius:6px;border:1px solid #eee}
+.ii .tp{font-weight:600;font-size:13px;color:#333;margin-bottom:4px}.ii .dt{font-size:13px;color:#666}
+ul.al{list-style:none;padding:0}ul.al li{padding:4px 0;font-size:13px}ul.al li::before{content:'♿ '}
+table.at{width:100%;border-collapse:collapse;font-size:13px}
+.at th{background:#f5f5f5;text-align:left;padding:8px 12px;border:1px solid #e0e0e0}.at td{padding:8px 12px;border:1px solid #e0e0e0}
+.req{color:#d32f2f;font-weight:600}.opt{color:#666}
+.rl{display:flex;flex-wrap:wrap;gap:8px}
+.rl a{display:inline-block;padding:4px 12px;background:#e3f2fd;color:#1565c0;border-radius:4px;font-size:12px;text-decoration:none}
+.rl a:hover{background:#bbdefb}
+.screenshot-thumb{max-width:300px;max-height:180px;border:1px solid #ddd;border-radius:4px;margin-top:10px}
+.top-nav{background:linear-gradient(90deg,#1a237e 0%,#0d47a1 100%);box-shadow:0 2px 8px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box}
+.top-nav-inner{margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.top-nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;transition:all .2s;background:rgba(255,255,255,.08)}
+.top-nav a:hover{background:rgba(255,255,255,.2);color:#fff}
+.top-nav .sep{color:rgba(255,255,255,.5);font-size:13px}
+.top-nav .project{color:rgba(255,255,255,.9);font-size:14px;font-weight:500}
+@media print{body{background:#fff}.bs{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="top-nav"><div class="top-nav-inner"><a href="index.html"><span style="font-size:18px">&#8962;</span> Dashboard Home</a><span class="sep">·</span><span class="project">Thermo Fisher AEM &rarr; EDS Migration</span></div></nav>
+
+<div class="report-header">
+<div class="report-header-inner">
+<h1>Block Functional Documentation — Part 3: Specialized &amp; Layout Blocks</h1>
+<div class="subtitle">Functional specs for Mondrian, Highlights, Quote, CSR, Support Hub, Chapter TOC, Video Modal/Teaser/Playlist, and more</div>
+<div class="meta">Thermo Fisher Scientific AEM → EDS Migration | 20 blocks, 29 variations | Generated 2026-03-20 | Report 12 of 12</div>
+</div>
+</div>
+
+<div class="container">
+<div class="toc"><h2>Table of Contents</h2>
+<ul>
+<li><a href="#mondrian">16. Mondrian</a><span class="vc">— 4 variations</span></li>
+<li><a href="#highlights">17. Highlights</a><span class="vc">— 1 variation</span></li>
+<li><a href="#quote">18. Quote</a><span class="vc">— 2 variations</span></li>
+<li><a href="#resources">19. Resources Grid/List</a><span class="vc">— 2 variations</span></li>
+<li><a href="#section-metadata">20. Section Metadata</a><span class="vc">— 8 variations</span></li>
+<li><a href="#chapter-toc">21. Chapter TOC</a><span class="vc">— 1 variation</span></li>
+<li><a href="#handbook-search">22. Handbook Search</a><span class="vc">— 1 variation</span></li>
+<li><a href="#video-teaser">23. Video Teaser</a><span class="vc">— 1 variation</span></li>
+<li><a href="#video-modal">24. Video Modal</a><span class="vc">— 1 variation</span></li>
+<li><a href="#support-hub">25. Support Hub</a><span class="vc">— 1 variation</span></li>
+<li><a href="#quick-menu">26. Quick Menu</a><span class="vc">— 1 variation</span></li>
+<li><a href="#csr-pillars">27. CSR Pillars/Commitments</a><span class="vc">— 1 variation</span></li>
+<li><a href="#csr-report">28. CSR Report</a><span class="vc">— 1 variation</span></li>
+<li><a href="#social-share">29. Social Share</a><span class="vc">— 1 variation</span></li>
+<li><a href="#blog-cards">30. Blog Cards</a><span class="vc">— 2 variations</span></li>
+<li><a href="#featured-grid">31. Featured Grid</a><span class="vc">— 1 variation</span></li>
+<li><a href="#pipeline">32. Pipeline</a><span class="vc">— 1 variation</span></li>
+<li><a href="#download-card">33. Download Card</a><span class="vc">— 2 variations</span></li>
+</ul></div>
+
+<!-- BLOCK 16: MONDRIAN -->
+<div class="bs" id="mondrian">
+<div class="bh"><h2>16. Mondrian</h2><div class="bm"><span>4 Variations</span><span>Complexity: Complex</span><span>Est: 4–6 dev days</span><span>Priority: P2</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Multi-slot promotional module using a Mondrian-style grid layout. Features large and small image tiles, CTA links, and optional inline navigation lists. Two primary structural variants (module-d, module-f) with CSS-only sub-variants. Found on Legacy platform category hub pages.</div>
+
+<div class="vc2" id="mondrian-v1"><div class="vh"><h3>V1: Module-D (Large Left + Small Right)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Two-column layout: left side has a large hero image slot (376×170px), right side stacks a small image tile (174×170px) above a navigation list. Used on L1 category hub pages.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.mondrian-module.mondrian-module-d.clearfix</code></td><td>Module-D wrapper (724×170px)</td></tr>
+<tr><td>Left Panel</td><td><code>.mondrian-module-outer.mondrian-submodule-left</code></td><td>Large image slot (376×170px) with link + overlay text</td></tr>
+<tr><td>Right Top</td><td><code>.mondrian-module-inner</code></td><td>Small image tile (174×170px) with link + overlay</td></tr>
+<tr><td>Right Bottom</td><td><code>.mondrian-module-inner.mondrian-module-list</code></td><td>Navigation link list (no image)</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Grid proportions: left ~52%, right-top ~24%, right-bottom ~24%</li><li>Left panel image fills slot without distortion</li><li>Right-top image tile displays with overlay text</li><li>Right-bottom renders as navigation link list</li><li>Nav items: Cell &amp; Gene Therapy, Clinical Microbiology, Diagnostic Development, Diagnostic Testing</li><li>All tiles/links are clickable and navigate correctly</li><li>Clearfix prevents float collapse</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Hover (Tiles)</div><div class="dt">Image tiles: slight zoom (scale 1.05) + overlay darkening. Nav links: underline + color shift.</div></div>
+<div class="ii"><div class="tp">Click</div><div class="dt">Each tile/link navigates to category page.</div></div>
+</div></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/clinical.html" target="_blank">clinical.html</a></div>
+<img src="screenshots/mondrian-v1.jpeg" alt="Mondrian Module-D" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="mondrian-v2"><div class="vh"><h3>V2: Module-F (Category Page Variant)</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd">
+<p class="desc">Mondrian module variant F — similar grid layout to Module-D but with different proportions and styling. Found on L2/L3 category pages alongside sidebar navigation. More compact than Module-D.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Grid renders within constrained width (alongside sidebar)</li><li>Proportions adjusted for narrower container</li><li>All interactive elements functional</li><li>Compatible with sidebar-nav layout</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl">
+<a href="https://www.thermofisher.com/us/en/home/clinical/diagnostic-testing.html" target="_blank">diagnostic-testing.html</a>
+<a href="https://www.thermofisher.com/us/en/home/life-science/protein-biology.html" target="_blank">protein-biology.html</a>
+</div>
+<img src="screenshots/mondrian-v2.jpeg" alt="Mondrian Module-F" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+
+<div class="vc2" id="mondrian-v3"><div class="vh"><h3>V3: Full-Width 3-Tile</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span></div></div>
+<div class="vbd"><p class="desc">Full-width variant with 3 equal image tiles in a row. No navigation list. Used for broader visual presentations.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>3 equal tiles across full width</li><li>Each tile has image, overlay text, and link</li><li>Responsive: stacks on mobile</li></ul></div></div></div>
+
+<div class="vc2" id="mondrian-v4"><div class="vh"><h3>V4: 2-Tile Asymmetric</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd"><p class="desc">Two tiles with asymmetric sizing (60/40 or 70/30). Used for featured+secondary content pairing.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Asymmetric tile proportions maintained</li><li>Both tiles interactive with hover effects</li><li>Responsive collapse to stacked on mobile</li></ul></div></div></div>
+</div></div>
+
+<!-- BLOCK 17: HIGHLIGHTS -->
+<div class="bs" id="highlights">
+<div class="bh"><h2>17. Highlights</h2><div class="bm"><span>1 Variation</span><span>Complexity: Medium</span><span>Est: 2–3 dev days</span><span>Priority: P3</span></div></div>
+<div class="bb">
+<div class="vc2" id="highlights-v1"><div class="vh"><h3>V1: Statistics Slider with Dots</h3><div class="vb2"><span class="badge badge-corporate">Corporate</span></div></div>
+<div class="vbd">
+<p class="desc">Statistics/highlights section displaying key numeric achievements with titles and descriptions. Uses a slider with dot navigation for paginating through multiple highlight items. Found on corporate CSR page.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-p-highlights .section-highlight</code></td><td>Highlights section wrapper</td></tr>
+<tr><td>Slider</td><td><code>.slider-wrapper</code></td><td>Slider container</td></tr>
+<tr><td>Grid</td><td><code>.highlight-grid</code></td><td>Grid layout for highlight items</td></tr>
+<tr><td>Item</td><td><code>.highlight-item</code></td><td>Individual highlight card</td></tr>
+<tr><td>Title</td><td><code>.highlight-title</code></td><td>Numeric stat (e.g., "$1.5B")</td></tr>
+<tr><td>Description</td><td><code>.desc-highlight</code></td><td>Explanation text</td></tr>
+<tr><td>Dots</td><td><code>.highlight-dots</code></td><td>Pagination dot indicators</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Highlight items display in grid layout</li><li>Dot navigation shows current position</li><li>Clicking dots navigates to different highlight groups</li><li>Statistics numbers rendered large and prominent</li><li>Smooth transition between pages</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Dot Click</div><div class="dt">Navigates to corresponding highlight page. Active dot filled.</div></div>
+<div class="ii"><div class="tp">Swipe</div><div class="dt">Touch swipe navigates between pages on mobile.</div></div>
+</div></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html" target="_blank">corporate-social-responsibility.html</a></div>
+<img src="screenshots/highlights-v1.jpeg" alt="Highlights Slider" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 18: QUOTE -->
+<div class="bs" id="quote">
+<div class="bh"><h2>18. Quote</h2><div class="bm"><span>2 Variations</span><span>Complexity: Simple</span><span>Est: 1 dev day</span><span>Priority: P3</span></div></div>
+<div class="bb">
+<div class="vc2" id="quote-v1"><div class="vh"><h3>V1: CEO Blockquote</h3><div class="vb2"><span class="badge badge-corporate">Corporate</span></div></div>
+<div class="vbd"><p class="desc">Prominent blockquote featuring CEO letter/message. Rendered as HTML blockquote with attribution. Section class: csr-letter-from-ceo. 2 blockquotes found on CSR page.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Blockquote renders with distinctive styling (large quotes, indented)</li><li>Attribution shows author name and title</li><li>Typography matches corporate brand guidelines</li><li>Responsive text sizing</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html" target="_blank">corporate-social-responsibility.html</a></div></div></div></div>
+
+<div class="vc2" id="quote-v2"><div class="vh"><h3>V2: Testimonial Quote</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Customer/partner testimonial blockquote used on various pages. Includes photo, name, title/organization.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Quote text styled with opening/closing quotation marks</li><li>Author photo displayed (optional)</li><li>Name and title below quote</li></ul></div></div></div>
+</div></div>
+
+<!-- BLOCK 19: RESOURCES -->
+<div class="bs" id="resources">
+<div class="bh"><h2>19. Resources Grid/List</h2><div class="bm"><span>2 Variations</span><span>Complexity: Simple</span><span>Est: 1–2 dev days</span><span>Priority: P2</span></div></div>
+<div class="bb">
+<div class="vc2" id="resources-v1"><div class="vh"><h3>V1: Resources Grid</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Grid layout of resource cards (guides, protocols, app notes). Each card has document type icon, title, and CTA.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Resources displayed in 3-column grid</li><li>Document type clearly indicated</li><li>CTA link functional</li></ul></div></div></div>
+<div class="vc2" id="resources-v2"><div class="vh"><h3>V2: Resources List</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Vertical list of resources with icon, title, description on each row.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Single-column list layout</li><li>Each row has icon + title + description</li><li>Click navigates to resource</li></ul></div></div></div>
+</div></div>
+
+<!-- BLOCK 20: SECTION METADATA -->
+<div class="bs" id="section-metadata">
+<div class="bh"><h2>20. Section Metadata</h2><div class="bm"><span>8 Variations</span><span>Complexity: Simple</span><span>Est: 1 dev day</span><span>Priority: P0</span></div></div>
+<div class="bb">
+<div class="bo"><strong>Block Overview:</strong> Section metadata is an EDS-specific block that controls section styling — background colors, spacing, and layout. 8 style variations identified from different page sections. Implemented as CSS classes on section wrappers.</div>
+<div class="vc2"><div class="vh"><h3>Style Variations</h3></div>
+<div class="vbd">
+<table class="st">
+<tr><th>Variation</th><th>Style</th><th>Usage</th></tr>
+<tr><td>V1: Light</td><td>White/light gray background (#f5f5f5)</td><td>Default content sections</td></tr>
+<tr><td>V2: Dark</td><td>Dark navy background (#1C3F94), white text</td><td>Feature highlights, CTAs</td></tr>
+<tr><td>V3: Grey</td><td>Medium grey background (#e0e0e0)</td><td>Alternate content sections</td></tr>
+<tr><td>V4: Accent</td><td>Brand blue background (#0072CE), white text</td><td>Promotional bands</td></tr>
+<tr><td>V5: Navy Blue</td><td>Deep navy (#0A2240)</td><td>Footer-area sections</td></tr>
+<tr><td>V6: Warm Beige</td><td>Warm beige/cream (#F5F0EB)</td><td>Testimonial sections</td></tr>
+<tr><td>V7: Brand Primary</td><td>Thermo Fisher red (#E31937)</td><td>Alert/urgent sections</td></tr>
+<tr><td>V8: Gradient</td><td>Linear gradient backgrounds</td><td>Special promotional sections</td></tr>
+</table>
+<div class="ds" style="margin-top:20px"><h4>Acceptance Criteria (All Variations)</h4>
+<ul class="cl"><li>Section background color/gradient renders correctly</li><li>Text color automatically adjusts for contrast (dark bg → white text)</li><li>Section padding consistent (60px top/bottom desktop, 40px mobile)</li><li>Nested blocks inherit appropriate text colors</li><li>Transitions between section styles are clean (no gaps/overlaps)</li></ul></div>
+</div></div>
+</div></div>
+
+<!-- BLOCK 21: CHAPTER TOC -->
+<div class="bs" id="chapter-toc">
+<div class="bh"><h2>21. Chapter TOC</h2><div class="bm"><span>1 Variation</span><span>Complexity: Medium</span><span>Est: 2–3 dev days</span><span>Priority: P3</span></div></div>
+<div class="bb">
+<div class="vc2" id="chapter-toc-v1"><div class="vh"><h3>V1: Handbook Table of Contents</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-unique">Unique</span></div></div>
+<div class="vbd">
+<p class="desc">Table of contents for multi-chapter handbook/reference guide. Features dedicated search box, collapsible sidebar with plus/minus icons, and chapter listings organized by parts separated by horizontal rules. 16 h3 chapter headings, 7 hr separators.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Search Section</td><td><code>"Search The Molecular Probes Handbook"</code></td><td>Dedicated handbook search</td></tr>
+<tr><td>Sidebar</td><td><code>.sidebar</code></td><td>Collapsible chapter navigation</td></tr>
+<tr><td>TOC Heading</td><td><code>"Table of Contents"</code></td><td>h2 section heading</td></tr>
+<tr><td>Parts</td><td><code>Separated by &lt;hr&gt;</code></td><td>7 horizontal rule separators for parts</td></tr>
+<tr><td>Chapters</td><td><code>h3 elements</code></td><td>16 chapter headings as links</td></tr>
+<tr><td>Expand/Collapse</td><td><code>.icon-plus</code></td><td>Toggle icons for subsections</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Search box accepts queries and filters/navigates to matching chapters</li><li>16 chapters displayed organized in parts separated by horizontal rules</li><li>Sidebar navigation shows chapter hierarchy</li><li>Plus/minus icons toggle chapter subsections</li><li>Chapter links navigate to individual chapter pages</li><li>Resources section accessible at bottom</li></ul></div>
+<div class="ds"><h4>Interactions</h4>
+<div class="ig">
+<div class="ii"><div class="tp">Search</div><div class="dt">Text search within handbook chapters. Results highlight matching chapters.</div></div>
+<div class="ii"><div class="tp">Expand/Collapse</div><div class="dt">Plus icon click expands chapter subsections. Minus collapses. Animated transition.</div></div>
+<div class="ii"><div class="tp">Chapter Click</div><div class="dt">Navigates to individual chapter page.</div></div>
+</div></div>
+<div class="ds"><h4>Reference URLs</h4>
+<div class="rl"><a href="https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook.html" target="_blank">molecular-probes-the-handbook.html</a></div>
+<img src="screenshots/chapter-toc-v1.jpeg" alt="Chapter TOC" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 22: HANDBOOK SEARCH -->
+<div class="bs" id="handbook-search">
+<div class="bh"><h2>22. Handbook Search</h2><div class="bm"><span>1 Variation</span><span>Complexity: Medium</span><span>Est: 2–3 dev days</span><span>Priority: P3</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Dedicated Handbook Search</h3><div class="vb2"><span class="badge badge-legacy">Legacy</span><span class="badge badge-unique">Unique</span></div></div>
+<div class="vbd"><p class="desc">Specialized search box for searching within a specific handbook/reference guide. Different from global site search — scoped to handbook content only.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Search scoped to handbook content (not site-wide)</li><li>Results display as chapter/section matches</li><li>Search input has clear label and placeholder</li><li>Submit on Enter key</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook.html" target="_blank">molecular-probes-the-handbook.html</a></div></div>
+</div></div>
+</div></div>
+
+<!-- BLOCK 23: VIDEO TEASER -->
+<div class="bs" id="video-teaser">
+<div class="bh"><h2>23. Video Teaser</h2><div class="bm"><span>1 Variation</span><span>Complexity: Simple</span><span>Est: 1–2 dev days</span><span>Priority: P2</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Teaser with Play Button</h3><div class="vb2"><span class="badge badge-modern">Modern</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd"><p class="desc">Video teaser component displaying a thumbnail preview image with a play button overlay. Clicking opens the full video in a modal (V24: Video Modal). Class: m--teaser with cmp-ctaitem__icon arrow.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Thumbnail image displays with centered play button overlay</li><li>Click opens video modal (not inline playback)</li><li>Play button has hover state (scale up, opacity change)</li><li>Thumbnail maintains 16:9 aspect ratio</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://www.thermofisher.com/us/en/home/products-and-services/supply-center.html" target="_blank">supply-center.html</a></div></div>
+</div></div>
+</div></div>
+
+<!-- BLOCK 24: VIDEO MODAL -->
+<div class="bs" id="video-modal">
+<div class="bh"><h2>24. Video Modal</h2><div class="bm"><span>1 Variation</span><span>Complexity: Medium</span><span>Est: 2–3 dev days</span><span>Priority: P2</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Brightcove Modal Player</h3><div class="vb2"><span class="badge badge-modern">Modern</span><span class="badge badge-new">NEW</span></div></div>
+<div class="vbd">
+<p class="desc">Modal/lightbox overlay containing a Brightcove video.js player. Triggered by Video Teaser (V23) click. Features modal header, body, and close button. Dark overlay behind modal.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Overlay</td><td><code>.modal.modal-video</code></td><td>Modal overlay container</td></tr>
+<tr><td>Header</td><td><code>.modal-header</code></td><td>Modal header with close button</td></tr>
+<tr><td>Body</td><td><code>.modal-body</code></td><td>Video player container</td></tr>
+<tr><td>Player</td><td><code>Brightcove video.js (bc-player-xiCf2fKMT)</code></td><td>Embedded video player</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Modal opens with smooth animation (fade + scale)</li><li>Dark overlay covers page background (rgba(0,0,0,0.7))</li><li>Close button (X) in top-right corner</li><li>Escape key closes modal</li><li>Click outside modal closes it</li><li>Video auto-plays when modal opens</li><li>Video stops when modal closes</li><li>Body scroll locked while modal open</li></ul></div>
+<div class="ds"><h4>Accessibility</h4>
+<ul class="al"><li>Focus trapped within modal when open</li><li>Escape key closes modal</li><li>Focus returns to trigger element on close</li><li>aria-modal="true" on modal container</li><li>role="dialog" with aria-label</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://www.thermofisher.com/us/en/home/products-and-services/supply-center.html" target="_blank">supply-center.html</a></div>
+<img src="screenshots/video-modal-v1.jpeg" alt="Video Modal" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 25: SUPPORT HUB -->
+<div class="bs" id="support-hub">
+<div class="bh"><h2>25. Support Hub</h2><div class="bm"><span>1 Variation</span><span>Complexity: Complex</span><span>Est: 4–6 dev days</span><span>Priority: P2</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Support Landing Page</h3><div class="vb2"><span class="badge badge-modern">Modern</span><span class="badge badge-complex">Complex</span></div></div>
+<div class="vbd">
+<p class="desc">Support hub landing page with 6 major support categories, accordion expand/collapse sections, contact modal dialogs, category cards with Material Design icons, and organized support topic grids. Features chat icon and live support options.</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Accordion</td><td><code>.cmp-accordion__icon</code></td><td>Expandable support categories</td></tr>
+<tr><td>Modal</td><td><code>.modal .modal-body</code></td><td>Contact form modals</td></tr>
+<tr><td>Icons</td><td><code>.material-design-icon</code></td><td>Category icons (SVG)</td></tr>
+<tr><td>Chat</td><td><code>.message-processing-icon</code></td><td>Live chat launcher icon</td></tr>
+<tr><td>Categories</td><td><code>h2 headings × 6</code></td><td>Order help, Contact us, eSolutions, Product support, Technical info, Training</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>6 support categories display with appropriate Material Design icons</li><li>Accordion sections expand to show topic links</li><li>Contact modal opens with form for support requests</li><li>Chat icon launches live chat widget</li><li>Categories: Order help, Contact us, eSolutions, Product support, Technical info, Training &amp; education</li><li>16 images, 2 horizontal rules, 1 iframe render correctly</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://www.thermofisher.com/us/en/home/support.html" target="_blank">support.html</a></div>
+<img src="screenshots/support-hub-v1.jpeg" alt="Support Hub" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 26: QUICK MENU -->
+<div class="bs" id="quick-menu">
+<div class="bh"><h2>26. Quick Menu</h2><div class="bm"><span>1 Variation</span><span>Complexity: Simple</span><span>Est: 0.5 dev days</span><span>Priority: P1</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Header Utility Quick Links</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Quick navigation links in the global site header utility bar. Provides quick access to Order Status and Quick Order. Present on all thermofisher.com pages.</p>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>"Order Status" link navigates to /store/orders/solu</li><li>"Quick Order" link navigates to /store/v2/quick-order</li><li>Links always visible in header utility bar</li><li>Consistent styling across all pages</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://www.thermofisher.com/us/en/home.html" target="_blank">All pages (global header)</a></div></div>
+</div></div>
+</div></div>
+
+<!-- BLOCK 27: CSR PILLARS -->
+<div class="bs" id="csr-pillars">
+<div class="bh"><h2>27. CSR Pillars / Commitments</h2><div class="bm"><span>1 Variation</span><span>Complexity: Medium</span><span>Est: 2–3 dev days</span><span>Priority: P3</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Commitment Grid with Overlays</h3><div class="vb2"><span class="badge badge-corporate">Corporate</span><span class="badge badge-unique">Unique</span></div></div>
+<div class="vbd">
+<p class="desc">CSR commitment grid showing key responsibility areas as image cards with overlay titles, inner titles, and hover-activated arrow indicators. Section heading: "CSR COMMITMENT".</p>
+<div class="ds"><h4>Structure / Fields</h4>
+<table class="st"><tr><th>Element</th><th>Tag/Class</th><th>Description</th></tr>
+<tr><td>Container</td><td><code>.cmp-p-csr-commitment</code></td><td>Commitment section wrapper</td></tr>
+<tr><td>Grid</td><td><code>.csr-commitment-grid</code></td><td>Card grid layout</td></tr>
+<tr><td>Card Image</td><td><code>.csr-commitment-image</code></td><td>Background image per card</td></tr>
+<tr><td>Overlay</td><td><code>.csr-commitment-overlay</code></td><td>Dark overlay on image</td></tr>
+<tr><td>Title</td><td><code>.csr-commitment-title</code></td><td>Visible title on card</td></tr>
+<tr><td>Inner Title</td><td><code>.csr-commitment-inner-title</code></td><td>Secondary title revealed on hover</td></tr>
+<tr><td>Arrow</td><td><code>.csr-commitmen-arrow</code></td><td>Arrow indicator on hover</td></tr>
+</table></div>
+<div class="ds"><h4>Acceptance Criteria</h4>
+<ul class="cl"><li>Grid of commitment cards with background images</li><li>Overlay titles visible by default</li><li>Hover reveals inner title and arrow indicator</li><li>Smooth hover transition animation</li><li>Cards link to individual commitment pages</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html" target="_blank">corporate-social-responsibility.html</a></div>
+<img src="screenshots/csr-pillars-v1.jpeg" alt="CSR Commitments" class="screenshot-thumb" onerror="this.style.display='none'">
+</div></div></div>
+</div></div>
+
+<!-- BLOCK 28: CSR REPORT -->
+<div class="bs" id="csr-report">
+<div class="bh"><h2>28. CSR Report</h2><div class="bm"><span>1 Variation</span><span>Complexity: Simple</span><span>Est: 1 dev day</span><span>Priority: P4</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Reporting Hub Section</h3><div class="vb2"><span class="badge badge-corporate">Corporate</span></div></div>
+<div class="vbd"><p class="desc">Reporting hub section for CSR/annual reports with background imagery and downloadable document links. Classes: cmp-p-csr-report, csr-report-section, csr-report-documents.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Background image renders behind document links</li><li>Download links functional (PDF downloads)</li><li>Current report prominently displayed</li><li>Archive reports accessible</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html" target="_blank">corporate-social-responsibility.html</a></div></div>
+</div></div>
+</div></div>
+
+<!-- BLOCK 29: SOCIAL SHARE -->
+<div class="bs" id="social-share">
+<div class="bh"><h2>29. Social Share</h2><div class="bm"><span>1 Variation</span><span>Complexity: Simple</span><span>Est: 0.5 dev days</span><span>Priority: P4</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Footer Social Links</h3><div class="vb2"><span class="badge badge-corporate">Corporate</span></div></div>
+<div class="vbd"><p class="desc">Social media links in the footer area of corporate pages. Grid layout with social platform icons. Classes: footer-social-link, csr-footer, footer-grid.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Social icons render in grid</li><li>Links open social profiles in new tab</li><li>Icons have hover states</li><li>Accessible labels on icon-only links</li></ul></div>
+<div class="ds"><h4>Reference URLs</h4><div class="rl"><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html" target="_blank">corporate-social-responsibility.html</a></div></div>
+</div></div>
+</div></div>
+
+<!-- BLOCK 30: BLOG CARDS -->
+<div class="bs" id="blog-cards">
+<div class="bh"><h2>30. Blog Cards</h2><div class="bm"><span>2 Variations</span><span>Complexity: Simple</span><span>Est: 1–2 dev days</span><span>Priority: P3</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Blog Post Cards (Grid)</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Grid of blog post cards with featured image, date, title, excerpt, and "Read more" CTA. Used in blog listing and "Life in the Lab" sections.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>3-column grid on desktop</li><li>Date displayed above/below title</li><li>Excerpt truncated to 2–3 lines</li><li>"Read more" CTA links to full post</li></ul></div></div></div>
+<div class="vc2"><div class="vh"><h3>V2: Featured Blog Card</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Larger featured blog card spanning full width or 2 columns. Used to highlight the latest or most important blog post.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Spans full width or 2 columns in grid</li><li>Larger image and text than standard cards</li><li>Visually distinct from regular blog cards</li></ul></div></div></div>
+</div></div>
+
+<!-- BLOCK 31: FEATURED GRID -->
+<div class="bs" id="featured-grid">
+<div class="bh"><h2>31. Featured Grid</h2><div class="bm"><span>1 Variation</span><span>Complexity: Simple</span><span>Est: 1 dev day</span><span>Priority: P3</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Featured Content Grid</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Curated grid of featured content items, typically 2×2 or 3×2, with varied card sizes for visual hierarchy.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Grid renders with mixed card sizes</li><li>Featured item larger than others</li><li>All items clickable with proper hover states</li></ul></div></div></div>
+</div></div>
+
+<!-- BLOCK 32: PIPELINE -->
+<div class="bs" id="pipeline">
+<div class="bh"><h2>32. Pipeline</h2><div class="bm"><span>1 Variation</span><span>Complexity: Medium</span><span>Est: 2 dev days</span><span>Priority: P4</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Process Pipeline Diagram</h3><div class="vb2"><span class="badge badge-modern">Modern</span><span class="badge badge-unique">Unique</span></div></div>
+<div class="vbd"><p class="desc">Horizontal process/pipeline diagram showing sequential steps with connecting arrows. Similar to workflow stepper but purely visual (non-interactive). Used for illustrating product pipelines and workflows.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Steps render left-to-right with connecting arrows</li><li>Each step has label and optional icon</li><li>Arrow connectors clearly show flow direction</li><li>Responsive: wraps or scrolls horizontally on mobile</li></ul></div></div></div>
+</div></div>
+
+<!-- BLOCK 33: DOWNLOAD CARD -->
+<div class="bs" id="download-card">
+<div class="bh"><h2>33. Download Card</h2><div class="bm"><span>2 Variations</span><span>Complexity: Simple</span><span>Est: 1 dev day</span><span>Priority: P3</span></div></div>
+<div class="bb">
+<div class="vc2"><div class="vh"><h3>V1: Document Download Card</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Card for downloading documents (PDFs, guides, certificates). Shows file type icon, document title, file size, and download button.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>File type icon (PDF, DOC, etc.) displayed</li><li>Document title and file size shown</li><li>Download button triggers file download</li><li>Download link uses proper download attribute</li></ul></div></div></div>
+<div class="vc2"><div class="vh"><h3>V2: Software/App Download</h3><div class="vb2"><span class="badge badge-modern">Modern</span></div></div>
+<div class="vbd"><p class="desc">Larger card for software/application downloads with version info, system requirements, and download CTA.</p>
+<div class="ds"><h4>Acceptance Criteria</h4><ul class="cl"><li>Software name and version prominently displayed</li><li>System requirements listed</li><li>Download CTA button prominent</li><li>File size indicated</li></ul></div></div></div>
+</div></div>
+
+</div><!-- end container -->
+</body>
+</html>

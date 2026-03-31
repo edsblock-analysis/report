@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "site": "thermofisher.com",
+    "baseUrl": "https://www.thermofisher.com",
+    "corporateUrl": "https://corporate.thermofisher.com",
+    "totalUrlsAnalyzed": 10454,
+    "liveUrlEstimate": "~40-50% (many legacy pages return 404)",
+    "analysisDate": "2026-03-20",
+    "representativePagesAnalyzed": 25
+  },
+  "platformArchitectures": {
+    "summary": "Three distinct AEM implementations coexist on the domain",
+    "platforms": [
+      {
+        "id": "A",
+        "name": "AEM Classic (Legacy CQ5/Parsys)",
+        "bodyClass": "(none)",
+        "layoutSystem": "parsys + parsys_column + cq-colctrl-lt{N}",
+        "componentNaming": "{type}.parbase.section",
+        "responsive": false,
+        "sidebarSupport": true,
+        "templateWrapper": "container-wrap template-{N}-column",
+        "estimatedPages": "~60% of live pages",
+        "sampleUrls": [
+          "/us/en/home/about-us/events/life-science.html",
+          "/us/en/home/about-us/events/industrial.html",
+          "/us/en/home/about-us/events/clinical.html",
+          "/us/en/home/about-us/partnering-licensing.html",
+          "/us/en/home/chemicals/learning-center.html",
+          "/us/en/home/chemicals/applications.html",
+          "/us/en/home/clinical/cell-gene-therapy.html",
+          "/us/en/home/b2b.html"
+        ]
+      },
+      {
+        "id": "B",
+        "name": "AEM Core Components (Modern Responsive Grid)",
+        "bodyClass": "cmp-p-page",
+        "layoutSystem": "aem-Grid + aem-GridColumn (12-col responsive)",
+        "componentNaming": "cmp-p-{type} (proxy) + cmp-{type} (core)",
+        "responsive": true,
+        "sidebarSupport": false,
+        "templateWrapper": "(none - body-level cmp-p-page)",
+        "estimatedPages": "~30% of live pages",
+        "sampleUrls": [
+          "/us/en/home/brands/thermo-scientific/molecular-biology.html",
+          "/us/en/home/brands/invitrogen.html",
+          "/us/en/home/about-us/events.html",
+          "/us/en/home/bioprocessing/resources.html",
+          "/us/en/home/clinical/clinical-genomics.html",
+          "/us/en/home/chemicals.html"
+        ]
+      },
+      {
+        "id": "C",
+        "name": "Corporate AEM (TFC Custom Components)",
+        "bodyClass": "page basicpage",
+        "layoutSystem": "Custom flexbox/grid",
+        "componentNaming": "cmp-tfc-{type} + cmp-p-{type} (custom)",
+        "responsive": true,
+        "sidebarSupport": false,
+        "templateWrapper": "(none)",
+        "domain": "corporate.thermofisher.com",
+        "estimatedPages": "~10% (redirected from about-us paths)",
+        "sampleUrls": [
+          "/us/en/home/about-us/corporate-social-responsibility.html (redirects to corporate.thermofisher.com)",
+          "/us/en/home/about-us/sustainability/engaging-stakeholders/community.html (redirects)",
+          "/us/en/home/about-us/awards-recognition.html (redirects)"
+        ]
+      }
+    ]
+  },
+  "urlAnalysis": {
+    "totalUrls": 10454,
+    "transactionalExcluded": 2129,
+    "duplicateBrandPaths": 1066,
+    "netContentUrls": 7259,
+    "topLevelSections": {
+      "about-us": { "count": 6779, "subsections": {
+        "events": { "count": 4871, "breakdown": {
+          "industrial": 2232, "schedule": 1346, "anz": 1046, "life-science": 104, "clinical": 48, "digital-solutions": 19, "other": 76
+        }},
+        "news-gallery": { "count": 1571, "breakdown": {
+          "release": 502, "press-releases": 290, "press-release-china": 266, "japan-press-release": 216, "news-and-views": 121, "interview": 58, "video-gallery": 20, "other": 98
+        }},
+        "partnering-licensing": 62,
+        "sustainability": 51,
+        "corporate-social-responsibility": 30,
+        "csr": 36,
+        "investor-relations": 33,
+        "other": 96
+      }},
+      "brands": { "count": 729, "note": "brands1 (533) and brands2 (533) are exact duplicates of subset" },
+      "bioprocessing": { "count": 650, "subsections": {
+        "products": 375, "services": 42, "applications": 30, "resources": 25, "about": 24, "other": 154
+      }},
+      "clinical": { "count": 475, "subsections": {
+        "clinical-genomics": 145, "cell-gene-therapy": 111, "anatomical-pathology": 94, "clinical-microbiology": 70, "biobanking": 41, "other": 14
+      }},
+      "chemicals": { "count": 230 },
+      "china": { "count": 213 },
+      "campaigns": { "count": 98 },
+      "b2b": { "count": 68 },
+      "biotech-lab-solutions": { "count": 33 },
+      "blog": { "count": 10 },
+      "other": { "count": 32 }
+    }
+  },
+  "templateTypes": [
+    {
+      "id": "T1",
+      "name": "Event Detail Page",
+      "estimatedCount": 4625,
+      "urlPatterns": ["/about-us/events/industrial/*", "/about-us/events/schedule/*", "/about-us/events/anz/*"],
+      "platform": "A (Legacy)",
+      "liveStatus": "Mostly 404 - legacy event pages largely deprecated",
+      "notes": "Largest single group. Most return 404. Sub-category landing pages (life-science.html, industrial.html) are live and use Brightcove video teasers."
+    },
+    {
+      "id": "T2",
+      "name": "Brand Page",
+      "estimatedCount": 1811,
+      "urlPatterns": ["/brands/*", "/brands1/*", "/brands2/*"],
+      "platform": "Mixed A & B",
+      "liveStatus": "Good - many brand pages still live",
+      "notes": "brands1 and brands2 are exact duplicates. Modern pages (Applied Biosystems) use full-width layout; classic pages (Invitrogen, Thermo Scientific sub-pages) use sidebar layout."
+    },
+    {
+      "id": "T3",
+      "name": "Press Release / News",
+      "estimatedCount": 1274,
+      "urlPatterns": ["/about-us/news-gallery/release/*", "/about-us/news-gallery/press-releases/*", "/about-us/news-gallery/press-release-china/*", "/about-us/news-gallery/japan-press-release/*"],
+      "platform": "A (Legacy)",
+      "liveStatus": "Mostly 404 - news pages largely deprecated",
+      "notes": "Large volume but mostly inaccessible. Gallery landing returns 403."
+    },
+    {
+      "id": "T4",
+      "name": "Clinical Page",
+      "estimatedCount": 475,
+      "urlPatterns": ["/clinical/*"],
+      "platform": "Mixed A & B",
+      "liveStatus": "Landing pages live, deep pages mixed",
+      "notes": "Clinical landing uses legacy parsys with mondrian hero. Sub-pages use mixed platforms."
+    },
+    {
+      "id": "T5",
+      "name": "Bioprocessing Page",
+      "estimatedCount": 650,
+      "urlPatterns": ["/bioprocessing/*"],
+      "platform": "B (Modern)",
+      "liveStatus": "Good - many bioprocessing pages live",
+      "notes": "Modern architecture. Uses full-width hero, section separators, standardized 4-up resources footer grid. Most consistent template set."
+    },
+    {
+      "id": "T6",
+      "name": "Chemicals Page",
+      "estimatedCount": 230,
+      "urlPatterns": ["/chemicals/*"],
+      "platform": "Mixed A & B",
+      "liveStatus": "Landing live, sub-pages mixed",
+      "notes": "Chemicals landing uses modern Core Components. Sub-pages use legacy parsys."
+    },
+    {
+      "id": "T7",
+      "name": "Corporate / CSR Page",
+      "estimatedCount": 180,
+      "urlPatterns": ["/about-us/corporate-social-responsibility/*", "/about-us/sustainability/*", "/about-us/csr/*"],
+      "platform": "C (Corporate TFC)",
+      "liveStatus": "Redirects to corporate.thermofisher.com",
+      "notes": "Entirely custom component library (cmp-tfc-*). Uses bespoke blocks like ceo-letter, highlights, csr-commitment."
+    },
+    {
+      "id": "T8",
+      "name": "Campaign / Landing Page",
+      "estimatedCount": 98,
+      "urlPatterns": ["/c/*"],
+      "platform": "A (Legacy)",
+      "liveStatus": "Mostly 404",
+      "notes": "Short-lived campaign pages, most expired."
+    },
+    {
+      "id": "T9",
+      "name": "B2B / eProcurement Page",
+      "estimatedCount": 68,
+      "urlPatterns": ["/b2b/*"],
+      "platform": "A (Legacy)",
+      "liveStatus": "Landing live, sub-pages mixed",
+      "notes": "2-column layout with sidebar navigation. Uses mondrian hero."
+    },
+    {
+      "id": "T10",
+      "name": "News Article / Interview",
+      "estimatedCount": 179,
+      "urlPatterns": ["/about-us/news-gallery/news-and-views/*", "/about-us/news-gallery/interview/*"],
+      "platform": "A (Legacy)",
+      "liveStatus": "Mostly 404",
+      "notes": "Blog-style article content."
+    },
+    {
+      "id": "T11",
+      "name": "About-Us / Corporate Info",
+      "estimatedCount": 124,
+      "urlPatterns": ["/about-us/partnering-licensing/*", "/about-us/investor-relations/*", "/about-us/awards-recognition.html"],
+      "platform": "Mixed A & C",
+      "liveStatus": "Some redirect to corporate site",
+      "notes": "Partnering pages use legacy template with carousel hero + sidebar nav."
+    },
+    {
+      "id": "T12",
+      "name": "China / Regional Page",
+      "estimatedCount": 213,
+      "urlPatterns": ["/china/*"],
+      "platform": "Unknown (not tested)",
+      "liveStatus": "Unknown",
+      "notes": "Regional content, may have locale-specific templates."
+    }
+  ]
+}

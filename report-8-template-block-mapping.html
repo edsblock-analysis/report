@@ -1,0 +1,224 @@
+<html>
+<head>
+<title>View 2: Template → Block Mapping - Thermo Fisher AEM-to-EDS Migration</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1500px; margin: 0 auto; padding: 20px; overflow-x: hidden; }
+h1 { color: #0066cc; border-bottom: 3px solid #0066cc; padding-bottom: 10px; }
+h2 { color: #333; margin-top: 40px; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+h3 { color: #555; margin-top: 20px; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; vertical-align: top; font-size: 0.9em; }
+th { background: #0066cc; color: white; }
+tr:nth-child(even) { background: #f8f9fa; }
+a { color: #0066cc; }
+p.meta { color: #666; }
+.block-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; margin: 1px; font-size: 0.85em; }
+.bt-hero { background: #ffeaa7; color: #636e72; }
+.bt-cards { background: #dfe6e9; color: #2d3436; }
+.bt-columns { background: #b2bec3; color: #2d3436; }
+.bt-teaser { background: #fab1a0; color: #636e72; }
+.bt-form { background: #ff7675; color: white; }
+.bt-nav { background: #74b9ff; color: white; }
+.bt-video { background: #a29bfe; color: white; }
+.bt-interactive { background: #00cec9; color: white; }
+.bt-section { background: #e17055; color: white; }
+.bt-unique { background: #6c5ce7; color: white; }
+.platform-modern { background: #d4edda; color: #155724; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; }
+.platform-legacy { background: #fff3cd; color: #856404; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; }
+.platform-mixed { background: #cce5ff; color: #004085; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; }
+.top-nav{background:linear-gradient(90deg,#1a237e 0%,#0d47a1 100%);box-shadow:0 2px 8px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box}
+.top-nav-inner{margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.top-nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;transition:all .2s;background:rgba(255,255,255,.08)}
+.top-nav a:hover{background:rgba(255,255,255,.2);color:#fff}
+.top-nav .sep{color:rgba(255,255,255,.5);font-size:13px}
+.top-nav .project{color:rgba(255,255,255,.9);font-size:14px;font-weight:500}
+</style>
+</head>
+<body>
+<nav class="top-nav"><div class="top-nav-inner"><a href="index.html"><span style="font-size:18px">&#8962;</span> Dashboard Home</a><span class="sep">·</span><span class="project">Thermo Fisher AEM &rarr; EDS Migration</span></div></nav>
+
+<h1>View 2: Template → Block Mapping</h1>
+<p class="meta"><b>Site:</b> thermofisher.com | <b>Date:</b> 2026-03-20 | <b>Templates:</b> 21 | <b>Blocks:</b> 35 | <b>Variations:</b> 87</p>
+
+<h2>Complete Template → Block Mapping</h2>
+<table>
+<tr><th>Template</th><th>Variation</th><th>Block</th><th>Block Variation</th><th>Reference URL</th></tr>
+<!-- T01: Modern Category Landing -->
+<tr style="background:#e8f4fd"><td rowspan="6"><b>T01: Modern Category Landing (L1)</b><br><span class="platform-modern">Modern</span><br>216 pages</td><td rowspan="6">T01a: Standard<br>T01b: With CTA<br>T01c: Gradient</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard, V3: Gradient, V4: With CTA</td><td><a href="https://www.thermofisher.com/us/en/home/life-science/cell-analysis.html">Cell Analysis</a>, <a href="https://www.thermofisher.com/us/en/home/bioprocessing.html">Bioprocessing</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-cards">cards</span></td><td>V1: 3-up, V2: 4-up, V3: 2-up, V8: Icon props</td><td><a href="https://www.thermofisher.com/us/en/home/bioprocessing.html">Bioprocessing</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-columns">columns</span></td><td>V1: 50/50 text-left, V2: 50/50 image-left</td><td><a href="https://www.thermofisher.com/us/en/home/bioprocessing.html">Bioprocessing</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo bar</td><td>All pages</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-cards">resources-grid</span></td><td>V1: 4-up icon footer</td><td><a href="https://www.thermofisher.com/us/en/home/bioprocessing.html">Bioprocessing</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-section">section-metadata</span></td><td>V8: Modern container</td><td>—</td></tr>
+
+<!-- T02: Modern Category L2 -->
+<tr><td rowspan="7"><b>T02: Modern Category L2</b><br><span class="platform-modern">Modern</span><br>1,698 pages</td><td rowspan="7">T02a: Standard<br>T02b: With Sidebar</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard, V4: With CTA</td><td><a href="https://www.thermofisher.com/us/en/home/bioprocessing/about.html">Bioprocessing About</a></td></tr>
+<tr><td><span class="block-tag bt-cards">cards</span></td><td>V1: 3-up, V2: 4-up, V8: Icon props</td><td><a href="https://www.thermofisher.com/us/en/home/bioprocessing/about.html">Bioprocessing About</a></td></tr>
+<tr><td><span class="block-tag bt-columns">columns</span></td><td>V1: 50/50 text-left, V2: image-left, V3: 75/25</td><td><a href="https://www.thermofisher.com/us/en/home/bioprocessing/about.html">Bioprocessing About</a></td></tr>
+<tr><td><span class="block-tag bt-nav">sidebar-nav</span></td><td>V1: Auto-navigation tree</td><td><a href="https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html">Bioreactors</a></td></tr>
+<tr><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo, V4: Mid-page promotional</td><td><a href="https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html">Molecular Biology</a></td></tr>
+<tr><td><span class="block-tag bt-cards">resources-grid</span></td><td>V1: 4-up icon footer</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-section">section-metadata</span></td><td>V8: Modern container</td><td>—</td></tr>
+
+<!-- T03: Category Deep Page -->
+<tr style="background:#e8f4fd"><td rowspan="12"><b>T03: Category Deep Page</b><br><span class="platform-mixed">Mixed</span><br>16,758 pages</td><td rowspan="12">T03a: Modern Deep<br>T03b: Legacy+Sidebar<br>T03c: Legacy+Video<br>T03d: Legacy+Forms</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard, V5: Thinbanner</td><td><a href="https://www.thermofisher.com/us/en/home/life-science/pcr.html">PCR</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-nav">sidebar-nav</span></td><td>V1: Auto-nav, V2: Manual left-nav</td><td><a href="https://www.thermofisher.com/us/en/home/industrial/chromatography.html">Chromatography</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-cards">cards</span></td><td>V1: 3-up, V2: 4-up, V6: Product showcase</td><td><a href="https://www.thermofisher.com/us/en/home/brands/invitrogen.html">Invitrogen</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-columns">columns</span></td><td>V1: 50/50, V4: Legacy 2-col, V5: Legacy 3-col, V6: Asymmetric</td><td><a href="https://www.thermofisher.com/us/en/home/industrial/chromatography.html">Chromatography</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-video">video</span></td><td>V1: Brightcove legacy</td><td><a href="https://www.thermofisher.com/us/en/home/life-science/pcr/real-time-pcr.html">Real-Time PCR</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-interactive">embed</span></td><td>V1: LTRawHTML</td><td><a href="https://www.thermofisher.com/us/en/home/industrial/chromatography.html">Chromatography</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-interactive">table</span></td><td>V1: Spec table, V2: Striped RTE</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-form">form</span></td><td>V3: Experience Fragment, V4: Inline request</td><td><a href="https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html">Protein Assays</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-unique">mondrian</span></td><td>V2: Module-f, V3: Group, V4: Featured-list</td><td><a href="https://www.thermofisher.com/us/en/home/life-science/protein-biology/protein-assays-analysis.html">Protein Assays</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo, V5: Dark gradient</td><td><a href="https://www.thermofisher.com/us/en/home/clinical/clinical-translational-research.html">Translational Research</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-section">section-metadata</span></td><td>V2: Blue-light, V3: Gray-lighter, V5: Mini, V6: BG image, V7: Page heading</td><td><a href="https://www.thermofisher.com/us/en/home/life-science/pcr.html">PCR</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-cards">resources-grid</span></td><td>V1: 4-up icon footer</td><td>—</td></tr>
+
+<!-- T04: Product Detail -->
+<tr><td rowspan="10"><b>T04: Product Detail</b><br><span class="platform-modern">Modern</span><br>807 pages</td><td rowspan="10">T04a: Standard</td><td><span class="block-tag bt-hero">hero</span></td><td>V2: Foreground product image</td><td><a href="https://www.thermofisher.com/us/en/home/electron-microscopy/products/scanning-electron-microscopes/volumescope-2-sem.html">VolumeScope</a></td></tr>
+<tr><td><span class="block-tag bt-nav">product-sub-nav</span></td><td>V1: Sticky product nav</td><td><a href="https://www.thermofisher.com/us/en/home/bioprocessing/products/bioreactors.html">Bioreactors</a></td></tr>
+<tr><td><span class="block-tag bt-nav">sidebar-nav</span></td><td>V1: Auto-navigation tree</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-columns">columns</span></td><td>V3: 75/25 asymmetric</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-video">video</span></td><td>V2: Video teaser card</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-interactive">table</span></td><td>V1: Spec table</td><td><a href="https://www.thermofisher.com/us/en/home/industrial/chromatography/liquid-chromatography-lc/hplc-uhplc-systems/vanquish-tandem-lc-system-lc-lc-ms.html">Vanquish LC</a></td></tr>
+<tr><td><span class="block-tag bt-interactive">embed</span></td><td>V1: LTRawHTML</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-cards">download-card</span></td><td>V1: Resource download</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo bar</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-section">section-metadata</span></td><td>V8: Modern container</td><td>—</td></tr>
+
+<!-- T05: Form Page -->
+<tr style="background:#e8f4fd"><td rowspan="3"><b>T05: Form Page</b><br><span class="platform-mixed">Mixed</span><br>18,521 pages</td><td rowspan="3">T05a: Modern Pragma<br>T05b: Legacy Eloqua<br>T05c: Thank-You</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard, V5: Thinbanner</td><td><a href="https://www.thermofisher.com/us/en/home/global/forms/life-science/pcr-innovation.html">PCR Innovation</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-form">form</span></td><td>V1: Modern Pragma, V2: Legacy Eloqua</td><td><a href="https://www.thermofisher.com/us/en/home/global/forms/industrial/gc-columns-literature-request.html">GC Columns</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo bar</td><td>—</td></tr>
+
+<!-- T06: Promotion -->
+<tr><td rowspan="5"><b>T06: Promotion Page</b><br><span class="platform-modern">Modern</span><br>13,813 pages</td><td rowspan="5">T06a: Standard<br>T06b: Campaign<br>T06c: Thank-You</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard, V3: Gradient</td><td><a href="https://www.thermofisher.com/us/en/home/products-and-services/promotions/save-now.html">Save Now</a></td></tr>
+<tr><td><span class="block-tag bt-cards">cards</span></td><td>V9: Promotion with badge</td><td><a href="https://www.thermofisher.com/us/en/home/products-and-services/promotions/save-now.html">Save Now</a></td></tr>
+<tr><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo, V2: Full-width, V4: Mid-page</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-columns">columns</span></td><td>V1: 50/50 text-left</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-form">form</span></td><td>V1: Modern Pragma</td><td>—</td></tr>
+
+<!-- T07: Tech Resources -->
+<tr style="background:#e8f4fd"><td rowspan="5"><b>T07: Tech Resources</b><br><span class="platform-modern">Modern</span><br>6,871 pages</td><td rowspan="5">T07a: Hub<br>T07b: Detail</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard</td><td><a href="https://www.thermofisher.com/us/en/home/technical-resources/technical-reference-library.html">Tech Ref Library</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-cards">cards</span></td><td>V10: Tech reference cards</td><td><a href="https://www.thermofisher.com/us/en/home/technical-resources/technical-reference-library.html">Tech Ref Library</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-nav">anchor-nav</span></td><td>V1: cmp-anchorlist TOC</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo bar</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-section">section-metadata</span></td><td>V8: Modern container</td><td>—</td></tr>
+
+<!-- T08: Events -->
+<tr><td rowspan="5"><b>T08: Events Page</b><br><span class="platform-modern">Modern</span><br>4,873 pages</td><td rowspan="5">T08a: Hub<br>T08b: Detail</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard</td><td><a href="https://www.thermofisher.com/us/en/home/about-us/events.html">Events</a></td></tr>
+<tr><td><span class="block-tag bt-unique">event-table</span></td><td>V1: Filterable event list</td><td><a href="https://www.thermofisher.com/us/en/home/about-us/events.html">Events</a></td></tr>
+<tr><td><span class="block-tag bt-cards">cards</span></td><td>V7: Legacy 4-col category</td><td><a href="https://www.thermofisher.com/us/en/home/about-us/events/digital-solutions.html">DS Events</a></td></tr>
+<tr><td><span class="block-tag bt-form">form</span></td><td>V1: Modern Pragma</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo bar</td><td>—</td></tr>
+
+<!-- T09: Brand Page -->
+<tr style="background:#e8f4fd"><td rowspan="6"><b>T09: Brand Page</b><br><span class="platform-legacy">Legacy</span><br>1,795 pages</td><td rowspan="6">T09a: Landing<br>T09b: Sub-page</td><td><span class="block-tag bt-hero">hero</span></td><td>V5: Thinbanner</td><td><a href="https://www.thermofisher.com/us/en/home/brands/invitrogen.html">Invitrogen</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-nav">sidebar-nav</span></td><td>V1: Auto-nav, V2: Manual</td><td><a href="https://www.thermofisher.com/us/en/home/brands/thermo-scientific/molecular-biology.html">Molecular Bio</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-cards">cards</span></td><td>V5: Text-only, V6: Product showcase</td><td><a href="https://www.thermofisher.com/us/en/home/brands/invitrogen.html">Invitrogen</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-columns">columns</span></td><td>V4: Legacy 2-col, V5: Legacy 3-col</td><td><a href="https://www.thermofisher.com/us/en/home/industrial/chromatography.html">Chromatography</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo, V4: Mid-page</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-section">section-metadata</span></td><td>V1: White, V2: Blue-light, V3: Gray-lighter</td><td>—</td></tr>
+
+<!-- T10: Corporate -->
+<tr><td rowspan="8"><b>T10: Corporate About</b><br><span class="platform-mixed">Modern+Corp</span><br>1,906 pages</td><td rowspan="8">T10a: Standard<br>T10b: TFC Corporate</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard, V7: Corporate</td><td><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html">CSR</a></td></tr>
+<tr><td><span class="block-tag bt-interactive">carousel</span></td><td>V1: Hero slider</td><td><a href="https://www.thermofisher.com/us/en/home/about-us/partnering-licensing.html">Partnering</a></td></tr>
+<tr><td><span class="block-tag bt-unique">highlights</span></td><td>V1: Stats/numbers grid</td><td><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html">CSR</a></td></tr>
+<tr><td><span class="block-tag bt-interactive">quote</span></td><td>V1: CEO letter, V2: Testimonial</td><td><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html">CSR</a></td></tr>
+<tr><td><span class="block-tag bt-unique">csr-pillars</span></td><td>V1: Corporate pillars</td><td><a href="https://corporate.thermofisher.com/us/en/index/corporate-social-responsibility.html">CSR</a></td></tr>
+<tr><td><span class="block-tag bt-unique">pipeline</span></td><td>V1: Drug dev phases</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-columns">columns</span></td><td>V1: 50/50, V4: Legacy 2-col</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo bar</td><td>—</td></tr>
+
+<!-- T11: Protocol -->
+<tr style="background:#e8f4fd"><td rowspan="6"><b>T11: Reference/Protocol</b><br><span class="platform-legacy">Legacy</span><br>1,730 pages</td><td rowspan="6">T11a: Index<br>T11b: Detail</td><td><span class="block-tag bt-hero">hero</span></td><td>V5: Thinbanner</td><td><a href="https://www.thermofisher.com/us/en/home/references/protocols.html">Protocols</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-nav">anchor-nav</span></td><td>V3: Pipe-separated links</td><td><a href="https://www.thermofisher.com/us/en/home/references/protocols.html">Protocols</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-nav">sidebar-nav</span></td><td>V2: Manual left-nav</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-cards">resources-list</span></td><td>V1: Title + description links</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-interactive">table</span></td><td>V2: Striped RTE table</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-section">section-metadata</span></td><td>V2: Blue-light, V3: Gray-lighter</td><td>—</td></tr>
+
+<!-- T12: Handbook -->
+<tr><td rowspan="8"><b>T12: Reference/Handbook</b><br><span class="platform-legacy">Legacy</span><br>455 pages</td><td rowspan="8">T12a: Gibco<br>T12b: Mol. Probes</td><td><span class="block-tag bt-hero">hero</span></td><td>V5: Thinbanner</td><td><a href="https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html">Cell Culture Basics</a></td></tr>
+<tr><td><span class="block-tag bt-unique">chapter-toc</span></td><td>V1: Handbook chapter nav</td><td><a href="https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook.html">Mol. Probes Handbook</a></td></tr>
+<tr><td><span class="block-tag bt-unique">handbook-search</span></td><td>V1: Inline search box</td><td><a href="https://www.thermofisher.com/us/en/home/references/molecular-probes-the-handbook.html">Mol. Probes Handbook</a></td></tr>
+<tr><td><span class="block-tag bt-nav">sidebar-nav</span></td><td>V3: Chapter sidebar</td><td><a href="https://www.thermofisher.com/us/en/home/life-science/cloning.html">Cloning</a></td></tr>
+<tr><td><span class="block-tag bt-video">video</span></td><td>V1: Brightcove, V4: Playlist</td><td><a href="https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html">Cell Culture Basics</a></td></tr>
+<tr><td><span class="block-tag bt-video">video-playlist</span></td><td>V1: Playlist</td><td><a href="https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html">Cell Culture Basics</a></td></tr>
+<tr><td><span class="block-tag bt-cards">cards</span></td><td>V11: Icon cards (decorative)</td><td><a href="https://www.thermofisher.com/us/en/home/references/gibco-cell-culture-basics.html">Cell Culture Basics</a></td></tr>
+<tr><td><span class="block-tag bt-section">section-metadata</span></td><td>V2: Blue-light, V6: BG image</td><td>—</td></tr>
+
+<!-- T13: Support -->
+<tr style="background:#e8f4fd"><td rowspan="7"><b>T13: Support Hub</b><br><span class="platform-modern">Modern</span><br>310 pages</td><td rowspan="7">T13a: Landing<br>T13b: Detail</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard</td><td><a href="https://www.thermofisher.com/us/en/home/support.html">Support</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-unique">support-hub</span></td><td>V1: Categorized links</td><td><a href="https://www.thermofisher.com/us/en/home/support.html">Support</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-unique">quick-menu</span></td><td>V1: Titled quick-links</td><td><a href="https://www.thermofisher.com/us/en/home/clinical/diagnostic-testing.html">Diagnostic Testing</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-interactive">accordion</span></td><td>V1: Modern cmp-accordion</td><td><a href="https://www.thermofisher.com/us/en/home/products-and-services/services.html">Services</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-nav">anchor-nav</span></td><td>V1: cmp-anchorlist TOC</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo bar</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-section">section-metadata</span></td><td>V8: Modern container</td><td>—</td></tr>
+
+<!-- T14: Blog -->
+<tr><td rowspan="6"><b>T14: Blog/Editorial</b><br><span class="platform-legacy">Legacy/WP</span><br>789 pages</td><td rowspan="6">T14a: Magazine<br>T14b: Post<br>T14c: Community</td><td><span class="block-tag bt-hero">hero</span></td><td>V5: Thinbanner</td><td><a href="https://www.thermofisher.com/us/en/home/new-ideas/life-in-the-lab.html">Life in the Lab</a></td></tr>
+<tr><td><span class="block-tag bt-interactive">carousel</span></td><td>V2: Filmstrip magazine</td><td><a href="https://www.thermofisher.com/us/en/home/new-ideas/life-in-the-lab.html">Life in the Lab</a></td></tr>
+<tr><td><span class="block-tag bt-unique">blog-cards</span></td><td>V1: WordPress grid, V2: Legacy post-list</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-interactive">social-share</span></td><td>V1: Inline social icons</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-columns">columns</span></td><td>V4: Legacy 2-col</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-section">section-metadata</span></td><td>V3: Gray-lighter</td><td>—</td></tr>
+
+<!-- T15: PAS -->
+<tr style="background:#e8f4fd"><td rowspan="8"><b>T15: PAS Landing/Services</b><br><span class="platform-mixed">Mixed</span><br>6,676 pages</td><td rowspan="8">T15a: Landing<br>T15b: Supply Ctr<br>T15c: Detail</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard, V5: Thinbanner</td><td><a href="https://www.thermofisher.com/us/en/home/products-and-services/services.html">Services</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-interactive">accordion</span></td><td>V1: Modern, V2: Legacy Bootstrap</td><td><a href="https://www.thermofisher.com/us/en/home/products-and-services/services.html">Services</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-nav">anchor-nav</span></td><td>V1: cmp-anchorlist TOC</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-video">video-teaser</span></td><td>V1: Thumbnail + play</td><td><a href="https://www.thermofisher.com/us/en/home/products-and-services/supply-center.html">Supply Center</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-video">video-modal</span></td><td>V1: Modal overlay</td><td><a href="https://www.thermofisher.com/us/en/home/products-and-services/supply-center.html">Supply Center</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-cards">cards</span></td><td>V1: 3-up</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-teaser">teaser</span></td><td>V1: Header promo bar</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-section">section-metadata</span></td><td>V8: Modern container</td><td>—</td></tr>
+
+<!-- T16: Industry Vertical -->
+<tr><td rowspan="7"><b>T16: Industry Vertical</b><br><span class="platform-modern">Modern</span><br>414 pages</td><td rowspan="7">T16a: Landing<br>T16b: Detail</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard, V3: Gradient</td><td><a href="https://www.thermofisher.com/us/en/home/sustainable-design.html">Sustainable Design</a></td></tr>
+<tr><td><span class="block-tag bt-nav">sidebar-nav</span></td><td>V1: Auto-nav</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-video">video</span></td><td>V3: Modern Brightcove</td><td><a href="https://www.thermofisher.com/us/en/home/sustainable-design.html">Sustainable Design</a></td></tr>
+<tr><td><span class="block-tag bt-nav">product-sub-nav</span></td><td>V2: Manual/auto with dropdowns</td><td><a href="https://www.thermofisher.com/us/en/home/sustainable-design.html">Sustainable Design</a></td></tr>
+<tr><td><span class="block-tag bt-cards">cards</span></td><td>V1: 3-up, V2: 4-up</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-columns">columns</span></td><td>V1: 50/50</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-section">section-metadata</span></td><td>V8: Modern container</td><td>—</td></tr>
+
+<!-- T17: Digital Solutions -->
+<tr style="background:#e8f4fd"><td rowspan="6"><b>T17: Digital Solutions</b><br><span class="platform-mixed">Mixed</span><br>96 pages</td><td rowspan="6">T17a: Hub<br>T17b: Cloud</td><td><span class="block-tag bt-hero">hero</span></td><td>V3: Gradient</td><td><a href="https://www.thermofisher.com/us/en/home/digital-solutions.html">Digital Solutions</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-interactive">tabs</span></td><td>V3: Workflow tabs</td><td><a href="https://www.thermofisher.com/us/en/home/digital-solutions.html">Digital Solutions</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-interactive">accordion</span></td><td>V2: Legacy Bootstrap</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-columns">columns</span></td><td>V7: Bordered 4-col</td><td><a href="https://www.thermofisher.com/us/en/home/digital-solutions.html">Digital Solutions</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-unique">workflow-stepper</span></td><td>V1: Multi-step</td><td><a href="https://www.thermofisher.com/us/en/home/life-science/cloning.html">Cloning</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-section">section-metadata</span></td><td>V8: Modern container</td><td>—</td></tr>
+
+<!-- T18: Clinical Hub -->
+<tr><td rowspan="8"><b>T18: Clinical Hub</b><br><span class="platform-legacy">Legacy</span><br>147 pages</td><td rowspan="8">T18a: Mondrian<br>T18b: Sub-hub</td><td><span class="block-tag bt-hero">hero</span></td><td>V5: Thinbanner, V6: Mondrian</td><td><a href="https://www.thermofisher.com/us/en/home/clinical.html">Clinical</a></td></tr>
+<tr><td><span class="block-tag bt-unique">mondrian</span></td><td>V1: Feature promo</td><td><a href="https://www.thermofisher.com/us/en/home/clinical.html">Clinical</a></td></tr>
+<tr><td><span class="block-tag bt-unique">quick-menu</span></td><td>V1: Titled quick-links</td><td><a href="https://www.thermofisher.com/us/en/home/clinical/diagnostic-testing.html">Diagnostic Testing</a></td></tr>
+<tr><td><span class="block-tag bt-teaser">teaser</span></td><td>V2: Full-width, V3: Split, V5: Gradient</td><td><a href="https://www.thermofisher.com/us/en/home/clinical.html">Clinical</a></td></tr>
+<tr><td><span class="block-tag bt-cards">cards</span></td><td>V1: 3-up, V7: Legacy 4-col</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-columns">columns</span></td><td>V4: 2-col, V5: 3-col, V6: Asymmetric</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-form">form</span></td><td>V3: Experience Fragment</td><td><a href="https://www.thermofisher.com/us/en/home/clinical/clinical-translational-research.html">Translational</a></td></tr>
+<tr><td><span class="block-tag bt-section">section-metadata</span></td><td>V2: Blue-light, V3: Gray-lighter</td><td>—</td></tr>
+
+<!-- T19-T21 -->
+<tr style="background:#e8f4fd"><td rowspan="4"><b>T19: Order Hub</b><br><span class="platform-modern">Modern</span><br>64 pages</td><td rowspan="4">T19a: Hub</td><td><span class="block-tag bt-hero">hero</span></td><td>V1: Standard</td><td><a href="https://www.thermofisher.com/us/en/home/order.html">Order</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-nav">anchor-nav</span></td><td>V1: cmp-anchorlist TOC</td><td><a href="https://www.thermofisher.com/us/en/home/order.html">Order</a></td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-interactive">accordion</span></td><td>V1: Modern cmp-accordion</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-section">section-metadata</span></td><td>V8: Modern container</td><td>—</td></tr>
+
+<tr><td rowspan="5"><b>T20: B2B Page</b><br><span class="platform-legacy">Legacy</span><br>69 pages</td><td rowspan="5">T20a: Landing</td><td><span class="block-tag bt-hero">hero</span></td><td>V6: Mondrian hero</td><td><a href="https://www.thermofisher.com/us/en/home/b2b.html">B2B</a></td></tr>
+<tr><td><span class="block-tag bt-unique">mondrian</span></td><td>V1: Feature promo, V2: Module-f</td><td><a href="https://www.thermofisher.com/us/en/home/b2b.html">B2B</a></td></tr>
+<tr><td><span class="block-tag bt-cards">cards</span></td><td>V7: Legacy 4-col</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-columns">columns</span></td><td>V4: Legacy 2-col</td><td>—</td></tr>
+<tr><td><span class="block-tag bt-section">section-metadata</span></td><td>V2: Blue-light</td><td>—</td></tr>
+
+<tr style="background:#e8f4fd"><td rowspan="4"><b>T21: Chemicals</b><br><span class="platform-legacy">Legacy</span><br>230 pages</td><td rowspan="4">T21a: Landing</td><td><span class="block-tag bt-hero">hero</span></td><td>V5: Thinbanner</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-nav">sidebar-nav</span></td><td>V2: Manual left-nav</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-columns">columns</span></td><td>V4: Legacy 2-col, V5: Legacy 3-col</td><td>—</td></tr>
+<tr style="background:#e8f4fd"><td><span class="block-tag bt-section">section-metadata</span></td><td>V2: Blue-light, V3: Gray-lighter</td><td>—</td></tr>
+</table>
+
+</body>
+</html>
