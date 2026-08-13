@@ -1,0 +1,1246 @@
+[
+  {
+    "url": "https://www.american-equity.com",
+    "bytes": 227173,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/about",
+    "bytes": 186681,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/about",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/about",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/about/careers",
+    "bytes": 192293,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/about/careers",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/about/careers",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/about/careers/internship-program",
+    "bytes": 164395,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/about/careers/internship-program",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/about/careers/internship-program",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/about/careers/openings",
+    "bytes": 140992,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/about/careers/openings",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/about/careers/openings",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/about/careers/why-work-here",
+    "bytes": 198364,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/about/careers/why-work-here",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/about/careers/why-work-here",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/accessibility",
+    "bytes": 120467,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/accessibility",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/accessibility",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/agent-sms-privacy-terms",
+    "bytes": 124000,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/agent-sms-privacy-terms",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/agent-sms-privacy-terms",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/annuities",
+    "bytes": 259209,
+    "redirected": true,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/annuities",
+        "status": 301,
+        "location": "/our-annuities"
+      },
+      {
+        "url": "https://www.american-equity.com/our-annuities",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/our-annuities",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/annuities-101",
+    "bytes": 179331,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/annuities-101",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/annuities-101",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/annuities/fixed-index-annuities",
+    "bytes": 259209,
+    "redirected": true,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/annuities/fixed-index-annuities",
+        "status": 301,
+        "location": "/our-annuities"
+      },
+      {
+        "url": "https://www.american-equity.com/our-annuities",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/our-annuities",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/annuities/retirement-income-research",
+    "bytes": 1066917,
+    "redirected": true,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/annuities/retirement-income-research",
+        "status": 301,
+        "location": "/insights"
+      },
+      {
+        "url": "https://www.american-equity.com/insights",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/AssetShield",
+    "bytes": 254906,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/AssetShield",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/AssetShield",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/beneficiary-support",
+    "bytes": 172613,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/beneficiary-support",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/beneficiary-support",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/community",
+    "bytes": 165571,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/community",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/community",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/contact-us",
+    "bytes": 151391,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/contact-us",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/contact-us",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/EstateShield",
+    "bytes": 219746,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/EstateShield",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/EstateShield",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/financial-strength",
+    "bytes": 160743,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/financial-strength",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/financial-strength",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/form",
+    "bytes": 114854,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/form",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/form",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/forms",
+    "bytes": 133342,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/forms",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/forms",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/GuaranteeShield",
+    "bytes": 208057,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/GuaranteeShield",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/GuaranteeShield",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/income-gap-calculator",
+    "bytes": 117847,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/income-gap-calculator",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/income-gap-calculator",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/IncomeShield",
+    "bytes": 234514,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/IncomeShield",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/IncomeShield",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/incomeshield-annuity/how-it-works",
+    "bytes": 234514,
+    "redirected": true,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/incomeshield-annuity/how-it-works",
+        "status": 301,
+        "location": "/IncomeShield"
+      },
+      {
+        "url": "https://www.american-equity.com/IncomeShield",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/IncomeShield",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights",
+    "bytes": 1066917,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/10-Facts-About-Fixed-Index-Annuities",
+    "bytes": 159793,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/10-Facts-About-Fixed-Index-Annuities",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/10-Facts-About-Fixed-Index-Annuities",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/8-questions-to-ask-yourself-when-planning-for-retirement",
+    "bytes": 149025,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/8-questions-to-ask-yourself-when-planning-for-retirement",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/8-questions-to-ask-yourself-when-planning-for-retirement",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year",
+    "bytes": 138970,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/Annuities-101-What-You-Need-to-Know",
+    "bytes": 154153,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/Annuities-101-What-You-Need-to-Know",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/Annuities-101-What-You-Need-to-Know",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+    "bytes": 153071,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/baby-boomer-retirement-trends-housing",
+    "bytes": 152659,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/baby-boomer-retirement-trends-housing",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/baby-boomer-retirement-trends-housing",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/baby-boomer-retirement-trends-transportation--health-care",
+    "bytes": 165414,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/baby-boomer-retirement-trends-transportation--health-care",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/baby-boomer-retirement-trends-transportation--health-care",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/benefits-of-fixed-index-annuities",
+    "bytes": 159058,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/benefits-of-fixed-index-annuities",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/benefits-of-fixed-index-annuities",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time",
+    "bytes": 154784,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/how-annuities-can-help-fund-reliable-income-in-retirement",
+    "bytes": 152518,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/how-annuities-can-help-fund-reliable-income-in-retirement",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/how-annuities-can-help-fund-reliable-income-in-retirement",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals",
+    "bytes": 165847,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity",
+    "bytes": 171303,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap",
+    "bytes": 159622,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+    "bytes": 175157,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/the-benefits-of-working-with-a-financial-professional",
+    "bytes": 153371,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/the-benefits-of-working-with-a-financial-professional",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/the-benefits-of-working-with-a-financial-professional",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/the-sandwich-generation-and-its-retirement-outlook",
+    "bytes": 170331,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/the-sandwich-generation-and-its-retirement-outlook",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/the-sandwich-generation-and-its-retirement-outlook",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income",
+    "bytes": 161967,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/job-applicant-privacy-policy",
+    "bytes": 146441,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/job-applicant-privacy-policy",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/job-applicant-privacy-policy",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/naic-statutory-financial-statements",
+    "bytes": 353919,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/naic-statutory-financial-statements",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/naic-statutory-financial-statements",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/our-annuities",
+    "bytes": 259209,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/our-annuities",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/our-annuities",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/privacy",
+    "bytes": 171336,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/privacy",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/privacy",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals",
+    "bytes": 216536,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/American-Equity-AssetShield",
+    "bytes": 375023,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/American-Equity-AssetShield",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/American-Equity-AssetShield",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/American-Equity-EstateShield",
+    "bytes": 234108,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/American-Equity-EstateShield",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/American-Equity-EstateShield",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/American-Equity-GuaranteeShield",
+    "bytes": 223988,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/American-Equity-GuaranteeShield",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/American-Equity-GuaranteeShield",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/American-Equity-IncomeShield",
+    "bytes": 378698,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/American-Equity-IncomeShield",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/American-Equity-IncomeShield",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/client-engagement-collections",
+    "bytes": 395210,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/client-engagement-collections",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/client-engagement-collections",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/client-engagement-collections/art-engagement-collection",
+    "bytes": 152699,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/client-engagement-collections/art-engagement-collection",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/client-engagement-collections/art-engagement-collection",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/contact-us",
+    "bytes": 139479,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/contact-us",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/contact-us",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/document-library",
+    "bytes": 123497,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/document-library",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/document-library",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/forms-library",
+    "bytes": 127690,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/forms-library",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/forms-library",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/fp-insights-and-education",
+    "bytes": 99491,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/fp-insights-and-education",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/fp-insights-and-education",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World",
+    "bytes": 153679,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk",
+    "bytes": 152063,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/material-request-form",
+    "bytes": 102053,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/material-request-form",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/material-request-form",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/our-annuities",
+    "bytes": 179816,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/our-annuities",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/our-annuities",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/rates-and-indexes",
+    "bytes": 299528,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/rates-and-indexes",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/rates-and-indexes",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/resources",
+    "bytes": 202609,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/resources",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/resources",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/tools-calculators",
+    "bytes": 135763,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/tools-calculators",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/tools-calculators",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/professionals/tools-calculators/income-gap-calculator",
+    "bytes": 109733,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/professionals/tools-calculators/income-gap-calculator",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/professionals/tools-calculators/income-gap-calculator",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/resources/blog/9-ways-to-plan-for-a-happier-retirement",
+    "bytes": 175157,
+    "redirected": true,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/resources/blog/9-ways-to-plan-for-a-happier-retirement",
+        "status": 301,
+        "location": "/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps"
+      },
+      {
+        "url": "https://www.american-equity.com/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/resources/blog/baby-boomer-retirement-trends-retirement-income",
+    "bytes": 153071,
+    "redirected": true,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/resources/blog/baby-boomer-retirement-trends-retirement-income",
+        "status": 301,
+        "location": "/insights/baby-boomer-retirement-income-expectations-and-opportunities"
+      },
+      {
+        "url": "https://www.american-equity.com/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/resources/blog/fixed-index-annuities-faq",
+    "bytes": 159058,
+    "redirected": true,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/resources/blog/fixed-index-annuities-faq",
+        "status": 301,
+        "location": "/insights/benefits-of-fixed-index-annuities/"
+      },
+      {
+        "url": "https://www.american-equity.com/insights/benefits-of-fixed-index-annuities/",
+        "status": 308,
+        "location": "/insights/benefits-of-fixed-index-annuities"
+      },
+      {
+        "url": "https://www.american-equity.com/insights/benefits-of-fixed-index-annuities",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/benefits-of-fixed-index-annuities",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders",
+    "bytes": 1066917,
+    "redirected": true,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders",
+        "status": 301,
+        "location": "/insights"
+      },
+      {
+        "url": "https://www.american-equity.com/insights",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings",
+    "bytes": 1066917,
+    "redirected": true,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings",
+        "status": 301,
+        "location": "/insights"
+      },
+      {
+        "url": "https://www.american-equity.com/insights",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/resources/blog/top-fixed-index-annuity-benefits",
+    "bytes": 159793,
+    "redirected": true,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/resources/blog/top-fixed-index-annuity-benefits",
+        "status": 301,
+        "location": "/insights/10-Facts-About-Fixed-Index-Annuities/"
+      },
+      {
+        "url": "https://www.american-equity.com/insights/10-Facts-About-Fixed-Index-Annuities/",
+        "status": 308,
+        "location": "/insights/10-Facts-About-Fixed-Index-Annuities"
+      },
+      {
+        "url": "https://www.american-equity.com/insights/10-Facts-About-Fixed-Index-Annuities",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/insights/10-Facts-About-Fixed-Index-Annuities",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/security-disclosure",
+    "bytes": 100937,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/security-disclosure",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/security-disclosure",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/terms-of-use",
+    "bytes": 207010,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/terms-of-use",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/terms-of-use",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  {
+    "url": "https://www.american-equity.com/usa-patriot-act-notice",
+    "bytes": 101713,
+    "redirected": false,
+    "chain": [
+      {
+        "url": "https://www.american-equity.com/usa-patriot-act-notice",
+        "status": 200,
+        "location": null
+      }
+    ],
+    "finalUrl": "https://www.american-equity.com/usa-patriot-act-notice",
+    "finalStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "server": "envoy"
+  }
+]

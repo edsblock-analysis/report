@@ -1,0 +1,2040 @@
+{
+  "templates": {
+    "Home": {
+      "pages": 1,
+      "urls": [
+        "/"
+      ]
+    },
+    "Section Landing / Hub": {
+      "pages": 13,
+      "urls": [
+        "/about",
+        "/annuities-101",
+        "/beneficiary-support",
+        "/community",
+        "/financial-strength",
+        "/professionals",
+        "/professionals/client-engagement-collections",
+        "/professionals/client-engagement-collections/art-engagement-collection",
+        "/professionals/fp-insights-and-education",
+        "/professionals/our-annuities",
+        "/professionals/rates-and-indexes",
+        "/professionals/resources",
+        "/professionals/tools-calculators"
+      ]
+    },
+    "Careers": {
+      "pages": 4,
+      "urls": [
+        "/about/careers",
+        "/about/careers/internship-program",
+        "/about/careers/openings",
+        "/about/careers/why-work-here"
+      ]
+    },
+    "Legal / Utility": {
+      "pages": 8,
+      "urls": [
+        "/accessibility",
+        "/agent-sms-privacy-terms",
+        "/job-applicant-privacy-policy",
+        "/naic-statutory-financial-statements",
+        "/privacy",
+        "/security-disclosure",
+        "/terms-of-use",
+        "/usa-patriot-act-notice"
+      ]
+    },
+    "Product / Annuity (Consumer)": {
+      "pages": 8,
+      "urls": [
+        "/annuities",
+        "/annuities/fixed-index-annuities",
+        "/AssetShield",
+        "/EstateShield",
+        "/GuaranteeShield",
+        "/IncomeShield",
+        "/incomeshield-annuity/how-it-works",
+        "/our-annuities"
+      ]
+    },
+    "Content Listing (Dynamic)": {
+      "pages": 4,
+      "urls": [
+        "/annuities/retirement-income-research",
+        "/insights",
+        "/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders",
+        "/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings"
+      ]
+    },
+    "Contact": {
+      "pages": 2,
+      "urls": [
+        "/contact-us",
+        "/professionals/contact-us"
+      ]
+    },
+    "Form / Document Listing": {
+      "pages": 5,
+      "urls": [
+        "/form",
+        "/forms",
+        "/professionals/document-library",
+        "/professionals/forms-library",
+        "/professionals/material-request-form"
+      ]
+    },
+    "Tool / Calculator (Embed)": {
+      "pages": 2,
+      "urls": [
+        "/income-gap-calculator",
+        "/professionals/tools-calculators/income-gap-calculator"
+      ]
+    },
+    "Article (Insight / Blog)": {
+      "pages": 23,
+      "urls": [
+        "/insights/10-Facts-About-Fixed-Index-Annuities",
+        "/insights/8-questions-to-ask-yourself-when-planning-for-retirement",
+        "/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year",
+        "/insights/Annuities-101-What-You-Need-to-Know",
+        "/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+        "/insights/baby-boomer-retirement-trends-housing",
+        "/insights/baby-boomer-retirement-trends-transportation--health-care",
+        "/insights/benefits-of-fixed-index-annuities",
+        "/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time",
+        "/insights/how-annuities-can-help-fund-reliable-income-in-retirement",
+        "/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals",
+        "/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity",
+        "/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap",
+        "/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+        "/insights/the-benefits-of-working-with-a-financial-professional",
+        "/insights/the-sandwich-generation-and-its-retirement-outlook",
+        "/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income",
+        "/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World",
+        "/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk",
+        "/resources/blog/9-ways-to-plan-for-a-happier-retirement",
+        "/resources/blog/baby-boomer-retirement-trends-retirement-income",
+        "/resources/blog/fixed-index-annuities-faq",
+        "/resources/blog/top-fixed-index-annuity-benefits"
+      ]
+    },
+    "Product / Annuity (Professional)": {
+      "pages": 4,
+      "urls": [
+        "/professionals/American-Equity-AssetShield",
+        "/professionals/American-Equity-EstateShield",
+        "/professionals/American-Equity-GuaranteeShield",
+        "/professionals/American-Equity-IncomeShield"
+      ]
+    }
+  },
+  "assign": [
+    {
+      "url": "https://www.american-equity.com",
+      "path": "/",
+      "finalPath": "/",
+      "redirected": false,
+      "template": "Home",
+      "components": {
+        "ContentArea": 7,
+        "heroHeaderSection": 1,
+        "featureCardsAndMediaRow": 2,
+        "featuredIconCard": 5,
+        "videoBlock": 1,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "metrics": 1,
+        "metricsCard": 3,
+        "imageBlock": 1,
+        "featuredImageCard": 3,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/about",
+      "path": "/about",
+      "finalPath": "/about",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 6,
+        "heroHeaderSection": 1,
+        "imageBlock": 2,
+        "featureCardsAndMediaRow": 2,
+        "featuredImageCard": 5,
+        "metrics": 1,
+        "metricsCard": 3,
+        "ctaBlock": 1,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/about/careers",
+      "path": "/about/careers",
+      "finalPath": "/about/careers",
+      "redirected": false,
+      "template": "Careers",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "imageBlock": 1,
+        "ctaBlock": 3,
+        "featureCardsAndMediaRow": 2,
+        "featuredIconCard": 4,
+        "featureVerticalLineTab": 1,
+        "featureVerticalLineTabCard": 4,
+        "featuredImageCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/about/careers/internship-program",
+      "path": "/about/careers/internship-program",
+      "finalPath": "/about/careers/internship-program",
+      "redirected": false,
+      "template": "Careers",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "videoBlock": 2,
+        "featureCardsAndMediaRow": 1,
+        "featuredIconCard": 4,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "ctaBlock": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/about/careers/openings",
+      "path": "/about/careers/openings",
+      "finalPath": "/about/careers/openings",
+      "redirected": false,
+      "template": "Careers",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "progressBar": 1,
+        "progressBarStep": 5,
+        "scriptRow": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Greenhouse (job board / ATS)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/about/careers/why-work-here",
+      "path": "/about/careers/why-work-here",
+      "finalPath": "/about/careers/why-work-here",
+      "redirected": false,
+      "template": "Careers",
+      "components": {
+        "ContentArea": 7,
+        "heroHeaderSection": 1,
+        "ctaBlock": 2,
+        "featureCardsAndMediaRow": 3,
+        "featuredIconCard": 5,
+        "videoBlock": 2,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 4,
+        "featuredImageCard": 7,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/accessibility",
+      "path": "/accessibility",
+      "finalPath": "/accessibility",
+      "redirected": false,
+      "template": "Legal / Utility",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredIconCard": 4,
+        "richTextRow": 1,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/agent-sms-privacy-terms",
+      "path": "/agent-sms-privacy-terms",
+      "finalPath": "/agent-sms-privacy-terms",
+      "redirected": false,
+      "template": "Legal / Utility",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredIconCard": 4,
+        "richTextRow": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/annuities",
+      "path": "/annuities",
+      "finalPath": "/our-annuities",
+      "redirected": true,
+      "template": "Product / Annuity (Consumer)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "videoBlock": 1,
+        "featureVerticalLineTab": 1,
+        "featureVerticalLineTabCard": 3,
+        "featureCardsAndMediaRow": 1,
+        "imageBlock": 1,
+        "accordion": 1,
+        "progressBar": 1,
+        "progressBarStep": 4,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/annuities-101",
+      "path": "/annuities-101",
+      "finalPath": "/annuities-101",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 6,
+        "heroHeaderSection": 1,
+        "imageBlock": 2,
+        "videoBlock": 1,
+        "featureCardsAndMediaRow": 2,
+        "featuredIconCard": 6,
+        "ctaBlock": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/annuities/fixed-index-annuities",
+      "path": "/annuities/fixed-index-annuities",
+      "finalPath": "/our-annuities",
+      "redirected": true,
+      "template": "Product / Annuity (Consumer)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "videoBlock": 1,
+        "featureVerticalLineTab": 1,
+        "featureVerticalLineTabCard": 3,
+        "featureCardsAndMediaRow": 1,
+        "imageBlock": 1,
+        "accordion": 1,
+        "progressBar": 1,
+        "progressBarStep": 4,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/annuities/retirement-income-research",
+      "path": "/annuities/retirement-income-research",
+      "finalPath": "/insights",
+      "redirected": true,
+      "template": "Content Listing (Dynamic)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "blogHeader": 1,
+        "blogCard": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "YouTube (outbound links only)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/AssetShield",
+      "path": "/AssetShield",
+      "finalPath": "/AssetShield",
+      "redirected": false,
+      "template": "Product / Annuity (Consumer)",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "videoBlock": 1,
+        "ctaBlock": 1,
+        "accordion": 1,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "imageBlock": 1,
+        "progressBar": 1,
+        "progressBarStep": 4,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/beneficiary-support",
+      "path": "/beneficiary-support",
+      "finalPath": "/beneficiary-support",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 3,
+        "heroHeaderSection": 1,
+        "progressBar": 1,
+        "progressBarStep": 3,
+        "imageBlock": 1,
+        "attachments": 1,
+        "accordion": 1,
+        "ctaBlock": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/community",
+      "path": "/community",
+      "finalPath": "/community",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 6,
+        "heroHeaderSection": 1,
+        "featureCardsAndMediaRow": 2,
+        "featuredIconCard": 3,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "ctaBlock": 1,
+        "featuredImageCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/contact-us",
+      "path": "/contact-us",
+      "finalPath": "/contact-us",
+      "redirected": false,
+      "template": "Contact",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "contactRow": 1,
+        "contactCard": 4,
+        "imageBlock": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 3,
+        "ctaBlock": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/EstateShield",
+      "path": "/EstateShield",
+      "finalPath": "/EstateShield",
+      "redirected": false,
+      "template": "Product / Annuity (Consumer)",
+      "components": {
+        "ContentArea": 6,
+        "heroHeaderSection": 1,
+        "videoBlock": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 2,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "imageBlock": 1,
+        "progressBar": 1,
+        "progressBarStep": 4,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/financial-strength",
+      "path": "/financial-strength",
+      "finalPath": "/financial-strength",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "imageBlock": 2,
+        "metrics": 1,
+        "metricsCard": 3,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 3,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/form",
+      "path": "/form",
+      "finalPath": "/form",
+      "redirected": false,
+      "template": "Form / Document Listing",
+      "components": {
+        "ContentArea": 3,
+        "heroHeader": 1,
+        "richTextRow": 1,
+        "formInputModel": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/forms",
+      "path": "/forms",
+      "finalPath": "/forms",
+      "redirected": false,
+      "template": "Form / Document Listing",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "formListing": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/GuaranteeShield",
+      "path": "/GuaranteeShield",
+      "finalPath": "/GuaranteeShield",
+      "redirected": false,
+      "template": "Product / Annuity (Consumer)",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "imageBlock": 2,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "progressBar": 1,
+        "progressBarStep": 4,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/income-gap-calculator",
+      "path": "/income-gap-calculator",
+      "finalPath": "/income-gap-calculator",
+      "redirected": false,
+      "template": "Tool / Calculator (Embed)",
+      "components": {
+        "ContentArea": 3,
+        "heroHeaderSection": 1,
+        "imageBlock": 1,
+        "scriptRow": 1,
+        "ctaBlock": 1,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Hedgeness (income-gap calculator)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/IncomeShield",
+      "path": "/IncomeShield",
+      "finalPath": "/IncomeShield",
+      "redirected": false,
+      "template": "Product / Annuity (Consumer)",
+      "components": {
+        "ContentArea": 6,
+        "heroHeaderSection": 1,
+        "videoBlock": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 4,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "imageBlock": 1,
+        "progressBar": 1,
+        "progressBarStep": 4,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/incomeshield-annuity/how-it-works",
+      "path": "/incomeshield-annuity/how-it-works",
+      "finalPath": "/IncomeShield",
+      "redirected": true,
+      "template": "Product / Annuity (Consumer)",
+      "components": {
+        "ContentArea": 6,
+        "heroHeaderSection": 1,
+        "videoBlock": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 4,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "imageBlock": 1,
+        "progressBar": 1,
+        "progressBarStep": 4,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights",
+      "path": "/insights",
+      "finalPath": "/insights",
+      "redirected": false,
+      "template": "Content Listing (Dynamic)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "blogHeader": 1,
+        "blogCard": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "YouTube (outbound links only)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/10-Facts-About-Fixed-Index-Annuities",
+      "path": "/insights/10-Facts-About-Fixed-Index-Annuities",
+      "finalPath": "/insights/10-Facts-About-Fixed-Index-Annuities",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/8-questions-to-ask-yourself-when-planning-for-retirement",
+      "path": "/insights/8-questions-to-ask-yourself-when-planning-for-retirement",
+      "finalPath": "/insights/8-questions-to-ask-yourself-when-planning-for-retirement",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year",
+      "path": "/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year",
+      "finalPath": "/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/Annuities-101-What-You-Need-to-Know",
+      "path": "/insights/Annuities-101-What-You-Need-to-Know",
+      "finalPath": "/insights/Annuities-101-What-You-Need-to-Know",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+      "path": "/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+      "finalPath": "/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/baby-boomer-retirement-trends-housing",
+      "path": "/insights/baby-boomer-retirement-trends-housing",
+      "finalPath": "/insights/baby-boomer-retirement-trends-housing",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/baby-boomer-retirement-trends-transportation--health-care",
+      "path": "/insights/baby-boomer-retirement-trends-transportation--health-care",
+      "finalPath": "/insights/baby-boomer-retirement-trends-transportation--health-care",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/benefits-of-fixed-index-annuities",
+      "path": "/insights/benefits-of-fixed-index-annuities",
+      "finalPath": "/insights/benefits-of-fixed-index-annuities",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time",
+      "path": "/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time",
+      "finalPath": "/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "imageBlock": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredIconCard": 4,
+        "richTextRow": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/how-annuities-can-help-fund-reliable-income-in-retirement",
+      "path": "/insights/how-annuities-can-help-fund-reliable-income-in-retirement",
+      "finalPath": "/insights/how-annuities-can-help-fund-reliable-income-in-retirement",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 3,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals",
+      "path": "/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals",
+      "finalPath": "/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 3,
+        "imageBlock": 2,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "YouTube (outbound links only)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity",
+      "path": "/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity",
+      "finalPath": "/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "imageBlock": 1,
+        "richTextRow": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap",
+      "path": "/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap",
+      "finalPath": "/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+      "path": "/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+      "finalPath": "/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/the-benefits-of-working-with-a-financial-professional",
+      "path": "/insights/the-benefits-of-working-with-a-financial-professional",
+      "finalPath": "/insights/the-benefits-of-working-with-a-financial-professional",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/the-sandwich-generation-and-its-retirement-outlook",
+      "path": "/insights/the-sandwich-generation-and-its-retirement-outlook",
+      "finalPath": "/insights/the-sandwich-generation-and-its-retirement-outlook",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income",
+      "path": "/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income",
+      "finalPath": "/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/job-applicant-privacy-policy",
+      "path": "/job-applicant-privacy-policy",
+      "finalPath": "/job-applicant-privacy-policy",
+      "redirected": false,
+      "template": "Legal / Utility",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredIconCard": 4,
+        "richTextRow": 1,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/naic-statutory-financial-statements",
+      "path": "/naic-statutory-financial-statements",
+      "finalPath": "/naic-statutory-financial-statements",
+      "redirected": false,
+      "template": "Legal / Utility",
+      "components": {
+        "ContentArea": 3,
+        "heroHeaderSection": 1,
+        "attachments": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/our-annuities",
+      "path": "/our-annuities",
+      "finalPath": "/our-annuities",
+      "redirected": false,
+      "template": "Product / Annuity (Consumer)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "videoBlock": 1,
+        "featureVerticalLineTab": 1,
+        "featureVerticalLineTabCard": 3,
+        "featureCardsAndMediaRow": 1,
+        "imageBlock": 1,
+        "accordion": 1,
+        "progressBar": 1,
+        "progressBarStep": 4,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/privacy",
+      "path": "/privacy",
+      "finalPath": "/privacy",
+      "redirected": false,
+      "template": "Legal / Utility",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredIconCard": 4,
+        "richTextRow": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals",
+      "path": "/professionals",
+      "finalPath": "/professionals",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 6,
+        "heroHeaderSection": 1,
+        "generalModal": 1,
+        "featureCardsAndMediaRow": 2,
+        "featuredIconCard": 9,
+        "feature3SetsImage": 1,
+        "featureSetCard": 3,
+        "metrics": 1,
+        "metricsCard": 3,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/American-Equity-AssetShield",
+      "path": "/professionals/American-Equity-AssetShield",
+      "finalPath": "/professionals/American-Equity-AssetShield",
+      "redirected": false,
+      "template": "Product / Annuity (Professional)",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "videoBlock": 1,
+        "ctaBlock": 3,
+        "brochure": 1,
+        "brochureTab": 5,
+        "brochureCard": 6,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "imageBlock": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 3,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/American-Equity-EstateShield",
+      "path": "/professionals/American-Equity-EstateShield",
+      "finalPath": "/professionals/American-Equity-EstateShield",
+      "redirected": false,
+      "template": "Product / Annuity (Professional)",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "videoBlock": 1,
+        "brochure": 1,
+        "brochureTab": 3,
+        "brochureCard": 1,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "imageBlock": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 3,
+        "ctaBlock": 2,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/American-Equity-GuaranteeShield",
+      "path": "/professionals/American-Equity-GuaranteeShield",
+      "finalPath": "/professionals/American-Equity-GuaranteeShield",
+      "redirected": false,
+      "template": "Product / Annuity (Professional)",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "imageBlock": 2,
+        "brochure": 1,
+        "brochureTab": 2,
+        "brochureCard": 1,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 3,
+        "ctaBlock": 2,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/American-Equity-IncomeShield",
+      "path": "/professionals/American-Equity-IncomeShield",
+      "finalPath": "/professionals/American-Equity-IncomeShield",
+      "redirected": false,
+      "template": "Product / Annuity (Professional)",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "videoBlock": 1,
+        "brochure": 1,
+        "brochureTab": 5,
+        "brochureCard": 4,
+        "featureHorizontalLineTab": 1,
+        "featureHorizontalLineTabCard": 3,
+        "imageBlock": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 3,
+        "ctaBlock": 2,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Wistia (video)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/client-engagement-collections",
+      "path": "/professionals/client-engagement-collections",
+      "finalPath": "/professionals/client-engagement-collections",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 3,
+        "heroHeaderSection": 1,
+        "anchorLinkTarget": 1,
+        "brochure": 7,
+        "brochureTab": 7,
+        "brochureCard": 28,
+        "ctaBlock": 1,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/client-engagement-collections/art-engagement-collection",
+      "path": "/professionals/client-engagement-collections/art-engagement-collection",
+      "finalPath": "/professionals/client-engagement-collections/art-engagement-collection",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "ctaBlock": 3,
+        "attachments": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 2,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/contact-us",
+      "path": "/professionals/contact-us",
+      "finalPath": "/professionals/contact-us",
+      "redirected": false,
+      "template": "Contact",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "contactRow": 1,
+        "contactCard": 3,
+        "scriptRow": 1,
+        "ctaBlock": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "ion interactive (Scribble) — forms"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/document-library",
+      "path": "/professionals/document-library",
+      "finalPath": "/professionals/document-library",
+      "redirected": false,
+      "template": "Form / Document Listing",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "formListing": 1,
+        "ctaBlock": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/forms-library",
+      "path": "/professionals/forms-library",
+      "finalPath": "/professionals/forms-library",
+      "redirected": false,
+      "template": "Form / Document Listing",
+      "components": {
+        "ContentArea": 3,
+        "heroHeaderSection": 1,
+        "formTable": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/fp-insights-and-education",
+      "path": "/professionals/fp-insights-and-education",
+      "finalPath": "/professionals/fp-insights-and-education",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 3,
+        "heroHeaderSection": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World",
+      "path": "/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World",
+      "finalPath": "/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 3,
+        "imageBlock": 2,
+        "featureCardsAndMediaRow": 1,
+        "featuredImageCard": 3,
+        "attachments": 1,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk",
+      "path": "/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk",
+      "finalPath": "/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk",
+      "redirected": false,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 3,
+        "featureCardsAndMediaRow": 1,
+        "featuredIconCard": 3,
+        "imageBlock": 2,
+        "attachments": 1,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/material-request-form",
+      "path": "/professionals/material-request-form",
+      "finalPath": "/professionals/material-request-form",
+      "redirected": false,
+      "template": "Form / Document Listing",
+      "components": {
+        "ContentArea": 3,
+        "heroHeaderSection": 1,
+        "scriptRow": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "ion interactive (Scribble) — forms"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/our-annuities",
+      "path": "/professionals/our-annuities",
+      "finalPath": "/professionals/our-annuities",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 7,
+        "heroHeaderSection": 1,
+        "featureCardsAndMediaRow": 4,
+        "featuredImageCard": 7,
+        "imageBlock": 1,
+        "featuredIconCard": 2,
+        "ctaBlock": 1,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/rates-and-indexes",
+      "path": "/professionals/rates-and-indexes",
+      "finalPath": "/professionals/rates-and-indexes",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "attachments": 3,
+        "accordion": 1,
+        "ctaBlock": 2,
+        "featureCardsAndMediaRow": 1,
+        "featuredIconCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/resources",
+      "path": "/professionals/resources",
+      "finalPath": "/professionals/resources",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 8,
+        "heroHeaderSection": 1,
+        "ctaBlock": 3,
+        "featureCardsAndMediaRow": 5,
+        "featuredImageCard": 8,
+        "featuredIconCard": 6,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/tools-calculators",
+      "path": "/professionals/tools-calculators",
+      "finalPath": "/professionals/tools-calculators",
+      "redirected": false,
+      "template": "Section Landing / Hub",
+      "components": {
+        "ContentArea": 5,
+        "heroHeaderSection": 1,
+        "featureCardsAndMediaRow": 2,
+        "featuredIconCard": 5,
+        "ctaBlock": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/professionals/tools-calculators/income-gap-calculator",
+      "path": "/professionals/tools-calculators/income-gap-calculator",
+      "finalPath": "/professionals/tools-calculators/income-gap-calculator",
+      "redirected": false,
+      "template": "Tool / Calculator (Embed)",
+      "components": {
+        "ContentArea": 3,
+        "heroHeaderSection": 1,
+        "scriptRow": 1,
+        "ctaBlock": 1,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 11
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "Hedgeness (income-gap calculator)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/resources/blog/9-ways-to-plan-for-a-happier-retirement",
+      "path": "/resources/blog/9-ways-to-plan-for-a-happier-retirement",
+      "finalPath": "/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+      "redirected": true,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/resources/blog/baby-boomer-retirement-trends-retirement-income",
+      "path": "/resources/blog/baby-boomer-retirement-trends-retirement-income",
+      "finalPath": "/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+      "redirected": true,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/resources/blog/fixed-index-annuities-faq",
+      "path": "/resources/blog/fixed-index-annuities-faq",
+      "finalPath": "/insights/benefits-of-fixed-index-annuities",
+      "redirected": true,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders",
+      "path": "/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders",
+      "finalPath": "/insights",
+      "redirected": true,
+      "template": "Content Listing (Dynamic)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "blogHeader": 1,
+        "blogCard": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "YouTube (outbound links only)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings",
+      "path": "/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings",
+      "finalPath": "/insights",
+      "redirected": true,
+      "template": "Content Listing (Dynamic)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "blogHeader": 1,
+        "blogCard": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation",
+        "YouTube (outbound links only)"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/resources/blog/top-fixed-index-annuity-benefits",
+      "path": "/resources/blog/top-fixed-index-annuity-benefits",
+      "finalPath": "/insights/10-Facts-About-Fixed-Index-Annuities",
+      "redirected": true,
+      "template": "Article (Insight / Blog)",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "richTextRow": 2,
+        "imageBlock": 1,
+        "disclosure": 1,
+        "relatedBlogPosts": 1,
+        "blogCard": 3,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/security-disclosure",
+      "path": "/security-disclosure",
+      "finalPath": "/security-disclosure",
+      "redirected": false,
+      "template": "Legal / Utility",
+      "components": {
+        "ContentArea": 3,
+        "heroHeaderSection": 1,
+        "richTextRow": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/terms-of-use",
+      "path": "/terms-of-use",
+      "finalPath": "/terms-of-use",
+      "redirected": false,
+      "template": "Legal / Utility",
+      "components": {
+        "ContentArea": 4,
+        "heroHeaderSection": 1,
+        "featureCardsAndMediaRow": 1,
+        "featuredIconCard": 4,
+        "richTextRow": 1,
+        "disclosure": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    },
+    {
+      "url": "https://www.american-equity.com/usa-patriot-act-notice",
+      "path": "/usa-patriot-act-notice",
+      "finalPath": "/usa-patriot-act-notice",
+      "redirected": false,
+      "template": "Legal / Utility",
+      "components": {
+        "ContentArea": 3,
+        "heroHeaderSection": 1,
+        "richTextRow": 1,
+        "footerNavigationColumn": 4,
+        "footerNavigationLink": 10
+      },
+      "integrations": [
+        "Google Tag Manager",
+        "Google Analytics 4 (via GTM)",
+        "OneTrust (consent)",
+        "Optimizely CMS (SaaS)",
+        "Optimizely Web / Experimentation"
+      ]
+    }
+  ]
+}

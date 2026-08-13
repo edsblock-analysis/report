@@ -1,0 +1,777 @@
+{
+  "Home": {
+    "pageCount": 1,
+    "urls": [
+      "/"
+    ],
+    "embeds": null,
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Standard Hero": 1
+        }
+      },
+      "Feature Cards & Media": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Media + copy row": 1,
+          "Icon card grid": 1,
+          "Image card grid": 1
+        }
+      },
+      "Video (Wistia)": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Inline Wistia video": 1
+        }
+      },
+      "Tabs (Tabbed Content)": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Horizontal tabs": 1
+        }
+      },
+      "Metrics / Stats": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Stat row": 1
+        }
+      },
+      "Accordion / Disclosure": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Disclosure / legal expander": 1
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 1,
+        "variations": {
+          "Multi-column footer": 1
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 1,
+        "variations": {
+          "Mega-menu header": 1
+        }
+      }
+    }
+  },
+  "Section Landing / Hub": {
+    "pageCount": 13,
+    "urls": [
+      "/about",
+      "/annuities-101",
+      "/beneficiary-support",
+      "/community",
+      "/financial-strength",
+      "/professionals",
+      "/professionals/client-engagement-collections",
+      "/professionals/client-engagement-collections/art-engagement-collection",
+      "/professionals/fp-insights-and-education",
+      "/professionals/our-annuities",
+      "/professionals/rates-and-indexes",
+      "/professionals/resources",
+      "/professionals/tools-calculators"
+    ],
+    "embeds": null,
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 13,
+        "variations": {
+          "Standard Hero": 13
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 13,
+        "variations": {
+          "Multi-column footer": 13
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 13,
+        "variations": {
+          "Mega-menu header": 13
+        }
+      },
+      "Breadcrumb": {
+        "kind": "global",
+        "pages": 12,
+        "variations": {
+          "Breadcrumb trail": 12
+        }
+      },
+      "Feature Cards & Media": {
+        "kind": "block",
+        "pages": 10,
+        "variations": {
+          "Media + copy row": 10,
+          "Image card grid": 6,
+          "Icon card grid": 7,
+          "3-set image feature": 1
+        }
+      },
+      "Accordion / Disclosure": {
+        "kind": "block",
+        "pages": 8,
+        "variations": {
+          "Disclosure / legal expander": 6,
+          "FAQ accordion": 2
+        }
+      },
+      "Metrics / Stats": {
+        "kind": "block",
+        "pages": 3,
+        "variations": {
+          "Stat row": 3
+        }
+      },
+      "Video (Wistia)": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Inline Wistia video": 1
+        }
+      },
+      "Blog Card / Related Posts": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Related posts strip": 1,
+          "Editorial card grid": 1
+        }
+      },
+      "Progress Bar / Stepper": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Numbered step sequence": 1
+        }
+      },
+      "Tabs (Tabbed Content)": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Horizontal tabs": 1
+        }
+      },
+      "Modal / Dialog": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "General modal": 1
+        }
+      }
+    }
+  },
+  "Careers": {
+    "pageCount": 4,
+    "urls": [
+      "/about/careers",
+      "/about/careers/internship-program",
+      "/about/careers/openings",
+      "/about/careers/why-work-here"
+    ],
+    "embeds": {
+      "Greenhouse job board": 1
+    },
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 4,
+        "variations": {
+          "Standard Hero": 4
+        }
+      },
+      "Feature Cards & Media": {
+        "kind": "block",
+        "pages": 4,
+        "variations": {
+          "Media + copy row": 4,
+          "Icon card grid": 3,
+          "Image card grid": 3
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 4,
+        "variations": {
+          "Multi-column footer": 4
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 4,
+        "variations": {
+          "Mega-menu header": 4
+        }
+      },
+      "Breadcrumb": {
+        "kind": "global",
+        "pages": 4,
+        "variations": {
+          "Breadcrumb trail": 4
+        }
+      },
+      "Tabs (Tabbed Content)": {
+        "kind": "block",
+        "pages": 3,
+        "variations": {
+          "Vertical tabs": 1,
+          "Horizontal tabs": 2
+        }
+      },
+      "Video (Wistia)": {
+        "kind": "block",
+        "pages": 2,
+        "variations": {
+          "Inline Wistia video": 2
+        }
+      },
+      "Progress Bar / Stepper": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Numbered step sequence": 1
+        }
+      }
+    }
+  },
+  "Legal / Utility": {
+    "pageCount": 8,
+    "urls": [
+      "/accessibility",
+      "/agent-sms-privacy-terms",
+      "/job-applicant-privacy-policy",
+      "/naic-statutory-financial-statements",
+      "/privacy",
+      "/security-disclosure",
+      "/terms-of-use",
+      "/usa-patriot-act-notice"
+    ],
+    "embeds": null,
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 8,
+        "variations": {
+          "Standard Hero": 8
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 8,
+        "variations": {
+          "Multi-column footer": 8
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 8,
+        "variations": {
+          "Mega-menu header": 8
+        }
+      },
+      "Breadcrumb": {
+        "kind": "global",
+        "pages": 8,
+        "variations": {
+          "Breadcrumb trail": 8
+        }
+      },
+      "Feature Cards & Media": {
+        "kind": "block",
+        "pages": 5,
+        "variations": {
+          "Media + copy row": 5,
+          "Icon card grid": 5
+        }
+      },
+      "Accordion / Disclosure": {
+        "kind": "block",
+        "pages": 3,
+        "variations": {
+          "Disclosure / legal expander": 3
+        }
+      }
+    }
+  },
+  "Product / Annuity (Consumer)": {
+    "pageCount": 8,
+    "urls": [
+      "/AssetShield",
+      "/EstateShield",
+      "/GuaranteeShield",
+      "/IncomeShield",
+      "/annuities",
+      "/annuities/fixed-index-annuities",
+      "/incomeshield-annuity/how-it-works",
+      "/our-annuities"
+    ],
+    "embeds": null,
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 8,
+        "variations": {
+          "Standard Hero": 8
+        }
+      },
+      "Tabs (Tabbed Content)": {
+        "kind": "block",
+        "pages": 8,
+        "variations": {
+          "Vertical tabs": 3,
+          "Horizontal tabs": 5
+        }
+      },
+      "Accordion / Disclosure": {
+        "kind": "block",
+        "pages": 8,
+        "variations": {
+          "FAQ accordion": 4,
+          "Disclosure / legal expander": 5
+        }
+      },
+      "Progress Bar / Stepper": {
+        "kind": "block",
+        "pages": 8,
+        "variations": {
+          "Numbered step sequence": 8
+        }
+      },
+      "Blog Card / Related Posts": {
+        "kind": "block",
+        "pages": 8,
+        "variations": {
+          "Related posts strip": 8,
+          "Editorial card grid": 8
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 8,
+        "variations": {
+          "Multi-column footer": 8
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 8,
+        "variations": {
+          "Mega-menu header": 8
+        }
+      },
+      "Breadcrumb": {
+        "kind": "global",
+        "pages": 8,
+        "variations": {
+          "Breadcrumb trail": 8
+        }
+      },
+      "Video (Wistia)": {
+        "kind": "block",
+        "pages": 7,
+        "variations": {
+          "Inline Wistia video": 7
+        }
+      },
+      "Feature Cards & Media": {
+        "kind": "block",
+        "pages": 6,
+        "variations": {
+          "Media + copy row": 6,
+          "Image card grid": 3
+        }
+      }
+    }
+  },
+  "Content Listing (Dynamic)": {
+    "pageCount": 4,
+    "urls": [
+      "/annuities/retirement-income-research",
+      "/insights",
+      "/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders",
+      "/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings"
+    ],
+    "embeds": null,
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 4,
+        "variations": {
+          "Standard Hero": 4,
+          "Article Hero": 4
+        }
+      },
+      "Blog Card / Related Posts": {
+        "kind": "block",
+        "pages": 4,
+        "variations": {
+          "Editorial card grid": 4
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 4,
+        "variations": {
+          "Multi-column footer": 4
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 4,
+        "variations": {
+          "Mega-menu header": 4
+        }
+      },
+      "Breadcrumb": {
+        "kind": "global",
+        "pages": 4,
+        "variations": {
+          "Breadcrumb trail": 4
+        }
+      },
+      "Dynamic Content Listing (Insights index)": {
+        "kind": "block",
+        "pages": 4,
+        "variations": {
+          "Client-fetched paginated feed": 4
+        }
+      }
+    }
+  },
+  "Contact": {
+    "pageCount": 2,
+    "urls": [
+      "/contact-us",
+      "/professionals/contact-us"
+    ],
+    "embeds": {
+      "ion interactive form": 1
+    },
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 2,
+        "variations": {
+          "Standard Hero": 2
+        }
+      },
+      "Contact Card / Row": {
+        "kind": "block",
+        "pages": 2,
+        "variations": {
+          "Contact cards": 2
+        }
+      },
+      "Feature Cards & Media": {
+        "kind": "block",
+        "pages": 2,
+        "variations": {
+          "Media + copy row": 2,
+          "Image card grid": 2
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 2,
+        "variations": {
+          "Multi-column footer": 2
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 2,
+        "variations": {
+          "Mega-menu header": 2
+        }
+      },
+      "Breadcrumb": {
+        "kind": "global",
+        "pages": 2,
+        "variations": {
+          "Breadcrumb trail": 2
+        }
+      }
+    }
+  },
+  "Form / Document Listing": {
+    "pageCount": 5,
+    "urls": [
+      "/form",
+      "/forms",
+      "/professionals/document-library",
+      "/professionals/forms-library",
+      "/professionals/material-request-form"
+    ],
+    "embeds": {
+      "ion interactive form": 1
+    },
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 5,
+        "variations": {
+          "Simple Hero": 1,
+          "Standard Hero": 4
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 5,
+        "variations": {
+          "Multi-column footer": 5
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 5,
+        "variations": {
+          "Mega-menu header": 5
+        }
+      },
+      "Breadcrumb": {
+        "kind": "global",
+        "pages": 5,
+        "variations": {
+          "Breadcrumb trail": 5
+        }
+      },
+      "Searchable Form / Document Library": {
+        "kind": "block",
+        "pages": 3,
+        "variations": {
+          "Search + category tabs": 2,
+          "Table directory": 1
+        }
+      },
+      "Native Data-Entry Form": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Native form": 1
+        }
+      },
+      "Feature Cards & Media": {
+        "kind": "block",
+        "pages": 1,
+        "variations": {
+          "Media + copy row": 1,
+          "Image card grid": 1
+        }
+      }
+    }
+  },
+  "Tool / Calculator (Embed)": {
+    "pageCount": 2,
+    "urls": [
+      "/income-gap-calculator",
+      "/professionals/tools-calculators/income-gap-calculator"
+    ],
+    "embeds": {
+      "Hedgeness calculator": 2
+    },
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 2,
+        "variations": {
+          "Standard Hero": 2
+        }
+      },
+      "Accordion / Disclosure": {
+        "kind": "block",
+        "pages": 2,
+        "variations": {
+          "Disclosure / legal expander": 2
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 2,
+        "variations": {
+          "Multi-column footer": 2
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 2,
+        "variations": {
+          "Mega-menu header": 2
+        }
+      },
+      "Breadcrumb": {
+        "kind": "global",
+        "pages": 2,
+        "variations": {
+          "Breadcrumb trail": 2
+        }
+      }
+    }
+  },
+  "Article (Insight / Blog)": {
+    "pageCount": 23,
+    "urls": [
+      "/insights/10-Facts-About-Fixed-Index-Annuities",
+      "/insights/8-questions-to-ask-yourself-when-planning-for-retirement",
+      "/insights/Annuities-101-What-You-Need-to-Know",
+      "/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time",
+      "/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals",
+      "/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap",
+      "/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year",
+      "/insights/baby-boomer-retirement-income-expectations-and-opportunities",
+      "/insights/baby-boomer-retirement-trends-housing",
+      "/insights/baby-boomer-retirement-trends-transportation--health-care",
+      "/insights/benefits-of-fixed-index-annuities",
+      "/insights/how-annuities-can-help-fund-reliable-income-in-retirement",
+      "/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity",
+      "/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps",
+      "/insights/the-benefits-of-working-with-a-financial-professional",
+      "/insights/the-sandwich-generation-and-its-retirement-outlook",
+      "/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income",
+      "/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World",
+      "/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk",
+      "/resources/blog/9-ways-to-plan-for-a-happier-retirement",
+      "/resources/blog/baby-boomer-retirement-trends-retirement-income",
+      "/resources/blog/fixed-index-annuities-faq",
+      "/resources/blog/top-fixed-index-annuity-benefits"
+    ],
+    "embeds": null,
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 23,
+        "variations": {
+          "Standard Hero": 23
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 23,
+        "variations": {
+          "Multi-column footer": 23
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 23,
+        "variations": {
+          "Mega-menu header": 23
+        }
+      },
+      "Accordion / Disclosure": {
+        "kind": "block",
+        "pages": 21,
+        "variations": {
+          "Disclosure / legal expander": 21
+        }
+      },
+      "Blog Card / Related Posts": {
+        "kind": "block",
+        "pages": 21,
+        "variations": {
+          "Related posts strip": 21,
+          "Editorial card grid": 21
+        }
+      },
+      "Feature Cards & Media": {
+        "kind": "block",
+        "pages": 3,
+        "variations": {
+          "Media + copy row": 3,
+          "Icon card grid": 2,
+          "Image card grid": 1
+        }
+      },
+      "Breadcrumb": {
+        "kind": "global",
+        "pages": 2,
+        "variations": {
+          "Breadcrumb trail": 2
+        }
+      }
+    }
+  },
+  "Product / Annuity (Professional)": {
+    "pageCount": 4,
+    "urls": [
+      "/professionals/American-Equity-AssetShield",
+      "/professionals/American-Equity-EstateShield",
+      "/professionals/American-Equity-GuaranteeShield",
+      "/professionals/American-Equity-IncomeShield"
+    ],
+    "embeds": null,
+    "blocks": {
+      "Hero (In-Page Intro Band)": {
+        "kind": "block",
+        "pages": 4,
+        "variations": {
+          "Standard Hero": 4
+        }
+      },
+      "Tabs (Tabbed Content)": {
+        "kind": "block",
+        "pages": 4,
+        "variations": {
+          "Horizontal tabs": 4
+        }
+      },
+      "Feature Cards & Media": {
+        "kind": "block",
+        "pages": 4,
+        "variations": {
+          "Media + copy row": 4,
+          "Image card grid": 4
+        }
+      },
+      "Accordion / Disclosure": {
+        "kind": "block",
+        "pages": 4,
+        "variations": {
+          "Disclosure / legal expander": 4
+        }
+      },
+      "Global Footer": {
+        "kind": "global",
+        "pages": 4,
+        "variations": {
+          "Multi-column footer": 4
+        }
+      },
+      "Global Header / Navigation (site chrome)": {
+        "kind": "global",
+        "pages": 4,
+        "variations": {
+          "Mega-menu header": 4
+        }
+      },
+      "Breadcrumb": {
+        "kind": "global",
+        "pages": 4,
+        "variations": {
+          "Breadcrumb trail": 4
+        }
+      },
+      "Video (Wistia)": {
+        "kind": "block",
+        "pages": 3,
+        "variations": {
+          "Inline Wistia video": 3
+        }
+      }
+    }
+  }
+}
