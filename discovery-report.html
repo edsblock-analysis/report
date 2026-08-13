@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>American Equity → EDS · Pre-Sales Report</title>
+<style>
+:root{--brand:#c8102e;--ink:#0b0f19;--edge:#e2e6ee;--blue:#1f4e9b;--muted:#5b6472;--navy:#0a2240}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#f4f6fa}
+header.hero{background:linear-gradient(135deg,#0a2240,#123a6b 60%,#1f4e9b);color:#fff;padding:44px 40px 38px}
+header.hero h1{margin:0 0 8px;font-size:27px;letter-spacing:-.5px}
+header.hero .sub{color:#c3d2ea;font-size:14.5px;max-width:960px}
+header.hero .badge{display:inline-block;background:var(--brand);color:#fff;font-weight:700;padding:3px 11px;border-radius:5px;font-size:12px;margin-bottom:14px;letter-spacing:.5px}
+nav.toc{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--edge);z-index:40;padding:10px 24px;display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px}
+nav.toc a{color:var(--muted);text-decoration:none;white-space:nowrap}nav.toc a:hover{color:var(--blue)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px 70px}
+section{background:#fff;border:1px solid var(--edge);border-radius:14px;padding:24px 28px;margin:20px 0;box-shadow:0 1px 3px rgba(10,15,25,.05)}
+h2.sec{font-size:20px;margin:0 0 4px;padding-bottom:9px;border-bottom:3px solid var(--brand);display:inline-block}
+h4{margin:16px 0 6px;font-size:15px}
+.lead{color:#28303d;max-width:1000px;font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:18px 0}
+.kpi{background:linear-gradient(160deg,#f8fafc,#eef2f9);border:1px solid var(--edge);border-radius:12px;padding:16px}
+.kpi .n{font-size:25px;font-weight:800;color:var(--blue);line-height:1}
+.kpi .l{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:6px}
+.kpi.alt .n{color:var(--brand)}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--edge);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:#f0f3f8;font-weight:700}
+td.num,th.num{text-align:center;white-space:nowrap}
+tr:nth-child(even){background:#fafbfd}
+tr.grp td{background:#0a2240!important;color:#fff;font-weight:700}
+tr.grp td b{color:#fff}
+.found{color:var(--muted);font-size:11.5px}
+.redir{color:#9a3412;font-size:11px;font-weight:600}
+.cx{padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;display:inline-block}
+.cx-Low{background:#dcfce7;color:#166534}.cx-Medium{background:#fef9c3;color:#854d0e}.cx-High{background:#ffedd5;color:#9a3412}.cx-VeryHigh{background:#ede9fe;color:#5b21b6}
+.total-row td{background:#0a2240!important;color:#fff;font-weight:800}
+.cbadge{display:inline-block;background:var(--blue);color:#fff;font-size:10px;font-weight:800;padding:1px 7px;border-radius:20px;margin-left:6px;text-transform:uppercase}
+.kt{font-size:9.5px;font-weight:800;padding:1px 6px;border-radius:20px;text-transform:uppercase;letter-spacing:.2px;margin-left:4px}
+.kt-def{background:#e5e7eb;color:#374151}.kt-emb{background:#fee2e2;color:#991b1b}.kt-glob{background:#e0e7ff;color:#3730a3}
+.vc{display:inline-block;background:#eef2f9;border:1px solid #dfe6f1;color:#1a4bcc;font-size:10px;font-weight:800;padding:0 6px;border-radius:20px}
+.scope{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;display:inline-block}
+.sc-in{background:#dcfce7;color:#166534}.sc-out{background:#e5e7eb;color:#374151}.sc-conf{background:#fef3c7;color:#92400e}
+.vblock{margin:14px 0;padding:12px 14px;border:1px solid var(--edge);border-radius:10px;background:#fbfcfe}
+.vblock h4{margin:0 0 8px}
+.mapt{margin:6px 0}
+.urls{margin-top:8px}
+.urls a{display:inline-block;background:#eef2f9;border:1px solid #dfe6f1;color:#1a4bcc;padding:2px 7px;border-radius:6px;margin:2px;font-size:11px;text-decoration:none}
+.urls a:hover{background:var(--blue);color:#fff}
+a{color:#1a4bcc}
+.callout{background:#eff5ff;border-left:4px solid var(--blue);padding:10px 14px;border-radius:6px;font-size:13px;margin:12px 0}
+.note{background:#fff8e6;border-left:4px solid #d99400;padding:10px 14px;border-radius:6px;font-size:13px;margin:12px 0}
+.embed-note{background:#fef2f2;border-left:3px solid #dc2626;padding:6px 12px;border-radius:6px;font-size:12px;margin:6px 0}
+.obs dt{font-weight:700;color:var(--navy);margin-top:10px}
+.obs dd{margin:2px 0 0;font-size:13.5px}
+.legend{font-size:12px;color:var(--muted);margin:8px 0}
+.legend .kt{margin-left:0;margin-right:4px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:24px}
+@media print{nav.toc{display:none}section{break-inside:avoid;box-shadow:none}a{color:inherit}}
+</style></head>
+<body>
+<header class="hero">
+  <div class="badge">ADOBE EDGE DELIVERY SERVICES · PRE-SALES DISCOVERY REPORT</div>
+  <h1>American-Equity.com → EDS · Blocks, Templates &amp; Block↔Template Mapping</h1>
+  <div class="sub">A single, shareable pre-sales discovery of <code>www.american-equity.com</code> for migration to Adobe Edge Delivery Services. Every one of the <b>74 in-scope URLs</b> was fetched and read individually (no sampling); the template↔block mapping is built from each page's own <code>data-component</code> markup. Source platform: <b>Next.js on Optimizely CMS</b>. Contains <b>no estimates, timelines, story points, or development days</b> — it is a structural scope-definition artifact.</div>
+</header>
+<nav class="toc">
+  <a href="#summary">1 · Summary</a>
+  <a href="#urls">2 · Analyzed URLs</a>
+  <a href="#blocks">3 · Blocks &amp; Variations</a>
+  <a href="#mapping">4 · Template ↔ Block Mapping</a>
+  <a href="#integ">5 · Third-Party Integrations</a>
+  <a href="#assume">6 · Assumptions &amp; Scope</a>
+  <a href="#obs">7 · Other Observations</a>
+</nav>
+<div class="wrap">
+
+<section id="summary">
+<h2 class="sec">1 · Summary</h2>
+<div class="kpis">
+  <div class="kpi"><div class="n">74</div><div class="l">URLs analyzed</div></div>
+  <div class="kpi"><div class="n">64</div><div class="l">Distinct pages</div></div>
+  <div class="kpi alt"><div class="n">11</div><div class="l">Templates</div></div>
+  <div class="kpi alt"><div class="n">16</div><div class="l">Blocks</div></div>
+  <div class="kpi alt"><div class="n">25</div><div class="l">Variations</div></div>
+  <div class="kpi"><div class="n">6</div><div class="l">Forms</div></div>
+  <div class="kpi"><div class="n">10</div><div class="l">Integrations</div></div>
+  <div class="kpi"><div class="n">7</div><div class="l">Open questions</div></div>
+</div>
+<p class="lead">American Equity is a marketing/content site on <b>Optimizely CMS</b> with a <b>Next.js</b> front end. Because the DOM labels every component with a <code>data-component</code> name, block boundaries and their placement per template are read directly from the markup rather than guessed. All 74 URLs returned HTTP 200; 10 are legacy 301/308 redirects to canonical pages, leaving <b>64 distinct rendered pages</b> across <b>11 templates</b>.</p>
+<div class="callout"><b>What this report gives pre-sales:</b> (2) the exact list of URLs analyzed with live links, (3) the 16 reusable blocks with their variations and complexity, (4) a per-template <b>block↔variation mapping</b> showing which blocks appear on each template and how many pages use each variation, (5) verified third-party integrations, (6) assumptions &amp; scope boundaries, and (7) other technical observations. The heavier items are the Tabs block, the client-hydrated listings (Insights + form/document libraries), and third-party embeds that are preserved rather than rebuilt.</div>
+</section>
+
+<section id="urls">
+<h2 class="sec">2 · URLs Analyzed (all 74, grouped by template)</h2>
+<p class="lead">Every input URL (links open the live page). Input file had 75 lines — 1 duplicate (<code>/IncomeShield</code>) removed → 74 unique URLs, all HTTP 200. Redirecting URLs show their canonical target.</p>
+<table><thead><tr><th>URL (click to open)</th><th>Page title</th><th>Content type</th></tr></thead>
+<tbody><tr class="grp"><td colspan="3"><b>Article (Insight / Blog)</b> · 23 URLs</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/10-Facts-About-Fixed-Index-Annuities" target="_blank" rel="noopener">/insights/10-Facts-About-Fixed-Index-Annuities</a></td>
+        <td>American Equity | 10 Facts About Fixed Index Annuities</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/8-questions-to-ask-yourself-when-planning-for-retirement" target="_blank" rel="noopener">/insights/8-questions-to-ask-yourself-when-planning-for-retirement</a></td>
+        <td>American Equity | 8 questions to ask yourself when planning for retirement</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/Annuities-101-What-You-Need-to-Know" target="_blank" rel="noopener">/insights/Annuities-101-What-You-Need-to-Know</a></td>
+        <td>American Equity | Annuities 101: What You Need to Know</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time" target="_blank" rel="noopener">/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time</a></td>
+        <td>American Equity | Four ways fixed index annuities can help protect your income over time</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals" target="_blank" rel="noopener">/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals</a></td>
+        <td>American Equity | How to Approach Retirement Conversations with Positivity: 5 Topics to Help You Achieve Goals</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap" target="_blank" rel="noopener">/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap</a></td>
+        <td>Retirement planning for women poses unique challenges | American Equity Investment Life Insurance</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year" target="_blank" rel="noopener">/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year</a></td>
+        <td>American Equity Named One of Newsweek’s Most Trustworthy Companies in America for Fourth Consecutive Year</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/baby-boomer-retirement-income-expectations-and-opportunities" target="_blank" rel="noopener">/insights/baby-boomer-retirement-income-expectations-and-opportunities</a></td>
+        <td>American Equity | Baby Boomer Retirement Income Expectations and Opportunities</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/baby-boomer-retirement-trends-housing" target="_blank" rel="noopener">/insights/baby-boomer-retirement-trends-housing</a></td>
+        <td>American Equity | Baby Boomer Retirement Trends: Housing</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/baby-boomer-retirement-trends-transportation--health-care" target="_blank" rel="noopener">/insights/baby-boomer-retirement-trends-transportation--health-care</a></td>
+        <td>American Equity | Baby Boomer Retirement Trends: Transportation &amp; Health Care</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/benefits-of-fixed-index-annuities" target="_blank" rel="noopener">/insights/benefits-of-fixed-index-annuities</a></td>
+        <td>American Equity | Benefits of Fixed Index Annuities</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/how-annuities-can-help-fund-reliable-income-in-retirement" target="_blank" rel="noopener">/insights/how-annuities-can-help-fund-reliable-income-in-retirement</a></td>
+        <td>American Equity | How Annuities Can Help Fund Reliable Income in Retirement</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity" target="_blank" rel="noopener">/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity</a></td>
+        <td>American Equity | Key Features To Consider When Choosing a Fixed Index Annuity</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps" target="_blank" rel="noopener">/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps</a></td>
+        <td>American Equity | Successful Retirement Budgeting: How To Reach Goals and Avoid Income Gaps</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/the-benefits-of-working-with-a-financial-professional" target="_blank" rel="noopener">/insights/the-benefits-of-working-with-a-financial-professional</a></td>
+        <td>American Equity | The Benefits of Working With a Financial Professional</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/the-sandwich-generation-and-its-retirement-outlook" target="_blank" rel="noopener">/insights/the-sandwich-generation-and-its-retirement-outlook</a></td>
+        <td>American Equity | The Sandwich Generation and Its Retirement Outlook</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income" target="_blank" rel="noopener">/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income</a></td>
+        <td>American Equity | What to Know About Retirement: Four Questions to Better Understand Retirement Income</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World" target="_blank" rel="noopener">/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk" target="_blank" rel="noopener">/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/resources/blog/9-ways-to-plan-for-a-happier-retirement" target="_blank" rel="noopener">/resources/blog/9-ways-to-plan-for-a-happier-retirement</a><div class="redir">301 → /insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps</div></td>
+        <td>American Equity | Successful Retirement Budgeting: How To Reach Goals and Avoid Income Gaps</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/resources/blog/baby-boomer-retirement-trends-retirement-income" target="_blank" rel="noopener">/resources/blog/baby-boomer-retirement-trends-retirement-income</a><div class="redir">301 → /insights/baby-boomer-retirement-income-expectations-and-opportunities</div></td>
+        <td>American Equity | Baby Boomer Retirement Income Expectations and Opportunities</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/resources/blog/fixed-index-annuities-faq" target="_blank" rel="noopener">/resources/blog/fixed-index-annuities-faq</a><div class="redir">301 → /insights/benefits-of-fixed-index-annuities</div></td>
+        <td>American Equity | Benefits of Fixed Index Annuities</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/resources/blog/top-fixed-index-annuity-benefits" target="_blank" rel="noopener">/resources/blog/top-fixed-index-annuity-benefits</a><div class="redir">301 → /insights/10-Facts-About-Fixed-Index-Annuities</div></td>
+        <td>American Equity | 10 Facts About Fixed Index Annuities</td>
+        <td class="found">Landing Page</td></tr>
+<tr class="grp"><td colspan="3"><b>Section Landing / Hub</b> · 13 URLs</td></tr><tr>
+        <td><a href="https://www.american-equity.com/about" target="_blank" rel="noopener">/about</a></td>
+        <td>Who We Are | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/annuities-101" target="_blank" rel="noopener">/annuities-101</a></td>
+        <td>Annuities 101 | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/beneficiary-support" target="_blank" rel="noopener">/beneficiary-support</a></td>
+        <td>Beneficiary Support | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/community" target="_blank" rel="noopener">/community</a></td>
+        <td>Community Involvement | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/financial-strength" target="_blank" rel="noopener">/financial-strength</a></td>
+        <td>Financial Strength | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals" target="_blank" rel="noopener">/professionals</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/client-engagement-collections" target="_blank" rel="noopener">/professionals/client-engagement-collections</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/client-engagement-collections/art-engagement-collection" target="_blank" rel="noopener">/professionals/client-engagement-collections/art-engagement-collection</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/fp-insights-and-education" target="_blank" rel="noopener">/professionals/fp-insights-and-education</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/our-annuities" target="_blank" rel="noopener">/professionals/our-annuities</a></td>
+        <td>Annuities | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/rates-and-indexes" target="_blank" rel="noopener">/professionals/rates-and-indexes</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/resources" target="_blank" rel="noopener">/professionals/resources</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/tools-calculators" target="_blank" rel="noopener">/professionals/tools-calculators</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr>
+<tr class="grp"><td colspan="3"><b>Legal / Utility</b> · 8 URLs</td></tr><tr>
+        <td><a href="https://www.american-equity.com/accessibility" target="_blank" rel="noopener">/accessibility</a></td>
+        <td>Accessibility | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/agent-sms-privacy-terms" target="_blank" rel="noopener">/agent-sms-privacy-terms</a></td>
+        <td>Agent SMS Privacy Terms and Conditions | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/job-applicant-privacy-policy" target="_blank" rel="noopener">/job-applicant-privacy-policy</a></td>
+        <td>Job Applicant Privacy Policy | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/naic-statutory-financial-statements" target="_blank" rel="noopener">/naic-statutory-financial-statements</a></td>
+        <td>American Equity | NAIC Statutory Financial Statements</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/privacy" target="_blank" rel="noopener">/privacy</a></td>
+        <td>Privacy Policy | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/security-disclosure" target="_blank" rel="noopener">/security-disclosure</a></td>
+        <td>Security Disclosure Form | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/terms-of-use" target="_blank" rel="noopener">/terms-of-use</a></td>
+        <td>Terms of Use | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/usa-patriot-act-notice" target="_blank" rel="noopener">/usa-patriot-act-notice</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">General Page</td></tr>
+<tr class="grp"><td colspan="3"><b>Product / Annuity (Consumer)</b> · 8 URLs</td></tr><tr>
+        <td><a href="https://www.american-equity.com/AssetShield" target="_blank" rel="noopener">/AssetShield</a></td>
+        <td>American Equity AssetShield Fixed Index Annuity</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/EstateShield" target="_blank" rel="noopener">/EstateShield</a></td>
+        <td>American Equity EstateShield Fixed Index Annuity</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/GuaranteeShield" target="_blank" rel="noopener">/GuaranteeShield</a></td>
+        <td>American Equity GuaranteeShield Fixed Annuity</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/IncomeShield" target="_blank" rel="noopener">/IncomeShield</a></td>
+        <td>American Equity IncomeShield Fixed Index Annuity</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/annuities" target="_blank" rel="noopener">/annuities</a><div class="redir">301 → /our-annuities</div></td>
+        <td>Annuities | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/annuities/fixed-index-annuities" target="_blank" rel="noopener">/annuities/fixed-index-annuities</a><div class="redir">301 → /our-annuities</div></td>
+        <td>Annuities | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/incomeshield-annuity/how-it-works" target="_blank" rel="noopener">/incomeshield-annuity/how-it-works</a><div class="redir">301 → /IncomeShield</div></td>
+        <td>American Equity IncomeShield Fixed Index Annuity</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/our-annuities" target="_blank" rel="noopener">/our-annuities</a></td>
+        <td>Annuities | American Equity</td>
+        <td class="found">General Page</td></tr>
+<tr class="grp"><td colspan="3"><b>Form / Document Listing</b> · 5 URLs</td></tr><tr>
+        <td><a href="https://www.american-equity.com/form" target="_blank" rel="noopener">/form</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/forms" target="_blank" rel="noopener">/forms</a></td>
+        <td>Service Forms | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/document-library" target="_blank" rel="noopener">/professionals/document-library</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/forms-library" target="_blank" rel="noopener">/professionals/forms-library</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/material-request-form" target="_blank" rel="noopener">/professionals/material-request-form</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr>
+<tr class="grp"><td colspan="3"><b>Careers</b> · 4 URLs</td></tr><tr>
+        <td><a href="https://www.american-equity.com/about/careers" target="_blank" rel="noopener">/about/careers</a></td>
+        <td>American Equity Investment Life Insurance Company Careers</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/about/careers/internship-program" target="_blank" rel="noopener">/about/careers/internship-program</a></td>
+        <td>Careers | Internship Program | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/about/careers/openings" target="_blank" rel="noopener">/about/careers/openings</a></td>
+        <td>Careers | Open Positions | American Equity</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/about/careers/why-work-here" target="_blank" rel="noopener">/about/careers/why-work-here</a></td>
+        <td>Careers | Why Work Here | American Equity</td>
+        <td class="found">General Page</td></tr>
+<tr class="grp"><td colspan="3"><b>Content Listing (Dynamic)</b> · 4 URLs</td></tr><tr>
+        <td><a href="https://www.american-equity.com/annuities/retirement-income-research" target="_blank" rel="noopener">/annuities/retirement-income-research</a><div class="redir">301 → /insights</div></td>
+        <td>American Equity | Insights and Information</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/insights" target="_blank" rel="noopener">/insights</a></td>
+        <td>American Equity | Insights and Information</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders" target="_blank" rel="noopener">/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders</a><div class="redir">301 → /insights</div></td>
+        <td>American Equity | Insights and Information</td>
+        <td class="found">Landing Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings" target="_blank" rel="noopener">/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings</a><div class="redir">301 → /insights</div></td>
+        <td>American Equity | Insights and Information</td>
+        <td class="found">Landing Page</td></tr>
+<tr class="grp"><td colspan="3"><b>Product / Annuity (Professional)</b> · 4 URLs</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/American-Equity-AssetShield" target="_blank" rel="noopener">/professionals/American-Equity-AssetShield</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/American-Equity-EstateShield" target="_blank" rel="noopener">/professionals/American-Equity-EstateShield</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/American-Equity-GuaranteeShield" target="_blank" rel="noopener">/professionals/American-Equity-GuaranteeShield</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/American-Equity-IncomeShield" target="_blank" rel="noopener">/professionals/American-Equity-IncomeShield</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr>
+<tr class="grp"><td colspan="3"><b>Contact</b> · 2 URLs</td></tr><tr>
+        <td><a href="https://www.american-equity.com/contact-us" target="_blank" rel="noopener">/contact-us</a></td>
+        <td>Contact Us | American Equity</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/contact-us" target="_blank" rel="noopener">/professionals/contact-us</a></td>
+        <td>Contact Us | American Equity</td>
+        <td class="found">General Page</td></tr>
+<tr class="grp"><td colspan="3"><b>Tool / Calculator (Embed)</b> · 2 URLs</td></tr><tr>
+        <td><a href="https://www.american-equity.com/income-gap-calculator" target="_blank" rel="noopener">/income-gap-calculator</a></td>
+        <td>Income Gap Calculator for our IncomeShield product | American Equity |</td>
+        <td class="found">General Page</td></tr><tr>
+        <td><a href="https://www.american-equity.com/professionals/tools-calculators/income-gap-calculator" target="_blank" rel="noopener">/professionals/tools-calculators/income-gap-calculator</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">—</td></tr>
+<tr class="grp"><td colspan="3"><b>Home</b> · 1 URL</td></tr><tr>
+        <td><a href="https://www.american-equity.com" target="_blank" rel="noopener">/</a></td>
+        <td>American Equity Investment Life Insurance Company</td>
+        <td class="found">Landing Page</td></tr></tbody></table>
+</section>
+
+<section id="blocks">
+<h2 class="sec">3 · Blocks &amp; Variations with Complexity</h2>
+<p class="lead"><b>16 blocks</b> (13 content + 3 global) · <b>25 variations</b>. A variation is counted only for a real structural/behavioral/authoring/technical difference — never content/image/text differences. "Pages" = number of the 74 URLs where the block appears.</p>
+<table>
+<thead><tr><th>Block</th><th class="num">Pages</th><th class="num">Var.</th><th>Complexity</th><th>Variations (what differs)</th></tr></thead>
+<tbody>
+<tr>
+    <td><b>Hero (In-Page Intro Band)</b></td>
+    <td class="num">74</td>
+    <td class="num">3</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td><b>Standard Hero</b> — Heading + subcopy + optional image/CTA; on 73 pages<br><b>Article Hero</b> — Title + author/date/read-time meta + eyebrow; used on dynamic article/listing pages<br><b>Simple Hero</b> — Minimal heading-only variant (form template page)</td></tr>
+<tr>
+    <td><b>Feature Cards &amp; Media</b></td>
+    <td class="num">36</td>
+    <td class="num">4</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td><b>Media + copy row</b> — Alternating image/text rows with optional CTA — the site's workhorse content band<br><b>Icon card grid</b> — Grid of icon + heading + text cards (3–9 up)<br><b>Image card grid</b> — Grid of image + heading + text/link cards<br><b>3-set image feature</b> — Three-column image feature grouping</td></tr>
+<tr>
+    <td><b>Tabs (Tabbed Content)</b></td>
+    <td class="num">17</td>
+    <td class="num">2</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td><b>Horizontal line tabs</b> — Tab strip along the top; tab → card panel<br><b>Vertical line tabs</b> — Tab list on the side; tab → card panel</td></tr>
+<tr>
+    <td><b>Progress Bar / Stepper</b></td>
+    <td class="num">10</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td><b>Numbered step sequence</b> — Ordered “how it works / next steps” 3–5 step sequence</td></tr>
+<tr>
+    <td><b>Video (Wistia)</b></td>
+    <td class="num">14</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td><b>Inline Wistia video</b> — Wistia web component (&lt;wistia-video&gt;) with poster + heading + copy</td></tr>
+<tr>
+    <td><b>Metrics / Stats</b></td>
+    <td class="num">4</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Low">Low</span></td>
+    <td><b>Stat row</b> — Large-number + label KPI row (e.g. financial-strength, about)</td></tr>
+<tr>
+    <td><b>Accordion / Disclosure</b></td>
+    <td class="num">43</td>
+    <td class="num">2</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td><b>FAQ accordion</b> — Expand/collapse Q&amp;A groups<br><b>Disclosure / legal expander</b> — Collapsible fine-print / disclaimer region (very common footer-of-content)</td></tr>
+<tr>
+    <td><b>Blog Card / Related Posts</b></td>
+    <td class="num">34</td>
+    <td class="num">2</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td><b>Related posts strip</b> — Auto-populated “related/insights” cards at article foot<br><b>Editorial card grid</b> — Curated card links to insight articles</td></tr>
+<tr>
+    <td><b>Dynamic Content Listing (Insights index)</b></td>
+    <td class="num">4</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td><b>Insights listing (client-fetched)</b> — Paginated article feed ("BlogPosts", "Pagination", "articles" in payload); SSR renders shell, list hydrates client-side</td></tr>
+<tr>
+    <td><b>Searchable Form / Document Library</b></td>
+    <td class="num">4</td>
+    <td class="num">2</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td><b>Form listing w/ search + category tabs</b> — Consumer /forms and /professionals/document-library<br><b>Form table directory</b> — Professionals /forms-library</td></tr>
+<tr>
+    <td><b>Native Data-Entry Form (Form Input Model)</b></td>
+    <td class="num">1</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td><b>Native form</b> — The only true HTML &lt;form&gt; on the site — text inputs, a select, a textarea and a submit button, on /form</td></tr>
+<tr>
+    <td><b>Contact Card / Row</b></td>
+    <td class="num">2</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Low">Low</span></td>
+    <td><b>Contact cards</b> — Phone/email/dept contact cards (contact-us, professionals/contact-us)</td></tr>
+<tr>
+    <td><b>Modal / Dialog</b></td>
+    <td class="num">1</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td><b>General modal</b> — Dialog triggered from content (professionals landing)</td></tr>
+<tr>
+    <td><b>Global Header / Navigation (site chrome)</b> <span class="cbadge">global</span></td>
+    <td class="num">74</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td><b>Mega-menu header</b> — 4 top-level menus (About Us, Annuities, Retirement Resources, Support) with dropdown panels + utility menu (Login/Register/Search) + Find an Agent</td></tr>
+<tr>
+    <td><b>Global Footer</b> <span class="cbadge">global</span></td>
+    <td class="num">74</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td><b>Multi-column footer</b> — Nav columns + social links (Facebook/LinkedIn) + legal/disclosure + logo; ~10 link cols site-wide</td></tr>
+<tr>
+    <td><b>Breadcrumb</b> <span class="cbadge">global</span></td>
+    <td class="num">51</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Low">Low</span></td>
+    <td><b>Breadcrumb trail</b> — Interior-page breadcrumb (aria-label="Breadcrumb")</td></tr>
+<tr class="total-row"><td>TOTAL — 16 blocks</td><td class="num">—</td><td class="num">25</td><td>—</td><td></td></tr>
+</tbody></table>
+</section>
+
+<section id="mapping">
+<h2 class="sec">4 · Template ↔ Block ↔ Variation Mapping</h2>
+<p class="lead">Built by reading the <code>data-component</code> markup of <b>all 74 pages</b>. For each of the 11 templates: the blocks that appear on it, how many of the template's pages use each block, the block's complexity, and each variation with its page count. Only the 16 real blocks are listed (<span class="kt kt-glob">global</span> = site chrome built once); default content (prose, images, buttons, download links) is handled by core decoration and is not listed. Any third-party embed on a template is called out in a note under its table.</p>
+<div class="vblock">
+      <h4>Article (Insight / Blog) <span class="found">· 23 pages · complexity Medium</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">23/23</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Standard Hero <span class="vc">23</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">23/23</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">23</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">23/23</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">23</span></td></tr><tr>
+        <td><b>Accordion / Disclosure</b></td>
+        <td class="num">21/23</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Disclosure / legal expander <span class="vc">21</span></td></tr><tr>
+        <td><b>Blog Card / Related Posts</b></td>
+        <td class="num">21/23</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Related posts strip <span class="vc">21</span> · Editorial card grid <span class="vc">21</span></td></tr><tr>
+        <td><b>Feature Cards &amp; Media</b></td>
+        <td class="num">3/23</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Media + copy row <span class="vc">3</span> · Icon card grid <span class="vc">2</span> · Image card grid <span class="vc">1</span></td></tr><tr>
+        <td><b>Breadcrumb</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">2/23</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Breadcrumb trail <span class="vc">2</span></td></tr></tbody></table>
+      
+      <div class="urls"><a href="https://www.american-equity.com/insights/10-Facts-About-Fixed-Index-Annuities" target="_blank" rel="noopener">/insights/10-Facts-About-Fixed-Index-Annuities</a><a href="https://www.american-equity.com/insights/8-questions-to-ask-yourself-when-planning-for-retirement" target="_blank" rel="noopener">/insights/8-questions-to-ask-yourself-when-planning-for-retirement</a><a href="https://www.american-equity.com/insights/Annuities-101-What-You-Need-to-Know" target="_blank" rel="noopener">/insights/Annuities-101-What-You-Need-to-Know</a><a href="https://www.american-equity.com/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time" target="_blank" rel="noopener">/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time</a><a href="https://www.american-equity.com/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals" target="_blank" rel="noopener">/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals</a><a href="https://www.american-equity.com/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap" target="_blank" rel="noopener">/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap</a><a href="https://www.american-equity.com/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year" target="_blank" rel="noopener">/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year</a><a href="https://www.american-equity.com/insights/baby-boomer-retirement-income-expectations-and-opportunities" target="_blank" rel="noopener">/insights/baby-boomer-retirement-income-expectations-and-opportunities</a><a href="https://www.american-equity.com/insights/baby-boomer-retirement-trends-housing" target="_blank" rel="noopener">/insights/baby-boomer-retirement-trends-housing</a><a href="https://www.american-equity.com/insights/baby-boomer-retirement-trends-transportation--health-care" target="_blank" rel="noopener">/insights/baby-boomer-retirement-trends-transportation--health-care</a><a href="https://www.american-equity.com/insights/benefits-of-fixed-index-annuities" target="_blank" rel="noopener">/insights/benefits-of-fixed-index-annuities</a><a href="https://www.american-equity.com/insights/how-annuities-can-help-fund-reliable-income-in-retirement" target="_blank" rel="noopener">/insights/how-annuities-can-help-fund-reliable-income-in-retirement</a><a href="https://www.american-equity.com/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity" target="_blank" rel="noopener">/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity</a><a href="https://www.american-equity.com/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps" target="_blank" rel="noopener">/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps</a><a href="https://www.american-equity.com/insights/the-benefits-of-working-with-a-financial-professional" target="_blank" rel="noopener">/insights/the-benefits-of-working-with-a-financial-professional</a><a href="https://www.american-equity.com/insights/the-sandwich-generation-and-its-retirement-outlook" target="_blank" rel="noopener">/insights/the-sandwich-generation-and-its-retirement-outlook</a><a href="https://www.american-equity.com/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income" target="_blank" rel="noopener">/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income</a><a href="https://www.american-equity.com/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World" target="_blank" rel="noopener">/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World</a><a href="https://www.american-equity.com/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk" target="_blank" rel="noopener">/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk</a><a href="https://www.american-equity.com/resources/blog/9-ways-to-plan-for-a-happier-retirement" target="_blank" rel="noopener">/resources/blog/9-ways-to-plan-for-a-happier-retirement</a><a href="https://www.american-equity.com/resources/blog/baby-boomer-retirement-trends-retirement-income" target="_blank" rel="noopener">/resources/blog/baby-boomer-retirement-trends-retirement-income</a><a href="https://www.american-equity.com/resources/blog/fixed-index-annuities-faq" target="_blank" rel="noopener">/resources/blog/fixed-index-annuities-faq</a><a href="https://www.american-equity.com/resources/blog/top-fixed-index-annuity-benefits" target="_blank" rel="noopener">/resources/blog/top-fixed-index-annuity-benefits</a></div>
+    </div>
+<div class="vblock">
+      <h4>Section Landing / Hub <span class="found">· 13 pages · complexity Medium</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">13/13</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Standard Hero <span class="vc">13</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">13/13</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">13</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">13/13</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">13</span></td></tr><tr>
+        <td><b>Breadcrumb</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">12/13</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Breadcrumb trail <span class="vc">12</span></td></tr><tr>
+        <td><b>Feature Cards &amp; Media</b></td>
+        <td class="num">10/13</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Media + copy row <span class="vc">10</span> · Image card grid <span class="vc">6</span> · Icon card grid <span class="vc">7</span> · 3-set image feature <span class="vc">1</span></td></tr><tr>
+        <td><b>Accordion / Disclosure</b></td>
+        <td class="num">8/13</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Disclosure / legal expander <span class="vc">6</span> · FAQ accordion <span class="vc">2</span></td></tr><tr>
+        <td><b>Metrics / Stats</b></td>
+        <td class="num">3/13</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Stat row <span class="vc">3</span></td></tr><tr>
+        <td><b>Video (Wistia)</b></td>
+        <td class="num">1/13</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Inline Wistia video <span class="vc">1</span></td></tr><tr>
+        <td><b>Blog Card / Related Posts</b></td>
+        <td class="num">1/13</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Related posts strip <span class="vc">1</span> · Editorial card grid <span class="vc">1</span></td></tr><tr>
+        <td><b>Progress Bar / Stepper</b></td>
+        <td class="num">1/13</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Numbered step sequence <span class="vc">1</span></td></tr><tr>
+        <td><b>Tabs (Tabbed Content)</b></td>
+        <td class="num">1/13</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Horizontal line tabs <span class="vc">1</span></td></tr><tr>
+        <td><b>Modal / Dialog</b></td>
+        <td class="num">1/13</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>General modal <span class="vc">1</span></td></tr></tbody></table>
+      
+      <div class="urls"><a href="https://www.american-equity.com/about" target="_blank" rel="noopener">/about</a><a href="https://www.american-equity.com/annuities-101" target="_blank" rel="noopener">/annuities-101</a><a href="https://www.american-equity.com/beneficiary-support" target="_blank" rel="noopener">/beneficiary-support</a><a href="https://www.american-equity.com/community" target="_blank" rel="noopener">/community</a><a href="https://www.american-equity.com/financial-strength" target="_blank" rel="noopener">/financial-strength</a><a href="https://www.american-equity.com/professionals" target="_blank" rel="noopener">/professionals</a><a href="https://www.american-equity.com/professionals/client-engagement-collections" target="_blank" rel="noopener">/professionals/client-engagement-collections</a><a href="https://www.american-equity.com/professionals/client-engagement-collections/art-engagement-collection" target="_blank" rel="noopener">/professionals/client-engagement-collections/art-engagement-collection</a><a href="https://www.american-equity.com/professionals/fp-insights-and-education" target="_blank" rel="noopener">/professionals/fp-insights-and-education</a><a href="https://www.american-equity.com/professionals/our-annuities" target="_blank" rel="noopener">/professionals/our-annuities</a><a href="https://www.american-equity.com/professionals/rates-and-indexes" target="_blank" rel="noopener">/professionals/rates-and-indexes</a><a href="https://www.american-equity.com/professionals/resources" target="_blank" rel="noopener">/professionals/resources</a><a href="https://www.american-equity.com/professionals/tools-calculators" target="_blank" rel="noopener">/professionals/tools-calculators</a></div>
+    </div>
+<div class="vblock">
+      <h4>Legal / Utility <span class="found">· 8 pages · complexity Low</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Standard Hero <span class="vc">8</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">8</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">8</span></td></tr><tr>
+        <td><b>Breadcrumb</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Breadcrumb trail <span class="vc">8</span></td></tr><tr>
+        <td><b>Feature Cards &amp; Media</b></td>
+        <td class="num">5/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Media + copy row <span class="vc">5</span> · Icon card grid <span class="vc">5</span></td></tr><tr>
+        <td><b>Accordion / Disclosure</b></td>
+        <td class="num">3/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Disclosure / legal expander <span class="vc">3</span></td></tr></tbody></table>
+      
+      <div class="urls"><a href="https://www.american-equity.com/accessibility" target="_blank" rel="noopener">/accessibility</a><a href="https://www.american-equity.com/agent-sms-privacy-terms" target="_blank" rel="noopener">/agent-sms-privacy-terms</a><a href="https://www.american-equity.com/job-applicant-privacy-policy" target="_blank" rel="noopener">/job-applicant-privacy-policy</a><a href="https://www.american-equity.com/naic-statutory-financial-statements" target="_blank" rel="noopener">/naic-statutory-financial-statements</a><a href="https://www.american-equity.com/privacy" target="_blank" rel="noopener">/privacy</a><a href="https://www.american-equity.com/security-disclosure" target="_blank" rel="noopener">/security-disclosure</a><a href="https://www.american-equity.com/terms-of-use" target="_blank" rel="noopener">/terms-of-use</a><a href="https://www.american-equity.com/usa-patriot-act-notice" target="_blank" rel="noopener">/usa-patriot-act-notice</a></div>
+    </div>
+<div class="vblock">
+      <h4>Product / Annuity (Consumer) <span class="found">· 8 pages · complexity High</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Standard Hero <span class="vc">8</span></td></tr><tr>
+        <td><b>Tabs (Tabbed Content)</b></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Vertical line tabs <span class="vc">3</span> · Horizontal line tabs <span class="vc">5</span></td></tr><tr>
+        <td><b>Accordion / Disclosure</b></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>FAQ accordion <span class="vc">4</span> · Disclosure / legal expander <span class="vc">5</span></td></tr><tr>
+        <td><b>Progress Bar / Stepper</b></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Numbered step sequence <span class="vc">8</span></td></tr><tr>
+        <td><b>Blog Card / Related Posts</b></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Related posts strip <span class="vc">8</span> · Editorial card grid <span class="vc">8</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">8</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">8</span></td></tr><tr>
+        <td><b>Breadcrumb</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">8/8</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Breadcrumb trail <span class="vc">8</span></td></tr><tr>
+        <td><b>Video (Wistia)</b></td>
+        <td class="num">7/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Inline Wistia video <span class="vc">7</span></td></tr><tr>
+        <td><b>Feature Cards &amp; Media</b></td>
+        <td class="num">6/8</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Media + copy row <span class="vc">6</span> · Image card grid <span class="vc">3</span></td></tr></tbody></table>
+      
+      <div class="urls"><a href="https://www.american-equity.com/AssetShield" target="_blank" rel="noopener">/AssetShield</a><a href="https://www.american-equity.com/EstateShield" target="_blank" rel="noopener">/EstateShield</a><a href="https://www.american-equity.com/GuaranteeShield" target="_blank" rel="noopener">/GuaranteeShield</a><a href="https://www.american-equity.com/IncomeShield" target="_blank" rel="noopener">/IncomeShield</a><a href="https://www.american-equity.com/annuities" target="_blank" rel="noopener">/annuities</a><a href="https://www.american-equity.com/annuities/fixed-index-annuities" target="_blank" rel="noopener">/annuities/fixed-index-annuities</a><a href="https://www.american-equity.com/incomeshield-annuity/how-it-works" target="_blank" rel="noopener">/incomeshield-annuity/how-it-works</a><a href="https://www.american-equity.com/our-annuities" target="_blank" rel="noopener">/our-annuities</a></div>
+    </div>
+<div class="vblock">
+      <h4>Form / Document Listing <span class="found">· 5 pages · complexity High</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">5/5</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Simple Hero <span class="vc">1</span> · Standard Hero <span class="vc">4</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">5/5</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">5</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">5/5</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">5</span></td></tr><tr>
+        <td><b>Breadcrumb</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">5/5</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Breadcrumb trail <span class="vc">5</span></td></tr><tr>
+        <td><b>Searchable Form / Document Library</b></td>
+        <td class="num">3/5</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Form listing w/ search + tabs <span class="vc">2</span> · Form table directory <span class="vc">1</span></td></tr><tr>
+        <td><b>Native Data-Entry Form (Form Input Model)</b></td>
+        <td class="num">1/5</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Native form <span class="vc">1</span></td></tr><tr>
+        <td><b>Feature Cards &amp; Media</b></td>
+        <td class="num">1/5</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Media + copy row <span class="vc">1</span> · Image card grid <span class="vc">1</span></td></tr></tbody></table>
+      <div class="embed-note"><b>Third-party embed on this template (preserved, not rebuilt):</b> ion interactive form <span class="vc">1</span></div>
+      <div class="urls"><a href="https://www.american-equity.com/form" target="_blank" rel="noopener">/form</a><a href="https://www.american-equity.com/forms" target="_blank" rel="noopener">/forms</a><a href="https://www.american-equity.com/professionals/document-library" target="_blank" rel="noopener">/professionals/document-library</a><a href="https://www.american-equity.com/professionals/forms-library" target="_blank" rel="noopener">/professionals/forms-library</a><a href="https://www.american-equity.com/professionals/material-request-form" target="_blank" rel="noopener">/professionals/material-request-form</a></div>
+    </div>
+<div class="vblock">
+      <h4>Careers <span class="found">· 4 pages · complexity Medium</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Standard Hero <span class="vc">4</span></td></tr><tr>
+        <td><b>Feature Cards &amp; Media</b></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Media + copy row <span class="vc">4</span> · Icon card grid <span class="vc">3</span> · Image card grid <span class="vc">3</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">4</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">4</span></td></tr><tr>
+        <td><b>Breadcrumb</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Breadcrumb trail <span class="vc">4</span></td></tr><tr>
+        <td><b>Tabs (Tabbed Content)</b></td>
+        <td class="num">3/4</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Vertical line tabs <span class="vc">1</span> · Horizontal line tabs <span class="vc">2</span></td></tr><tr>
+        <td><b>Video (Wistia)</b></td>
+        <td class="num">2/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Inline Wistia video <span class="vc">2</span></td></tr><tr>
+        <td><b>Progress Bar / Stepper</b></td>
+        <td class="num">1/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Numbered step sequence <span class="vc">1</span></td></tr></tbody></table>
+      <div class="embed-note"><b>Third-party embed on this template (preserved, not rebuilt):</b> Greenhouse job board <span class="vc">1</span></div>
+      <div class="urls"><a href="https://www.american-equity.com/about/careers" target="_blank" rel="noopener">/about/careers</a><a href="https://www.american-equity.com/about/careers/internship-program" target="_blank" rel="noopener">/about/careers/internship-program</a><a href="https://www.american-equity.com/about/careers/openings" target="_blank" rel="noopener">/about/careers/openings</a><a href="https://www.american-equity.com/about/careers/why-work-here" target="_blank" rel="noopener">/about/careers/why-work-here</a></div>
+    </div>
+<div class="vblock">
+      <h4>Content Listing (Dynamic) <span class="found">· 4 pages · complexity High</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Standard Hero <span class="vc">4</span> · Article Hero <span class="vc">4</span></td></tr><tr>
+        <td><b>Blog Card / Related Posts</b></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Editorial card grid <span class="vc">4</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">4</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">4</span></td></tr><tr>
+        <td><b>Breadcrumb</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Breadcrumb trail <span class="vc">4</span></td></tr><tr>
+        <td><b>Dynamic Content Listing (Insights index)</b></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Insights listing (client-fetched) <span class="vc">4</span></td></tr></tbody></table>
+      
+      <div class="urls"><a href="https://www.american-equity.com/annuities/retirement-income-research" target="_blank" rel="noopener">/annuities/retirement-income-research</a><a href="https://www.american-equity.com/insights" target="_blank" rel="noopener">/insights</a><a href="https://www.american-equity.com/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders" target="_blank" rel="noopener">/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders</a><a href="https://www.american-equity.com/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings" target="_blank" rel="noopener">/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings</a></div>
+    </div>
+<div class="vblock">
+      <h4>Product / Annuity (Professional) <span class="found">· 4 pages · complexity High</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Standard Hero <span class="vc">4</span></td></tr><tr>
+        <td><b>Tabs (Tabbed Content)</b></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Horizontal line tabs <span class="vc">4</span></td></tr><tr>
+        <td><b>Feature Cards &amp; Media</b></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Media + copy row <span class="vc">4</span> · Image card grid <span class="vc">4</span></td></tr><tr>
+        <td><b>Accordion / Disclosure</b></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Disclosure / legal expander <span class="vc">4</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">4</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">4</span></td></tr><tr>
+        <td><b>Breadcrumb</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">4/4</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Breadcrumb trail <span class="vc">4</span></td></tr><tr>
+        <td><b>Video (Wistia)</b></td>
+        <td class="num">3/4</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Inline Wistia video <span class="vc">3</span></td></tr></tbody></table>
+      
+      <div class="urls"><a href="https://www.american-equity.com/professionals/American-Equity-AssetShield" target="_blank" rel="noopener">/professionals/American-Equity-AssetShield</a><a href="https://www.american-equity.com/professionals/American-Equity-EstateShield" target="_blank" rel="noopener">/professionals/American-Equity-EstateShield</a><a href="https://www.american-equity.com/professionals/American-Equity-GuaranteeShield" target="_blank" rel="noopener">/professionals/American-Equity-GuaranteeShield</a><a href="https://www.american-equity.com/professionals/American-Equity-IncomeShield" target="_blank" rel="noopener">/professionals/American-Equity-IncomeShield</a></div>
+    </div>
+<div class="vblock">
+      <h4>Contact <span class="found">· 2 pages · complexity Low</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Standard Hero <span class="vc">2</span></td></tr><tr>
+        <td><b>Contact Card / Row</b></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Contact cards <span class="vc">2</span></td></tr><tr>
+        <td><b>Feature Cards &amp; Media</b></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Media + copy row <span class="vc">2</span> · Image card grid <span class="vc">2</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">2</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">2</span></td></tr><tr>
+        <td><b>Breadcrumb</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Breadcrumb trail <span class="vc">2</span></td></tr></tbody></table>
+      <div class="embed-note"><b>Third-party embed on this template (preserved, not rebuilt):</b> ion interactive form <span class="vc">1</span></div>
+      <div class="urls"><a href="https://www.american-equity.com/contact-us" target="_blank" rel="noopener">/contact-us</a><a href="https://www.american-equity.com/professionals/contact-us" target="_blank" rel="noopener">/professionals/contact-us</a></div>
+    </div>
+<div class="vblock">
+      <h4>Tool / Calculator (Embed) <span class="found">· 2 pages · complexity High</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Standard Hero <span class="vc">2</span></td></tr><tr>
+        <td><b>Accordion / Disclosure</b></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Disclosure / legal expander <span class="vc">2</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">2</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">2</span></td></tr><tr>
+        <td><b>Breadcrumb</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">2/2</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Breadcrumb trail <span class="vc">2</span></td></tr></tbody></table>
+      <div class="embed-note"><b>Third-party embed on this template (preserved, not rebuilt):</b> Hedgeness calculator <span class="vc">2</span></div>
+      <div class="urls"><a href="https://www.american-equity.com/income-gap-calculator" target="_blank" rel="noopener">/income-gap-calculator</a><a href="https://www.american-equity.com/professionals/tools-calculators/income-gap-calculator" target="_blank" rel="noopener">/professionals/tools-calculators/income-gap-calculator</a></div>
+    </div>
+<div class="vblock">
+      <h4>Home <span class="found">· 1 page · complexity High</span></h4>
+      <table class="mapt"><thead><tr><th>Block used on this template</th><th class="num">Pages</th><th>Block cx</th><th>Variation(s) observed <span class="found">(count = pages)</span></th></tr></thead>
+      <tbody><tr>
+        <td><b>Hero (In-Page Intro Band)</b></td>
+        <td class="num">1/1</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Standard Hero <span class="vc">1</span></td></tr><tr>
+        <td><b>Feature Cards &amp; Media</b></td>
+        <td class="num">1/1</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Media + copy row <span class="vc">1</span> · Icon card grid <span class="vc">1</span> · Image card grid <span class="vc">1</span></td></tr><tr>
+        <td><b>Video (Wistia)</b></td>
+        <td class="num">1/1</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Inline Wistia video <span class="vc">1</span></td></tr><tr>
+        <td><b>Tabs (Tabbed Content)</b></td>
+        <td class="num">1/1</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Horizontal line tabs <span class="vc">1</span></td></tr><tr>
+        <td><b>Metrics / Stats</b></td>
+        <td class="num">1/1</td>
+        <td><span class="cx cx-Low">Low</span></td>
+        <td>Stat row <span class="vc">1</span></td></tr><tr>
+        <td><b>Accordion / Disclosure</b></td>
+        <td class="num">1/1</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Disclosure / legal expander <span class="vc">1</span></td></tr><tr>
+        <td><b>Global Footer</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">1/1</td>
+        <td><span class="cx cx-Medium">Medium</span></td>
+        <td>Multi-column footer <span class="vc">1</span></td></tr><tr>
+        <td><b>Global Header / Navigation (site chrome)</b> <span class="kt kt-glob">global</span></td>
+        <td class="num">1/1</td>
+        <td><span class="cx cx-High">High</span></td>
+        <td>Mega-menu header <span class="vc">1</span></td></tr></tbody></table>
+      
+      <div class="urls"><a href="https://www.american-equity.com" target="_blank" rel="noopener">/</a></div>
+    </div>
+<div class="note"><b>Reading the counts:</b> "Pages" is <i>x/y</i> = pages of that template using the block. A block can carry several variations on one template — e.g. consumer product pages use <b>both</b> horizontal and vertical tab orientations. Only the 13 content + 3 global blocks are bespoke EDS build items.</div>
+</section>
+
+<section id="integ">
+<h2 class="sec">5 · Third-Party Integrations (verified)</h2>
+<p class="lead"><b>10 integrations</b> confirmed by on-page evidence. "Pages" = pages where observed. Facebook/LinkedIn appear only as footer social <i>links</i> (not tracking pixels) and are therefore excluded.</p>
+<table>
+<thead><tr><th>Integration</th><th class="num">Pages</th><th>Scope</th><th>Purpose</th><th>Evidence</th><th>EDS consideration</th></tr></thead>
+<tbody><tr>
+    <td><b>Google Tag Manager</b></td>
+    <td class="num">74</td>
+    <td>Site-wide</td>
+    <td>Tag management container (GTM-MZDFLT8W); loads GA4 &amp; other tags</td>
+    <td class="found">googletagmanager.com script + GTM-MZDFLT8W on every page</td>
+    <td>Re-add GTM via delayed.js; keep container ID. Preserve data-gtm-* attributes on links/CTAs for tracking parity.</td></tr>
+<tr>
+    <td><b>Google Analytics 4 (via GTM)</b></td>
+    <td class="num">74</td>
+    <td>Site-wide</td>
+    <td>Web analytics</td>
+    <td class="found">gtag() present; GA4 fired through GTM container (no standalone G- id in markup)</td>
+    <td>Ships through GTM; no separate work beyond GTM. Custom events/data-layer changes out of scope unless requested.</td></tr>
+<tr>
+    <td><b>OneTrust (consent management)</b></td>
+    <td class="num">74</td>
+    <td>Site-wide</td>
+    <td>Cookie consent / privacy banner</td>
+    <td class="found">cdn.cookielaw.org script + data-domain-script="019aa2c6-...-a83a0e6bf1ab" on every page</td>
+    <td>Load OneTrust in delayed phase with the same domain-script id. Consent gates tag firing.</td></tr>
+<tr>
+    <td><b>Optimizely CMS (SaaS)</b></td>
+    <td class="num">74</td>
+    <td>Site-wide (platform)</td>
+    <td>Current content management platform (Next.js front end)</td>
+    <td class="found">app-*.cms.optimizely.com references + opti-content-area DOM</td>
+    <td>This is the source CMS being migrated FROM. Content is re-authored into EDS documents; not an ongoing runtime integration.</td></tr>
+<tr>
+    <td><b>Optimizely Web / Experimentation</b></td>
+    <td class="num">74</td>
+    <td>Site-wide</td>
+    <td>A/B testing &amp; experimentation snippet</td>
+    <td class="found">cdn.optimizely.com/js/5000773591891968.js preloaded/pushed on every page</td>
+    <td>Re-add experimentation snippet via delayed.js if AE keeps Optimizely Experiment. Confirm whether it is actively used.</td></tr>
+<tr>
+    <td><b>Wistia (video)</b></td>
+    <td class="num">14</td>
+    <td>Page-specific (product/marketing pages)</td>
+    <td>Hosted video player</td>
+    <td class="found">&lt;wistia-video&gt; web component + videoType:"wistia" (e.g. medias/ldupiv1d6y)</td>
+    <td>Video block with lazy facade → Wistia embed script (delayed). Keep Wistia media IDs.</td></tr>
+<tr>
+    <td><b>ion interactive (Scribble)</b></td>
+    <td class="num">2</td>
+    <td>Page-specific (material-request-form, professionals/contact-us)</td>
+    <td>Interactive forms hosted externally</td>
+    <td class="found">ionfiles.scribblecdn.net/ionizer + data-ion-embed-hash → experience.american-equity.com</td>
+    <td>Preserve via Script/Embed block. External app remains authoritative for form logic/submission.</td></tr>
+<tr>
+    <td><b>Hedgeness</b></td>
+    <td class="num">2</td>
+    <td>Page-specific (income-gap calculators)</td>
+    <td>Income-gap calculator widget</td>
+    <td class="found">ael.hedgenessapp.com/aelWidget.js → #hedgenessWidget</td>
+    <td>Preserve via Script/Embed block. Calculator logic remains in vendor widget.</td></tr>
+<tr>
+    <td><b>Greenhouse</b></td>
+    <td class="num">1</td>
+    <td>Page-specific (careers/openings)</td>
+    <td>Job board / ATS</td>
+    <td class="found">boards.greenhouse.io/embed/job_board/js?for=americanequity... → #grnhse_app</td>
+    <td>Preserve via Script/Embed block. ATS remains external.</td></tr>
+<tr>
+    <td><b>YouTube (outbound links only)</b></td>
+    <td class="num">5</td>
+    <td>Page-specific</td>
+    <td>Linked videos in article rich text</td>
+    <td class="found">youtube.com/watch links inside rich text; NOT an on-page embed</td>
+    <td>No player integration needed — links only. If an embed is later desired, add a lite-YouTube facade.</td></tr></tbody></table>
+</section>
+
+<section id="assume">
+<h2 class="sec">6 · Assumptions &amp; Scope Boundaries</h2>
+<table>
+<thead><tr><th>Assumption</th><th>Observed basis</th><th>How we treat it</th><th>Scope</th></tr></thead>
+<tbody><tr><td><b>External authenticated apps are out of scope</b></td><td>myportal (login) and register (Okta) are separate applications on other subdomains.</td><td>EDS preserves links to them; authentication is not rebuilt.</td><td><span class="scope sc-out">Out of Scope</span></td></tr>
+<tr><td><b>External portals linked, not rebuilt</b></td><td>Login/Register/affiliate (eagle-lifeco, ae-newyork) surfaces are external.</td><td>Link out from header/footer; no reimplementation.</td><td><span class="scope sc-out">Out of Scope</span></td></tr>
+<tr><td><b>DAM assets remain external</b></td><td>PDFs/brochures/statements served from asset.american-equity.com.</td><td>Reference assets as-is unless AE requires re-hosting into EDS.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>Asset resolver reused, not rebuilt</b></td><td>/api/assets/resolve-by-key is a verified 301 redirect service, not app logic.</td><td>Reuse resolver or use final asset URLs; do not build custom API code.</td><td><span class="scope sc-in">In Scope (reuse)</span></td></tr>
+<tr><td><b>Third-party platforms stay external</b></td><td>ion interactive, Hedgeness, Greenhouse render inside vendor scripts/iframes.</td><td>Preserve embeds via an embed/script block; vendor apps remain authoritative.</td><td><span class="scope sc-in">In Scope (embed only)</span></td></tr>
+<tr><td><b>Content differences do not create variations</b></td><td>Many pages share identical block composition with different copy/images.</td><td>Variations only where structure/behavior/authoring/tech differ.</td><td><span class="scope sc-in">In Scope</span></td></tr>
+<tr><td><b>Structural/behavioral differences can create variations</b></td><td>e.g. horizontal vs vertical line-tabs; icon vs image cards; accordion vs disclosure.</td><td>These are counted as distinct variations.</td><td><span class="scope sc-in">In Scope</span></td></tr>
+<tr><td><b>Dynamic listings need an EDS index</b></td><td>/insights, /forms, document/forms libraries hydrate lists client-side (empty SSR).</td><td>Rebuild as index-backed listing blocks with search/pagination.</td><td><span class="scope sc-in">In Scope</span></td></tr>
+<tr><td><b>Analytics re-instated as observed</b></td><td>GTM + GA4 + Optimizely Web + OneTrust present site-wide.</td><td>Re-add the same containers/snippets; new tracking/data-layer work estimated separately.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>Native /form purpose unconfirmed</b></td><td>/form uses placeholder labels and no visible submit endpoint in SSR.</td><td>Confirm whether it is a live form or a demo before building a native Form block.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>Optimizely Experimentation usage unconfirmed</b></td><td>Experiment snippet is present site-wide but active tests are not verifiable from HTML.</td><td>Confirm whether AE keeps Optimizely Experiment before re-integrating.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>SEO redirect parity required</b></td><td>10 legacy URLs 301/308 to canonical pages.</td><td>Recreate redirect map in EDS at launch.</td><td><span class="scope sc-in">In Scope</span></td></tr></tbody></table>
+</section>
+
+<section id="obs">
+<h2 class="sec">7 · Other Observations</h2>
+<dl class="obs">
+<dt>Platform</dt><dd>Source is <b>Next.js (App Router / RSC)</b> on <b>Optimizely CMS (SaaS)</b>, server <code>envoy</code>. Blocks are identified from the site's own <code>data-component</code> attributes — the mapping below is read from the markup, not inferred.</dd>
+<dt>Redirects</dt><dd>10 of the 74 input URLs are <b>301/308 redirects</b> to canonical in-scope pages (legacy <code>/annuities*</code>, <code>/incomeshield-annuity/*</code>, <code>/resources/blog/*</code>). These must be recreated in EDS redirect config for SEO parity.</dd>
+<dt>Client-hydrated lists</dt><dd>The Insights feed and the form/document libraries render their lists <b>client-side</b> (empty in server HTML). In EDS these become index-backed listing blocks (query-index.json) with search/pagination — the main net-new data-modeling work.</dd>
+<dt>Asset resolver</dt><dd><code>/api/assets/resolve-by-key</code> (used on 17 pages) is a <b>verified 301 asset resolver</b> to <code>asset.american-equity.com</code> (returns a PDF). It is a redirect/download service, <b>not custom application code</b> — reuse it.</dd>
+<dt>External authenticated apps</dt><dd>Login (<code>myportal</code>) and registration (<code>register</code>, Okta) are separate applications on other subdomains, plus affiliate sites (<code>eagle-lifeco.com</code>, <code>ae-newyork.com</code>). EDS <b>links out</b>; it does not rebuild them.</dd>
+<dt>Video</dt><dd>Wistia is the only on-page video (14 pages) via the <code>&lt;wistia-video&gt;</code> web component; YouTube appears only as outbound links in article text. Use a lazy facade + delayed script for Core Web Vitals.</dd>
+<dt>SEO / accessibility</dt><dd>All 74 pages carry meta descriptions and canonicals; <b>10 pages have more than one H1</b> — worth normalizing during migration. Preserve <code>data-gtm-*</code> tracking attributes on nav/CTAs for analytics parity.</dd>
+<dt>No CAPTCHA</dt><dd>No reCAPTCHA/hCaptcha/Turnstile was found in American Equity's own markup. Any CAPTCHA would live inside vendor iframes (ion / Greenhouse) and is <b>not verifiable from the accessible page behavior</b>.</dd>
+</dl>
+</section>
+
+<footer>American Equity → EDS · Pre-sales discovery report · Generated 2026-08-13 · All findings evidence-based from live page markup · No estimates/timelines/story points by design.</footer>
+</div>
+</body></html>

@@ -1,274 +1,1032 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thermo Fisher AEM → EDS Migration — Analysis Dashboard</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>American Equity → EDS · Discovery Analysis</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;color:#333;min-height:100vh;line-height:1.6;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-
-/* Header - matches report theme */
-.header{background:linear-gradient(135deg,#1a237e 0%,#0d47a1 100%);padding:50px 40px 40px;text-align:center;position:relative}
-.header h1{font-size:36px;font-weight:700;margin-bottom:8px;letter-spacing:-0.5px;color:#fff}
-.header .subtitle{font-size:18px;opacity:0.9;margin-bottom:24px;color:rgba(255,255,255,0.9)}
-.stats-bar{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:20px}
-.stat{text-align:center}
-.stat .num{font-size:32px;font-weight:700;color:#fff;display:block}
-.stat .label{font-size:12px;text-transform:uppercase;letter-spacing:1px;opacity:0.8;margin-top:2px;color:rgba(255,255,255,0.9)}
-
-/* Main */
-.main{max-width:1300px;margin:0 auto;padding:40px 24px 60px}
-
-/* Section Headers */
-.section-header{display:flex;align-items:center;gap:12px;margin:40px 0 20px;padding-bottom:12px;border-bottom:2px solid #e8eaf6}
-.section-header:first-child{margin-top:0}
-.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.section-header h2{font-size:22px;font-weight:600;color:#1a237e}
-.section-header .count{background:#e8eaf6;color:#1565c0;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;margin-left:8px}
-
-/* Cards Grid */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:20px}
-
-/* Report Card */
-.card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:24px;transition:all 0.2s ease;position:relative;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.card:hover{border-color:#1a237e;transform:translateY(-2px);box-shadow:0 4px 20px rgba(26,35,126,0.15)}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
-.card.blue::before{background:linear-gradient(90deg,#1a237e,#3949ab)}
-.card.green::before{background:linear-gradient(90deg,#1565c0,#1976d2)}
-.card.orange::before{background:linear-gradient(90deg,#0d47a1,#1565c0)}
-.card.purple::before{background:linear-gradient(90deg,#283593,#3949ab)}
-.card.teal::before{background:linear-gradient(90deg,#1565c0,#1e88e5)}
-
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
-.card-badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:4px 10px;border-radius:6px}
-.badge-inventory{background:#e3f2fd;color:#1565c0}
-.badge-template{background:#e8f5e9;color:#2e7d32}
-.badge-functional{background:#fff3e0;color:#e65100}
-.badge-data{background:#e8eaf6;color:#283593}
-
-.card-number{font-size:13px;color:#666;font-weight:600}
-.card h3{font-size:18px;font-weight:600;color:#1a237e;margin-bottom:8px;line-height:1.3}
-.card .desc{font-size:14px;color:#555;line-height:1.6;flex-grow:1;margin-bottom:16px}
-.card .meta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-.card .meta-tag{font-size:12px;color:#666;background:#f5f5f5;padding:4px 10px;border-radius:6px;border:1px solid #e0e0e0}
-.card .meta-tag strong{color:#333}
-.card-link{display:inline-flex;align-items:center;gap:6px;color:#1565c0;font-size:14px;font-weight:600;transition:color 0.15s}
-.card:hover .card-link{color:#0d47a1}
-.card-link::after{content:'→';transition:transform 0.15s}
-.card:hover .card-link::after{transform:translateX(3px)}
-
-/* Data Files Section */
-.data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.data-card{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:18px 20px;display:flex;align-items:center;gap:16px;transition:border-color 0.2s;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.data-card:hover{border-color:#1565c0}
-.data-icon{width:44px;height:44px;border-radius:10px;background:#e8eaf6;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:#1a237e}
-.data-info h4{font-size:15px;color:#333;margin-bottom:3px}
-.data-info p{font-size:13px;color:#666}
-
-/* Footer */
-.footer{text-align:center;padding:40px 24px;color:#666;font-size:13px;border-top:1px solid #e0e0e0;margin-top:40px}
-.footer a{color:#1565c0}
-
-/* Quick Stats Cards */
-.quick-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:40px}
-.qs{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:20px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.qs .qs-num{font-size:28px;font-weight:700;color:#1565c0}
-.qs .qs-label{font-size:13px;color:#666;margin-top:4px}
-
-/* Top Nav Bar - matches report theme, full width */
-.top-nav{background:linear-gradient(90deg,#1a237e 0%,#0d47a1 100%);box-shadow:0 2px 8px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box}
-.top-nav-inner{margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
-.top-nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;transition:all .2s;background:rgba(255,255,255,.08)}
-.top-nav a:hover{background:rgba(255,255,255,.2);color:#fff}
-.top-nav .sep{color:rgba(255,255,255,.5);font-size:13px}
-.top-nav .project{color:rgba(255,255,255,.9);font-size:14px;font-weight:500}
-.top-nav-current{color:#fff;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:6px;background:rgba(255,255,255,.15)}
-
-@media(max-width:768px){
-  .header h1{font-size:24px}
-  .stats-bar{gap:24px}
-  .stat .num{font-size:24px}
-  .cards{grid-template-columns:1fr}
-  .data-grid{grid-template-columns:1fr}
-  .quick-stats{grid-template-columns:1fr 1fr}
-}
-</style>
-</head>
+:root{--brand:#c8102e;--ink:#0b0f19;--edge:#e2e6ee;--blue:#1f4e9b;--muted:#5b6472;--navy:#0a2240}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#f4f6fa}
+header.hero{background:linear-gradient(135deg,#0a2240,#123a6b 60%,#1f4e9b);color:#fff;padding:44px 40px 38px}
+header.hero h1{margin:0 0 8px;font-size:27px;letter-spacing:-.5px}
+header.hero .sub{color:#c3d2ea;font-size:14.5px;max-width:920px}
+header.hero .badge{display:inline-block;background:var(--brand);color:#fff;font-weight:700;padding:3px 11px;border-radius:5px;font-size:12px;margin-bottom:14px;letter-spacing:.5px}
+nav.toc{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--edge);z-index:40;padding:10px 24px;display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px}
+nav.toc a{color:var(--muted);text-decoration:none;white-space:nowrap}nav.toc a:hover{color:var(--blue)}
+.wrap{max-width:1220px;margin:0 auto;padding:0 24px 70px}
+section{background:#fff;border:1px solid var(--edge);border-radius:14px;padding:24px 28px;margin:20px 0;box-shadow:0 1px 3px rgba(10,15,25,.05)}
+h2.sec{font-size:20px;margin:0 0 4px;padding-bottom:9px;border-bottom:3px solid var(--brand);display:inline-block}
+h4{margin:16px 0 6px;font-size:15px}
+.lead{color:#28303d;max-width:1000px;font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:18px 0}
+.kpi{background:linear-gradient(160deg,#f8fafc,#eef2f9);border:1px solid var(--edge);border-radius:12px;padding:16px}
+.kpi .n{font-size:25px;font-weight:800;color:var(--blue);line-height:1}
+.kpi .l{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:6px}
+.kpi.alt .n{color:var(--brand)}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0}
+th,td{border:1px solid var(--edge);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:#f0f3f8;font-weight:700}
+td.num,th.num{text-align:center;white-space:nowrap}
+tr:nth-child(even){background:#fafbfd}
+.found{color:var(--muted);font-size:11.5px;margin-top:3px}
+.cx{padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;display:inline-block}
+.cx-Low{background:#dcfce7;color:#166534}.cx-Medium{background:#fef9c3;color:#854d0e}.cx-High{background:#ffedd5;color:#9a3412}.cx-VeryHigh{background:#ede9fe;color:#5b21b6}
+.total-row td{background:#0a2240!important;color:#fff;font-weight:800;border-color:#333}
+.cbadge{display:inline-block;background:var(--blue);color:#fff;font-size:10px;font-weight:800;padding:1px 7px;border-radius:20px;margin-left:6px;text-transform:uppercase;letter-spacing:.3px}
+.scope{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap;display:inline-block}
+.sc-in{background:#dcfce7;color:#166534}.sc-out{background:#e5e7eb;color:#374151}.sc-conf{background:#fef3c7;color:#92400e}
+.vblock{margin:14px 0;padding:12px 14px;border:1px solid var(--edge);border-radius:10px;background:#fbfcfe}
+.vblock h4{margin:0 0 8px}
+.urls code,.tag{font-size:11px}
+.urls code{display:inline-block;background:#eef2f9;border:1px solid #dfe6f1;color:#1a4bcc;padding:2px 7px;border-radius:6px;margin:2px}
+.tag{display:inline-block;background:#eef7ee;border:1px solid #cfe6cf;color:#1d6b2b;padding:1px 6px;border-radius:6px;margin:1px}
+.redir{color:#9a3412;font-size:11px;font-weight:600}
+.assume li{font-size:13px;margin:3px 0}
+.callout{background:#eff5ff;border-left:4px solid var(--blue);padding:10px 14px;border-radius:6px;font-size:13px;margin:12px 0}
+.note{background:#fff8e6;border-left:4px solid #d99400;padding:10px 14px;border-radius:6px;font-size:13px;margin:12px 0}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:24px}
+@media print{nav.toc{display:none}section{break-inside:avoid;box-shadow:none}}
+</style></head>
 <body>
-
-<nav class="top-nav">
-  <div class="top-nav-inner">
-    <span class="top-nav-current">⌂ Dashboard</span>
-    <span class="sep">·</span>
-    <span class="project">Thermo Fisher AEM → EDS Migration</span>
-  </div>
+<header class="hero">
+  <div class="badge">ADOBE EDGE DELIVERY SERVICES · DISCOVERY ANALYSIS</div>
+  <h1>American-Equity.com → EDS · Site Discovery &amp; Component Analysis</h1>
+  <div class="sub">Evidence-based discovery of <code>www.american-equity.com</code> for migration to Adobe Edge Delivery Services. Every one of the <b>74 unique URLs</b> in scope was fetched and inspected (no sampling). Source platform observed: <b>Next.js (App Router / RSC) on Optimizely CMS</b>. Blocks are identified from the site's own <code>data-component</code> attributes. This document contains <b>no estimates, timelines, story points, or development days</b> — it is a structural/technical discovery for scope definition.</div>
+</header>
+<nav class="toc">
+  <a href="#summary">Executive Summary</a>
+  <a href="#urls">URL / Page Analysis</a>
+  <a href="#blocks">Blocks &amp; Variations</a>
+  <a href="#blockdetail">Variation Detail</a>
+  <a href="#templates">Templates</a>
+  <a href="#forms">Forms</a>
+  <a href="#integ">Integrations</a>
+  <a href="#external">Redirects / APIs / External</a>
+  <a href="#assume">Assumptions &amp; Scope</a>
+  <a href="#gray">Gray Areas</a>
+  <a href="#eds">EDS Considerations</a>
+  <a href="#counts">Final Counts</a>
 </nav>
+<div class="wrap">
 
-<div class="header">
-  <h1>Thermo Fisher AEM → EDS Migration</h1>
-  <div class="subtitle">Analysis Dashboard — Block Inventory, Template Mapping & Functional Documentation</div>
-  <div class="stats-bar">
-    <div class="stat"><span class="num">81,753</span><span class="label">URLs Analyzed</span></div>
-    <div class="stat"><span class="num">35</span><span class="label">Blocks</span></div>
-    <div class="stat"><span class="num">87</span><span class="label">Variations</span></div>
-    <div class="stat"><span class="num">21</span><span class="label">Templates</span></div>
-    <div class="stat"><span class="num">12</span><span class="label">Reports</span></div>
-    <div class="stat"><span class="num">59</span><span class="label">Screenshots</span></div>
-  </div>
+<section id="summary">
+<h2 class="sec">Executive Summary</h2>
+<div class="kpis">
+  <div class="kpi"><div class="n">74</div><div class="l">Unique URLs analyzed</div></div>
+  <div class="kpi"><div class="n">64</div><div class="l">Distinct rendered pages</div></div>
+  <div class="kpi"><div class="n">10</div><div class="l">Legacy redirects</div></div>
+  <div class="kpi alt"><div class="n">16</div><div class="l">Blocks</div></div>
+  <div class="kpi alt"><div class="n">25</div><div class="l">Variations</div></div>
+  <div class="kpi alt"><div class="n">11</div><div class="l">Templates</div></div>
+  <div class="kpi"><div class="n">6</div><div class="l">Forms</div></div>
+  <div class="kpi"><div class="n">10</div><div class="l">Integrations</div></div>
+  <div class="kpi"><div class="n">8</div><div class="l">External dependencies</div></div>
+  <div class="kpi"><div class="n">7</div><div class="l">Open questions</div></div>
 </div>
+<p class="lead">American Equity is a marketing/content site built on <b>Optimizely CMS</b> with a <b>Next.js (App Router)</b> front end. The DOM exposes clean Optimizely component names via <code>data-component</code>, which we used as the authoritative block signal (rather than inferring from CSS classes). All 74 URLs returned HTTP 200; 10 are 301/308 redirects that resolve to canonical in-scope pages, leaving <b>64 distinct rendered pages</b>.</p>
+<div class="callout"><b>Scope shape:</b> The bulk of the site is standard content composition (hero, feature cards &amp; media, tabs, accordions, video) — prose, standalone images, CTAs and download links are default content handled by core decoration, not bespoke blocks. The higher-complexity areas are (1) the <b>tabbed line-feature</b> block and <b>dynamic listings</b> (insights feed, searchable form/document libraries) that hydrate client-side and need an EDS index, and (2) <b>third-party embeds</b> (ion interactive forms, Hedgeness calculator, Greenhouse jobs) that should be <b>preserved, not rebuilt</b>. Downloadable resources (brochures, statements) are authored as links resolving to the existing DAM.</p>
+<div class="note"><b>Out of EDS scope (link, don't rebuild):</b> customer login (<code>myportal</code>), registration (<code>register</code>, Okta), affiliate sites (<code>eagle-lifeco</code>, <code>ae-newyork</code>), DAM downloads (<code>asset.american-equity.com</code>), and the vendor-hosted forms/calculator/jobs apps. The <code>/api/assets/resolve-by-key</code> endpoint is a <b>verified 301 asset resolver</b> — a redirect service, not custom application code.</p>
+</section>
 
-<div class="main">
+<section id="urls">
+<h2 class="sec">1 · URL / Page Analysis (all 74)</h2>
+<p class="lead">Every input URL, its assigned template, observed content components, and integrations. Redirecting URLs show their canonical target. Input file had 75 lines (1 duplicate: <code>/IncomeShield</code> listed twice) → 74 unique URLs.</p>
+<table><thead><tr><th>URL</th><th>Template</th><th>Observed components</th><th>Integrations</th></tr></thead>
+<tbody><tr>
+      <td><code>/</code></td>
+      <td>Home</td>
+      <td class="found">heroHeaderSection×1, featureCardsAndMediaRow×2, featuredIconCard×5, videoBlock×1, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, metrics×1, metricsCard×3, imageBlock×1, featuredImageCard×3, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/about</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, imageBlock×2, featureCardsAndMediaRow×2, featuredImageCard×5, metrics×1, metricsCard×3, ctaBlock×1, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/about/careers</code></td>
+      <td>Careers</td>
+      <td class="found">heroHeaderSection×1, imageBlock×1, ctaBlock×3, featureCardsAndMediaRow×2, featuredIconCard×4, featureVerticalLineTab×1, featureVerticalLineTabCard×4, featuredImageCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/about/careers/internship-program</code></td>
+      <td>Careers</td>
+      <td class="found">heroHeaderSection×1, videoBlock×2, featureCardsAndMediaRow×1, featuredIconCard×4, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, ctaBlock×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/about/careers/openings</code></td>
+      <td>Careers</td>
+      <td class="found">heroHeaderSection×1, progressBar×1, progressBarStep×5, scriptRow×1, featureCardsAndMediaRow×1, featuredImageCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Greenhouse (job board)</span></td></tr>
+<tr>
+      <td><code>/about/careers/why-work-here</code></td>
+      <td>Careers</td>
+      <td class="found">heroHeaderSection×1, ctaBlock×2, featureCardsAndMediaRow×3, featuredIconCard×5, videoBlock×2, featureHorizontalLineTab×1, featureHorizontalLineTabCard×4, featuredImageCard×7</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/accessibility</code></td>
+      <td>Legal / Utility</td>
+      <td class="found">heroHeaderSection×1, featureCardsAndMediaRow×1, featuredIconCard×4, richTextRow×1, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/agent-sms-privacy-terms</code></td>
+      <td>Legal / Utility</td>
+      <td class="found">heroHeaderSection×1, featureCardsAndMediaRow×1, featuredIconCard×4, richTextRow×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/annuities</code> <span class="redir">301→ /our-annuities</span></td>
+      <td>Product / Annuity (Consumer)</td>
+      <td class="found">heroHeaderSection×1, videoBlock×1, featureVerticalLineTab×1, featureVerticalLineTabCard×3, featureCardsAndMediaRow×1, imageBlock×1, accordion×1, progressBar×1, progressBarStep×4, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/annuities-101</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, imageBlock×2, videoBlock×1, featureCardsAndMediaRow×2, featuredIconCard×6, ctaBlock×1, relatedBlogPosts×1, blogCard×3, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/annuities/fixed-index-annuities</code> <span class="redir">301→ /our-annuities</span></td>
+      <td>Product / Annuity (Consumer)</td>
+      <td class="found">heroHeaderSection×1, videoBlock×1, featureVerticalLineTab×1, featureVerticalLineTabCard×3, featureCardsAndMediaRow×1, imageBlock×1, accordion×1, progressBar×1, progressBarStep×4, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/annuities/retirement-income-research</code> <span class="redir">301→ /insights</span></td>
+      <td>Content Listing (Dynamic)</td>
+      <td class="found">heroHeaderSection×1, blogHeader×1, blogCard×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">YouTube (linked/embedded)</span></td></tr>
+<tr>
+      <td><code>/AssetShield</code></td>
+      <td>Product / Annuity (Consumer)</td>
+      <td class="found">heroHeaderSection×1, videoBlock×1, ctaBlock×1, accordion×1, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, imageBlock×1, progressBar×1, progressBarStep×4, relatedBlogPosts×1, blogCard×3, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/beneficiary-support</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, progressBar×1, progressBarStep×3, imageBlock×1, attachments×1, accordion×1, ctaBlock×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/community</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, featureCardsAndMediaRow×2, featuredIconCard×3, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, ctaBlock×1, featuredImageCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/contact-us</code></td>
+      <td>Contact</td>
+      <td class="found">heroHeaderSection×1, contactRow×1, contactCard×4, imageBlock×1, featureCardsAndMediaRow×1, featuredImageCard×3, ctaBlock×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/EstateShield</code></td>
+      <td>Product / Annuity (Consumer)</td>
+      <td class="found">heroHeaderSection×1, videoBlock×1, featureCardsAndMediaRow×1, featuredImageCard×2, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, imageBlock×1, progressBar×1, progressBarStep×4, relatedBlogPosts×1, blogCard×3, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/financial-strength</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, imageBlock×2, metrics×1, metricsCard×3, featureCardsAndMediaRow×1, featuredImageCard×3, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/form</code></td>
+      <td>Form / Document Listing</td>
+      <td class="found">heroHeader×1, richTextRow×1, formInputModel×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/forms</code></td>
+      <td>Form / Document Listing</td>
+      <td class="found">heroHeaderSection×1, formListing×1, featureCardsAndMediaRow×1, featuredImageCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/GuaranteeShield</code></td>
+      <td>Product / Annuity (Consumer)</td>
+      <td class="found">heroHeaderSection×1, imageBlock×2, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, progressBar×1, progressBarStep×4, relatedBlogPosts×1, blogCard×3, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/income-gap-calculator</code></td>
+      <td>Tool / Calculator (Embed)</td>
+      <td class="found">heroHeaderSection×1, imageBlock×1, scriptRow×1, ctaBlock×1, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Hedgeness (income-gap calculator)</span></td></tr>
+<tr>
+      <td><code>/IncomeShield</code></td>
+      <td>Product / Annuity (Consumer)</td>
+      <td class="found">heroHeaderSection×1, videoBlock×1, featureCardsAndMediaRow×1, featuredImageCard×4, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, imageBlock×1, progressBar×1, progressBarStep×4, relatedBlogPosts×1, blogCard×3, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/incomeshield-annuity/how-it-works</code> <span class="redir">301→ /IncomeShield</span></td>
+      <td>Product / Annuity (Consumer)</td>
+      <td class="found">heroHeaderSection×1, videoBlock×1, featureCardsAndMediaRow×1, featuredImageCard×4, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, imageBlock×1, progressBar×1, progressBarStep×4, relatedBlogPosts×1, blogCard×3, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/insights</code></td>
+      <td>Content Listing (Dynamic)</td>
+      <td class="found">heroHeaderSection×1, blogHeader×1, blogCard×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">YouTube (linked/embedded)</span></td></tr>
+<tr>
+      <td><code>/insights/10-Facts-About-Fixed-Index-Annuities</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/8-questions-to-ask-yourself-when-planning-for-retirement</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/Annuities-101-What-You-Need-to-Know</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/baby-boomer-retirement-income-expectations-and-opportunities</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/baby-boomer-retirement-trends-housing</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/baby-boomer-retirement-trends-transportation--health-care</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/benefits-of-fixed-index-annuities</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, imageBlock×1, featureCardsAndMediaRow×1, featuredIconCard×4, richTextRow×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/how-annuities-can-help-fund-reliable-income-in-retirement</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×3, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×3, imageBlock×2, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">YouTube (linked/embedded)</span></td></tr>
+<tr>
+      <td><code>/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, imageBlock×1, richTextRow×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/the-benefits-of-working-with-a-financial-professional</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/the-sandwich-generation-and-its-retirement-outlook</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/job-applicant-privacy-policy</code></td>
+      <td>Legal / Utility</td>
+      <td class="found">heroHeaderSection×1, featureCardsAndMediaRow×1, featuredIconCard×4, richTextRow×1, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/naic-statutory-financial-statements</code></td>
+      <td>Legal / Utility</td>
+      <td class="found">heroHeaderSection×1, attachments×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/our-annuities</code></td>
+      <td>Product / Annuity (Consumer)</td>
+      <td class="found">heroHeaderSection×1, videoBlock×1, featureVerticalLineTab×1, featureVerticalLineTabCard×3, featureCardsAndMediaRow×1, imageBlock×1, accordion×1, progressBar×1, progressBarStep×4, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/privacy</code></td>
+      <td>Legal / Utility</td>
+      <td class="found">heroHeaderSection×1, featureCardsAndMediaRow×1, featuredIconCard×4, richTextRow×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, generalModal×1, featureCardsAndMediaRow×2, featuredIconCard×9, feature3SetsImage×1, featureSetCard×3, metrics×1, metricsCard×3, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/American-Equity-AssetShield</code></td>
+      <td>Product / Annuity (Professional)</td>
+      <td class="found">heroHeaderSection×1, videoBlock×1, ctaBlock×3, brochure×1, brochureTab×5, brochureCard×6, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, imageBlock×1, featureCardsAndMediaRow×1, featuredImageCard×3, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/professionals/American-Equity-EstateShield</code></td>
+      <td>Product / Annuity (Professional)</td>
+      <td class="found">heroHeaderSection×1, videoBlock×1, brochure×1, brochureTab×3, brochureCard×1, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, imageBlock×1, featureCardsAndMediaRow×1, featuredImageCard×3, ctaBlock×2, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/professionals/American-Equity-GuaranteeShield</code></td>
+      <td>Product / Annuity (Professional)</td>
+      <td class="found">heroHeaderSection×1, imageBlock×2, brochure×1, brochureTab×2, brochureCard×1, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, featureCardsAndMediaRow×1, featuredImageCard×3, ctaBlock×2, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/American-Equity-IncomeShield</code></td>
+      <td>Product / Annuity (Professional)</td>
+      <td class="found">heroHeaderSection×1, videoBlock×1, brochure×1, brochureTab×5, brochureCard×4, featureHorizontalLineTab×1, featureHorizontalLineTabCard×3, imageBlock×1, featureCardsAndMediaRow×1, featuredImageCard×3, ctaBlock×2, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Wistia (video)</span></td></tr>
+<tr>
+      <td><code>/professionals/client-engagement-collections</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, anchorLinkTarget×1, brochure×7, brochureTab×7, brochureCard×28, ctaBlock×1, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/client-engagement-collections/art-engagement-collection</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, ctaBlock×3, attachments×1, featureCardsAndMediaRow×1, featuredImageCard×2</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/contact-us</code></td>
+      <td>Contact</td>
+      <td class="found">heroHeaderSection×1, contactRow×1, contactCard×3, scriptRow×1, ctaBlock×1, featureCardsAndMediaRow×1, featuredImageCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">ion interactive (Scribble/forms)</span></td></tr>
+<tr>
+      <td><code>/professionals/document-library</code></td>
+      <td>Form / Document Listing</td>
+      <td class="found">heroHeaderSection×1, formListing×1, ctaBlock×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/forms-library</code></td>
+      <td>Form / Document Listing</td>
+      <td class="found">heroHeaderSection×1, formTable×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/fp-insights-and-education</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×3, imageBlock×2, featureCardsAndMediaRow×1, featuredImageCard×3, attachments×1, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk</code></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×3, featureCardsAndMediaRow×1, featuredIconCard×3, imageBlock×2, attachments×1, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/material-request-form</code></td>
+      <td>Form / Document Listing</td>
+      <td class="found">heroHeaderSection×1, scriptRow×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">ion interactive (Scribble/forms)</span></td></tr>
+<tr>
+      <td><code>/professionals/our-annuities</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, featureCardsAndMediaRow×4, featuredImageCard×7, imageBlock×1, featuredIconCard×2, ctaBlock×1, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/rates-and-indexes</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, attachments×3, accordion×1, ctaBlock×2, featureCardsAndMediaRow×1, featuredIconCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/resources</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, ctaBlock×3, featureCardsAndMediaRow×5, featuredImageCard×8, featuredIconCard×6</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/tools-calculators</code></td>
+      <td>Section Landing / Hub</td>
+      <td class="found">heroHeaderSection×1, featureCardsAndMediaRow×2, featuredIconCard×5, ctaBlock×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/professionals/tools-calculators/income-gap-calculator</code></td>
+      <td>Tool / Calculator (Embed)</td>
+      <td class="found">heroHeaderSection×1, scriptRow×1, ctaBlock×1, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">Hedgeness (income-gap calculator)</span></td></tr>
+<tr>
+      <td><code>/resources/blog/9-ways-to-plan-for-a-happier-retirement</code> <span class="redir">301→ /insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps</span></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/resources/blog/baby-boomer-retirement-trends-retirement-income</code> <span class="redir">301→ /insights/baby-boomer-retirement-income-expectations-and-opportunities</span></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/resources/blog/fixed-index-annuities-faq</code> <span class="redir">301→ /insights/benefits-of-fixed-index-annuities</span></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders</code> <span class="redir">301→ /insights</span></td>
+      <td>Content Listing (Dynamic)</td>
+      <td class="found">heroHeaderSection×1, blogHeader×1, blogCard×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">YouTube (linked/embedded)</span></td></tr>
+<tr>
+      <td><code>/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings</code> <span class="redir">301→ /insights</span></td>
+      <td>Content Listing (Dynamic)</td>
+      <td class="found">heroHeaderSection×1, blogHeader×1, blogCard×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span> <span class="tag">YouTube (linked/embedded)</span></td></tr>
+<tr>
+      <td><code>/resources/blog/top-fixed-index-annuity-benefits</code> <span class="redir">301→ /insights/10-Facts-About-Fixed-Index-Annuities</span></td>
+      <td>Article (Insight / Blog)</td>
+      <td class="found">heroHeaderSection×1, richTextRow×2, imageBlock×1, disclosure×1, relatedBlogPosts×1, blogCard×3</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/security-disclosure</code></td>
+      <td>Legal / Utility</td>
+      <td class="found">heroHeaderSection×1, richTextRow×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/terms-of-use</code></td>
+      <td>Legal / Utility</td>
+      <td class="found">heroHeaderSection×1, featureCardsAndMediaRow×1, featuredIconCard×4, richTextRow×1, disclosure×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr>
+<tr>
+      <td><code>/usa-patriot-act-notice</code></td>
+      <td>Legal / Utility</td>
+      <td class="found">heroHeaderSection×1, richTextRow×1</td>
+      <td><span class="tag">Google Tag Manager</span> <span class="tag">Google Analytics (gtag)</span> <span class="tag">OneTrust (consent)</span> <span class="tag">Optimizely CMS (SaaS)</span> <span class="tag">Optimizely Web/Experimentation</span></td></tr></tbody></table>
+</section>
 
+<section id="blocks">
+<h2 class="sec">2 · Blocks &amp; Variations with Complexity</h2>
+<p class="lead"><b>16 blocks</b> (13 content + 3 global), <b>25 variations</b>. A variation is only counted where there is a real structural, behavioral, authoring, or technical difference — not content/image/text differences. Complexity distribution: <span class="cx cx-High">High</span> <b>5</b> &nbsp; <span class="cx cx-Low">Low</span> <b>3</b> &nbsp; <span class="cx cx-Medium">Medium</span> <b>8</b>.</p>
+<div class="callout"><b>Hero vs. navigation — no overlap:</b> the <b>Hero (In-Page Intro Band)</b> is the first content band <i>inside</i> <code>&lt;main&gt;</code> (heading/image/CTA authored per page). The site's <b>navigation</b> is a separate <b>global</b> block living in <code>&lt;header&gt;/&lt;nav&gt;</code>, built once for the whole site. They are distinct blocks; the 3 global blocks (header/navigation, footer, breadcrumb) are page chrome, not per-page content.</div>
+<table>
+<thead><tr><th>Block</th><th class="num">Pages</th><th class="num">Var.</th><th>Complexity</th><th>Important behavior / dependencies</th><th>EDS implementation considerations</th></tr></thead>
+<tbody>
+<tr>
+    <td><b>Hero (In-Page Intro Band)</b><div class="found">heroHeaderSection, heroHeader, blogHeader</div></td>
+    <td class="num">74</td>
+    <td class="num">3</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>The first content band INSIDE &lt;main&gt; (not the site navigation) — background image/color, optional eyebrow, heading, subcopy, CTA. Structurally similar across product/landing/legal; article variant adds post metadata. The global nav is a separate block (below).</td>
+    <td>One hero block with a variant class (e.g. hero / hero.article). Distinct from the global header/nav. Breadcrumb rendered separately. Image via EDS optimized picture.</td></tr>
+<tr>
+    <td><b>Feature Cards &amp; Media</b><div class="found">featureCardsAndMediaRow, featuredIconCard, featuredImageCard, feature3SetsImage, featureSetCard</div></td>
+    <td class="num">36</td>
+    <td class="num">4</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>One family of feature/card layouts: alternating media+copy rows and responsive card grids (icon or image). Media side, background, and column count are authoring options. Icon vs image is a meaningful media/structural difference, so they are counted as variations of the same block.</td>
+    <td>Single "cards / columns" block with media-row, icon-card, and image-card variants. Grid responsive by card count; image via EDS optimized picture.</td></tr>
+<tr>
+    <td><b>Tabs (Tabbed Content)</b><div class="found">featureHorizontalLineTab, featureHorizontalLineTabCard, featureVerticalLineTab, featureVerticalLineTabCard</div></td>
+    <td class="num">17</td>
+    <td class="num">2</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td>Interactive tab switching (client JS), ARIA tablist/tabpanel, keyboard nav. Horizontal vs vertical differ in layout + interaction model.</td>
+    <td>Tabs block with orientation variant. Needs JS decoration for tab state, ARIA roles, and deep-link/anchor support.</td></tr>
+<tr>
+    <td><b>Progress Bar / Stepper</b><div class="found">progressBar, progressBarStep</div></td>
+    <td class="num">10</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>Presentational stepped sequence (not a form wizard). Each step = icon/number + heading + text.</td>
+    <td>Static stepper block; no state machine. CSS-driven connectors. Low interactivity.</td></tr>
+<tr>
+    <td><b>Video (Wistia)</b><div class="found">videoBlock</div></td>
+    <td class="num">14</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>Uses Wistia player web-component + Wistia embed script (videoType:"wistia"). YouTube appears only as outbound links inside rich text, not as an embed.</td>
+    <td>Video block with lazy facade → Wistia embed. Load player script only on interaction/delayed phase for CWV.</td></tr>
+<tr>
+    <td><b>Metrics / Stats</b><div class="found">metrics, metricsCard</div></td>
+    <td class="num">4</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Low">Low</span></td>
+    <td>Static numeric highlights. No animation/data source observed.</td>
+    <td>Simple stats block; author-entered numbers.</td></tr>
+<tr>
+    <td><b>Accordion / Disclosure</b><div class="found">accordion, disclosure</div></td>
+    <td class="num">43</td>
+    <td class="num">2</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>Both are expand/collapse; accordion is multi-item FAQ, disclosure is single legal expander. Distinct authoring purpose + placement.</td>
+    <td>Accordion block with a "disclosure" variant. ARIA disclosure pattern, keyboard support.</td></tr>
+<tr>
+    <td><b>Blog Card / Related Posts</b><div class="found">blogCard, relatedBlogPosts</div></td>
+    <td class="num">34</td>
+    <td class="num">2</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>Related-posts is data-driven (pulls related Insights); cards render title/image/excerpt/link. Depends on content taxonomy.</td>
+    <td>Card block + a query-driven variant (index/taxonomy) for related posts. Needs an index (e.g. EDS query-index.json).</td></tr>
+<tr>
+    <td><b>Dynamic Content Listing (Insights index)</b><div class="found">blogHeader</div></td>
+    <td class="num">4</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td>List of posts with pagination is fetched/rendered client-side (empty in SSR HTML). Category/feed driven.</td>
+    <td>Listing block backed by an EDS index (query-index.json) with pagination; replaces the client feed. Higher effort due to data model + pagination.</td></tr>
+<tr>
+    <td><b>Searchable Form / Document Library</b><div class="found">formListing, formTable</div></td>
+    <td class="num">4</td>
+    <td class="num">2</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td>This is NOT a data-entry form. It is a searchable/filterable DIRECTORY of downloadable service forms and documents (e.g. annuity service forms, statements). The page renders a search box plus category tabs (formListing) or a sortable table (formTable) over a set of documents; each result row links out to the PDF on the DAM (via /api/assets/resolve-by-key → asset.american-equity.com). The list itself is fetched and rendered client-side, so the server HTML is only an empty shell. In short: a "find the form/document I need, then download it" tool.</td>
+    <td>Listing block backed by an EDS index (query-index.json) with client-side search/filter (and a tabbed vs table display variant). Result links resolve to the existing DAM. Higher effort because it needs a document data model + search UX, not just static markup.</td></tr>
+<tr>
+    <td><b>Native Data-Entry Form (Form Input Model)</b><div class="found">formInputModel</div></td>
+    <td class="num">1</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td>This is an actual data-collection form built natively in the CMS (component "formInputModel") — the visitor types values and submits them, unlike the vendor-embedded forms (ion/Greenhouse) which live inside third-party iframes. On the one page it appears (/form) the fields carry placeholder labels ("Form title", "Form description") and the server HTML shows no submit endpoint, so it looks like a template/sample rather than a wired-up production form. Whether it is live, and where it posts to, cannot be confirmed from the accessible page behavior.</td>
+    <td>Build as an EDS form block (or AEM Forms) once the real field model, validation rules, and submit endpoint are confirmed with American Equity. Tracked in the Forms section and Gray Areas as a "confirm before building" item.</td></tr>
+<tr>
+    <td><b>Contact Card / Row</b><div class="found">contactCard, contactRow</div></td>
+    <td class="num">2</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Low">Low</span></td>
+    <td>Static contact detail cards with tel:/mailto: links.</td>
+    <td>Cards variant; author-entered contact info.</td></tr>
+<tr>
+    <td><b>Modal / Dialog</b><div class="found">generalModal</div></td>
+    <td class="num">1</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>Overlay dialog; focus trap + ARIA dialog semantics.</td>
+    <td>Modal block/util; accessible dialog, opened from a trigger link.</td></tr>
+<tr>
+    <td><b>Global Header / Navigation (site chrome)</b> <span class="cbadge">global</span><div class="found">—</div></td>
+    <td class="num">74</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td>The site navigation in &lt;header&gt;/&lt;nav&gt; (NOT a per-page hero). Desktop mega-menu (navigation-menu triggers + content panels), mobile drawer, utility links to external portal/register. Carries no data-component — it is structural chrome, built once for the whole site. GTM nav tracking attributes.</td>
+    <td>Standard EDS header block from the nav document; mega-menu panels + mobile drawer. Built once, shared by every page. External utility links (Login/Register) preserved.</td></tr>
+<tr>
+    <td><b>Global Footer</b> <span class="cbadge">global</span><div class="found">footerNavigationColumn, footerNavigationLink</div></td>
+    <td class="num">74</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>Static multi-column footer with social + legal links and rich disclosure text. GTM footer tracking attributes.</td>
+    <td>Standard EDS footer block from footer document.</td></tr>
+<tr>
+    <td><b>Breadcrumb</b> <span class="cbadge">global</span><div class="found">—</div></td>
+    <td class="num">51</td>
+    <td class="num">1</td>
+    <td><span class="cx cx-Low">Low</span></td>
+    <td>Path breadcrumb on interior pages; not present on home/some landings.</td>
+    <td>Breadcrumb block/auto-block derived from path or metadata.</td></tr>
+<tr class="total-row"><td>TOTAL — 16 blocks</td><td class="num">—</td><td class="num">25</td><td>—</td><td colspan="2"></td></tr>
+</tbody></table>
+</section>
 
+<section id="blockdetail">
+<h2 class="sec">2b · Variation Detail</h2>
+<p class="lead">Per-block breakdown of each counted variation and the structural/behavioral evidence that distinguishes it.</p>
+<div class="vblock"><h4>Hero (In-Page Intro Band) <span class="cx cx-Medium">Medium</span> <span class="found">· 74 pages · heroHeaderSection, heroHeader, blogHeader</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Standard Hero</b></td><td>Heading + subcopy + optional image/CTA; on 73 pages</td><td class="num">73 pages</td></tr><tr><td><b>Article Hero</b></td><td>Title + author/date/read-time meta + eyebrow; used on dynamic article/listing pages</td><td class="num">4 pages</td></tr><tr><td><b>Simple Hero</b></td><td>Minimal heading-only variant (form template page)</td><td class="num">1 page</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Feature Cards &amp; Media <span class="cx cx-Medium">Medium</span> <span class="found">· 36 pages · featureCardsAndMediaRow, featuredIconCard, featuredImageCard, feature3SetsImage, featureSetCard</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Media + copy row</b></td><td>Alternating image/text rows with optional CTA — the site's workhorse content band</td><td class="num">36 pages</td></tr><tr><td><b>Icon card grid</b></td><td>Grid of icon + heading + text cards (3–9 up)</td><td class="num">18 pages</td></tr><tr><td><b>Image card grid</b></td><td>Grid of image + heading + text/link cards</td><td class="num">21 pages</td></tr><tr><td><b>3-set image feature</b></td><td>Three-column image feature grouping</td><td class="num">1 page</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Tabs (Tabbed Content) <span class="cx cx-High">High</span> <span class="found">· 17 pages · featureHorizontalLineTab, featureHorizontalLineTabCard, featureVerticalLineTab, featureVerticalLineTabCard</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Horizontal line tabs</b></td><td>Tab strip along the top; tab → card panel</td><td class="num">13 pages</td></tr><tr><td><b>Vertical line tabs</b></td><td>Tab list on the side; tab → card panel</td><td class="num">4 pages</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Progress Bar / Stepper <span class="cx cx-Medium">Medium</span> <span class="found">· 10 pages · progressBar, progressBarStep</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Numbered step sequence</b></td><td>Ordered “how it works / next steps” 3–5 step sequence</td><td class="num">10 pages</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Video (Wistia) <span class="cx cx-Medium">Medium</span> <span class="found">· 14 pages · videoBlock</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Inline Wistia video</b></td><td>Wistia web component (&lt;wistia-video&gt;) with poster + heading + copy</td><td class="num">14 pages</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Metrics / Stats <span class="cx cx-Low">Low</span> <span class="found">· 4 pages · metrics, metricsCard</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Stat row</b></td><td>Large-number + label KPI row (e.g. financial-strength, about)</td><td class="num">4 pages</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Accordion / Disclosure <span class="cx cx-Medium">Medium</span> <span class="found">· 43 pages · accordion, disclosure</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>FAQ accordion</b></td><td>Expand/collapse Q&amp;A groups</td><td class="num">6 pages</td></tr><tr><td><b>Disclosure / legal expander</b></td><td>Collapsible fine-print / disclaimer region (very common footer-of-content)</td><td class="num">42 pages</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Blog Card / Related Posts <span class="cx cx-Medium">Medium</span> <span class="found">· 34 pages · blogCard, relatedBlogPosts</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Related posts strip</b></td><td>Auto-populated “related/insights” cards at article foot</td><td class="num">30 pages</td></tr><tr><td><b>Editorial card grid</b></td><td>Curated card links to insight articles</td><td class="num">within 34 pages</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Dynamic Content Listing (Insights index) <span class="cx cx-High">High</span> <span class="found">· 4 pages · blogHeader</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Insights listing (client-fetched)</b></td><td>Paginated article feed ("BlogPosts", "Pagination", "articles" in payload); SSR renders shell, list hydrates client-side</td><td class="num">/insights + 3 legacy redirects</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Searchable Form / Document Library <span class="cx cx-High">High</span> <span class="found">· 4 pages · formListing, formTable</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Form listing w/ search + category tabs</b></td><td>Consumer /forms and /professionals/document-library</td><td class="num">3 pages</td></tr><tr><td><b>Form table directory</b></td><td>Professionals /forms-library</td><td class="num">1 page</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Native Data-Entry Form (Form Input Model) <span class="cx cx-High">High</span> <span class="found">· 1 pages · formInputModel</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Native form</b></td><td>The only true HTML &lt;form&gt; on the site — text inputs, a select, a textarea and a submit button, on /form</td><td class="num">1 page</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Contact Card / Row <span class="cx cx-Low">Low</span> <span class="found">· 2 pages · contactCard, contactRow</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Contact cards</b></td><td>Phone/email/dept contact cards (contact-us, professionals/contact-us)</td><td class="num">2 pages</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Modal / Dialog <span class="cx cx-Medium">Medium</span> <span class="found">· 1 pages · generalModal</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>General modal</b></td><td>Dialog triggered from content (professionals landing)</td><td class="num">1 page</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Global Header / Navigation (site chrome) <span class="cx cx-High">High</span> <span class="found">· 74 pages · global</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Mega-menu header</b></td><td>4 top-level menus (About Us, Annuities, Retirement Resources, Support) with dropdown panels + utility menu (Login/Register/Search) + Find an Agent</td><td class="num">site-wide</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Global Footer <span class="cx cx-Medium">Medium</span> <span class="found">· 74 pages · footerNavigationColumn, footerNavigationLink</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Multi-column footer</b></td><td>Nav columns + social links (Facebook/LinkedIn) + legal/disclosure + logo; ~10 link cols site-wide</td><td class="num">site-wide</td></tr>
+  </tbody></table></div>
+<div class="vblock"><h4>Breadcrumb <span class="cx cx-Low">Low</span> <span class="found">· 51 pages · global</span></h4>
+  <table><thead><tr><th>Variation</th><th>Distinguishing structure / behavior</th><th class="num">Seen</th></tr></thead><tbody>
+  <tr><td><b>Breadcrumb trail</b></td><td>Interior-page breadcrumb (aria-label="Breadcrumb")</td><td class="num">51 pages</td></tr>
+  </tbody></table></div>
+</section>
 
-<!-- SECTION 1: Block Inventory & Analysis -->
-<div class="section-header">
-  <div class="section-icon" style="background:rgba(59,130,246,0.15);color:#60a5fa">&#9638;</div>
-  <h2>Block Inventory & Analysis</h2>
-  <span class="count">4 Reports</span>
+<section id="templates">
+<h2 class="sec">3 · Template Inventory</h2>
+<p class="lead"><b>11 templates</b>, assigned by <b>final (post-redirect) URL + observed block composition</b>, not URL pattern alone. Template complexity: <span class="cx cx-High">High</span> <b>6</b> &nbsp; <span class="cx cx-Low">Low</span> <b>2</b> &nbsp; <span class="cx cx-Medium">Medium</span> <b>3</b>. Pages with the same purpose but materially different block variations are noted inline (e.g. consumer vs professional product pages).</p>
+<table>
+<thead><tr><th>Template</th><th class="num">Pages</th><th class="num">% Site</th><th>Complexity</th><th>Block composition</th><th>Notes / variations</th></tr></thead>
+<tbody>
+<tr>
+      <td><b>Article (Insight / Blog)</b></td>
+      <td class="num">23</td>
+      <td class="num">31.1%</td>
+      <td><span class="cx cx-Medium">Medium</span></td>
+      <td>Hero (article/standard) · Related Posts (blogCard) · Accordion/Disclosure</td>
+      <td>Editorial article body (prose is default rich-text content). Two sub-shapes: full editorial (hero + body + related posts) and lightweight (blogHeader + single card) — same template, content-driven difference.</td></tr>
+<tr>
+      <td><b>Product / Annuity (Consumer)</b></td>
+      <td class="num">8</td>
+      <td class="num">10.8%</td>
+      <td><span class="cx cx-High">High</span></td>
+      <td>Hero · Tabs · Progress Bar/Stepper · Video (Wistia) · Feature Cards &amp; Media · Accordion (FAQ) · Related Posts</td>
+      <td>AssetShield/EstateShield/GuaranteeShield/IncomeShield + our-annuities. Richest consumer composition; interactive tabs + stepper + video.</td></tr>
+<tr>
+      <td><b>Product / Annuity (Professional)</b></td>
+      <td class="num">4</td>
+      <td class="num">5.4%</td>
+      <td><span class="cx cx-High">High</span></td>
+      <td>Hero · Tabs · Feature Cards &amp; Media · Video · Accordion/Disclosure</td>
+      <td>Professionals product pages mirror the consumer shape and add tabbed groups of downloadable resource cards that link to DAM assets (handled as authored download links, not a bespoke block).</td></tr>
+<tr>
+      <td><b>Section Landing / Hub</b></td>
+      <td class="num">13</td>
+      <td class="num">17.6%</td>
+      <td><span class="cx cx-Medium">Medium</span></td>
+      <td>Hero · Feature Cards &amp; Media · Metrics · Accordion/Disclosure</td>
+      <td>Marketing hubs (about, community, financial-strength, professionals, resources, our-annuities pro). Composition varies by hub but same block palette.</td></tr>
+<tr>
+      <td><b>Content Listing (Dynamic)</b></td>
+      <td class="num">4</td>
+      <td class="num">5.4%</td>
+      <td><span class="cx cx-High">High</span></td>
+      <td>Article Hero (blogHeader) · Dynamic Insights feed (client-fetched, paginated)</td>
+      <td>/insights (+3 legacy /annuities &amp; /resources/blog redirects land here). List hydrates client-side; needs an EDS index + pagination.</td></tr>
+<tr>
+      <td><b>Form / Document Listing</b></td>
+      <td class="num">5</td>
+      <td class="num">6.8%</td>
+      <td><span class="cx cx-High">High</span></td>
+      <td>Hero · Searchable Form/Document Library OR Native Data-Entry Form OR vendor embed</td>
+      <td>Heterogeneous: /forms &amp; document-library and forms-library are searchable document directories; /form is the native data-entry form; material-request-form is a vendor (ion) embed. Directory data hydrates client-side.</td></tr>
+<tr>
+      <td><b>Careers</b></td>
+      <td class="num">4</td>
+      <td class="num">5.4%</td>
+      <td><span class="cx cx-Medium">Medium</span></td>
+      <td>Hero · Feature Cards &amp; Media · Tabs · Video · Progress Bar (openings) + Greenhouse job-board embed</td>
+      <td>careers hub + why-work-here + internship-program (marketing) and openings, which embeds the Greenhouse job board.</td></tr>
+<tr>
+      <td><b>Tool / Calculator (Embed)</b></td>
+      <td class="num">2</td>
+      <td class="num">2.7%</td>
+      <td><span class="cx cx-High">High</span></td>
+      <td>Hero · Hedgeness calculator embed · Accordion/Disclosure · (tools-calculators hub uses Feature Cards)</td>
+      <td>income-gap-calculator (consumer + professional) embed the third-party Hedgeness widget; tools-calculators landing is a hub of tool links.</td></tr>
+<tr>
+      <td><b>Contact</b></td>
+      <td class="num">2</td>
+      <td class="num">2.7%</td>
+      <td><span class="cx cx-Low">Low</span></td>
+      <td>Hero · Contact Cards/Row · Feature Cards &amp; Media · (ion form embed on professionals/contact-us)</td>
+      <td>contact-us (consumer) and professionals/contact-us; latter also embeds an ion interactive contact form.</td></tr>
+<tr>
+      <td><b>Legal / Utility</b></td>
+      <td class="num">8</td>
+      <td class="num">10.8%</td>
+      <td><span class="cx cx-Low">Low</span></td>
+      <td>Hero · Accordion/Disclosure · (Feature Cards on some)</td>
+      <td>Prose is default rich-text content. privacy, terms-of-use, accessibility, security-disclosure, patriot-act, sms-privacy, job-applicant-privacy, naic-statutory-financial-statements (the last links to statement PDFs).</td></tr>
+<tr>
+      <td><b>Home</b></td>
+      <td class="num">1</td>
+      <td class="num">1.4%</td>
+      <td><span class="cx cx-High">High</span></td>
+      <td>Hero · Feature Cards &amp; Media · Tabs · Metrics · Video · Accordion/Disclosure</td>
+      <td>Single homepage; densest marketing composition.</td></tr>
+<tr class="total-row"><td>TOTAL — 11 templates</td><td class="num">74</td><td class="num">100%</td><td>—</td><td colspan="2"></td></tr>
+</tbody></table>
+<h4>Template → URL mapping</h4>
+<div class="vblock"><h4>Article (Insight / Blog) <span class="found">· 23 URLs</span></h4>
+    <div class="urls"><code>/insights/10-Facts-About-Fixed-Index-Annuities</code> <code>/insights/8-questions-to-ask-yourself-when-planning-for-retirement</code> <code>/insights/american-equity-named-one-of-newsweeks-most-trustworthy-companies-in-america-for-fourth-consecutive-year</code> <code>/insights/Annuities-101-What-You-Need-to-Know</code> <code>/insights/baby-boomer-retirement-income-expectations-and-opportunities</code> <code>/insights/baby-boomer-retirement-trends-housing</code> <code>/insights/baby-boomer-retirement-trends-transportation--health-care</code> <code>/insights/benefits-of-fixed-index-annuities</code> <code>/insights/Four-ways-fixed-index-annuities-can-help-protect-your-income-over-time</code> <code>/insights/how-annuities-can-help-fund-reliable-income-in-retirement</code> <code>/insights/How-to-Approach-Retirement-Conversations-with-Positivity-5-Topics-to-Help-You-Achieve-Goals</code> <code>/insights/key-features-to-consider-when-choosing-a-fixed-index-annuity</code> <code>/insights/Retirement-planning-for-women-Closing-the-gender-retirement-gap</code> <code>/insights/successful-retirement-budgeting-how-to-reach-goals-and-avoid-income-gaps</code> <code>/insights/the-benefits-of-working-with-a-financial-professional</code> <code>/insights/the-sandwich-generation-and-its-retirement-outlook</code> <code>/insights/what-to-know-about-retirement-unknowns-four-questions-to-better-understand-retirement-income</code> <code>/professionals/fp-insights-and-education/Rethinking-Retirement-Income-in-a-Lower-Yield-World</code> <code>/professionals/fp-insights-and-education/The-ART-of-Managing-Retirement-Income-Risk</code> <code>/resources/blog/9-ways-to-plan-for-a-happier-retirement</code> <code>/resources/blog/baby-boomer-retirement-trends-retirement-income</code> <code>/resources/blog/fixed-index-annuities-faq</code> <code>/resources/blog/top-fixed-index-annuity-benefits</code></div></div>
+<div class="vblock"><h4>Product / Annuity (Consumer) <span class="found">· 8 URLs</span></h4>
+    <div class="urls"><code>/annuities</code> <code>/annuities/fixed-index-annuities</code> <code>/AssetShield</code> <code>/EstateShield</code> <code>/GuaranteeShield</code> <code>/IncomeShield</code> <code>/incomeshield-annuity/how-it-works</code> <code>/our-annuities</code></div></div>
+<div class="vblock"><h4>Product / Annuity (Professional) <span class="found">· 4 URLs</span></h4>
+    <div class="urls"><code>/professionals/American-Equity-AssetShield</code> <code>/professionals/American-Equity-EstateShield</code> <code>/professionals/American-Equity-GuaranteeShield</code> <code>/professionals/American-Equity-IncomeShield</code></div></div>
+<div class="vblock"><h4>Section Landing / Hub <span class="found">· 13 URLs</span></h4>
+    <div class="urls"><code>/about</code> <code>/annuities-101</code> <code>/beneficiary-support</code> <code>/community</code> <code>/financial-strength</code> <code>/professionals</code> <code>/professionals/client-engagement-collections</code> <code>/professionals/client-engagement-collections/art-engagement-collection</code> <code>/professionals/fp-insights-and-education</code> <code>/professionals/our-annuities</code> <code>/professionals/rates-and-indexes</code> <code>/professionals/resources</code> <code>/professionals/tools-calculators</code></div></div>
+<div class="vblock"><h4>Content Listing (Dynamic) <span class="found">· 4 URLs</span></h4>
+    <div class="urls"><code>/annuities/retirement-income-research</code> <code>/insights</code> <code>/resources/blog/managing-retirement-expenses-what-to-know-about-lifetime-income-riders</code> <code>/resources/blog/never-too-late-ways-to-catch-up-on-retirement-savings</code></div></div>
+<div class="vblock"><h4>Form / Document Listing <span class="found">· 5 URLs</span></h4>
+    <div class="urls"><code>/form</code> <code>/forms</code> <code>/professionals/document-library</code> <code>/professionals/forms-library</code> <code>/professionals/material-request-form</code></div></div>
+<div class="vblock"><h4>Careers <span class="found">· 4 URLs</span></h4>
+    <div class="urls"><code>/about/careers</code> <code>/about/careers/internship-program</code> <code>/about/careers/openings</code> <code>/about/careers/why-work-here</code></div></div>
+<div class="vblock"><h4>Tool / Calculator (Embed) <span class="found">· 2 URLs</span></h4>
+    <div class="urls"><code>/income-gap-calculator</code> <code>/professionals/tools-calculators/income-gap-calculator</code></div></div>
+<div class="vblock"><h4>Contact <span class="found">· 2 URLs</span></h4>
+    <div class="urls"><code>/contact-us</code> <code>/professionals/contact-us</code></div></div>
+<div class="vblock"><h4>Legal / Utility <span class="found">· 8 URLs</span></h4>
+    <div class="urls"><code>/accessibility</code> <code>/agent-sms-privacy-terms</code> <code>/job-applicant-privacy-policy</code> <code>/naic-statutory-financial-statements</code> <code>/privacy</code> <code>/security-disclosure</code> <code>/terms-of-use</code> <code>/usa-patriot-act-notice</code></div></div>
+<div class="vblock"><h4>Home <span class="found">· 1 URLs</span></h4>
+    <div class="urls"><code>/</code></div></div>
+</section>
+
+<section id="forms">
+<h2 class="sec">4 · Forms</h2>
+<p class="lead"><b>6 form surfaces</b> identified. Most are <b>third-party embedded</b> (ion interactive, Hedgeness, Greenhouse) — the vendor app owns fields, validation, submission, and any CAPTCHA. Only <code>/form</code> is a native form component, and it appears to be a template/sample (placeholder labels, no submit endpoint in server HTML).</p>
+<table>
+<thead><tr><th>Form</th><th>Type</th><th>Important fields</th><th>Validation</th><th>Submission</th><th>CAPTCHA</th><th>Cx</th><th>EDS consideration</th></tr></thead>
+<tbody><tr>
+    <td><b>Material Request Form</b><div class="found">/professionals/material-request-form</div></td>
+    <td>Third-party embedded (ion interactive)</td>
+    <td>Supply/material request fields (rendered inside ion iframe app)</td>
+    <td>Handled by ion app</td>
+    <td>Posts within ion interactive (experience.american-equity.com/material-request-form)</td>
+    <td>Not verifiable from page (inside vendor iframe)</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>Preserve ion embed via a Script/Embed block. Do not rebuild. Confirm whether AE wants this natively rebuilt.</td></tr>
+<tr>
+    <td><b>Income Gap Calculator</b><div class="found">/income-gap-calculator, /professionals/tools-calculators/income-gap-calculator</div></td>
+    <td>Third-party embedded app (Hedgeness widget)</td>
+    <td>Calculator inputs rendered by ael.hedgenessapp.com widget</td>
+    <td>Handled by Hedgeness widget</td>
+    <td>Client-side calculation in vendor widget (no AE submit observed)</td>
+    <td>None observed</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>Preserve via Script/Embed block; mount aelWidget.js into #hedgenessWidget. Do not rebuild.</td></tr>
+<tr>
+    <td><b>Job Openings / Application</b><div class="found">/about/careers/openings</div></td>
+    <td>Third-party embedded (Greenhouse job board)</td>
+    <td>Job search &amp; application flow rendered by Greenhouse</td>
+    <td>Greenhouse</td>
+    <td>Greenhouse ATS (boards.greenhouse.io)</td>
+    <td>Not verifiable (vendor)</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>Preserve Greenhouse embed via Script/Embed block. Applications remain in Greenhouse.</td></tr>
+<tr>
+    <td><b>Professional Contact Form</b><div class="found">/professionals/contact-us</div></td>
+    <td>Third-party embedded (ion interactive) + static contact cards</td>
+    <td>Contact fields inside ion embed; page also shows static contact cards</td>
+    <td>ion app</td>
+    <td>ion interactive</td>
+    <td>Not verifiable (vendor)</td>
+    <td><span class="cx cx-Medium">Medium</span></td>
+    <td>Preserve ion embed; contact cards are a native cards block.</td></tr>
+<tr>
+    <td><b>Native Form Template</b><div class="found">/form</div></td>
+    <td>Native (formInputModel) — appears to be a template/sample page</td>
+    <td>Text input(s), select, textarea, submit; labels are placeholders ("Form title", "Form description")</td>
+    <td>noValidate on &lt;form&gt;; client validation not confirmed</td>
+    <td>Endpoint not present in SSR HTML — not verifiable</td>
+    <td>None observed</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td>If required as a real form: build a Form block (or AEM Forms) with confirmed field model + submit endpoint. Confirm whether /form is a live form or a demo.</td></tr>
+<tr>
+    <td><b>Forms / Document Search (consumer /forms, document-library, forms-library)</b><div class="found">/forms, /professionals/document-library, /professionals/forms-library</div></td>
+    <td>Search/filter listing (client-hydrated), not a submission form</td>
+    <td>Search box + category tabs (form-listing) / table (form-table)</td>
+    <td>n/a (search)</td>
+    <td>No submission — links resolve to DAM assets</td>
+    <td>n/a</td>
+    <td><span class="cx cx-High">High</span></td>
+    <td>Listing block with client search/filter over an EDS index; rows link to DAM. Not a data-collection form.</td></tr></tbody></table>
+<div class="note">No CAPTCHA (reCAPTCHA/hCaptcha/Turnstile) was found anywhere in American Equity's own markup. Any CAPTCHA present would live inside the vendor iframes (ion / Greenhouse) and is <b>not verifiable from the accessible page behavior</b>.</div>
+</section>
+
+<section id="integ">
+<h2 class="sec">5 · Third-Party Integrations (verified)</h2>
+<p class="lead"><b>10 integrations</b> confirmed by on-page evidence. "Pages" = number of the 74 URLs where the integration was observed. Facebook/LinkedIn appear only as <b>footer social links</b> (not tracking pixels) and are therefore not listed as integrations.</p>
+<table>
+<thead><tr><th>Integration</th><th class="num">Pages</th><th>Scope</th><th>Purpose</th><th>Evidence</th><th>EDS migration consideration</th></tr></thead>
+<tbody><tr>
+    <td><b>Google Tag Manager</b></td>
+    <td class="num">74</td>
+    <td>Site-wide</td>
+    <td>Tag management container (GTM-MZDFLT8W); loads GA4 &amp; other tags</td>
+    <td class="found">googletagmanager.com script + GTM-MZDFLT8W on every page</td>
+    <td>Re-add GTM via delayed.js; keep container ID. Preserve data-gtm-* attributes on links/CTAs for tracking parity.</td></tr>
+<tr>
+    <td><b>Google Analytics 4 (via GTM)</b></td>
+    <td class="num">74</td>
+    <td>Site-wide</td>
+    <td>Web analytics</td>
+    <td class="found">gtag() present; GA4 fired through GTM container (no standalone G- id in markup)</td>
+    <td>Ships through GTM; no separate work beyond GTM. Custom events/data-layer changes out of scope unless requested.</td></tr>
+<tr>
+    <td><b>OneTrust (consent management)</b></td>
+    <td class="num">74</td>
+    <td>Site-wide</td>
+    <td>Cookie consent / privacy banner</td>
+    <td class="found">cdn.cookielaw.org script + data-domain-script="019aa2c6-...-a83a0e6bf1ab" on every page</td>
+    <td>Load OneTrust in delayed phase with the same domain-script id. Consent gates tag firing.</td></tr>
+<tr>
+    <td><b>Optimizely CMS (SaaS)</b></td>
+    <td class="num">74</td>
+    <td>Site-wide (platform)</td>
+    <td>Current content management platform (Next.js front end)</td>
+    <td class="found">app-*.cms.optimizely.com references + opti-content-area DOM</td>
+    <td>This is the source CMS being migrated FROM. Content is re-authored into EDS documents; not an ongoing runtime integration.</td></tr>
+<tr>
+    <td><b>Optimizely Web / Experimentation</b></td>
+    <td class="num">74</td>
+    <td>Site-wide</td>
+    <td>A/B testing &amp; experimentation snippet</td>
+    <td class="found">cdn.optimizely.com/js/5000773591891968.js preloaded/pushed on every page</td>
+    <td>Re-add experimentation snippet via delayed.js if AE keeps Optimizely Experiment. Confirm whether it is actively used.</td></tr>
+<tr>
+    <td><b>Wistia (video)</b></td>
+    <td class="num">14</td>
+    <td>Page-specific (product/marketing pages)</td>
+    <td>Hosted video player</td>
+    <td class="found">&lt;wistia-video&gt; web component + videoType:"wistia" (e.g. medias/ldupiv1d6y)</td>
+    <td>Video block with lazy facade → Wistia embed script (delayed). Keep Wistia media IDs.</td></tr>
+<tr>
+    <td><b>ion interactive (Scribble)</b></td>
+    <td class="num">2</td>
+    <td>Page-specific (material-request-form, professionals/contact-us)</td>
+    <td>Interactive forms hosted externally</td>
+    <td class="found">ionfiles.scribblecdn.net/ionizer + data-ion-embed-hash → experience.american-equity.com</td>
+    <td>Preserve via Script/Embed block. External app remains authoritative for form logic/submission.</td></tr>
+<tr>
+    <td><b>Hedgeness</b></td>
+    <td class="num">2</td>
+    <td>Page-specific (income-gap calculators)</td>
+    <td>Income-gap calculator widget</td>
+    <td class="found">ael.hedgenessapp.com/aelWidget.js → #hedgenessWidget</td>
+    <td>Preserve via Script/Embed block. Calculator logic remains in vendor widget.</td></tr>
+<tr>
+    <td><b>Greenhouse</b></td>
+    <td class="num">1</td>
+    <td>Page-specific (careers/openings)</td>
+    <td>Job board / ATS</td>
+    <td class="found">boards.greenhouse.io/embed/job_board/js?for=americanequity... → #grnhse_app</td>
+    <td>Preserve via Script/Embed block. ATS remains external.</td></tr>
+<tr>
+    <td><b>YouTube (outbound links only)</b></td>
+    <td class="num">5</td>
+    <td>Page-specific</td>
+    <td>Linked videos in article rich text</td>
+    <td class="found">youtube.com/watch links inside rich text; NOT an on-page embed</td>
+    <td>No player integration needed — links only. If an embed is later desired, add a lite-YouTube facade.</td></tr></tbody></table>
+</section>
+
+<section id="external">
+<h2 class="sec">6 · Redirects, APIs &amp; External Dependencies</h2>
+<p class="lead">Observed → Dependency → EDS Requirement → Recommendation. The only <code>/api/</code> endpoint on the site is the asset resolver, verified as a simple 301 redirect to the DAM (not custom application logic).</p>
+<table>
+<thead><tr><th>Observed</th><th>Dependency</th><th>EDS requirement</th><th>Recommendation</th></tr></thead>
+<tbody><tr>
+    <td>/api/assets/resolve-by-key?key=... (17 pages, 81 links)</td>
+    <td>Asset resolver → 301 to asset.american-equity.com/download/... (verified: returns application/pdf)</td>
+    <td>EDS must let these links keep resolving to the DAM download.</td>
+    <td>REUSE the existing resolver OR link the final asset URL directly. It is a simple redirect/asset service — NOT custom app development.</td></tr>
+<tr>
+    <td>asset.american-equity.com/download/... (site-wide)</td>
+    <td>DAM download host for PDFs/brochures/statements</td>
+    <td>Externally hosted documents must remain reachable.</td>
+    <td>Keep DAM external; reference assets as-is. Migrate into EDS/DAM only if AE explicitly requires re-hosting.</td></tr>
+<tr>
+    <td>myportal.american-equity.com (site-wide "Login")</td>
+    <td>Customer login portal (separate app; login page)</td>
+    <td>Header/footer "Login" must link to the portal.</td>
+    <td>PRESERVE link. Out of EDS scope — do not rebuild authentication.</td></tr>
+<tr>
+    <td>register.american-equity.com (site-wide "Register")</td>
+    <td>Registration app (Okta-backed)</td>
+    <td>Header "Register" must link out.</td>
+    <td>PRESERVE link. Out of EDS scope.</td></tr>
+<tr>
+    <td>experience.american-equity.com</td>
+    <td>Host for ion interactive form pages (embedded)</td>
+    <td>ion embeds must continue to load from here.</td>
+    <td>PRESERVE embeds; external app remains authoritative.</td></tr>
+<tr>
+    <td>eagle-lifeco.com, ae-newyork.com (site-wide footer)</td>
+    <td>Affiliate/subsidiary company sites</td>
+    <td>Footer/nav links to affiliates.</td>
+    <td>PRESERVE external links.</td></tr>
+<tr>
+    <td>ambest.com, fitchratings.com, spglobal.com (financial-strength)</td>
+    <td>Ratings agency references / links</td>
+    <td>Outbound links to ratings sources.</td>
+    <td>PRESERVE external links.</td></tr>
+<tr>
+    <td>10 legacy URLs return 301/308</td>
+    <td>Redirect map (/annuities*, /incomeshield-annuity/how-it-works, /resources/blog/*) → canonical pages</td>
+    <td>SEO redirect parity on launch.</td>
+    <td>Recreate these redirects in EDS redirect config so legacy URLs keep resolving.</td></tr></tbody></table>
+<h4>Login / Register / Subdomains</h4>
+<p class="lead">Login (<code>myportal.american-equity.com</code>) and registration (<code>register.american-equity.com</code>, Okta) are separate authenticated applications on other subdomains. Per the working assumption, these are <b>out of the main american-equity.com EDS scope</b>: EDS preserves the links rather than rebuilding the systems. Affiliate sites (<code>eagle-lifeco.com</code>, <code>ae-newyork.com</code>) are external links in the header/footer.</p>
+</section>
+
+<section id="assume">
+<h2 class="sec">7 · Assumptions &amp; Scope Boundaries</h2>
+<table>
+<thead><tr><th>Assumption</th><th>Observed basis</th><th>How we treat it</th><th>Scope</th></tr></thead>
+<tbody><tr><td><b>External authenticated apps are out of scope</b></td><td>myportal (login) and register (Okta) are separate applications on other subdomains.</td><td>EDS preserves links to them; authentication is not rebuilt.</td><td><span class="scope sc-out">Out of Scope</span></td></tr>
+<tr><td><b>External portals linked, not rebuilt</b></td><td>Login/Register/affiliate (eagle-lifeco, ae-newyork) surfaces are external.</td><td>Link out from header/footer; no reimplementation.</td><td><span class="scope sc-out">Out of Scope</span></td></tr>
+<tr><td><b>DAM assets remain external</b></td><td>PDFs/brochures/statements served from asset.american-equity.com.</td><td>Reference assets as-is unless AE requires re-hosting into EDS.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>Asset resolver reused, not rebuilt</b></td><td>/api/assets/resolve-by-key is a verified 301 redirect service, not app logic.</td><td>Reuse resolver or use final asset URLs; do not build custom API code.</td><td><span class="scope sc-in">In Scope (reuse)</span></td></tr>
+<tr><td><b>Third-party platforms stay external</b></td><td>ion interactive, Hedgeness, Greenhouse render inside vendor scripts/iframes.</td><td>Preserve embeds via an embed/script block; vendor apps remain authoritative.</td><td><span class="scope sc-in">In Scope (embed only)</span></td></tr>
+<tr><td><b>Content differences do not create variations</b></td><td>Many pages share identical block composition with different copy/images.</td><td>Variations only where structure/behavior/authoring/tech differ.</td><td><span class="scope sc-in">In Scope</span></td></tr>
+<tr><td><b>Structural/behavioral differences can create variations</b></td><td>e.g. horizontal vs vertical line-tabs; icon vs image cards; accordion vs disclosure.</td><td>These are counted as distinct variations.</td><td><span class="scope sc-in">In Scope</span></td></tr>
+<tr><td><b>Dynamic listings need an EDS index</b></td><td>/insights, /forms, document/forms libraries hydrate lists client-side (empty SSR).</td><td>Rebuild as index-backed listing blocks with search/pagination.</td><td><span class="scope sc-in">In Scope</span></td></tr>
+<tr><td><b>Analytics re-instated as observed</b></td><td>GTM + GA4 + Optimizely Web + OneTrust present site-wide.</td><td>Re-add the same containers/snippets; new tracking/data-layer work estimated separately.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>Native /form purpose unconfirmed</b></td><td>/form uses placeholder labels and no visible submit endpoint in SSR.</td><td>Confirm whether it is a live form or a demo before building a native Form block.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>Optimizely Experimentation usage unconfirmed</b></td><td>Experiment snippet is present site-wide but active tests are not verifiable from HTML.</td><td>Confirm whether AE keeps Optimizely Experiment before re-integrating.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>SEO redirect parity required</b></td><td>10 legacy URLs 301/308 to canonical pages.</td><td>Recreate redirect map in EDS at launch.</td><td><span class="scope sc-in">In Scope</span></td></tr></tbody></table>
+</section>
+
+<section id="gray">
+<h2 class="sec">8 · Gray Areas / Open Questions</h2>
+<table>
+<thead><tr><th>Area</th><th>Observed</th><th>Assumption</th><th>Recommendation</th><th>Scope</th></tr></thead>
+<tbody><tr><td><b>/form submission target</b></td><td>Native form has placeholder labels and no submit endpoint in server HTML.</td><td>It is likely a template/sample; the real intake is the ion "material request" form.</td><td>Confirm with AE whether /form is live; if so, obtain the submit endpoint + field spec.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>ion / Hedgeness / Greenhouse rebuild vs embed</b></td><td>These render entirely inside vendor scripts/iframes.</td><td>Rebuilding vendor apps in EDS is not warranted; embeds are the intended integration.</td><td>Preserve embeds unless AE explicitly wants a native rebuild (separate scope).</td><td><span class="scope sc-out">Out of Scope (embed only)</span></td></tr>
+<tr><td><b>DAM re-hosting</b></td><td>Documents live on asset.american-equity.com via a resolver.</td><td>Re-hosting thousands of PDFs into EDS/DAM may be unnecessary.</td><td>Keep external + reuse resolver; migrate only if AE mandates it.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>Insights feed data model</b></td><td>/insights list is client-fetched; taxonomy/category source not in SSR.</td><td>An EDS query-index will be needed to reproduce the feed + pagination.</td><td>Confirm article taxonomy/tagging so the index &amp; related-posts logic match.</td><td><span class="scope sc-in">In Scope (needs data model)</span></td></tr>
+<tr><td><b>CAPTCHA on vendor forms</b></td><td>No CAPTCHA observed in AE markup; vendor forms may add their own.</td><td>Any CAPTCHA is inside ion/Greenhouse, not AE.</td><td>No AE-side CAPTCHA work assumed; not verifiable from accessible page behavior.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>Optimizely Experimentation</b></td><td>Snippet present; live experiments not visible in HTML.</td><td>May or may not be actively used.</td><td>Confirm before re-integrating; treat as optional.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr>
+<tr><td><b>Search functionality</b></td><td>Header shows a search affordance; a global search backend is not verifiable from SSR.</td><td>Search may be powered by Optimizely/other service.</td><td>Confirm search provider &amp; scope; not verifiable from accessible page behavior.</td><td><span class="scope sc-conf">Requires Confirmation</span></td></tr></tbody></table>
+</section>
+
+<section id="eds">
+<h2 class="sec">9 · AEM / EDS Implementation Considerations</h2>
+<ul class="assume">
+<li><b>Content source:</b> Content is currently authored in Optimizely CMS and delivered via a Next.js front end. Migration re-authors content into EDS documents (Google Drive/SharePoint or DA). Optimizely CMS is a source, not an ongoing runtime dependency.</li>
+<li><b>Block signal advantage:</b> Because the source DOM carries explicit <code>data-component</code> names, block boundaries and variations are unusually clear — mapping to EDS blocks is deterministic rather than inferred.</li>
+<li><b>Global chrome:</b> Header (mega-menu with 4 top-level menus + utility login/register/search + "Find an Agent") and footer (multi-column + social + disclosure) are built once as EDS header/footer blocks from nav/footer documents. Preserve <code>data-gtm-*</code> tracking attributes for analytics parity.</li>
+<li><b>Dynamic listings:</b> <code>/insights</code>, <code>/forms</code>, and the document/forms libraries hydrate their lists client-side (empty in SSR). In EDS these become index-backed listing blocks (e.g. <code>query-index.json</code>) with search/filter/pagination. This is the main net-new data-modeling work.</li>
+<li><b>Interactivity:</b> Tabbed line-feature blocks and accordions/disclosures need accessible JS decoration (ARIA tablist/disclosure, keyboard nav). The progress-bar/stepper is presentational (no state machine).</li>
+<li><b>Media:</b> Wistia videos should use a lazy facade and load the Wistia script in the delayed phase to protect Core Web Vitals. YouTube appears only as outbound links.</li>
+<li><b>Embeds:</b> ion interactive, Hedgeness, and Greenhouse are mounted via a generic embed/script block. Load vendor scripts in the delayed phase; keep the embed hashes/IDs.</li>
+<li><b>Assets &amp; documents:</b> PDFs/brochures resolve through <code>/api/assets/resolve-by-key</code> → <code>asset.american-equity.com</code>. Reuse the resolver or link final asset URLs; re-hosting into EDS/DAM only if AE requires it.</li>
+<li><b>Consent &amp; tags:</b> OneTrust gates GTM (GA4 + Optimizely Web). Re-add OneTrust + GTM in the delayed phase with the same IDs; consent must gate tag firing.</li>
+<li><b>SEO:</b> Recreate the 10 legacy 301/308 redirects in EDS redirect config. Canonicals, OG/Twitter metadata, and robots are present per page and map to EDS metadata. (All 74 pages already have meta descriptions; 10 pages carry more than one H1 — worth normalizing during migration.)</li>
+<li><b>Accessibility:</b> Preserve ARIA on nav, tabs, accordions/disclosures, and modal; maintain heading hierarchy (address multi-H1 pages).</li>
+</ul>
+</section>
+
+<section id="counts">
+<h2 class="sec">10 · Final Counts &amp; Validation</h2>
+<table>
+<thead><tr><th>Metric</th><th class="num">Exact count</th></tr></thead>
+<tbody>
+<tr><td>Input lines in american-equity.txt</td><td class="num">75</td></tr>
+<tr><td>Unique URLs (1 duplicate removed: /IncomeShield)</td><td class="num">74</td></tr>
+<tr><td>URLs analyzed (fetched, HTTP 200)</td><td class="num">74</td></tr>
+<tr><td>URLs that could not be analyzed</td><td class="num">0</td></tr>
+<tr><td>Legacy redirects (301/308) among inputs</td><td class="num">10</td></tr>
+<tr><td>Distinct rendered pages (unique final URLs)</td><td class="num">64</td></tr>
+<tr><td>Blocks (total)</td><td class="num">16</td></tr>
+<tr><td>&nbsp;&nbsp;· content blocks</td><td class="num">13</td></tr>
+<tr><td>&nbsp;&nbsp;· global blocks (header/footer/breadcrumb)</td><td class="num">3</td></tr>
+<tr><td>Block variations (total)</td><td class="num">25</td></tr>
+<tr><td>&nbsp;&nbsp;· Low complexity blocks</td><td class="num">3</td></tr>
+<tr><td>&nbsp;&nbsp;· Medium complexity blocks</td><td class="num">8</td></tr>
+<tr><td>&nbsp;&nbsp;· High complexity blocks</td><td class="num">5</td></tr>
+<tr><td>Templates</td><td class="num">11</td></tr>
+<tr><td>Forms (surfaces)</td><td class="num">6</td></tr>
+<tr><td>Third-party integrations (verified)</td><td class="num">10</td></tr>
+<tr><td>External dependencies / redirect classes</td><td class="num">8</td></tr>
+<tr><td>Gray areas / open questions</td><td class="num">7</td></tr>
+</tbody></table>
+<div class="callout"><b>Coverage validation:</b> All 74/74 unique URLs were fetched (HTTP 200) and each is mapped to a template and its observed blocks in §1. There are <b>0 analysis gaps</b>. The 1 duplicate line in the input file (<code>/IncomeShield</code>) was de-duplicated. Signals are derived from live server HTML; where behavior lives inside client hydration or vendor iframes, it is explicitly flagged as "not verifiable from the accessible page behavior."</div>
+</section>
+
+<footer>American Equity → EDS discovery analysis · Generated 2026-08-13 · Evidence: <code>american-equity/data/*.json</code> · No estimates/timelines/story points included by design.</footer>
 </div>
-
-<div class="cards">
-
-  <a href="report-1-block-summary.html" class="card blue">
-    <div class="card-top">
-      <span class="card-badge badge-inventory">Inventory</span>
-      <span class="card-number">Report 1</span>
-    </div>
-    <h3>Block Summary</h3>
-    <p class="desc">Master inventory of all 35 identified blocks with screenshot thumbnails, complexity ratings (Simple/Medium/Complex), consolidation recommendations (Consolidate/Standalone/Split/Merge), and estimated development effort per block.</p>
-    <div class="meta-row">
-      <span class="meta-tag"><strong>35</strong> blocks</span>
-      <span class="meta-tag"><strong>87</strong> variations</span>
-      <span class="meta-tag">Screenshots</span>
-    </div>
-    <span class="card-link">View Report</span>
-  </a>
-
-  <a href="report-2-detailed-breakdown.html" class="card blue">
-    <div class="card-top">
-      <span class="card-badge badge-inventory">Inventory</span>
-      <span class="card-number">Report 2</span>
-    </div>
-    <h3>Detailed Block Breakdown</h3>
-    <p class="desc">Every block variation documented individually with per-variation screenshots, reference URLs to live thermofisher.com pages, platform tags (Modern/Legacy/Corporate), and [NEW] markers for recently discovered variations.</p>
-    <div class="meta-row">
-      <span class="meta-tag"><strong>87</strong> variations</span>
-      <span class="meta-tag"><strong>59</strong> screenshots</span>
-      <span class="meta-tag">Live URLs</span>
-    </div>
-    <span class="card-link">View Report</span>
-  </a>
-
-
-
-</div>
-
-<!-- SECTION 2: Template Mapping -->
-<div class="section-header">
-  <div class="section-icon" style="background:rgba(34,197,94,0.15);color:#4ade80">&#9776;</div>
-  <h2>Template & Block Mapping</h2>
-  <span class="count">3 Reports</span>
-</div>
-
-<div class="cards">
-
-  <a href="report-7-template-list.html" class="card green">
-    <div class="card-top">
-      <span class="card-badge badge-template">Templates</span>
-      <span class="card-number">Report 7</span>
-    </div>
-    <h3>Template List (View 1)</h3>
-    <p class="desc">All 21 identified page templates with 43 variations, estimated page counts, sample URLs, and platform distribution chart. Shows that Modern covers 38%, Legacy 6%, Mixed 51%, and Corporate 4% of pages.</p>
-    <div class="meta-row">
-      <span class="meta-tag"><strong>21</strong> templates</span>
-      <span class="meta-tag"><strong>43</strong> variations</span>
-      <span class="meta-tag">Distribution chart</span>
-    </div>
-    <span class="card-link">View Report</span>
-  </a>
-
-  <a href="report-8-template-block-mapping.html" class="card green">
-    <div class="card-top">
-      <span class="card-badge badge-template">Mapping</span>
-      <span class="card-number">Report 8</span>
-    </div>
-    <h3>Template → Block Mapping (View 2)</h3>
-    <p class="desc">Full mapping matrix showing which block variations appear on each template. Color-coded block tags by category (hero, cards, columns, nav, video, interactive, unique). The definitive reference for template composition.</p>
-    <div class="meta-row">
-      <span class="meta-tag"><strong>21×35</strong> matrix</span>
-      <span class="meta-tag">Color-coded</span>
-      <span class="meta-tag">Reference URLs</span>
-    </div>
-    <span class="card-link">View Report</span>
-  </a>
-
-
-
-</div>
-
-<!-- SECTION 3: Functional Documentation -->
-<div class="section-header">
-  <div class="section-icon" style="background:rgba(249,115,22,0.15);color:#fb923c">&#9881;</div>
-  <h2>Block Functional Documentation</h2>
-  <span class="count">3 Reports</span>
-</div>
-
-<div class="cards">
-
-  <a href="report-10-block-functional-docs-core.html" class="card orange">
-    <div class="card-top">
-      <span class="card-badge badge-functional">Functional Docs</span>
-      <span class="card-number">Report 10</span>
-    </div>
-    <h3>Core Blocks — Hero, Cards, Columns, Teaser, Form</h3>
-    <p class="desc">Comprehensive functional documentation for the 5 highest-impact blocks covering 34 variations. Each variation includes: DOM structure, acceptance criteria (QA checklists), interactions, responsive behavior, WCAG accessibility, and authoring requirements. Ready for LLD, developer handoff, and Jira story creation.</p>
-    <div class="meta-row">
-      <span class="meta-tag"><strong>5</strong> blocks</span>
-      <span class="meta-tag"><strong>34</strong> variations</span>
-      <span class="meta-tag"><strong>9</strong> sections each</span>
-    </div>
-    <span class="card-link">View Report</span>
-  </a>
-
-  <a href="report-11-block-functional-docs-nav-interactive.html" class="card orange">
-    <div class="card-top">
-      <span class="card-badge badge-functional">Functional Docs</span>
-      <span class="card-number">Report 11</span>
-    </div>
-    <h3>Navigation & Interactive — Sidebar, Tabs, Video, Carousel, Event Table</h3>
-    <p class="desc">Functional specs for 10 navigation and interactive blocks covering 25 variations. Includes complex components like the filterable event table (17 checkboxes, 3 filter groups), Brightcove video playlist, workflow stepper (5-step), and filmstrip carousel.</p>
-    <div class="meta-row">
-      <span class="meta-tag"><strong>10</strong> blocks</span>
-      <span class="meta-tag"><strong>25</strong> variations</span>
-      <span class="meta-tag">ARIA/keyboard docs</span>
-    </div>
-    <span class="card-link">View Report</span>
-  </a>
-
-  <a href="report-12-block-functional-docs-specialized.html" class="card orange">
-    <div class="card-top">
-      <span class="card-badge badge-functional">Functional Docs</span>
-      <span class="card-number">Report 12</span>
-    </div>
-    <h3>Specialized & Layout — Mondrian, CSR, Support Hub, Chapter TOC</h3>
-    <p class="desc">Functional documentation for 18 specialized blocks covering 29 variations. Includes unique components: Mondrian grid (4 variants), CSR commitments grid, statistics highlights slider, support hub (6 categories + chat), chapter table of contents, and video modal/teaser pair.</p>
-    <div class="meta-row">
-      <span class="meta-tag"><strong>18</strong> blocks</span>
-      <span class="meta-tag"><strong>29</strong> variations</span>
-      <span class="meta-tag">Corporate blocks</span>
-    </div>
-    <span class="card-link">View Report</span>
-  </a>
-
-</div>
-
-
-
-</div>
-
-
-</body>
-</html>
+</body></html>
